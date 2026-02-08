@@ -1,44 +1,47 @@
-export default function Home() {
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
+
+export default async function Home() {
+  const { data: posts } = await supabase
+    .from("posts")
+    .select("*")
+    .order("created_at", { ascending: false });
+
   return (
-    <main style={{ maxWidth: 980, margin: "32px auto", padding: "0 16px", fontFamily: "Arial, sans-serif" }}>
-      <header style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
-        <h1 style={{ margin: 0, letterSpacing: 0.5 }}>MotoCodex</h1>
+    <main style={{ maxWidth: 900, margin: "32px auto", padding: "0 16px", fontFamily: "Arial, sans-serif" }}>
+      <header style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
+        <h1>MotoCodex</h1>
         <div style={{ fontSize: 12 }}>
-          <a href="#" style={{ marginRight: 10 }}>SX</a>
-          <a href="#" style={{ marginRight: 10 }}>MX</a>
-          <a href="#" style={{ marginRight: 10 }}>SMX</a>
-          <a href="#" style={{ marginRight: 10 }}>WSX</a>
-          <a href="#" style={{ marginRight: 10 }}>WMX</a>
-          <a href="#" style={{ marginRight: 10 }}>MXGP</a>
-          <a href="#">Amateur</a>
+          SX&nbsp;&nbsp;MX&nbsp;&nbsp;SMX&nbsp;&nbsp;WSX&nbsp;&nbsp;WMX&nbsp;&nbsp;MXGP&nbsp;&nbsp;Amateur
         </div>
       </header>
 
-      <hr style={{ margin: "12px 0 18px" }} />
+      <hr />
 
-      <section>
-        <div style={{ fontWeight: 700, marginBottom: 8 }}>Top</div>
-        <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.55 }}>
-          <li><a href="#" style={{ textDecoration: "none" }}>BREAKING: Example headline placeholder</a></li>
-          <li><a href="#" style={{ textDecoration: "none" }}>Team/Rider rumor mill – example link</a></li>
-          <li><a href="#" style={{ textDecoration: "none" }}>Race recap: example link</a></li>
-        </ul>
-      </section>
+      <ul style={{ lineHeight: 1.6 }}>
+        {posts && posts.length > 0 ? (
+          posts.map((post) => (
+            <li key={post.id}>
+              <a href={post.url} target="_blank" rel="noreferrer">
+                {post.title}
+              </a>{" "}
+              <span style={{ fontSize: 12, opacity: 0.7 }}>
+                ({post.series || "General"} — {post.source || "Unknown"})
+              </span>
+            </li>
+          ))
+        ) : (
+          <li>No posts yet</li>
+        )}
+      </ul>
 
-      <hr style={{ margin: "18px 0" }} />
-
-      <section>
-        <div style={{ fontWeight: 700, marginBottom: 8 }}>More</div>
-        <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.55 }}>
-          <li><a href="#" style={{ textDecoration: "none" }}>YouTube show: example link</a></li>
-          <li><a href="#" style={{ textDecoration: "none" }}>Podcast clip: example link</a></li>
-          <li><a href="#" style={{ textDecoration: "none" }}>Industry press release: example link</a></li>
-        </ul>
-      </section>
-
-      <footer style={{ marginTop: 28, fontSize: 12, opacity: 0.8 }}>
-        <hr style={{ margin: "18px 0 10px" }} />
-        <div>© {new Date().getFullYear()} MotoCodex • text-first racing index</div>
+      <footer style={{ marginTop: 32, fontSize: 12, opacity: 0.7 }}>
+        <hr />
+        © {new Date().getFullYear()} MotoCodex • text-first racing index
       </footer>
     </main>
   );
