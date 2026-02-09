@@ -200,7 +200,7 @@ export default async function Home({
       <section
         style={{
           display: "grid",
-          gridTemplateColumns: "280px 1fr 280px",
+          gridTemplateColumns: "240px 1.4fr 240px",
           gap: 18,
           marginTop: 18,
           alignItems: "start",
@@ -233,7 +233,13 @@ export default async function Home({
             {latest.length ? (
               latest.map((post: any) => (
                 <li key={post.id} style={{ marginBottom: 6 }}>
-                  <a href={post.url} target="_blank" rel="noreferrer" style={{ textDecoration: "none" }}>
+                  <a
+  href={post.url}
+  target="_blank"
+  rel="noreferrer"
+  style={{ textDecoration: "none", fontWeight: 600 }}
+>
+
                     {post.title}
                   </a>{" "}
                   <span style={{ fontSize: 12, opacity: 0.7 }}>
