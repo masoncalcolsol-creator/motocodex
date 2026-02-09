@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/ingest?secret=motocodex_ingest_7f3a9c2b6e41d8a5",
+      "schedule": "*/10 * * * *"
+    }
+  ]
+}
