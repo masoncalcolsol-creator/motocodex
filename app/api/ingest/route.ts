@@ -8,7 +8,6 @@ export const dynamic = "force-dynamic";
 type Feed = { url: string; source: string; series: string };
 
 const FEEDS: Feed[] = [
-  { url: "https://rss.app/feed/fyzGoBShDC0DwWTz", source: "RSSapp-01", series: "News" },
   { url: "https://rss.app/feeds/aSS1zuuI3ctrFdsO.xml", source: "VitalMX", series: "News" },
   { url: "https://rss.app/feeds/F4ihXBNPFhfG6Zqb.xml", source: "PulpMx", series: "News" },
   { url: "https://rss.app/feeds/kKaJyhdwFRIYQjOK.xml", source: "Main Event Moto", series: "News" },
