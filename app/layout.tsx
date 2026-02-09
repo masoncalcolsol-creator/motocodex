@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "MotoCodex",
-  description: "Text-first motocross racing index",
+  description: "All Moto No Fluff",
 };
 
 export default function RootLayout({
