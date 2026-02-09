@@ -2,167 +2,116 @@ import { NextRequest } from "next/server";
 import Parser from "rss-parser";
 import { createClient } from "@supabase/supabase-js";
 
+export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-type FeedDef = {
+type Feed = {
   url: string;
-  source: string;
-  series: string;
-  type: "rss" | "youtube";
+  source: string; // label shown in Supabase
+  series: string; // MX / SX / SMX / Media / News etc
 };
 
-/**
- * Resolve a YouTube URL to a videos RSS feed URL.
- * Supports:
- * - https://www.youtube.com/@handle
- * - https://www.youtube.com/c/customName
- * - https://www.youtube.com/channel/UCxxxx
- */
-async function youtubeToRss(url: string): Promise<{ rssUrl: string; channelId?: string }> {
-  // If already a channel URL with UC id
-  const channelMatch = url.match(/youtube\.com\/channel\/(UC[a-zA-Z0-9_-]+)/);
-  if (channelMatch?.[1]) {
-    const channelId = channelMatch[1];
-    return { rssUrl: `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`, channelId };
+const FEEDS: Feed[] = [
+  // ✅ RSS.app feeds you provided (keeping order)
+  { url: "https://rss.app/feed/fyzGoBShDC0DwWTz", source: "RSSapp-01", series: "News" },
+  { url: "https://rss.app/feeds/aSS1zuuI3ctrFdsO.xml", source: "VitalMX", series: "News" },
+  { url: "https://rss.app/feeds/F4ihXBNPFhfG6Zqb.xml", source: "PulpMx", series: "News" },
+  { url: "https://rss.app/feeds/kKaJyhdwFRIYQjOK.xml", source: "Main Event Moto", series: "News" },
+  { url: "https://rss.app/feeds/O4p5qISqikryCpmo.xml", source: "SwapMotoLive", series: "News" },
+  { url: "https://rss.app/feeds/dwr8Fti0aB3SJzbV.xml", source: "Whiskey Throttle", series: "News" },
+  { url: "https://rss.app/feeds/hY7dvA2OZ92UPEon.xml", source: "Racer X Online", series: "News" },
+  { url: "https://rss.app/feeds/oA2COqosh91E0nlM.xml", source: "SUperMotocross", series: "News" },
+  { url: "https://rss.app/feeds/Cv5ooBwheLndl145.xml", source: "Cyclenews", series: "News" },
+  { url: "https://rss.app/feeds/I8tDAnxQe4mO5KGB.xml", source: "Dirt Bike Magazine", series: "News" },
+  { url: "https://rss.app/feeds/x6iDIlysCAgymTHf.xml", source: "SuperCross Live", series: "News" },
+  { url: "https://rss.app/feeds/H81BeG5nsc90AHPH.xml", source: "MXGP", series: "News" },
+  { url: "https://rss.app/feeds/Dpv6wMEfCNZK7ftf.xml", source: "MXGPTV", series: "News" },
+  { url: "https://rss.app/feeds/K1Q4dPeXaIE44PuN.xml", source: "Matt Burkeen", series: "News" },
+  { url: "https://rss.app/feeds/Tbsj4CWbvLUjSWmw.xml", source: "LiveMotocross", series: "News" },
+];
+
+function mustEnv(name: string) {
+  const v = process.env[name];
+  if (!v) throw new Error(`${name} is required`);
+  return v;
+}
+
+function normalizeUrl(u: string) {
+  try {
+    const url = new URL(u);
+    // remove common tracking params so duplicates merge
+    ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach((k) =>
+      url.searchParams.delete(k)
+    );
+    return url.toString();
+  } catch {
+    return (u || "").trim();
   }
-
-  // Fetch the page and extract channelId
-  const res = await fetch(url, {
-    // Some YT pages behave better with a UA
-    headers: { "user-agent": "Mozilla/5.0" },
-    // Prevent any caching weirdness on serverless
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error(`YouTube page fetch failed (${res.status})`);
-  }
-
-  const html = await res.text();
-
-  // Common patterns containing channelId
-  const m1 = html.match(/"channelId":"(UC[a-zA-Z0-9_-]+)"/);
-  const m2 = html.match(/\/channel\/(UC[a-zA-Z0-9_-]+)/);
-
-  const channelId = m1?.[1] || m2?.[1];
-  if (!channelId) {
-    throw new Error("channelId not found");
-  }
-
-  return { rssUrl: `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`, channelId };
 }
 
 export async function GET(req: NextRequest) {
-  // --- auth (secret) ---
-  const secret = req.nextUrl.searchParams.get("secret");
-  if (!process.env.INGEST_SECRET) {
-    return new Response("Server misconfigured: INGEST_SECRET missing", { status: 500 });
-  }
-  if (secret !== process.env.INGEST_SECRET) {
+  const secret = req.nextUrl.searchParams.get("secret") || "";
+  if (secret !== mustEnv("INGEST_SECRET")) {
     return new Response("Unauthorized", { status: 401 });
   }
 
-  // --- env sanity checks ---
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-
-  if (!supabaseUrl) {
-    return new Response("Server misconfigured: NEXT_PUBLIC_SUPABASE_URL missing", { status: 500 });
-  }
-  if (!serviceKey) {
-    return new Response("Server misconfigured: SUPABASE_SERVICE_ROLE_KEY missing", { status: 500 });
-  }
-
-  const supabase = createClient(supabaseUrl, serviceKey, {
-    auth: { persistSession: false },
-  });
+  const supabase = createClient(
+    mustEnv("NEXT_PUBLIC_SUPABASE_URL"),
+    mustEnv("SUPABASE_SERVICE_ROLE_KEY"),
+    { auth: { persistSession: false } }
+  );
 
   const parser = new Parser({
-    timeout: 15000,
+    timeout: 20000,
     headers: { "user-agent": "Mozilla/5.0" },
   });
-
-  // --- feeds ---
-  const feeds: FeedDef[] = [
-    { url: "https://www.motocrossactionmag.com/feed/", source: "MXA", series: "MX", type: "rss" },
-
-    // VitalMX RSS (currently throws parse error for you; we keep it so you can see it)
-    { url: "https://www.vitalmx.com/rss.xml", source: "VitalMX", series: "MX", type: "rss" },
-
-    // YouTube channels
-    { url: "https://www.youtube.com/@vitalmx", source: "VitalMX (YouTube)", series: "Video", type: "youtube" },
-    { url: "https://www.youtube.com/c/livemotocross", source: "Live Motocross", series: "Video", type: "youtube" },
-    { url: "https://www.youtube.com/@whiskeythrottlemedia", source: "Whiskey Throttle", series: "Video", type: "youtube" },
-    { url: "https://www.youtube.com/@swapmotolive", source: "SwapMoto Live", series: "Video", type: "youtube" },
-    { url: "https://www.youtube.com/@PulpMX", source: "PulpMX (YouTube)", series: "Video", type: "youtube" },
-    { url: "https://www.youtube.com/@RacerXIllustrated", source: "Racer X Illustrated", series: "Video", type: "youtube" },
-    { url: "https://www.youtube.com/@supermotocross", source: "SuperMotocross", series: "Video", type: "youtube" },
-  ];
 
   let totalSeen = 0;
   let totalUpserted = 0;
 
-  const perFeed: any[] = [];
+  const perFeed: Array<{
+    source: string;
+    series: string;
+    url: string;
+    seen: number;
+    upserted: number;
+    error?: string;
+  }> = [];
 
-  for (const feed of feeds) {
-    const feedReport: any = {
-      url: feed.url,
-      source: feed.source,
-      series: feed.series,
-      seen: 0,
-      upserted: 0,
-    };
+  for (const feed of FEEDS) {
+    let seen = 0;
+    let upserted = 0;
 
     try {
-      // Convert YouTube URL -> RSS videos.xml
-      let fetchUrl = feed.url;
-      if (feed.type === "youtube") {
-        const { rssUrl, channelId } = await youtubeToRss(feed.url);
-        fetchUrl = rssUrl;
-        feedReport.resolved = { rssUrl, channelId };
-      }
-
-      const parsed = await parser.parseURL(fetchUrl);
-
-      const items = (parsed.items || []).slice(0, 15);
-      feedReport.seen = items.length;
-      totalSeen += items.length;
-
-      const itemErrors: any[] = [];
+      const parsed = await parser.parseURL(feed.url);
+      const items = (parsed.items || []).slice(0, 25);
 
       for (const item of items) {
-        const title = (item.title || "").trim();
-        const link = (item.link || item.guid || "").trim();
+        const title = (item.title || "").toString().trim();
+        const link = normalizeUrl(((item.link as string) || (item.guid as string) || "").trim());
+
         if (!title || !link) continue;
 
-        const { error } = await supabase.from("posts").upsert(
-          {
-            title,
-            url: link,
-            source: feed.source,
-            series: feed.series,
-          },
-          { onConflict: "url" }
-        );
+        seen++;
+        totalSeen++;
 
-        if (error) {
-          itemErrors.push({ url: link, message: error.message });
-        } else {
-          feedReport.upserted += 1;
-          totalUpserted += 1;
+        const { error } = await supabase
+          .from("posts")
+          .upsert(
+            { title, url: link, source: feed.source, series: feed.series },
+            { onConflict: "url" }
+          );
+
+        if (!error) {
+          upserted++;
+          totalUpserted++;
         }
       }
 
-      if (itemErrors.length) {
-        // include only first few to avoid huge payloads
-        feedReport.supabaseErrors = itemErrors.slice(0, 5);
-        feedReport.supabaseErrorCount = itemErrors.length;
-      }
+      perFeed.push({ ...feed, seen, upserted });
     } catch (e: any) {
-      feedReport.error = e?.message || String(e);
+      perFeed.push({ ...feed, seen, upserted, error: e?.message || String(e) });
     }
-
-    perFeed.push(feedReport);
   }
 
   return Response.json({
