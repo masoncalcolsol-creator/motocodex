@@ -12,6 +12,17 @@ type Post = {
   source: string;
   series: string;
   created_at?: string;
+
+  is_breaking: boolean;
+  is_pinned: boolean;
+  pin_rank: number;
+  is_hidden: boolean;
+
+  manual_title: string | null;
+  manual_url: string | null;
+  manual_source: string | null;
+  manual_series: string | null;
+  manual_updated_at?: string | null;
 };
 
 const FILTERS = [
@@ -40,18 +51,24 @@ function seriesFilterValues(series?: string) {
   if (!series) return null;
   const s = series.toUpperCase();
 
-  // keep compatibility if any legacy strings still exist
+  // compat with any legacy strings (harmless)
   if (s === "GEN") return ["GEN", "News", "news"];
   if (s === "VID") return ["VID", "Video", "video"];
   if (s === "AM") return ["AM", "Amateur", "amateur"];
-
   return [s];
 }
 
-export default async function Home(props: {
-  searchParams: any; // Next version may provide Promise here
-}) {
-  // ✅ This is the key fix: works whether searchParams is sync OR a Promise
+function applyOverrides(p: Post) {
+  return {
+    ...p,
+    title: p.manual_title?.trim() ? p.manual_title : p.title,
+    url: p.manual_url?.trim() ? p.manual_url : p.url,
+    source: p.manual_source?.trim() ? p.manual_source : p.source,
+    series: p.manual_series?.trim() ? p.manual_series : p.series,
+  };
+}
+
+export default async function Home(props: { searchParams: any }) {
   const sp = await Promise.resolve(props.searchParams);
 
   const series = sp.series ? String(sp.series).toUpperCase() : undefined;
@@ -65,7 +82,10 @@ export default async function Home(props: {
 
   let query = supabase
     .from("posts")
-    .select("id,title,url,source,series,created_at")
+    .select(
+      "id,title,url,source,series,created_at,is_breaking,is_pinned,pin_rank,is_hidden,manual_title,manual_url,manual_source,manual_series,manual_updated_at"
+    )
+    .eq("is_hidden", false)
     .limit(300);
 
   const seriesVals = seriesFilterValues(series);
@@ -74,16 +94,17 @@ export default async function Home(props: {
   if (source) query = query.eq("source", source);
   if (q) query = query.ilike("title", `%${q}%`);
 
-  // prefer ordering by created_at; fallback if column missing/disabled
-  let posts: Post[] = [];
-  const ordered = await query.order("created_at", { ascending: false });
-  if (ordered.error) {
-    const fallback = await query;
-    posts = Array.isArray(fallback.data) ? (fallback.data as Post[]) : [];
-  } else {
-    posts = Array.isArray(ordered.data) ? (ordered.data as Post[]) : [];
-  }
+  // editorial ordering: breaking → pinned → newest
+  const { data, error } = await query
+    .order("is_breaking", { ascending: false })
+    .order("is_pinned", { ascending: false })
+    .order("pin_rank", { ascending: true })
+    .order("created_at", { ascending: false });
 
+  const raw: Post[] = Array.isArray(data) ? (data as Post[]) : [];
+  const posts = raw.map(applyOverrides);
+
+  // Breaking: first item in ordered list (if any)
   const breaking = posts[0];
   const rest = posts.slice(1);
 
@@ -102,7 +123,6 @@ export default async function Home(props: {
         color: "#111",
       }}
     >
-      {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <div>
           <h1 style={{ margin: 0, fontSize: 56, fontWeight: 700 }}>MotoCodex</h1>
@@ -111,7 +131,6 @@ export default async function Home(props: {
           </div>
         </div>
 
-        {/* Search */}
         <form action="/" method="get" style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 10 }}>
           {series ? <input type="hidden" name="series" value={series} /> : null}
           {source ? <input type="hidden" name="source" value={source} /> : null}
@@ -147,7 +166,6 @@ export default async function Home(props: {
         </form>
       </div>
 
-      {/* Filters row */}
       <div style={{ marginTop: 18, borderTop: "1px solid #ddd", borderBottom: "1px solid #ddd", padding: "12px 0" }}>
         <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 18, fontFamily: "Arial, sans-serif", fontSize: 14 }}>
@@ -171,13 +189,10 @@ export default async function Home(props: {
             })}
           </div>
 
-          <div style={{ fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
-            Quick filters
-          </div>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>Quick filters</div>
         </div>
       </div>
 
-      {/* Breaking */}
       <section style={{ marginTop: 26, textAlign: "center" }}>
         <div style={{ color: "#b30000", fontFamily: "Arial, sans-serif", fontSize: 14, fontWeight: 900, letterSpacing: 1 }}>
           BREAKING
@@ -204,6 +219,8 @@ export default async function Home(props: {
 
             <div style={{ marginTop: 10, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
               {breaking.source} • {breaking.series}
+              {breaking.is_pinned ? " • PINNED" : ""}
+              {breaking.is_breaking ? " • BREAKING" : ""}
             </div>
           </div>
         ) : (
@@ -211,7 +228,6 @@ export default async function Home(props: {
         )}
       </section>
 
-      {/* 3-column headlines */}
       <section style={{ marginTop: 26 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40 }}>
           {[col1, col2, col3].map((col, idx) => (
@@ -222,19 +238,13 @@ export default async function Home(props: {
                     href={p.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      textDecoration: "none",
-                      color: "#111",
-                      fontSize: 18,
-                      fontWeight: 800,
-                      lineHeight: 1.15,
-                      display: "inline-block",
-                    }}
+                    style={{ textDecoration: "none", color: "#111", fontSize: 18, fontWeight: 800, lineHeight: 1.15 }}
                   >
                     {p.title}
                   </a>
                   <div style={{ marginTop: 6, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
                     {p.source} • {p.series}
+                    {p.is_pinned ? ` • PIN ${p.pin_rank}` : ""}
                   </div>
                 </div>
               ))}
