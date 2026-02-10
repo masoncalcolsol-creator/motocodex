@@ -1,5 +1,7 @@
-export const dynamic = "force-dynamic";
 // app/page.tsx
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 
@@ -34,12 +36,11 @@ function qp(params: Record<string, string | undefined>) {
   return s ? `?${s}` : "";
 }
 
-// Map UI filters to your existing data while you're transitioning tagging.
-// (You previously had lots of "News" — this keeps filters useful.)
 function seriesFilterValues(series?: string) {
   if (!series) return null;
   const s = series.toUpperCase();
 
+  // keep compatibility if any legacy strings still exist
   if (s === "GEN") return ["GEN", "News", "news"];
   if (s === "VID") return ["VID", "Video", "video"];
   if (s === "AM") return ["AM", "Amateur", "amateur"];
@@ -47,14 +48,15 @@ function seriesFilterValues(series?: string) {
   return [s];
 }
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams: { series?: string; q?: string; source?: string };
+export default async function Home(props: {
+  searchParams: any; // Next version may provide Promise here
 }) {
-  const series = searchParams.series?.toUpperCase();
-  const q = (searchParams.q ?? "").trim();
-  const source = (searchParams.source ?? "").trim();
+  // ✅ This is the key fix: works whether searchParams is sync OR a Promise
+  const sp = await Promise.resolve(props.searchParams);
+
+  const series = sp.series ? String(sp.series).toUpperCase() : undefined;
+  const q = sp.q ? String(sp.q).trim() : "";
+  const source = sp.source ? String(sp.source).trim() : "";
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -72,25 +74,19 @@ export default async function Home({
   if (source) query = query.eq("source", source);
   if (q) query = query.ilike("title", `%${q}%`);
 
-  // Sort newest-first when possible; if created_at doesn't exist it will error,
-  // so we fall back to no ordering.
+  // prefer ordering by created_at; fallback if column missing/disabled
   let posts: Post[] = [];
-  {
-    const { data, error } = await query.order("created_at", { ascending: false });
-
-    if (error) {
-      // fallback: same query without ordering (keeps site alive)
-      const fallback = await query;
-      posts = Array.isArray(fallback.data) ? (fallback.data as Post[]) : [];
-    } else {
-      posts = Array.isArray(data) ? (data as Post[]) : [];
-    }
+  const ordered = await query.order("created_at", { ascending: false });
+  if (ordered.error) {
+    const fallback = await query;
+    posts = Array.isArray(fallback.data) ? (fallback.data as Post[]) : [];
+  } else {
+    posts = Array.isArray(ordered.data) ? (ordered.data as Post[]) : [];
   }
 
   const breaking = posts[0];
   const rest = posts.slice(1);
 
-  // split into 3 columns
   const col1: Post[] = [];
   const col2: Post[] = [];
   const col3: Post[] = [];
@@ -179,33 +175,6 @@ export default async function Home({
             Quick filters
           </div>
         </div>
-
-        {(series || q || source) && (
-          <div style={{ marginTop: 10, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#333" }}>
-            Showing:
-            {series ? (
-              <>
-                {" "}
-                <strong>{series}</strong>{" "}
-              </>
-            ) : null}
-            {source ? (
-              <>
-                {" "}
-                • source: <strong>{source}</strong>{" "}
-              </>
-            ) : null}
-            {q ? (
-              <>
-                {" "}
-                • search: <strong>{q}</strong>{" "}
-              </>
-            ) : null}{" "}
-            <Link href="/" style={{ marginLeft: 10 }}>
-              [clear]
-            </Link>
-          </div>
-        )}
       </div>
 
       {/* Breaking */}
@@ -234,13 +203,7 @@ export default async function Home({
             </a>
 
             <div style={{ marginTop: 10, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
-              <Link href={`/${qp({ series, q, source: breaking.source })}`} style={{ color: "#111" }}>
-                {breaking.source}
-              </Link>{" "}
-              •{" "}
-              <Link href={`/${qp({ series: breaking.series, q, source })}`} style={{ color: "#111" }}>
-                {breaking.series}
-              </Link>
+              {breaking.source} • {breaking.series}
             </div>
           </div>
         ) : (
@@ -271,13 +234,7 @@ export default async function Home({
                     {p.title}
                   </a>
                   <div style={{ marginTop: 6, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
-                    <Link href={`/${qp({ series, q, source: p.source })}`} style={{ color: "#111" }}>
-                      {p.source}
-                    </Link>{" "}
-                    •{" "}
-                    <Link href={`/${qp({ series: p.series, q, source })}`} style={{ color: "#111" }}>
-                      {p.series}
-                    </Link>
+                    {p.source} • {p.series}
                   </div>
                 </div>
               ))}
