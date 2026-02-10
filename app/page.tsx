@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 // app/page.tsx
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
