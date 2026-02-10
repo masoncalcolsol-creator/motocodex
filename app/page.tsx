@@ -1,6 +1,5 @@
 // app/page.tsx
 import Link from "next/link";
-import { headers } from "next/headers";
 
 type Post = {
   id: string;
@@ -34,11 +33,12 @@ function qp(params: Record<string, string | undefined>) {
 }
 
 function getBaseUrl() {
-  const h = headers();
-  const host = h.get("x-forwarded-host") ?? h.get("host");
-  const proto = h.get("x-forwarded-proto") ?? "https";
-  if (!host) return "http://localhost:3000";
-  return `${proto}://${host}`;
+  // Vercel sets this automatically
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  // Local dev fallback
+  return "http://localhost:3000";
 }
 
 export default async function Home({
@@ -122,7 +122,7 @@ export default async function Home({
         </form>
       </div>
 
-      {/* Filters row */}
+      {/* Filters */}
       <div style={{ marginTop: 18, borderTop: "1px solid #ddd", borderBottom: "1px solid #ddd", padding: "12px 0" }}>
         <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 18, fontFamily: "Arial, sans-serif", fontSize: 14 }}>
@@ -146,107 +146,44 @@ export default async function Home({
             })}
           </div>
 
-          <div style={{ fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>Quick filters</div>
-        </div>
-
-        {(series || q || source) && (
-          <div style={{ marginTop: 10, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#333" }}>
-            Showing:
-            {series ? (
-              <>
-                {" "}
-                <strong>{series}</strong>{" "}
-              </>
-            ) : null}
-            {source ? (
-              <>
-                {" "}
-                • source: <strong>{source}</strong>{" "}
-              </>
-            ) : null}
-            {q ? (
-              <>
-                {" "}
-                • search: <strong>{q}</strong>{" "}
-              </>
-            ) : null}{" "}
-            <Link href="/" style={{ marginLeft: 10 }}>
-              [clear]
-            </Link>
+          <div style={{ fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
+            Quick filters
           </div>
-        )}
+        </div>
       </div>
 
       {/* Breaking */}
       <section style={{ marginTop: 26, textAlign: "center" }}>
-        <div style={{ color: "#b30000", fontFamily: "Arial, sans-serif", fontSize: 14, fontWeight: 900, letterSpacing: 1 }}>
+        <div style={{ color: "#b30000", fontFamily: "Arial, sans-serif", fontSize: 14, fontWeight: 900 }}>
           BREAKING
         </div>
 
-        {breaking ? (
+        {breaking && (
           <div style={{ marginTop: 10 }}>
             <a
               href={breaking.url}
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                textDecoration: "none",
-                color: "#111",
-                fontSize: 30,
-                fontWeight: 800,
-                lineHeight: 1.1,
-                maxWidth: 800,
-              }}
+              style={{ fontSize: 30, fontWeight: 800, color: "#111", textDecoration: "none" }}
             >
               {breaking.title}
             </a>
-
-            <div style={{ marginTop: 10, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
-              <Link href={`/${qp({ series, q, source: breaking.source })}`} style={{ color: "#111" }}>
-                {breaking.source}
-              </Link>{" "}
-              •{" "}
-              <Link href={`/${qp({ series: breaking.series, q, source })}`} style={{ color: "#111" }}>
-                {breaking.series}
-              </Link>
-            </div>
           </div>
-        ) : (
-          <div style={{ marginTop: 14, fontFamily: "Arial, sans-serif", color: "#666" }}>No posts yet</div>
         )}
       </section>
 
-      {/* 3-column headlines */}
+      {/* 3 columns */}
       <section style={{ marginTop: 26 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40 }}>
           {[col1, col2, col3].map((col, idx) => (
             <div key={idx}>
               {col.map((p) => (
                 <div key={p.id} style={{ marginBottom: 18 }}>
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      textDecoration: "none",
-                      color: "#111",
-                      fontSize: 18,
-                      fontWeight: 800,
-                      lineHeight: 1.15,
-                      display: "inline-block",
-                    }}
-                  >
+                  <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 800 }}>
                     {p.title}
                   </a>
-                  <div style={{ marginTop: 6, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
-                    <Link href={`/${qp({ series, q, source: p.source })}`} style={{ color: "#111" }}>
-                      {p.source}
-                    </Link>{" "}
-                    •{" "}
-                    <Link href={`/${qp({ series: p.series, q, source })}`} style={{ color: "#111" }}>
-                      {p.series}
-                    </Link>
+                  <div style={{ fontSize: 12, color: "#666" }}>
+                    {p.source} • {p.series}
                   </div>
                 </div>
               ))}
@@ -255,7 +192,7 @@ export default async function Home({
         </div>
       </section>
 
-      <footer style={{ marginTop: 40, paddingTop: 16, borderTop: "1px solid #ddd", fontFamily: "Arial, sans-serif", fontSize: 12, color: "#555" }}>
+      <footer style={{ marginTop: 40, borderTop: "1px solid #ddd", paddingTop: 16, fontSize: 12, color: "#555" }}>
         © 2026 MotoCodex • text-first racing index
       </footer>
     </main>
