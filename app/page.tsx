@@ -1,5 +1,6 @@
 // app/page.tsx
 import Link from "next/link";
+import { headers } from "next/headers";
 
 type Post = {
   id: string;
@@ -32,6 +33,14 @@ function qp(params: Record<string, string | undefined>) {
   return s ? `?${s}` : "";
 }
 
+function getBaseUrl() {
+  const h = headers();
+  const host = h.get("x-forwarded-host") ?? h.get("host");
+  const proto = h.get("x-forwarded-proto") ?? "https";
+  if (!host) return "http://localhost:3000";
+  return `${proto}://${host}`;
+}
+
 export default async function Home({
   searchParams,
 }: {
@@ -41,7 +50,12 @@ export default async function Home({
   const q = searchParams.q ?? "";
   const source = searchParams.source ?? "";
 
-  const res = await fetch(`/api/feed${qp({ series, q, source })}`, { cache: "no-store" });
+  const baseUrl = getBaseUrl();
+
+  const res = await fetch(`${baseUrl}/api/feed${qp({ series, q, source })}`, {
+    cache: "no-store",
+  });
+
   const json = await res.json().catch(() => []);
   const posts: Post[] = Array.isArray(json) ? json : [];
 
@@ -63,6 +77,7 @@ export default async function Home({
         color: "#111",
       }}
     >
+      {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <div>
           <h1 style={{ margin: 0, fontSize: 56, fontWeight: 700 }}>MotoCodex</h1>
@@ -71,6 +86,7 @@ export default async function Home({
           </div>
         </div>
 
+        {/* Search */}
         <form action="/" method="get" style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 10 }}>
           {series ? <input type="hidden" name="series" value={series} /> : null}
           {source ? <input type="hidden" name="source" value={source} /> : null}
@@ -106,6 +122,7 @@ export default async function Home({
         </form>
       </div>
 
+      {/* Filters row */}
       <div style={{ marginTop: 18, borderTop: "1px solid #ddd", borderBottom: "1px solid #ddd", padding: "12px 0" }}>
         <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 18, fontFamily: "Arial, sans-serif", fontSize: 14 }}>
@@ -160,6 +177,7 @@ export default async function Home({
         )}
       </div>
 
+      {/* Breaking */}
       <section style={{ marginTop: 26, textAlign: "center" }}>
         <div style={{ color: "#b30000", fontFamily: "Arial, sans-serif", fontSize: 14, fontWeight: 900, letterSpacing: 1 }}>
           BREAKING
@@ -199,6 +217,7 @@ export default async function Home({
         )}
       </section>
 
+      {/* 3-column headlines */}
       <section style={{ marginTop: 26 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40 }}>
           {[col1, col2, col3].map((col, idx) => (
