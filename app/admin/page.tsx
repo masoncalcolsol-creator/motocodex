@@ -15,7 +15,11 @@ type Post = {
   is_pinned: boolean;
   pin_rank: number;
   is_hidden: boolean;
+
+  manual_series?: string | null;
 };
+
+const SERIES_OPTIONS = ["GEN", "SX", "MX", "SMX", "WSX", "WMX", "MXGP", "AM", "OFF", "VID"] as const;
 
 export default function AdminPage() {
   const [token, setToken] = useState("");
@@ -47,7 +51,7 @@ export default function AdminPage() {
     }
   }
 
-  async function patch(id: string, updates: Partial<Post>) {
+  async function patch(id: string, updates: Record<string, any>) {
     setError("");
     try {
       const res = await fetch("/api/admin/posts", {
@@ -61,8 +65,8 @@ export default function AdminPage() {
       }
       const updated = (await res.json()) as Post;
 
-      // If we set breaking=true, server cleared others. Reload to reflect that.
-      if ((updates as any).is_breaking === true) {
+      // breaking true clears others; easiest is reload
+      if (updates.is_breaking === true) {
         await load();
         return;
       }
@@ -81,7 +85,7 @@ export default function AdminPage() {
     <div style={{ maxWidth: 1100, margin: "24px auto", padding: "0 16px", fontFamily: "Arial, sans-serif" }}>
       <h1 style={{ margin: 0, fontSize: 28, fontWeight: 800 }}>MotoCodex Admin</h1>
       <p style={{ marginTop: 6, color: "#555" }}>
-        Toggle <b>Breaking</b>, <b>Pin</b>, and <b>Hide</b>. This page requires an admin token.
+        Toggle <b>Breaking</b>, <b>Pin</b>, <b>Hide</b>, and override <b>Series</b>.
       </p>
 
       <div style={{ display: "flex", gap: 10, alignItems: "center", marginTop: 12 }}>
@@ -89,12 +93,18 @@ export default function AdminPage() {
           value={token}
           onChange={(e) => setToken(e.target.value)}
           placeholder="ADMIN_TOKEN"
-          style={{ width: 360, padding: "10px 12px", border: "1px solid #bbb", borderRadius: 6 }}
+          style={{ width: 420, padding: "10px 12px", border: "1px solid #bbb", borderRadius: 6 }}
         />
         <button
           onClick={load}
           disabled={!token.trim() || loading}
-          style={{ padding: "10px 14px", border: "1px solid #999", background: "white", borderRadius: 6, cursor: "pointer" }}
+          style={{
+            padding: "10px 14px",
+            border: "1px solid #999",
+            background: "white",
+            borderRadius: 6,
+            cursor: "pointer",
+          }}
         >
           {loading ? "Loading..." : "Load posts"}
         </button>
@@ -119,6 +129,7 @@ export default function AdminPage() {
             <th style={{ padding: "10px 6px" }}>Hide</th>
           </tr>
         </thead>
+
         <tbody>
           {posts.map((p) => (
             <tr key={p.id} style={{ borderTop: "1px solid #eee" }}>
@@ -127,13 +138,44 @@ export default function AdminPage() {
                   {p.title}
                 </a>
               </td>
+
               <td style={{ padding: "10px 6px", color: "#444" }}>{p.source}</td>
-              <td style={{ padding: "10px 6px", color: "#444" }}>{p.series}</td>
+
+              {/* Series dropdown (writes manual_series) */}
+              <td style={{ padding: "10px 6px" }}>
+                <select
+                  value={(p.manual_series ?? p.series) || "GEN"}
+                  onChange={(e) => patch(p.id, { manual_series: e.target.value })}
+                  style={{
+                    padding: "6px 8px",
+                    border: "1px solid #bbb",
+                    borderRadius: 6,
+                    background: "white",
+                    cursor: "pointer",
+                  }}
+                >
+                  {SERIES_OPTIONS.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </select>
+
+                {p.manual_series ? (
+                  <div style={{ marginTop: 4, fontSize: 11, color: "#777" }}>auto: {p.series}</div>
+                ) : null}
+              </td>
 
               <td style={{ padding: "10px 6px" }}>
                 <button
                   onClick={() => patch(p.id, { is_breaking: !p.is_breaking })}
-                  style={{ padding: "6px 10px", border: "1px solid #999", background: "white", borderRadius: 6, cursor: "pointer" }}
+                  style={{
+                    padding: "6px 10px",
+                    border: "1px solid #999",
+                    background: "white",
+                    borderRadius: 6,
+                    cursor: "pointer",
+                  }}
                 >
                   {p.is_breaking ? "Unset" : "Set"}
                 </button>
@@ -147,7 +189,13 @@ export default function AdminPage() {
                       pin_rank: p.is_pinned ? 100 : 1,
                     })
                   }
-                  style={{ padding: "6px 10px", border: "1px solid #999", background: "white", borderRadius: 6, cursor: "pointer" }}
+                  style={{
+                    padding: "6px 10px",
+                    border: "1px solid #999",
+                    background: "white",
+                    borderRadius: 6,
+                    cursor: "pointer",
+                  }}
                 >
                   {p.is_pinned ? `Unpin (${p.pin_rank})` : "Pin"}
                 </button>
@@ -156,7 +204,13 @@ export default function AdminPage() {
               <td style={{ padding: "10px 6px" }}>
                 <button
                   onClick={() => patch(p.id, { is_hidden: !p.is_hidden })}
-                  style={{ padding: "6px 10px", border: "1px solid #999", background: "white", borderRadius: 6, cursor: "pointer" }}
+                  style={{
+                    padding: "6px 10px",
+                    border: "1px solid #999",
+                    background: "white",
+                    borderRadius: 6,
+                    cursor: "pointer",
+                  }}
                 >
                   {p.is_hidden ? "Unhide" : "Hide"}
                 </button>
@@ -166,9 +220,7 @@ export default function AdminPage() {
         </tbody>
       </table>
 
-      {posts.length === 0 && token.trim() ? (
-        <div style={{ marginTop: 16, color: "#666" }}>No posts loaded yet.</div>
-      ) : null}
+      {posts.length === 0 && token.trim() ? <div style={{ marginTop: 16, color: "#666" }}>No posts loaded yet.</div> : null}
     </div>
   );
 }

@@ -10,9 +10,8 @@ function supabaseAdmin() {
   return createClient(url, key);
 }
 
-// Very light protection so random people can’t hit this API.
-// Add Vercel env var: ADMIN_TOKEN = any long random string.
-// Then send it from the admin page.
+// Light protection: set ADMIN_TOKEN in Vercel env vars.
+// Admin UI sends it in x-admin-token header.
 function requireAdmin(req: Request) {
   const token = req.headers.get("x-admin-token") || "";
   const expected = process.env.ADMIN_TOKEN || "";
@@ -20,13 +19,16 @@ function requireAdmin(req: Request) {
 }
 
 export async function GET(req: Request) {
-  if (!requireAdmin(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!requireAdmin(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const supabase = supabaseAdmin();
   const { data, error } = await supabase
     .from("posts")
-    .select("id,title,url,source,series,created_at,is_breaking,is_pinned,pin_rank,is_hidden")
-    .eq("is_hidden", false)
+    .select(
+      "id,title,url,source,series,created_at,is_breaking,is_pinned,pin_rank,is_hidden,manual_series"
+    )
     .order("is_breaking", { ascending: false })
     .order("is_pinned", { ascending: false })
     .order("pin_rank", { ascending: true })
@@ -38,7 +40,9 @@ export async function GET(req: Request) {
 }
 
 export async function PATCH(req: Request) {
-  if (!requireAdmin(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!requireAdmin(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
   const body = await req.json().catch(() => null);
   if (!body || !body.id || typeof body.id !== "string" || !body.updates) {
@@ -48,7 +52,7 @@ export async function PATCH(req: Request) {
   const supabase = supabaseAdmin();
   const { id, updates } = body as { id: string; updates: Record<string, any> };
 
-  // If setting a post to breaking=true, automatically clear other breaking posts
+  // If setting a post to breaking=true, clear others first
   if (updates.is_breaking === true) {
     await supabase.from("posts").update({ is_breaking: false }).eq("is_breaking", true);
   }
@@ -57,7 +61,9 @@ export async function PATCH(req: Request) {
     .from("posts")
     .update(updates)
     .eq("id", id)
-    .select("id,title,url,source,series,created_at,is_breaking,is_pinned,pin_rank,is_hidden")
+    .select(
+      "id,title,url,source,series,created_at,is_breaking,is_pinned,pin_rank,is_hidden,manual_series"
+    )
     .single();
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
