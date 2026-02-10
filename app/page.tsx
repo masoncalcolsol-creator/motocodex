@@ -1,5 +1,6 @@
 // app/page.tsx
 import Link from "next/link";
+import { createClient } from "@supabase/supabase-js";
 
 type Post = {
   id: string;
@@ -7,7 +8,7 @@ type Post = {
   url: string;
   source: string;
   series: string;
-  created_at: string;
+  created_at?: string;
 };
 
 const FILTERS = [
@@ -32,13 +33,17 @@ function qp(params: Record<string, string | undefined>) {
   return s ? `?${s}` : "";
 }
 
-function getBaseUrl() {
-  // Vercel sets this automatically
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  // Local dev fallback
-  return "http://localhost:3000";
+// Map UI filters to your existing data while you're transitioning tagging.
+// (You previously had lots of "News" — this keeps filters useful.)
+function seriesFilterValues(series?: string) {
+  if (!series) return null;
+  const s = series.toUpperCase();
+
+  if (s === "GEN") return ["GEN", "News", "news"];
+  if (s === "VID") return ["VID", "Video", "video"];
+  if (s === "AM") return ["AM", "Amateur", "amateur"];
+
+  return [s];
 }
 
 export default async function Home({
@@ -47,21 +52,44 @@ export default async function Home({
   searchParams: { series?: string; q?: string; source?: string };
 }) {
   const series = searchParams.series?.toUpperCase();
-  const q = searchParams.q ?? "";
-  const source = searchParams.source ?? "";
+  const q = (searchParams.q ?? "").trim();
+  const source = (searchParams.source ?? "").trim();
 
-  const baseUrl = getBaseUrl();
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
 
-  const res = await fetch(`${baseUrl}/api/feed${qp({ series, q, source })}`, {
-    cache: "no-store",
-  });
+  let query = supabase
+    .from("posts")
+    .select("id,title,url,source,series,created_at")
+    .limit(300);
 
-  const json = await res.json().catch(() => []);
-  const posts: Post[] = Array.isArray(json) ? json : [];
+  const seriesVals = seriesFilterValues(series);
+  if (seriesVals) query = query.in("series", seriesVals);
+
+  if (source) query = query.eq("source", source);
+  if (q) query = query.ilike("title", `%${q}%`);
+
+  // Sort newest-first when possible; if created_at doesn't exist it will error,
+  // so we fall back to no ordering.
+  let posts: Post[] = [];
+  {
+    const { data, error } = await query.order("created_at", { ascending: false });
+
+    if (error) {
+      // fallback: same query without ordering (keeps site alive)
+      const fallback = await query;
+      posts = Array.isArray(fallback.data) ? (fallback.data as Post[]) : [];
+    } else {
+      posts = Array.isArray(data) ? (data as Post[]) : [];
+    }
+  }
 
   const breaking = posts[0];
   const rest = posts.slice(1);
 
+  // split into 3 columns
   const col1: Post[] = [];
   const col2: Post[] = [];
   const col3: Post[] = [];
@@ -122,7 +150,7 @@ export default async function Home({
         </form>
       </div>
 
-      {/* Filters */}
+      {/* Filters row */}
       <div style={{ marginTop: 18, borderTop: "1px solid #ddd", borderBottom: "1px solid #ddd", padding: "12px 0" }}>
         <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center" }}>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 18, fontFamily: "Arial, sans-serif", fontSize: 14 }}>
@@ -150,40 +178,105 @@ export default async function Home({
             Quick filters
           </div>
         </div>
+
+        {(series || q || source) && (
+          <div style={{ marginTop: 10, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#333" }}>
+            Showing:
+            {series ? (
+              <>
+                {" "}
+                <strong>{series}</strong>{" "}
+              </>
+            ) : null}
+            {source ? (
+              <>
+                {" "}
+                • source: <strong>{source}</strong>{" "}
+              </>
+            ) : null}
+            {q ? (
+              <>
+                {" "}
+                • search: <strong>{q}</strong>{" "}
+              </>
+            ) : null}{" "}
+            <Link href="/" style={{ marginLeft: 10 }}>
+              [clear]
+            </Link>
+          </div>
+        )}
       </div>
 
       {/* Breaking */}
       <section style={{ marginTop: 26, textAlign: "center" }}>
-        <div style={{ color: "#b30000", fontFamily: "Arial, sans-serif", fontSize: 14, fontWeight: 900 }}>
+        <div style={{ color: "#b30000", fontFamily: "Arial, sans-serif", fontSize: 14, fontWeight: 900, letterSpacing: 1 }}>
           BREAKING
         </div>
 
-        {breaking && (
+        {breaking ? (
           <div style={{ marginTop: 10 }}>
             <a
               href={breaking.url}
               target="_blank"
               rel="noopener noreferrer"
-              style={{ fontSize: 30, fontWeight: 800, color: "#111", textDecoration: "none" }}
+              style={{
+                display: "inline-block",
+                textDecoration: "none",
+                color: "#111",
+                fontSize: 30,
+                fontWeight: 800,
+                lineHeight: 1.1,
+                maxWidth: 800,
+              }}
             >
               {breaking.title}
             </a>
+
+            <div style={{ marginTop: 10, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
+              <Link href={`/${qp({ series, q, source: breaking.source })}`} style={{ color: "#111" }}>
+                {breaking.source}
+              </Link>{" "}
+              •{" "}
+              <Link href={`/${qp({ series: breaking.series, q, source })}`} style={{ color: "#111" }}>
+                {breaking.series}
+              </Link>
+            </div>
           </div>
+        ) : (
+          <div style={{ marginTop: 14, fontFamily: "Arial, sans-serif", color: "#666" }}>No posts yet</div>
         )}
       </section>
 
-      {/* 3 columns */}
+      {/* 3-column headlines */}
       <section style={{ marginTop: 26 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 40 }}>
           {[col1, col2, col3].map((col, idx) => (
             <div key={idx}>
               {col.map((p) => (
                 <div key={p.id} style={{ marginBottom: 18 }}>
-                  <a href={p.url} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 800 }}>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      textDecoration: "none",
+                      color: "#111",
+                      fontSize: 18,
+                      fontWeight: 800,
+                      lineHeight: 1.15,
+                      display: "inline-block",
+                    }}
+                  >
                     {p.title}
                   </a>
-                  <div style={{ fontSize: 12, color: "#666" }}>
-                    {p.source} • {p.series}
+                  <div style={{ marginTop: 6, fontFamily: "Arial, sans-serif", fontSize: 12, color: "#666" }}>
+                    <Link href={`/${qp({ series, q, source: p.source })}`} style={{ color: "#111" }}>
+                      {p.source}
+                    </Link>{" "}
+                    •{" "}
+                    <Link href={`/${qp({ series: p.series, q, source })}`} style={{ color: "#111" }}>
+                      {p.series}
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -192,7 +285,7 @@ export default async function Home({
         </div>
       </section>
 
-      <footer style={{ marginTop: 40, borderTop: "1px solid #ddd", paddingTop: 16, fontSize: 12, color: "#555" }}>
+      <footer style={{ marginTop: 40, paddingTop: 16, borderTop: "1px solid #ddd", fontFamily: "Arial, sans-serif", fontSize: 12, color: "#555" }}>
         © 2026 MotoCodex • text-first racing index
       </footer>
     </main>
