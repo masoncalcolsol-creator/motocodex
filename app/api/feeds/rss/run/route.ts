@@ -1,6 +1,7 @@
 // FILE: C:\MotoCODEX\app\api\feeds\rss\run\route.ts
-// Create this file.
+// Replace the ENTIRE file with this.
 
+import { createHash } from "crypto";
 import { supabaseServer } from "@/lib/supabaseServer";
 import { assertCronSecretOrThrow } from "@/lib/guards";
 
@@ -32,10 +33,13 @@ function extractAttr(xml: string, tag: string, attr: string): string | null {
   return m?.[1]?.trim() ?? null;
 }
 
-function extractFirstUrlFromHtml(html: string): string | null {
-  // naive but effective: grab first <img src="...">
+function extractFirstImg(html: string): string | null {
   const m = html.match(/<img[^>]*src="([^"]+)"[^>]*>/i);
   return m?.[1]?.trim() ?? null;
+}
+
+function sha1(s: string) {
+  return createHash("sha1").update(s).digest("hex");
 }
 
 type FeedItem = {
@@ -46,19 +50,12 @@ type FeedItem = {
   raw?: any;
 };
 
-/**
- * Parse RSS 2.0 (<item>) and Atom (<entry>).
- * We only need: title, link, published date, thumbnail.
- */
 function parseRssOrAtom(xml: string): FeedItem[] {
   const items: FeedItem[] = [];
 
-  // RSS 2.0 items
   const rssItems = xml.match(/<item[\s\S]*?<\/item>/gi) ?? [];
   for (const block of rssItems) {
     const title = safeText(extractTag(block, "title")) || "Untitled";
-
-    // <link> is common; sometimes <guid> contains URL
     const link = safeText(extractTag(block, "link")) || safeText(extractTag(block, "guid"));
     if (!link) continue;
 
@@ -71,32 +68,24 @@ function parseRssOrAtom(xml: string): FeedItem[] {
     const published_at = pub ? new Date(pub).toISOString() : null;
     if (!published_at) continue;
 
-    // Thumbnail candidates:
-    // - media:thumbnail url=""
-    // - enclosure url=""
-    // - content:encoded (first img)
     const mediaThumb = extractAttr(block, "media:thumbnail", "url");
     const enclosure = extractAttr(block, "enclosure", "url");
     const contentEncoded = extractTag(block, "content:encoded");
-    const htmlThumb = contentEncoded ? extractFirstUrlFromHtml(contentEncoded) : null;
-
-    const thumbnail_url = mediaThumb || enclosure || htmlThumb || null;
+    const htmlThumb = contentEncoded ? extractFirstImg(contentEncoded) : null;
 
     items.push({
       title,
       url: link,
       published_at,
-      thumbnail_url,
+      thumbnail_url: mediaThumb || enclosure || htmlThumb || null,
       raw: { kind: "rss" },
     });
   }
 
-  // Atom entries
   const atomEntries = xml.match(/<entry[\s\S]*?<\/entry>/gi) ?? [];
   for (const block of atomEntries) {
     const title = safeText(extractTag(block, "title")) || "Untitled";
 
-    // Atom link: <link rel="alternate" href="..."/>
     const atomLink =
       (block.match(/<link[^>]*rel="alternate"[^>]*href="([^"]+)"[^>]*\/?>/i)?.[1] ?? null)?.trim() ||
       (block.match(/<link[^>]*href="([^"]+)"[^>]*\/?>/i)?.[1] ?? null)?.trim() ||
@@ -116,35 +105,49 @@ function parseRssOrAtom(xml: string): FeedItem[] {
     const enclosure = extractAttr(block, "enclosure", "url");
     const summary = extractTag(block, "summary");
     const content = extractTag(block, "content");
-    const htmlThumb = extractFirstUrlFromHtml(summary || content || "");
-
-    const thumbnail_url = mediaThumb || enclosure || htmlThumb || null;
+    const htmlThumb = extractFirstImg(summary || content || "");
 
     items.push({
       title,
       url: atomLink,
       published_at,
-      thumbnail_url,
+      thumbnail_url: mediaThumb || enclosure || htmlThumb || null,
       raw: { kind: "atom" },
     });
   }
 
-  // Deduplicate by url (keep newest)
+  // Dedup by URL (newest wins)
   const seen = new Map<string, FeedItem>();
   for (const it of items) {
     const prev = seen.get(it.url);
-    if (!prev) {
-      seen.set(it.url, it);
-    } else {
-      if (new Date(it.published_at).getTime() > new Date(prev.published_at).getTime()) {
-        seen.set(it.url, it);
-      }
-    }
+    if (!prev) seen.set(it.url, it);
+    else if (new Date(it.published_at).getTime() > new Date(prev.published_at).getTime()) seen.set(it.url, it);
   }
 
   return Array.from(seen.values()).sort(
     (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
   );
+}
+
+async function countExistingByKeys(supabase: any, keys: string[]) {
+  if (!keys.length) return 0;
+
+  // PostgREST "in" list can be touchy; keep it safe
+  const chunkSize = 50;
+  let total = 0;
+
+  for (let i = 0; i < keys.length; i += chunkSize) {
+    const chunk = keys.slice(i, i + chunkSize);
+    const { data, error } = await supabase
+      .from("social_posts")
+      .select("dedupe_key")
+      .in("dedupe_key", chunk);
+
+    if (error) throw new Error(error.message);
+    total += (data ?? []).length;
+  }
+
+  return total;
 }
 
 async function ingestOneSource(source: any) {
@@ -188,13 +191,16 @@ async function ingestOneSource(source: any) {
     const fetchedCount = items.length;
 
     const rows = items.map((it) => {
-      const dedupe_key = `${source.platform}:${it.url}`; // stable dedupe
+      const url = it.url;
+      const platform = String(source.platform || "instagram");
+      const dedupe_key = `${platform}:${sha1(url)}`;
+
       return {
-        platform: source.platform,
+        platform,
         source_id: source.id,
         dedupe_key,
         title: it.title,
-        url: it.url,
+        url,
         thumbnail_url: it.thumbnail_url ?? null,
         published_at: it.published_at,
         raw: {
@@ -204,17 +210,22 @@ async function ingestOneSource(source: any) {
       };
     });
 
-    let insertedCount = 0;
+    const keys = rows.map((x) => x.dedupe_key);
 
-    if (rows.length) {
-      const { data, error } = await supabase
-        .from("social_posts")
-        .upsert(rows, { onConflict: "dedupe_key", ignoreDuplicates: true })
-        .select("id");
+    // Count before
+    const beforeCount = await countExistingByKeys(supabase, keys);
 
-      if (error) throw new Error(error.message);
-      insertedCount = (data ?? []).length;
-    }
+    // Upsert (ignore duplicates)
+    const { error: upErr } = await supabase
+      .from("social_posts")
+      .upsert(rows, { onConflict: "dedupe_key", ignoreDuplicates: true });
+
+    if (upErr) throw new Error(upErr.message);
+
+    // Count after
+    const afterCount = await countExistingByKeys(supabase, keys);
+
+    const insertedCount = Math.max(0, afterCount - beforeCount);
 
     const finishedAt = new Date().toISOString();
 
@@ -226,7 +237,7 @@ async function ingestOneSource(source: any) {
         inserted_count: insertedCount,
         ok: true,
         error_text: null,
-        details: { feed_url: feedUrl, platform: source.platform },
+        details: { feed_url: feedUrl, platform: source.platform, beforeCount, afterCount, attempted: rows.length },
       })
       .eq("id", runId);
 
@@ -287,7 +298,6 @@ export async function GET(request: Request) {
 
     const supabase = supabaseServer();
 
-    // v1: ingest RSS-based platforms (instagram now; more later)
     const { data: sources, error } = await supabase
       .from("social_sources")
       .select("*")
@@ -322,7 +332,6 @@ export async function GET(request: Request) {
       results,
     });
   } catch (err: any) {
-    const status = err?.status ?? 500;
-    return Response.json({ ok: false, error: String(err?.message ?? err) }, { status });
+    return Response.json({ ok: false, error: String(err?.message ?? err) }, { status: 500 });
   }
 }

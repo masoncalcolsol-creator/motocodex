@@ -22,27 +22,21 @@ function safeText(s: string | null): string {
 
 function parseYouTubeAtom(xml: string): YtEntry[] {
   const entries: YtEntry[] = [];
-  const entryBlocks = xml.match(/<entry[\s\S]*?<\/entry>/g) ?? [];
+  const blocks = xml.match(/<entry[\s\S]*?<\/entry>/g) ?? [];
 
-  for (const block of entryBlocks) {
+  for (const b of blocks) {
     const videoId =
-      (block.match(/<yt:videoId>([\s\S]*?)<\/yt:videoId>/)?.[1] ?? null)?.trim() || null;
-
-    const title =
-      (block.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? null)?.trim() || null;
-
-    const published =
-      (block.match(/<published>([\s\S]*?)<\/published>/)?.[1] ?? null)?.trim() || null;
-
+      (b.match(/<yt:videoId>([\s\S]*?)<\/yt:videoId>/)?.[1] ?? null)?.trim() || null;
+    const title = (b.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? null)?.trim() || null;
+    const published = (b.match(/<published>([\s\S]*?)<\/published>/)?.[1] ?? null)?.trim() || null;
     const link =
-      (block.match(/<link[^>]*rel="alternate"[^>]*href="([^"]+)"[^>]*\/?>/i)?.[1] ?? null)?.trim() ||
+      (b.match(/<link[^>]*rel="alternate"[^>]*href="([^"]+)"[^>]*\/?>/i)?.[1] ?? null)?.trim() ||
       null;
-
     const thumbnailUrl =
-      (block.match(/<media:thumbnail[^>]*url="([^"]+)"[^>]*\/?>/i)?.[1] ?? null)?.trim() ||
+      (b.match(/<media:thumbnail[^>]*url="([^"]+)"[^>]*\/?>/i)?.[1] ?? null)?.trim() ||
       null;
 
-    if (!title && !videoId) continue;
+    if (!videoId && !title) continue;
     entries.push({ videoId, title, published, link, thumbnailUrl });
   }
 
@@ -80,12 +74,12 @@ async function resolveChannelIdFromHandle(handle: string): Promise<string | null
   return null;
 }
 
-function buildFeedUrlFromChannelId(channelId: string) {
+function buildFeedUrl(channelId: string) {
   return `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
 }
 
-async function fetchFeedXml(feedUrl: string): Promise<{ ok: boolean; status: number; statusText: string; body: string }> {
-  const r = await fetch(feedUrl, {
+async function fetchXml(url: string) {
+  const r = await fetch(url, {
     method: "GET",
     headers: {
       "user-agent": "MotoFEEDS/1.0 (+MotoCODEX)",
@@ -93,14 +87,12 @@ async function fetchFeedXml(feedUrl: string): Promise<{ ok: boolean; status: num
     },
     cache: "no-store",
   });
-
   const body = await r.text().catch(() => "");
   return { ok: r.ok, status: r.status, statusText: r.statusText, body };
 }
 
 async function ingestOneSource(source: any) {
   const supabase = supabaseServer();
-
   const startedAt = new Date().toISOString();
 
   const { data: runRow } = await supabase
@@ -122,68 +114,43 @@ async function ingestOneSource(source: any) {
     let channelId: string | null = (source.channel_id ?? null) as string | null;
     const handle: string | null = (source.handle ?? null) as string | null;
 
-    let feedUrl: string | null = (source.feed_url ?? null) as string | null;
-
-    if (channelId) feedUrl = buildFeedUrlFromChannelId(channelId);
-
+    // Resolve channel id if missing
     if (!channelId && handle) {
       channelId = await resolveChannelIdFromHandle(handle);
       if (channelId) {
-        feedUrl = buildFeedUrlFromChannelId(channelId);
-        await supabase
-          .from("social_sources")
-          .update({ channel_id: channelId, feed_url: feedUrl })
-          .eq("id", source.id);
+        await supabase.from("social_sources").update({ channel_id: channelId }).eq("id", source.id);
       }
     }
 
-    if (!feedUrl) throw new Error("No feed_url. Provide channel_id or handle.");
+    if (!channelId) throw new Error("No channel_id. Provide channel_id or handle.");
 
-    let feedResp = await fetchFeedXml(feedUrl);
+    const feedUrl = buildFeedUrl(channelId);
 
-    if (!feedResp.ok && feedResp.status === 404 && handle) {
-      const resolved = await resolveChannelIdFromHandle(handle);
-      if (resolved && resolved !== channelId) {
-        channelId = resolved;
-        feedUrl = buildFeedUrlFromChannelId(channelId);
+    // Persist feed_url (handy for debugging)
+    await supabase.from("social_sources").update({ feed_url: feedUrl }).eq("id", source.id);
 
-        await supabase
-          .from("social_sources")
-          .update({ channel_id: channelId, feed_url: feedUrl })
-          .eq("id", source.id);
-
-        feedResp = await fetchFeedXml(feedUrl);
-      }
+    const resp = await fetchXml(feedUrl);
+    if (!resp.ok) {
+      throw new Error(`Fetch failed ${resp.status}: ${resp.statusText} :: ${safeText(resp.body).slice(0, 240)}`);
     }
 
-    if (!feedResp.ok) {
-      throw new Error(
-        `Fetch failed ${feedResp.status}: ${feedResp.statusText} :: ${safeText(feedResp.body).slice(0, 240)}`
-      );
-    }
-
-    const xml = feedResp.body;
-    const entries = parseYouTubeAtom(xml);
-
+    const entries = parseYouTubeAtom(resp.body);
     const fetchedCount = entries.length;
 
-    // Build rows for bulk upsert
     const rows = entries
       .map((e) => {
         const videoId = e.videoId;
         const publishedAt = e.published ? new Date(e.published).toISOString() : null;
         const url = e.link || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : null);
-        if (!url || !publishedAt) return null;
-
-        const dedupeKey = `youtube:${videoId || url}`;
+        if (!videoId || !publishedAt || !url) return null;
 
         return {
           platform: "youtube",
           source_id: source.id,
-          dedupe_key: dedupeKey,
+          dedupe_key: `youtube:${videoId}`,
           title: safeText(e.title) || "Untitled",
           url,
-          thumbnail_url: e.thumbnailUrl,
+          thumbnail_url: e.thumbnailUrl ?? null,
           published_at: publishedAt,
           video_id: videoId,
           channel_id: channelId,
@@ -192,21 +159,16 @@ async function ingestOneSource(source: any) {
       })
       .filter(Boolean) as any[];
 
-    // Bulk upsert, ignore duplicates by dedupe_key
     let insertedCount = 0;
-    const errorSamples: any[] = [];
 
-    if (rows.length > 0) {
+    if (rows.length) {
       const { data, error } = await supabase
         .from("social_posts")
         .upsert(rows, { onConflict: "dedupe_key", ignoreDuplicates: true })
         .select("id");
 
-      if (error) {
-        errorSamples.push({ stage: "upsert", message: error.message, details: (error as any).details });
-      } else {
-        insertedCount = (data ?? []).length;
-      }
+      if (error) throw new Error(error.message);
+      insertedCount = (data ?? []).length;
     }
 
     const finishedAt = new Date().toISOString();
@@ -217,14 +179,9 @@ async function ingestOneSource(source: any) {
         finished_at: finishedAt,
         fetched_count: fetchedCount,
         inserted_count: insertedCount,
-        ok: errorSamples.length === 0,
-        error_text: errorSamples.length ? JSON.stringify(errorSamples).slice(0, 1000) : null,
-        details: {
-          feed_url: feedUrl,
-          channel_id: channelId,
-          attempted: rows.length,
-          errorSamples,
-        },
+        ok: true,
+        error_text: null,
+        details: { feed_url: feedUrl, channel_id: channelId, attempted: rows.length },
       })
       .eq("id", runId);
 
@@ -232,63 +189,28 @@ async function ingestOneSource(source: any) {
       .from("social_sources")
       .update({
         last_ingested_at: finishedAt,
-        last_ingest_status: errorSamples.length ? "error" : "ok",
-        last_error: errorSamples.length ? JSON.stringify(errorSamples).slice(0, 1000) : null,
-        feed_url: feedUrl,
+        last_ingest_status: "ok",
+        last_error: null,
         channel_id: channelId,
+        feed_url: feedUrl,
       })
       .eq("id", source.id);
 
-    if (errorSamples.length) {
-      return {
-        source_id: source.id,
-        title: source.title ?? source.handle ?? source.channel_id ?? "Unknown",
-        fetched: fetchedCount,
-        inserted: insertedCount,
-        ok: false,
-        error: errorSamples[0]?.message ?? "Insert failed",
-      };
-    }
-
-    return {
-      source_id: source.id,
-      title: source.title ?? source.handle ?? source.channel_id ?? "Unknown",
-      fetched: fetchedCount,
-      inserted: insertedCount,
-      ok: true,
-    };
+    return { source_id: source.id, title: source.title ?? source.handle ?? "Unknown", fetched: fetchedCount, inserted: insertedCount, ok: true };
   } catch (err: any) {
     const finishedAt = new Date().toISOString();
     const msg = safeText(err?.message ?? String(err));
 
     if (runId) {
-      await supabase
-        .from("feed_ingest_runs")
-        .update({
-          finished_at: finishedAt,
-          ok: false,
-          error_text: msg,
-        })
-        .eq("id", runId);
+      await supabase.from("feed_ingest_runs").update({ finished_at: finishedAt, ok: false, error_text: msg }).eq("id", runId);
     }
 
     await supabase
       .from("social_sources")
-      .update({
-        last_ingested_at: finishedAt,
-        last_ingest_status: "error",
-        last_error: msg,
-      })
+      .update({ last_ingested_at: finishedAt, last_ingest_status: "error", last_error: msg })
       .eq("id", source.id);
 
-    return {
-      source_id: source.id,
-      title: source.title ?? source.handle ?? source.channel_id ?? "Unknown",
-      fetched: 0,
-      inserted: 0,
-      ok: false,
-      error: msg,
-    };
+    return { source_id: source.id, title: source.title ?? source.handle ?? "Unknown", fetched: 0, inserted: 0, ok: false, error: msg };
   }
 }
 
@@ -323,16 +245,8 @@ export async function GET(request: Request) {
       if (res.ok) okCount += 1;
     }
 
-    return Response.json({
-      ok: true,
-      sources: list.length,
-      okCount,
-      totalFetched,
-      totalInserted,
-      results,
-    });
+    return Response.json({ ok: true, sources: list.length, okCount, totalFetched, totalInserted, results });
   } catch (err: any) {
-    const status = err?.status ?? 500;
-    return Response.json({ ok: false, error: String(err?.message ?? err) }, { status });
+    return Response.json({ ok: false, error: String(err?.message ?? err) }, { status: 500 });
   }
 }
