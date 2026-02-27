@@ -88,6 +88,7 @@ export default async function FeedsPage({
   searchParams: Record<string, string | string[] | undefined>;
 }) {
   const renderNonce = Date.now();
+
   const q = first(searchParams, "q").trim();
   const platformParam = first(searchParams, "platform").trim().toLowerCase();
 
@@ -345,7 +346,12 @@ export default async function FeedsPage({
           <div style={{ padding: 8 }}>
             {posts.map((p) => {
               const src = sourceMap.get(p.source_id);
-              const label = (src?.title ?? "").trim() || (src?.handle ? `@${src.handle}` : "") || safeHostname(p.url) || "MotoFEEDS";
+              const label =
+                (src?.title ?? "").trim() ||
+                (src?.handle ? `@${src.handle}` : "") ||
+                safeHostname(p.url) ||
+                "MotoFEEDS";
+
               const host = safeHostname(p.url) ?? p.platform;
 
               return (
