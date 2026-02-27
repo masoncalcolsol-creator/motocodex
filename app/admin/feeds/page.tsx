@@ -1,147 +1,204 @@
-// FILE: C:\MotoCODEX\app\admin\feeds\page.tsx
+// FILE: C:\MotoCODEX\app\feeds\page.tsx
 // Replace the ENTIRE file with this.
 
-import { supabaseServer } from "@/lib/supabaseServer";
-import { assertAdminTokenOrThrow } from "@/lib/guards";
+import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-type SearchParams = Record<string, string | string[] | undefined>;
+type SocialPost = {
+  id: string;
+  title: string;
+  url: string;
+  thumbnail_url: string | null;
+  published_at: string;
+  source_id: string;
+  platform: string;
+};
 
-function fmt(ts?: string | null) {
-  if (!ts) return "—";
+type SocialSource = {
+  id: string;
+  title: string | null;
+  handle: string | null;
+  platform: string;
+};
+
+function supabasePublic() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+  return createClient(url, anon, { auth: { persistSession: false } });
+}
+
+function fmt(ts: string) {
   const d = new Date(ts);
   if (Number.isNaN(d.getTime())) return ts;
   return d.toLocaleString();
 }
 
-export default async function AdminFeedsPage({
+function first(searchParams: Record<string, string | string[] | undefined>, key: string): string {
+  const v = searchParams[key];
+  return Array.isArray(v) ? (v[0] ?? "") : (v ?? "");
+}
+
+export default async function FeedsPage({
   searchParams,
 }: {
-  searchParams: SearchParams;
+  searchParams: Record<string, string | string[] | undefined>;
 }) {
-  assertAdminTokenOrThrow(searchParams);
+  const q = first(searchParams, "q").trim();
+  const platformParam = first(searchParams, "platform").trim().toLowerCase();
 
-  const supabase = supabaseServer();
+  const platform =
+    platformParam === "youtube" ? "youtube" :
+    platformParam === "instagram" ? "instagram" :
+    "all";
 
-  const { data: sources, error: srcErr } = await supabase
+  const supabase = supabasePublic();
+
+  // Load sources for label mapping (enabled only)
+  const { data: sources } = await supabase
     .from("social_sources")
-    .select("*")
-    .order("enabled", { ascending: false })
-    .order("platform", { ascending: true })
-    .order("tier", { ascending: true })
-    .order("created_at", { ascending: true });
+    .select("id,title,handle,platform")
+    .eq("enabled", true);
 
-  if (srcErr) {
-    return (
-      <div style={{ padding: 16, fontFamily: "system-ui" }}>
-        <h1>Admin • Feeds</h1>
-        <pre>ERROR: {srcErr.message}</pre>
-      </div>
-    );
+  const sourceMap = new Map<string, SocialSource>();
+  (sources ?? []).forEach((s: any) => sourceMap.set(s.id, s));
+
+  let query = supabase
+    .from("social_posts")
+    .select("id,title,url,thumbnail_url,published_at,source_id,platform")
+    .order("published_at", { ascending: false })
+    .limit(300);
+
+  if (platform !== "all") {
+    query = query.eq("platform", platform);
+  } else {
+    query = query.in("platform", ["youtube", "instagram"]);
   }
 
-  const srcList = sources ?? [];
-
-  const rows = [];
-  for (const s of srcList) {
-    const { data: runs } = await supabase
-      .from("feed_ingest_runs")
-      .select("*")
-      .eq("source_id", s.id)
-      .order("started_at", { ascending: false })
-      .limit(1);
-
-    rows.push({ source: s, lastRun: (runs ?? [])[0] ?? null });
+  if (q) {
+    query = query.ilike("title", `%${q}%`);
   }
 
-  const token = Array.isArray(searchParams.token) ? searchParams.token[0] : (searchParams.token as string | undefined);
+  const { data: posts, error } = await query;
+
+  const base = "/feeds";
+  const qs = (p: string) => {
+    const u = new URL("https://example.com" + base);
+    if (q) u.searchParams.set("q", q);
+    if (p !== "all") u.searchParams.set("platform", p);
+    return u.pathname + u.search;
+  };
 
   return (
-    <div style={{ padding: 16, fontFamily: "system-ui", maxWidth: 1200 }}>
-      <h1 style={{ margin: 0 }}>Admin • Feeds (MotoFEEDS)</h1>
-      <p style={{ marginTop: 8, opacity: 0.8 }}>
-        Source health + last ingest run. (Gated by <code>ADMIN_TOKEN</code>)
-      </p>
+    <div style={{ padding: 16, fontFamily: "system-ui", maxWidth: 1100, margin: "0 auto" }}>
+      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+        <div>
+          <h1 style={{ margin: 0 }}>MotoFEEDS</h1>
+          <div style={{ marginTop: 6, opacity: 0.75 }}>
+            Master feed (YouTube + Instagram). Sorted newest → oldest. Search with <code>?q=</code>.
+          </div>
 
-      <div style={{ display: "flex", gap: 12, marginTop: 12, flexWrap: "wrap" }}>
-        <a href={`/admin/sources?token=${encodeURIComponent(token || "")}`} style={{ textDecoration: "none" }}>
-          <button style={{ padding: "10px 12px", cursor: "pointer" }}>Sources Manager →</button>
-        </a>
+          <div style={{ display: "flex", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
+            <a href={qs("all")} style={{ textDecoration: "none" }}>
+              <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "all" ? 800 : 400 }}>
+                All
+              </button>
+            </a>
+            <a href={qs("youtube")} style={{ textDecoration: "none" }}>
+              <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "youtube" ? 800 : 400 }}>
+                YouTube
+              </button>
+            </a>
+            <a href={qs("instagram")} style={{ textDecoration: "none" }}>
+              <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "instagram" ? 800 : 400 }}>
+                Instagram
+              </button>
+            </a>
+          </div>
+        </div>
 
-        <a
-          href={`/api/feeds/youtube/run?token=${encodeURIComponent(process.env.CRON_SECRET || "")}`}
-          style={{ textDecoration: "none" }}
-        >
-          <button style={{ padding: "10px 12px", cursor: "pointer" }}>Run YouTube ingest now*</button>
-        </a>
-
-        <a
-          href={`/api/feeds/rss/run?token=${encodeURIComponent(process.env.CRON_SECRET || "")}`}
-          style={{ textDecoration: "none" }}
-        >
-          <button style={{ padding: "10px 12px", cursor: "pointer" }}>Run RSS ingest now*</button>
-        </a>
+        <form method="GET" action="/feeds" style={{ display: "flex", gap: 8, alignItems: "center" }}>
+          <input type="hidden" name="platform" value={platform === "all" ? "" : platform} />
+          <input
+            name="q"
+            defaultValue={q}
+            placeholder="Search titles…"
+            style={{ padding: "10px 12px", width: 280, maxWidth: "70vw" }}
+          />
+          <button type="submit" style={{ padding: "10px 12px", cursor: "pointer" }}>
+            Search
+          </button>
+          {q || platform !== "all" ? (
+            <a href="/feeds" style={{ padding: "10px 12px", textDecoration: "none" }}>
+              Clear
+            </a>
+          ) : null}
+        </form>
       </div>
 
-      <p style={{ fontSize: 12, opacity: 0.7, marginTop: 8 }}>
-        *Uses server env <code>CRON_SECRET</code> at render time. If it’s missing, the button won’t work.
-      </p>
+      {error ? (
+        <pre style={{ marginTop: 16, padding: 12, background: "#111", color: "#fff", borderRadius: 8 }}>
+          ERROR: {error.message}
+        </pre>
+      ) : null}
 
-      <div style={{ marginTop: 16, border: "1px solid #ddd", borderRadius: 8, overflow: "hidden" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse" }}>
-          <thead>
-            <tr style={{ background: "#f6f6f6" }}>
-              <th style={{ textAlign: "left", padding: 10 }}>Enabled</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Platform</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Tier</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Title</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Last ingested</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Last status</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Fetched</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Inserted</th>
-              <th style={{ textAlign: "left", padding: 10 }}>Last error</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map(({ source, lastRun }) => (
-              <tr key={source.id} style={{ borderTop: "1px solid #eee" }}>
-                <td style={{ padding: 10 }}>{source.enabled ? "✅" : "—"}</td>
-                <td style={{ padding: 10 }}>{source.platform}</td>
-                <td style={{ padding: 10 }}>{source.tier}</td>
-                <td style={{ padding: 10 }}>
-                  <div style={{ fontWeight: 600 }}>{source.title ?? "—"}</div>
-                  <div style={{ fontSize: 12, opacity: 0.7 }}>
-                    {source.handle ? `@${source.handle}` : ""}
-                  </div>
-                </td>
-                <td style={{ padding: 10 }}>{fmt(source.last_ingested_at)}</td>
-                <td style={{ padding: 10 }}>
-                  {source.last_ingest_status === "ok" ? "OK" : source.last_ingest_status === "error" ? "ERROR" : "—"}
-                </td>
-                <td style={{ padding: 10 }}>{lastRun?.fetched_count ?? "—"}</td>
-                <td style={{ padding: 10 }}>{lastRun?.inserted_count ?? "—"}</td>
-                <td style={{ padding: 10, maxWidth: 360 }}>
-                  <div style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-                    {source.last_error ?? lastRun?.error_text ?? "—"}
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {rows.length === 0 && (
-              <tr>
-                <td colSpan={9} style={{ padding: 12, opacity: 0.7 }}>
-                  No sources yet. Add some in Sources Manager.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
+      <div style={{ marginTop: 16, display: "grid", gap: 12 }}>
+        {(posts as any[] | null)?.map((p: SocialPost) => {
+          const src = sourceMap.get(p.source_id);
+          const label =
+            src?.title ||
+            (src?.handle ? `@${src.handle}` : null) ||
+            p.platform;
 
-      <div style={{ marginTop: 18, fontSize: 12, opacity: 0.75 }}>
-        Bookmark: <code>/admin/feeds?token=YOUR_ADMIN_TOKEN</code>
+          return (
+            <a
+              key={p.id}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "160px 1fr",
+                gap: 12,
+                textDecoration: "none",
+                color: "inherit",
+                border: "1px solid #ddd",
+                borderRadius: 10,
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ width: 160, height: 90, background: "#f2f2f2" }}>
+                {p.thumbnail_url ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={p.thumbnail_url}
+                    alt=""
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                ) : null}
+              </div>
+
+              <div style={{ padding: 10 }}>
+                <div style={{ fontSize: 12, opacity: 0.75 }}>
+                  {label} • {p.platform.toUpperCase()} • {fmt(p.published_at)}
+                </div>
+                <div style={{ fontSize: 16, fontWeight: 700, marginTop: 6 }}>
+                  {p.title}
+                </div>
+                <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, wordBreak: "break-all" }}>
+                  {p.url}
+                </div>
+              </div>
+            </a>
+          );
+        })}
+
+        {(posts ?? []).length === 0 ? (
+          <div style={{ padding: 14, border: "1px solid #ddd", borderRadius: 10, opacity: 0.8 }}>
+            No posts found{q ? ` for "${q}"` : ""}.
+          </div>
+        ) : null}
       </div>
     </div>
   );
