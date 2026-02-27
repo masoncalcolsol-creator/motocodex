@@ -1,0 +1,29 @@
+﻿:root{
+  --bg:#070707;
+  --panel:rgba(18,18,18,0.82);
+  --panel2:rgba(14,14,14,0.92);
+  --text:#f3f3f3;
+  --muted:rgba(255,255,255,0.66);
+  --muted2:rgba(255,255,255,0.46);
+  --line:rgba(255,255,255,0.10);
+  --line2:rgba(255,255,255,0.16);
+  --red:#b30000;
+  --glow:rgba(255,40,40,0.22);
+  --steel:rgba(255,255,255,0.06);
+  --link:#ffffff;
+  --linkDim:rgba(255,255,255,0.88);
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; padding:0; }
+
+body{
+  background:
+    radial-gradient(1200px 700px at 50% -10%, rgba(179,0,0,0.22), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+a{ color:var(--link); text-decoration:none; }
+a:hover{ text-decoration:underline; }
