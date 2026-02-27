@@ -1,17 +1,11 @@
 ﻿// FILE: C:\MotoCODEX\app\api\ingest\run\route.ts
 // Replace the ENTIRE file with this.
 //
-// Features:
-// - Pulls FEEDS list (centralized)
-// - Per-feed breakdown (fetched/parsed/inserted/dupes/errors)
-// - Deterministic base importance by tier (Phase 2.1 anti-monoculture)
-// - Safe insert with "ignore duplicates" behavior (best-effort even if no constraints)
-// - Works with Supabase Service Role for writes
-//
-// Env expected:
-// - NEXT_PUBLIC_SUPABASE_URL
-// - SUPABASE_SERVICE_ROLE_KEY
-// - CRON_SECRET (optional, if you already gate cron/ingest)
+// Change:
+// - Iterates feed.urls[] in order until parse succeeds with items.
+// - Reports chosen_url per feed.
+// - If a URL is placeholder REPLACE_ME_ it is skipped with an explicit error.
+// - Still returns per-feed breakdown.
 
 import { NextResponse } from "next/server";
 import RSSParser from "rss-parser";
@@ -24,8 +18,9 @@ export const dynamic = "force-dynamic";
 type Breakdown = {
   key: string;
   name: string;
-  url: string;
   tier: number;
+  chosen_url: string | null;
+  tried_urls: string[];
   fetched: boolean;
   parsedCount: number;
   attempted: number;
@@ -47,7 +42,7 @@ function supabaseAdmin() {
 
 function requireAuth(req: Request) {
   const secret = process.env.CRON_SECRET;
-  if (!secret) return; // if you don't gate it, don't block
+  if (!secret) return;
   const auth = req.headers.get("authorization") || "";
   const token = auth.replace(/^Bearer\s+/i, "").trim();
   if (token !== secret) {
@@ -56,8 +51,6 @@ function requireAuth(req: Request) {
 }
 
 function baseImportanceForTier(tier: number) {
-  // Phase 2.1: crude but effective.
-  // Tier1 > Tier2 > Tier3. We’ll replace later with true source weights in ranking.
   if (tier === 1) return 9.0;
   if (tier === 2) return 6.0;
   return 3.0;
@@ -90,6 +83,40 @@ function safeIsoDate(item: any): string | null {
   return d.toISOString();
 }
 
+async function parseFirstWorkingFeed(
+  parser: RSSParser<any>,
+  urls: string[],
+  breakdown: Breakdown
+): Promise<{ chosenUrl: string | null; items: any[] }> {
+  for (const url of urls) {
+    breakdown.tried_urls.push(url);
+
+    if (url.includes("REPLACE_ME_")) {
+      breakdown.errors.push(`Feed URL is placeholder: ${url}`);
+      continue;
+    }
+
+    try {
+      const parsed = await parser.parseURL(url);
+      const items = Array.isArray(parsed?.items) ? parsed.items : [];
+
+      // We treat "0 items" as a failure for fallback purposes,
+      // because some feeds intermittently return empty.
+      if (items.length === 0) {
+        breakdown.errors.push(`Parsed 0 items from: ${url}`);
+        continue;
+      }
+
+      return { chosenUrl: url, items };
+    } catch (e: any) {
+      breakdown.errors.push(`Parse failed for ${url}: ${e?.message ? String(e.message) : "unknown"}`);
+      continue;
+    }
+  }
+
+  return { chosenUrl: null, items: [] };
+}
+
 export async function GET(req: Request) {
   try {
     requireAuth(req);
@@ -109,8 +136,9 @@ export async function GET(req: Request) {
       const b: Breakdown = {
         key: feed.key,
         name: feed.name,
-        url: feed.url,
         tier: feed.tier,
+        chosen_url: null,
+        tried_urls: [],
         fetched: false,
         parsedCount: 0,
         attempted: 0,
@@ -119,70 +147,57 @@ export async function GET(req: Request) {
         errors: [],
       };
 
-      // Placeholder detection (so you don't forget RSS.app swap)
-      if (feed.url.includes("REPLACE_ME_")) {
-        b.errors.push("Feed URL is placeholder. Replace with your RSS.app feed URL.");
+      const { chosenUrl, items } = await parseFirstWorkingFeed(parser, feed.urls, b);
+
+      if (!chosenUrl || items.length === 0) {
         breakdown.push(b);
         continue;
       }
 
-      try {
-        const parsed = await parser.parseURL(feed.url);
-        b.fetched = true;
+      b.chosen_url = chosenUrl;
+      b.fetched = true;
+      b.parsedCount = items.length;
 
-        const items = Array.isArray(parsed.items) ? parsed.items : [];
-        b.parsedCount = items.length;
+      // Limit per feed to prevent one source dominating
+      const slice = items.slice(0, 40);
 
-        // Limit per feed to avoid one source dumping 300 items and dominating
-        const slice = items.slice(0, 40);
-
-        for (const it of slice) {
-          const url = pickUrl(it);
-          const title = pickTitle(it);
-          if (!url || !title) {
-            b.dupesOrSkipped += 1;
-            continue;
-          }
-
-          b.attempted += 1;
-
-          const row: any = {
-            source_key: feed.key,
-            source_name: feed.name,
-            title,
-            url,
-            // leave tags null (Phase 2 pods fallback + later tagging)
-            tags: null,
-            // deterministic base importance by tier
-            importance: baseImportanceForTier(feed.tier),
-            // if your table has created_at default now(), don’t set it; but setting is harmless if allowed
-            created_at: safeIsoDate(it) ?? undefined,
-          };
-
-          // Best-effort insert:
-          // - If you have a unique constraint on url, duplicates will error; we treat as skipped.
-          // - If you don't, it will insert duplicates; but your existing pipeline likely already has a unique index.
-          const { error } = await supabase.from("news_items").insert(row);
-
-          if (error) {
-            // Treat duplicate-ish errors as skipped; otherwise record it.
-            const msg = error.message || "insert error";
-            const isDupe =
-              msg.toLowerCase().includes("duplicate") ||
-              msg.toLowerCase().includes("unique") ||
-              msg.toLowerCase().includes("violates");
-
-            if (isDupe) {
-              b.dupesOrSkipped += 1;
-            } else {
-              b.errors.push(msg);
-            }
-          } else {
-            b.inserted += 1;
-          }
+      for (const it of slice) {
+        const url = pickUrl(it);
+        const title = pickTitle(it);
+        if (!url || !title) {
+          b.dupesOrSkipped += 1;
+          continue;
         }
-      } catch (e: any) {
-        b.errors.push(e?.message ? String(e.message) : "feed parse failed");
+
+        b.attempted += 1;
+
+        const row: any = {
+          source_key: feed.key,
+          source_name: feed.name,
+          title,
+          url,
+          tags: null,
+          importance: baseImportanceForTier(feed.tier),
+          created_at: safeIsoDate(it) ?? undefined,
+        };
+
+        const { error } = await supabase.from("news_items").insert(row);
+
+        if (error) {
+          const msg = error.message || "insert error";
+          const isDupe =
+            msg.toLowerCase().includes("duplicate") ||
+            msg.toLowerCase().includes("unique") ||
+            msg.toLowerCase().includes("violates");
+
+          if (isDupe) {
+            b.dupesOrSkipped += 1;
+          } else {
+            b.errors.push(msg);
+          }
+        } else {
+          b.inserted += 1;
+        }
       }
 
       breakdown.push(b);
