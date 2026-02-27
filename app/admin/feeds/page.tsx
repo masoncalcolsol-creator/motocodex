@@ -26,7 +26,23 @@ type SocialSource = {
 function supabasePublic() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-  return createClient(url, anon, { auth: { persistSession: false } });
+  return createClient(url, anon, {
+    auth: { persistSession: false },
+    global: {
+      // Force fetch no-store at the client level (server-side fetch)
+      fetch: (input: any, init?: any) => {
+        return fetch(input, {
+          ...(init || {}),
+          cache: "no-store",
+          headers: {
+            ...(init?.headers || {}),
+            "cache-control": "no-store",
+            pragma: "no-cache",
+          },
+        });
+      },
+    },
+  });
 }
 
 function fmt(ts: string) {
@@ -45,6 +61,9 @@ export default async function FeedsPage({
 }: {
   searchParams: Record<string, string | string[] | undefined>;
 }) {
+  // Bust any accidental memoization/caching by tying render to now.
+  const _renderNonce = Date.now();
+
   const q = first(searchParams, "q").trim();
   const platformParam = first(searchParams, "platform").trim().toLowerCase();
 
@@ -56,10 +75,19 @@ export default async function FeedsPage({
   const supabase = supabasePublic();
 
   // Load sources for label mapping (enabled only)
-  const { data: sources } = await supabase
+  const { data: sources, error: srcErr } = await supabase
     .from("social_sources")
     .select("id,title,handle,platform")
     .eq("enabled", true);
+
+  if (srcErr) {
+    return (
+      <div style={{ padding: 16, fontFamily: "system-ui" }}>
+        <h1>MotoFEEDS</h1>
+        <pre>ERROR loading sources: {srcErr.message}</pre>
+      </div>
+    );
+  }
 
   const sourceMap = new Map<string, SocialSource>();
   (sources ?? []).forEach((s: any) => sourceMap.set(s.id, s));
@@ -68,7 +96,7 @@ export default async function FeedsPage({
     .from("social_posts")
     .select("id,title,url,thumbnail_url,published_at,source_id,platform")
     .order("published_at", { ascending: false })
-    .limit(300);
+    .limit(1000);
 
   if (platform !== "all") {
     query = query.eq("platform", platform);
@@ -137,9 +165,13 @@ export default async function FeedsPage({
         </form>
       </div>
 
+      <div style={{ marginTop: 10, fontSize: 12, opacity: 0.65 }}>
+        Render nonce: {String(_renderNonce)} • Showing up to 1000 items
+      </div>
+
       {error ? (
         <pre style={{ marginTop: 16, padding: 12, background: "#111", color: "#fff", borderRadius: 8 }}>
-          ERROR: {error.message}
+          ERROR loading posts: {error.message}
         </pre>
       ) : null}
 
