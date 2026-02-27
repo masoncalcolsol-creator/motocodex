@@ -1,10 +1,15 @@
 // FILE: C:\MotoCODEX\app\page.tsx
 // Replace the ENTIRE file with this.
 //
-// Adds:
-// - Selects thumbnail_url
-// - Shows thumbnail on cards when present
-// - Keeps pods fallback + safe schema assumptions
+// Change vs current:
+// - Does NOT hard-require thumbnail_url in the initial select.
+// - Attempts a second query including thumbnail_url if the first query succeeds.
+// - If thumbnail_url doesn't exist, it silently falls back (no site-wide blackout).
+//
+// Keeps:
+// - pods fallback
+// - safe sorting
+// - error banner when things genuinely break
 
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
@@ -12,7 +17,7 @@ import { createClient } from "@supabase/supabase-js";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-type NewsItem = {
+type NewsItemBase = {
   id: string;
   title: string;
   url: string;
@@ -20,8 +25,11 @@ type NewsItem = {
   source_name: string | null;
   tags: string[] | null;
   importance: number | null;
-  thumbnail_url: string | null;
   created_at: string | null;
+};
+
+type NewsItem = NewsItemBase & {
+  thumbnail_url?: string | null; // optional on purpose
 };
 
 function supabasePublic() {
@@ -29,9 +37,7 @@ function supabasePublic() {
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
   if (!url || !anon) {
-    throw new Error(
-      "Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY in environment."
-    );
+    throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY in environment.");
   }
 
   return createClient(url, anon, { auth: { persistSession: false } });
@@ -95,28 +101,62 @@ export default async function Page({
   try {
     const supabase = supabasePublic();
 
-    let query = supabase
+    // --- Base query (schema-safe)
+    let baseQuery = supabase
       .from("news_items")
-      .select("id,title,url,source_key,source_name,tags,importance,thumbnail_url,created_at")
+      .select("id,title,url,source_key,source_name,tags,importance,created_at")
       .limit(240);
 
     if (q.length) {
-      query = query.or(
-        `title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`
-      );
+      baseQuery = baseQuery.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
     }
 
     if (sort === "newest") {
-      query = query.order("created_at", { ascending: false, nullsFirst: false });
+      baseQuery = baseQuery.order("created_at", { ascending: false, nullsFirst: false });
     } else {
-      query = query.order("importance", { ascending: false, nullsFirst: false });
-      query = query.order("created_at", { ascending: false, nullsFirst: false });
+      baseQuery = baseQuery.order("importance", { ascending: false, nullsFirst: false });
+      baseQuery = baseQuery.order("created_at", { ascending: false, nullsFirst: false });
     }
 
-    const { data, error } = await query;
+    const baseRes = await baseQuery;
 
-    if (error) pageError = `Supabase query error: ${error.message}`;
-    else items = (data ?? []) as any;
+    if (baseRes.error) {
+      pageError = `Supabase query error: ${baseRes.error.message}`;
+    } else {
+      items = (baseRes.data ?? []) as any;
+
+      // --- Try to enrich with thumbnail_url (optional)
+      // If the column doesn't exist, we ignore and keep base items.
+      try {
+        let thumbQuery = supabase
+          .from("news_items")
+          .select("id,thumbnail_url")
+          .limit(240);
+
+        if (q.length) {
+          thumbQuery = thumbQuery.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
+        }
+
+        if (sort === "newest") {
+          thumbQuery = thumbQuery.order("created_at", { ascending: false, nullsFirst: false });
+        } else {
+          thumbQuery = thumbQuery.order("importance", { ascending: false, nullsFirst: false });
+          thumbQuery = thumbQuery.order("created_at", { ascending: false, nullsFirst: false });
+        }
+
+        const thumbRes = await thumbQuery;
+
+        if (!thumbRes.error && Array.isArray(thumbRes.data)) {
+          const map = new Map<string, string | null>();
+          for (const r of thumbRes.data as any[]) {
+            if (r?.id) map.set(String(r.id), r.thumbnail_url ?? null);
+          }
+          items = items.map((it) => ({ ...it, thumbnail_url: map.get(it.id) ?? null }));
+        }
+      } catch {
+        // ignore optional thumbnail enrichment failure
+      }
+    }
   } catch (e: any) {
     pageError = e?.message ? String(e.message) : "Unknown server error.";
   }
@@ -128,9 +168,7 @@ export default async function Page({
       podCounts.set(pod, (podCounts.get(pod) ?? 0) + 1);
     }
   }
-  const podsSorted = Array.from(podCounts.entries())
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 40);
+  const podsSorted = Array.from(podCounts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 40);
 
   const toggleHref = (nextSort: "newest" | "ranked") => {
     const params = new URLSearchParams();
@@ -141,7 +179,6 @@ export default async function Page({
 
   const CardThumb = ({ it }: { it: NewsItem }) => {
     if (!it.thumbnail_url) return null;
-
     return (
       <div
         style={{
@@ -445,7 +482,7 @@ export default async function Page({
             </div>
 
             <div style={{ padding: "0 12px 12px 12px", opacity: 0.65, fontSize: 12, lineHeight: 1.35 }}>
-              Video thumbnails appear automatically when the source provides media thumbnails (YouTube does).
+              Thumbnails appear when available. If your DB column isn’t present yet, the site still runs.
             </div>
           </aside>
         </div>
