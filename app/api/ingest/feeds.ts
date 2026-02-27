@@ -48,19 +48,19 @@ export const FEEDS: FeedDef[] = [
   // Tip: we keep YouTube keys distinct so we can weight + cap independently later.
 
   { key: "yt_vitalmx", name: "Vital MX (YouTube)", tier: 1, kind: "youtube", urls: [
-    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_VITALMX"
+    "https://rss.app/feeds/eEJ0JEjmJHAQvd5j.xml"
   ]},
 
   { key: "yt_racerx", name: "Racer X (YouTube)", tier: 1, kind: "youtube", urls: [
-    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_RACERX"
+    "https://rss.app/feeds/jn29gpgjQIhmLUZb.xml"
   ]},
 
   { key: "yt_maineventmoto", name: "Main Event Moto (YouTube)", tier: 2, kind: "youtube", urls: [
-    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_MAINEVENTMOTO"
+    "https://rss.app/feeds/K5nHxSHCDnctzH01.xml"
   ]},
 
   { key: "yt_mattburkeen", name: "Matt Burkeen (YouTube)", tier: 2, kind: "youtube", urls: [
-    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_MATTBURKEEN"
+    "https://rss.app/feeds/K1Q4dPeXaIE44PuN.xml"
   ]},
 
   // Add more:
