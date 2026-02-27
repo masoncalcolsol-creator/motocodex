@@ -25,11 +25,11 @@ export const FEEDS: FeedDef[] = [
   // SupercrossLive — typically no clean RSS; use RSS.app mirror generated from:
   // https://www.supercrosslive.com/news/
   // Replace the placeholder URL with your RSS.app feed URL.
-  { key: "supercrosslive_news", name: "SupercrossLive", url: "https://rss.app/feeds/REPLACE_ME_SUPERCROSSLIVE.xml", tier: 1 },
+  { key: "supercrosslive_news", name: "SupercrossLive", url: "https://rss.app/feeds/oA2COqosh91E0nlM.xml", tier: 1 },
 
   // Cycle News — often easiest via RSS.app mirror(s)
   // Replace placeholders with RSS.app feeds you generate (root + /category/ racing pages you care about).
-  { key: "cyclenews_root", name: "Cycle News", url: "https://rss.app/feeds/REPLACE_ME_CYCLENEWS.xml", tier: 1 },
+  { key: "cyclenews_root", name: "Cycle News", url: "https://rss.app/feeds/Cv5ooBwheLndl145.xml", tier: 1 },
 
   // PulpMX (WP feed)
   { key: "pulpmx", name: "PulpMX", url: "https://pulpmx.com/feed", tier: 1 },
