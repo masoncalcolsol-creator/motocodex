@@ -20,9 +20,6 @@ function safeText(s: string | null): string {
   return (s ?? "").replace(/\s+/g, " ").trim();
 }
 
-/**
- * Minimal YouTube Atom parser.
- */
 function parseYouTubeAtom(xml: string): YtEntry[] {
   const entries: YtEntry[] = [];
   const entryBlocks = xml.match(/<entry[\s\S]*?<\/entry>/g) ?? [];
@@ -52,10 +49,6 @@ function parseYouTubeAtom(xml: string): YtEntry[] {
   return entries;
 }
 
-/**
- * Resolve UC channel ID from a YouTube handle by scraping the channel page HTML.
- * This avoids manual channel_id lookup.
- */
 async function resolveChannelIdFromHandle(handle: string): Promise<string | null> {
   const h = handle.replace(/^@/, "").trim();
   if (!h) return null;
@@ -66,7 +59,7 @@ async function resolveChannelIdFromHandle(handle: string): Promise<string | null
     method: "GET",
     headers: {
       "user-agent": "MotoFEEDS/1.0 (+MotoCODEX)",
-      "accept": "text/html,*/*",
+      accept: "text/html,*/*",
     },
     cache: "no-store",
   });
@@ -75,16 +68,12 @@ async function resolveChannelIdFromHandle(handle: string): Promise<string | null
 
   const html = await r.text();
 
-  // Common patterns seen in YouTube HTML:
-  // 1) "channelId":"UC...."
   let m = html.match(/"channelId"\s*:\s*"((UC)[a-zA-Z0-9_-]{20,})"/);
   if (m?.[1]) return m[1];
 
-  // 2) canonical /channel/UC...
   m = html.match(/https:\/\/www\.youtube\.com\/channel\/((UC)[a-zA-Z0-9_-]{20,})/);
   if (m?.[1]) return m[1];
 
-  // 3) browseId":"UC..."
   m = html.match(/"browseId"\s*:\s*"((UC)[a-zA-Z0-9_-]{20,})"/);
   if (m?.[1]) return m[1];
 
@@ -100,7 +89,7 @@ async function fetchFeedXml(feedUrl: string): Promise<{ ok: boolean; status: num
     method: "GET",
     headers: {
       "user-agent": "MotoFEEDS/1.0 (+MotoCODEX)",
-      "accept": "application/atom+xml,application/xml,text/xml,*/*",
+      accept: "application/atom+xml,application/xml,text/xml,*/*",
     },
     cache: "no-store",
   });
@@ -133,19 +122,14 @@ async function ingestOneSource(source: any) {
     let channelId: string | null = (source.channel_id ?? null) as string | null;
     const handle: string | null = (source.handle ?? null) as string | null;
 
-    // Determine feed URL.
     let feedUrl: string | null = (source.feed_url ?? null) as string | null;
 
-    // If we have channel_id, prefer derived feed URL (authoritative).
     if (channelId) feedUrl = buildFeedUrlFromChannelId(channelId);
 
-    // If missing channel_id but we have handle, resolve channel_id.
     if (!channelId && handle) {
       channelId = await resolveChannelIdFromHandle(handle);
       if (channelId) {
         feedUrl = buildFeedUrlFromChannelId(channelId);
-
-        // Persist resolved channel_id + feed_url so we don't re-scrape every time.
         await supabase
           .from("social_sources")
           .update({ channel_id: channelId, feed_url: feedUrl })
@@ -155,10 +139,8 @@ async function ingestOneSource(source: any) {
 
     if (!feedUrl) throw new Error("No feed_url. Provide channel_id or handle.");
 
-    // Fetch feed
     let feedResp = await fetchFeedXml(feedUrl);
 
-    // If 404 and we have a handle, try resolving again (self-heal wrong channel_id).
     if (!feedResp.ok && feedResp.status === 404 && handle) {
       const resolved = await resolveChannelIdFromHandle(handle);
       if (resolved && resolved !== channelId) {
@@ -184,36 +166,47 @@ async function ingestOneSource(source: any) {
     const entries = parseYouTubeAtom(xml);
 
     const fetchedCount = entries.length;
+
+    // Build rows for bulk upsert
+    const rows = entries
+      .map((e) => {
+        const videoId = e.videoId;
+        const publishedAt = e.published ? new Date(e.published).toISOString() : null;
+        const url = e.link || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : null);
+        if (!url || !publishedAt) return null;
+
+        const dedupeKey = `youtube:${videoId || url}`;
+
+        return {
+          platform: "youtube",
+          source_id: source.id,
+          dedupe_key: dedupeKey,
+          title: safeText(e.title) || "Untitled",
+          url,
+          thumbnail_url: e.thumbnailUrl,
+          published_at: publishedAt,
+          video_id: videoId,
+          channel_id: channelId,
+          raw: { feed_url: feedUrl },
+        };
+      })
+      .filter(Boolean) as any[];
+
+    // Bulk upsert, ignore duplicates by dedupe_key
     let insertedCount = 0;
+    const errorSamples: any[] = [];
 
-    for (const e of entries) {
-      const videoId = e.videoId;
-      const publishedAt = e.published ? new Date(e.published).toISOString() : null;
-      const url = e.link || (videoId ? `https://www.youtube.com/watch?v=${videoId}` : null);
+    if (rows.length > 0) {
+      const { data, error } = await supabase
+        .from("social_posts")
+        .upsert(rows, { onConflict: "dedupe_key", ignoreDuplicates: true })
+        .select("id");
 
-      if (!url || !publishedAt) continue;
-
-      const dedupeKey = `youtube:${videoId || url}`;
-
-      const payload = {
-        platform: "youtube",
-        source_id: source.id,
-        dedupe_key: dedupeKey,
-        title: safeText(e.title) || "Untitled",
-        url,
-        thumbnail_url: e.thumbnailUrl,
-        published_at: publishedAt,
-        video_id: videoId,
-        channel_id: channelId,
-        raw: {
-          feed_url: feedUrl,
-        },
-      };
-
-      const { error: insErr } = await supabase.from("social_posts").insert(payload);
-
-      // Ignore unique conflicts; count only successful inserts.
-      if (!insErr) insertedCount += 1;
+      if (error) {
+        errorSamples.push({ stage: "upsert", message: error.message, details: (error as any).details });
+      } else {
+        insertedCount = (data ?? []).length;
+      }
     }
 
     const finishedAt = new Date().toISOString();
@@ -224,9 +217,14 @@ async function ingestOneSource(source: any) {
         finished_at: finishedAt,
         fetched_count: fetchedCount,
         inserted_count: insertedCount,
-        ok: true,
-        error_text: null,
-        details: { feed_url: feedUrl, channel_id: channelId },
+        ok: errorSamples.length === 0,
+        error_text: errorSamples.length ? JSON.stringify(errorSamples).slice(0, 1000) : null,
+        details: {
+          feed_url: feedUrl,
+          channel_id: channelId,
+          attempted: rows.length,
+          errorSamples,
+        },
       })
       .eq("id", runId);
 
@@ -234,12 +232,23 @@ async function ingestOneSource(source: any) {
       .from("social_sources")
       .update({
         last_ingested_at: finishedAt,
-        last_ingest_status: "ok",
-        last_error: null,
-        feed_url: feedUrl, // ensure persisted
+        last_ingest_status: errorSamples.length ? "error" : "ok",
+        last_error: errorSamples.length ? JSON.stringify(errorSamples).slice(0, 1000) : null,
+        feed_url: feedUrl,
         channel_id: channelId,
       })
       .eq("id", source.id);
+
+    if (errorSamples.length) {
+      return {
+        source_id: source.id,
+        title: source.title ?? source.handle ?? source.channel_id ?? "Unknown",
+        fetched: fetchedCount,
+        inserted: insertedCount,
+        ok: false,
+        error: errorSamples[0]?.message ?? "Insert failed",
+      };
+    }
 
     return {
       source_id: source.id,
