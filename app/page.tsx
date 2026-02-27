@@ -1,5 +1,13 @@
 // FILE: C:\MotoCODEX\app\page.tsx
 // Replace the ENTIRE file with this.
+//
+// Purpose:
+// - Guaranteed content render even if schema is minimal.
+// - Pods fallback works when tags are null/empty (hostname -> source_name -> source_key).
+// - Sorting is deterministic with minimal columns:
+//   * sort=newest  -> created_at desc
+//   * sort=ranked  -> importance desc, then created_at desc
+// - Renders Supabase error on page if query fails (so we never fly blind).
 
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
@@ -15,17 +23,19 @@ type NewsItem = {
   source_name: string | null;
   tags: string[] | null;
   importance: number | null;
-  credibility: number | null;
-  momentum: number | null;
-  recency: number | null;
-  score: number | null; // your ranked score column if present; safe if null
-  published_at: string | null;
   created_at: string | null;
 };
 
 function supabasePublic() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!url || !anon) {
+    throw new Error(
+      "Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY in environment."
+    );
+  }
+
   return createClient(url, anon, { auth: { persistSession: false } });
 }
 
@@ -52,7 +62,11 @@ function normalizePod(s: string): string {
 }
 
 function derivePods(item: NewsItem): string[] {
-  const tags = (item.tags ?? []).filter(Boolean).map((t) => normalizePod(String(t)));
+  const tags = (item.tags ?? [])
+    .filter(Boolean)
+    .map((t) => normalizePod(String(t)))
+    .filter(Boolean);
+
   if (tags.length) return tags;
 
   const host = safeHostname(item.url);
@@ -65,10 +79,6 @@ function derivePods(item: NewsItem): string[] {
   return [normalizePod(item.source_key)];
 }
 
-function clamp(n: number, lo: number, hi: number) {
-  return Math.max(lo, Math.min(hi, n));
-}
-
 export default async function Page({
   searchParams,
 }: {
@@ -77,38 +87,46 @@ export default async function Page({
   const q = (searchParams?.q ?? "").trim();
   const sort = (searchParams?.sort ?? "ranked") as "newest" | "ranked";
 
-  const supabase = supabasePublic();
+  let items: NewsItem[] = [];
+  let pageError: string | null = null;
 
-  // --- Query base
-  let query = supabase
-    .from("news_items")
-    .select(
-      "id,title,url,source_key,source_name,tags,importance,credibility,momentum,recency,score,published_at,created_at"
-    )
-    .limit(240);
+  try {
+    const supabase = supabasePublic();
 
-  // --- Search filter
-  if (q.length) {
-    // NOTE: avoids needing full-text config; keep deterministic.
-    // If you already have a better SQL function, swap later.
-    query = query.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
+    let query = supabase
+      .from("news_items")
+      // ONLY select columns we expect to exist (minimal-safe)
+      .select("id,title,url,source_key,source_name,tags,importance,created_at")
+      .limit(240);
+
+    // Search filter (safe + simple)
+    if (q.length) {
+      query = query.or(
+        `title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`
+      );
+    }
+
+    // Sorting (minimal-safe)
+    if (sort === "newest") {
+      query = query.order("created_at", { ascending: false, nullsFirst: false });
+    } else {
+      // ranked: importance desc, then created_at desc
+      query = query.order("importance", { ascending: false, nullsFirst: false });
+      query = query.order("created_at", { ascending: false, nullsFirst: false });
+    }
+
+    const { data, error } = await query;
+
+    if (error) {
+      pageError = `Supabase query error: ${error.message}`;
+    } else {
+      items = (data ?? []) as any;
+    }
+  } catch (e: any) {
+    pageError = e?.message ? String(e.message) : "Unknown server error.";
   }
 
-  // --- Sorting
-  if (sort === "newest") {
-    // Prefer published_at if present, then created_at.
-    query = query.order("published_at", { ascending: false, nullsFirst: false });
-    query = query.order("created_at", { ascending: false, nullsFirst: false });
-  } else {
-    // Ranked: prefer score desc, then created_at as stable tie-breaker.
-    query = query.order("score", { ascending: false, nullsFirst: false });
-    query = query.order("created_at", { ascending: false, nullsFirst: false });
-  }
-
-  const { data, error } = await query;
-  const items: NewsItem[] = (data ?? []) as any;
-
-  // --- Pods aggregation w/ fallback
+  // Pods aggregation w/ fallback (still works even if tags null)
   const podCounts = new Map<string, number>();
   for (const it of items) {
     for (const pod of derivePods(it)) {
@@ -116,7 +134,6 @@ export default async function Page({
       podCounts.set(pod, (podCounts.get(pod) ?? 0) + 1);
     }
   }
-
   const podsSorted = Array.from(podCounts.entries())
     .sort((a, b) => b[1] - a[1])
     .slice(0, 40);
@@ -128,12 +145,9 @@ export default async function Page({
     return `/?${params.toString()}`;
   };
 
-  const lensTitleLeft = "Inside Rut";
-  const lensTitleMid = "Main Line";
-  const lensTitleRight = "Outside Berm";
-
   return (
     <main style={{ minHeight: "100vh", background: "#0b0b0d", color: "#eaeaea" }}>
+      {/* TOP BAR */}
       <div
         style={{
           position: "sticky",
@@ -217,6 +231,7 @@ export default async function Page({
               >
                 Go
               </button>
+
               {q.length ? (
                 <Link
                   href={`/?sort=${sort}`}
@@ -245,9 +260,29 @@ export default async function Page({
               .
             </div>
           </div>
+
+          {/* If query fails, show the error IN THE UI */}
+          {pageError ? (
+            <div
+              style={{
+                marginTop: 10,
+                padding: "10px 12px",
+                borderRadius: 12,
+                border: "1px solid rgba(255,0,60,0.35)",
+                background: "rgba(255,0,60,0.12)",
+                color: "#ffd6df",
+                fontSize: 13,
+                fontWeight: 700,
+                lineHeight: 1.4,
+              }}
+            >
+              {pageError}
+            </div>
+          ) : null}
         </div>
       </div>
 
+      {/* 3-COLUMN GRID */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px" }}>
         <div
           style={{
@@ -266,36 +301,50 @@ export default async function Page({
             }}
           >
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <div style={{ fontWeight: 900 }}>{lensTitleLeft}</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Stream view ({sort === "newest" ? "Newest" : "Ranked"})</div>
+              <div style={{ fontWeight: 900 }}>Inside Rut</div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>
+                Stream view ({sort === "newest" ? "Newest" : "Ranked"})
+              </div>
             </div>
 
             <div style={{ padding: 8 }}>
-              {items.slice(0, 60).map((it) => (
-                <a
-                  key={`L-${it.id}`}
-                  href={it.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "block",
-                    padding: "10px 10px",
-                    borderRadius: 12,
-                    textDecoration: "none",
-                    color: "#eaeaea",
-                    border: "1px solid rgba(255,255,255,0.06)",
-                    background: "rgba(0,0,0,0.18)",
-                    marginBottom: 8,
-                  }}
-                >
-                  <div style={{ fontWeight: 800, lineHeight: 1.2 }}>{it.title}</div>
-                  <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                    <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
-                    <span>•</span>
-                    <span>{safeHostname(it.url) ?? "link"}</span>
-                  </div>
-                </a>
-              ))}
+              {items.length === 0 ? (
+                <div style={{ padding: 10, opacity: 0.7, fontSize: 13 }}>
+                  No items returned. If you see an error above, it’s schema/env/RLS.
+                </div>
+              ) : (
+                items.slice(0, 70).map((it) => (
+                  <a
+                    key={`L-${it.id}`}
+                    href={it.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      display: "block",
+                      padding: "10px 10px",
+                      borderRadius: 12,
+                      textDecoration: "none",
+                      color: "#eaeaea",
+                      border: "1px solid rgba(255,255,255,0.06)",
+                      background: "rgba(0,0,0,0.18)",
+                      marginBottom: 8,
+                    }}
+                  >
+                    <div style={{ fontWeight: 800, lineHeight: 1.2 }}>{it.title}</div>
+                    <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
+                      <span>•</span>
+                      <span>{safeHostname(it.url) ?? "link"}</span>
+                      {typeof it.importance === "number" ? (
+                        <>
+                          <span>•</span>
+                          <span>imp {it.importance.toFixed(2)}</span>
+                        </>
+                      ) : null}
+                    </div>
+                  </a>
+                ))
+              )}
             </div>
           </section>
 
@@ -309,67 +358,63 @@ export default async function Page({
             }}
           >
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <div style={{ fontWeight: 900 }}>{lensTitleMid}</div>
+              <div style={{ fontWeight: 900 }}>Main Line</div>
               <div style={{ opacity: 0.65, fontSize: 12 }}>
-                Prioritized view (score-driven) • tie-break by recency
+                Prioritized view (importance → created_at)
               </div>
             </div>
 
             <div style={{ padding: 8 }}>
-              {items.slice(0, 90).map((it) => {
-                const score = typeof it.score === "number" ? it.score : null;
-                const s = score === null ? "" : clamp(score, 0, 999).toFixed(1);
-                return (
-                  <a
-                    key={`M-${it.id}`}
-                    href={it.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      display: "block",
-                      padding: "12px 12px",
-                      borderRadius: 14,
-                      textDecoration: "none",
-                      color: "#eaeaea",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      background: "rgba(0,0,0,0.22)",
-                      marginBottom: 10,
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-                      <div style={{ fontWeight: 900, lineHeight: 1.2, flex: 1 }}>{it.title}</div>
-                      {s.length ? (
-                        <div
-                          style={{
-                            fontWeight: 900,
-                            fontSize: 12,
-                            padding: "4px 8px",
-                            borderRadius: 999,
-                            border: "1px solid rgba(255,0,60,0.35)",
-                            background: "rgba(255,0,60,0.16)",
-                            color: "#ffd6df",
-                            whiteSpace: "nowrap",
-                          }}
-                        >
-                          {s}
-                        </div>
-                      ) : null}
-                    </div>
+              {items.slice(0, 110).map((it) => (
+                <a
+                  key={`M-${it.id}`}
+                  href={it.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    display: "block",
+                    padding: "12px 12px",
+                    borderRadius: 14,
+                    textDecoration: "none",
+                    color: "#eaeaea",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    background: "rgba(0,0,0,0.22)",
+                    marginBottom: 10,
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+                    <div style={{ fontWeight: 900, lineHeight: 1.2, flex: 1 }}>{it.title}</div>
+                    {typeof it.importance === "number" ? (
+                      <div
+                        style={{
+                          fontWeight: 900,
+                          fontSize: 12,
+                          padding: "4px 8px",
+                          borderRadius: 999,
+                          border: "1px solid rgba(255,0,60,0.35)",
+                          background: "rgba(255,0,60,0.16)",
+                          color: "#ffd6df",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {it.importance.toFixed(2)}
+                      </div>
+                    ) : null}
+                  </div>
 
-                    <div style={{ marginTop: 7, fontSize: 12, opacity: 0.75, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                      <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
-                      <span>•</span>
-                      <span>{safeHostname(it.url) ?? "link"}</span>
-                      {it.tags?.length ? (
-                        <>
-                          <span>•</span>
-                          <span>{it.tags.slice(0, 3).join(", ")}</span>
-                        </>
-                      ) : null}
-                    </div>
-                  </a>
-                );
-              })}
+                  <div style={{ marginTop: 7, fontSize: 12, opacity: 0.75, display: "flex", gap: 8, flexWrap: "wrap" }}>
+                    <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
+                    <span>•</span>
+                    <span>{safeHostname(it.url) ?? "link"}</span>
+                    {it.tags?.length ? (
+                      <>
+                        <span>•</span>
+                        <span>{it.tags.slice(0, 3).join(", ")}</span>
+                      </>
+                    ) : null}
+                  </div>
+                </a>
+              ))}
             </div>
           </section>
 
@@ -383,9 +428,9 @@ export default async function Page({
             }}
           >
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <div style={{ fontWeight: 900 }}>{lensTitleRight}</div>
+              <div style={{ fontWeight: 900 }}>Outside Berm</div>
               <div style={{ opacity: 0.65, fontSize: 12 }}>
-                Pods (tags → fallback hostname/source)
+                Pods (tags → hostname/source)
               </div>
             </div>
 
@@ -420,13 +465,12 @@ export default async function Page({
             </div>
 
             <div style={{ padding: "0 12px 12px 12px", opacity: 0.65, fontSize: 12, lineHeight: 1.35 }}>
-              Clicking a pod runs <b>?q=</b> against title/source. Tags will get smarter next when ingest emits real
-              entity labels.
+              Pods are derived from tags when present; otherwise hostname/source is used so this column never dies.
             </div>
           </aside>
         </div>
 
-        {/* Mobile fallback: stack columns */}
+        {/* Mobile: stack columns */}
         <style>{`
           @media (max-width: 980px) {
             main > div > div {
