@@ -1,6 +1,9 @@
-// FILE: C:\MotoCODEX\app\feeds\page.tsx
-// Replace the ENTIRE file with this.
+# FILE: C:\MotoCODEX\app\feeds\page.tsx
+# Replace the ENTIRE file with this (PowerShell overwrite).
 
+cd C:\MotoCODEX
+
+@'
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 
@@ -146,7 +149,6 @@ export default async function FeedsPage({
 
   return (
     <main style={{ minHeight: "100vh", background: "#0b0b0d", color: "#eaeaea" }}>
-      {/* TOP BAR */}
       <div
         style={{
           position: "sticky",
@@ -201,51 +203,13 @@ export default async function FeedsPage({
           <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
               <a href={qs("all")} style={{ textDecoration: "none" }}>
-                <button
-                  style={{
-                    padding: "8px 10px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(255,255,255,0.10)",
-                    background: platform === "all" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)",
-                    color: "#eaeaea",
-                    fontWeight: 900,
-                    cursor: "pointer",
-                  }}
-                >
-                  All
-                </button>
+                <button style={{ padding: "8px 10px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: platform === "all" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>All</button>
               </a>
-
               <a href={qs("youtube")} style={{ textDecoration: "none" }}>
-                <button
-                  style={{
-                    padding: "8px 10px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(255,255,255,0.10)",
-                    background: platform === "youtube" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)",
-                    color: "#eaeaea",
-                    fontWeight: 900,
-                    cursor: "pointer",
-                  }}
-                >
-                  YouTube
-                </button>
+                <button style={{ padding: "8px 10px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: platform === "youtube" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>YouTube</button>
               </a>
-
               <a href={qs("instagram")} style={{ textDecoration: "none" }}>
-                <button
-                  style={{
-                    padding: "8px 10px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(255,255,255,0.10)",
-                    background: platform === "instagram" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)",
-                    color: "#eaeaea",
-                    fontWeight: 900,
-                    cursor: "pointer",
-                  }}
-                >
-                  Instagram
-                </button>
+                <button style={{ padding: "8px 10px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: platform === "instagram" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>Instagram</button>
               </a>
             </div>
 
@@ -267,37 +231,9 @@ export default async function FeedsPage({
                   fontSize: 14,
                 }}
               />
-              <button
-                type="submit"
-                style={{
-                  padding: "10px 12px",
-                  borderRadius: 12,
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: "rgba(255,0,60,0.18)",
-                  color: "#eaeaea",
-                  fontWeight: 900,
-                  cursor: "pointer",
-                }}
-              >
+              <button type="submit" style={{ padding: "10px 12px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,0,60,0.18)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>
                 Go
               </button>
-
-              {q.length ? (
-                <Link
-                  href={platform === "all" ? "/feeds" : `/feeds?platform=${platform}`}
-                  style={{
-                    padding: "10px 12px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(255,255,255,0.10)",
-                    background: "transparent",
-                    color: "#eaeaea",
-                    textDecoration: "none",
-                    fontWeight: 900,
-                  }}
-                >
-                  Clear
-                </Link>
-              ) : null}
             </form>
 
             <div style={{ marginLeft: "auto", opacity: 0.75, fontSize: 12 }}>
@@ -306,36 +242,17 @@ export default async function FeedsPage({
           </div>
 
           {pageError ? (
-            <div
-              style={{
-                marginTop: 10,
-                padding: "10px 12px",
-                borderRadius: 12,
-                border: "1px solid rgba(255,0,60,0.35)",
-                background: "rgba(255,0,60,0.12)",
-                color: "#ffd6df",
-                fontSize: 13,
-                fontWeight: 900,
-                lineHeight: 1.4,
-              }}
-            >
+            <div style={{ marginTop: 10, padding: "10px 12px", borderRadius: 12, border: "1px solid rgba(255,0,60,0.35)", background: "rgba(255,0,60,0.12)", color: "#ffd6df", fontSize: 13, fontWeight: 900, lineHeight: 1.4 }}>
               {pageError}
             </div>
           ) : null}
 
           <div style={{ marginTop: 8, opacity: 0.75, fontSize: 13 }}>
-            Showing <b>{posts.length}</b> items (YT={ytCount}, IG={igCount}){q.length ? (
-              <>
-                {" "}
-                for <b>{q}</b>
-              </>
-            ) : null}
-            .
+            Showing <b>{posts.length}</b> items (YT={ytCount}, IG={igCount}){q.length ? <> for <b>{q}</b></> : null}.
           </div>
         </div>
       </div>
 
-      {/* FEED */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px" }}>
         <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
           <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
@@ -346,12 +263,7 @@ export default async function FeedsPage({
           <div style={{ padding: 8 }}>
             {posts.map((p) => {
               const src = sourceMap.get(p.source_id);
-              const label =
-                (src?.title ?? "").trim() ||
-                (src?.handle ? `@${src.handle}` : "") ||
-                safeHostname(p.url) ||
-                "MotoFEEDS";
-
+              const label = (src?.title ?? "").trim() || (src?.handle ? `@${src.handle}` : "") || safeHostname(p.url) || "MotoFEEDS";
               const host = safeHostname(p.url) ?? p.platform;
 
               return (
@@ -374,9 +286,7 @@ export default async function FeedsPage({
                   }}
                 >
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontWeight: 900, lineHeight: 1.2 }}>
-                      {p.title ?? "(untitled)"}
-                    </div>
+                    <div style={{ fontWeight: 900, lineHeight: 1.2 }}>{p.title ?? "(untitled)"}</div>
                     <div style={{ marginTop: 7, fontSize: 12, opacity: 0.78, display: "flex", gap: 8, flexWrap: "wrap" }}>
                       <span>{label}</span>
                       <span>•</span>
@@ -389,26 +299,9 @@ export default async function FeedsPage({
                   </div>
 
                   {p.thumbnail_url ? (
-                    <div
-                      style={{
-                        width: 120,
-                        height: 80,
-                        borderRadius: 12,
-                        overflow: "hidden",
-                        flex: "0 0 auto",
-                        border: "1px solid rgba(255,255,255,0.10)",
-                        background: "rgba(255,255,255,0.06)",
-                      }}
-                      title={p.platform}
-                    >
+                    <div style={{ width: 120, height: 80, borderRadius: 12, overflow: "hidden", flex: "0 0 auto", border: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,255,255,0.06)" }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={p.thumbnail_url}
-                        alt=""
-                        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                        loading="lazy"
-                        referrerPolicy="no-referrer"
-                      />
+                      <img src={p.thumbnail_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" referrerPolicy="no-referrer" />
                     </div>
                   ) : null}
                 </a>
@@ -420,3 +313,4 @@ export default async function FeedsPage({
     </main>
   );
 }
+'@ | Set-Content -Encoding UTF8 C:\MotoCODEX\app\feeds\page.tsx
