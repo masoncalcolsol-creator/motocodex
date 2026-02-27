@@ -29,7 +29,6 @@ function supabasePublic() {
   return createClient(url, anon, {
     auth: { persistSession: false },
     global: {
-      // Force fetch no-store at the client level (server-side fetch)
       fetch: (input: any, init?: any) => {
         return fetch(input, {
           ...(init || {}),
@@ -56,13 +55,25 @@ function first(searchParams: Record<string, string | string[] | undefined>, key:
   return Array.isArray(v) ? (v[0] ?? "") : (v ?? "");
 }
 
+function supabaseHostHint() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+  try {
+    const u = new URL(url);
+    // e.g. https://ptfycshbfxgsvcgwqndm.supabase.co -> show project ref only
+    const host = u.host || "";
+    const ref = host.split(".")[0] || host;
+    return ref ? `${ref}…` : "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+
 export default async function FeedsPage({
   searchParams,
 }: {
   searchParams: Record<string, string | string[] | undefined>;
 }) {
-  // Bust any accidental memoization/caching by tying render to now.
-  const _renderNonce = Date.now();
+  const renderNonce = Date.now();
 
   const q = first(searchParams, "q").trim();
   const platformParam = first(searchParams, "platform").trim().toLowerCase();
@@ -74,20 +85,11 @@ export default async function FeedsPage({
 
   const supabase = supabasePublic();
 
-  // Load sources for label mapping (enabled only)
-  const { data: sources, error: srcErr } = await supabase
+  // label sources
+  const { data: sources } = await supabase
     .from("social_sources")
     .select("id,title,handle,platform")
     .eq("enabled", true);
-
-  if (srcErr) {
-    return (
-      <div style={{ padding: 16, fontFamily: "system-ui" }}>
-        <h1>MotoFEEDS</h1>
-        <pre>ERROR loading sources: {srcErr.message}</pre>
-      </div>
-    );
-  }
 
   const sourceMap = new Map<string, SocialSource>();
   (sources ?? []).forEach((s: any) => sourceMap.set(s.id, s));
@@ -104,15 +106,16 @@ export default async function FeedsPage({
     query = query.in("platform", ["youtube", "instagram"]);
   }
 
-  if (q) {
-    query = query.ilike("title", `%${q}%`);
-  }
+  if (q) query = query.ilike("title", `%${q}%`);
 
   const { data: posts, error } = await query;
 
-  const base = "/feeds";
+  const list = (posts ?? []) as SocialPost[];
+  const ytCount = list.filter((p) => p.platform === "youtube").length;
+  const igCount = list.filter((p) => p.platform === "instagram").length;
+
   const qs = (p: string) => {
-    const u = new URL("https://example.com" + base);
+    const u = new URL("https://example.com/feeds");
     if (q) u.searchParams.set("q", q);
     if (p !== "all") u.searchParams.set("platform", p);
     return u.pathname + u.search;
@@ -120,54 +123,50 @@ export default async function FeedsPage({
 
   return (
     <div style={{ padding: 16, fontFamily: "system-ui", maxWidth: 1100, margin: "0 auto" }}>
-      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
-        <div>
-          <h1 style={{ margin: 0 }}>MotoFEEDS</h1>
-          <div style={{ marginTop: 6, opacity: 0.75 }}>
-            Master feed (YouTube + Instagram). Sorted newest → oldest. Search with <code>?q=</code>.
-          </div>
+      <h1 style={{ margin: 0 }}>MotoFEEDS</h1>
+      <div style={{ marginTop: 6, opacity: 0.75 }}>
+        Master feed (YouTube + Instagram). Sorted newest → oldest.
+      </div>
 
-          <div style={{ display: "flex", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
-            <a href={qs("all")} style={{ textDecoration: "none" }}>
-              <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "all" ? 800 : 400 }}>
-                All
-              </button>
-            </a>
-            <a href={qs("youtube")} style={{ textDecoration: "none" }}>
-              <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "youtube" ? 800 : 400 }}>
-                YouTube
-              </button>
-            </a>
-            <a href={qs("instagram")} style={{ textDecoration: "none" }}>
-              <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "instagram" ? 800 : 400 }}>
-                Instagram
-              </button>
-            </a>
-          </div>
-        </div>
+      <div style={{ marginTop: 10, fontSize: 12, opacity: 0.7 }}>
+        Debug: render={renderNonce} • supabase={supabaseHostHint()} • returned yt={ytCount} ig={igCount} (limit 1000)
+      </div>
 
-        <form method="GET" action="/feeds" style={{ display: "flex", gap: 8, alignItems: "center" }}>
-          <input type="hidden" name="platform" value={platform === "all" ? "" : platform} />
-          <input
-            name="q"
-            defaultValue={q}
-            placeholder="Search titles…"
-            style={{ padding: "10px 12px", width: 280, maxWidth: "70vw" }}
-          />
-          <button type="submit" style={{ padding: "10px 12px", cursor: "pointer" }}>
-            Search
+      <div style={{ display: "flex", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
+        <a href={qs("all")} style={{ textDecoration: "none" }}>
+          <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "all" ? 800 : 400 }}>
+            All
           </button>
-          {q || platform !== "all" ? (
-            <a href="/feeds" style={{ padding: "10px 12px", textDecoration: "none" }}>
-              Clear
-            </a>
-          ) : null}
-        </form>
+        </a>
+        <a href={qs("youtube")} style={{ textDecoration: "none" }}>
+          <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "youtube" ? 800 : 400 }}>
+            YouTube
+          </button>
+        </a>
+        <a href={qs("instagram")} style={{ textDecoration: "none" }}>
+          <button style={{ padding: "8px 10px", cursor: "pointer", fontWeight: platform === "instagram" ? 800 : 400 }}>
+            Instagram
+          </button>
+        </a>
       </div>
 
-      <div style={{ marginTop: 10, fontSize: 12, opacity: 0.65 }}>
-        Render nonce: {String(_renderNonce)} • Showing up to 1000 items
-      </div>
+      <form method="GET" action="/feeds" style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 10 }}>
+        <input type="hidden" name="platform" value={platform === "all" ? "" : platform} />
+        <input
+          name="q"
+          defaultValue={q}
+          placeholder="Search titles…"
+          style={{ padding: "10px 12px", width: 280, maxWidth: "70vw" }}
+        />
+        <button type="submit" style={{ padding: "10px 12px", cursor: "pointer" }}>
+          Search
+        </button>
+        {q || platform !== "all" ? (
+          <a href="/feeds" style={{ padding: "10px 12px", textDecoration: "none" }}>
+            Clear
+          </a>
+        ) : null}
+      </form>
 
       {error ? (
         <pre style={{ marginTop: 16, padding: 12, background: "#111", color: "#fff", borderRadius: 8 }}>
@@ -176,12 +175,9 @@ export default async function FeedsPage({
       ) : null}
 
       <div style={{ marginTop: 16, display: "grid", gap: 12 }}>
-        {(posts as any[] | null)?.map((p: SocialPost) => {
+        {list.map((p) => {
           const src = sourceMap.get(p.source_id);
-          const label =
-            src?.title ||
-            (src?.handle ? `@${src.handle}` : null) ||
-            p.platform;
+          const label = src?.title || (src?.handle ? `@${src.handle}` : null) || p.platform;
 
           return (
             <a
@@ -203,11 +199,7 @@ export default async function FeedsPage({
               <div style={{ width: 160, height: 90, background: "#f2f2f2" }}>
                 {p.thumbnail_url ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={p.thumbnail_url}
-                    alt=""
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  />
+                  <img src={p.thumbnail_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 ) : null}
               </div>
 
@@ -215,18 +207,14 @@ export default async function FeedsPage({
                 <div style={{ fontSize: 12, opacity: 0.75 }}>
                   {label} • {p.platform.toUpperCase()} • {fmt(p.published_at)}
                 </div>
-                <div style={{ fontSize: 16, fontWeight: 700, marginTop: 6 }}>
-                  {p.title}
-                </div>
-                <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, wordBreak: "break-all" }}>
-                  {p.url}
-                </div>
+                <div style={{ fontSize: 16, fontWeight: 700, marginTop: 6 }}>{p.title}</div>
+                <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, wordBreak: "break-all" }}>{p.url}</div>
               </div>
             </a>
           );
         })}
 
-        {(posts ?? []).length === 0 ? (
+        {list.length === 0 ? (
           <div style={{ padding: 14, border: "1px solid #ddd", borderRadius: 10, opacity: 0.8 }}>
             No posts found{q ? ` for "${q}"` : ""}.
           </div>
