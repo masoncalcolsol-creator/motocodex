@@ -1,15 +1,15 @@
 // FILE: C:\MotoCODEX\app\page.tsx
 // Replace the ENTIRE file with this.
 //
-// Implements:
-// - Middle column uses published_at newest->oldest (truth)
-// - Mobile single feed (Instagram-style) with toggle view=newest|ranked
-// - Pods are topic clusters from tags (fallback: infer from hostname ONLY if tags missing)
-// - Search applies across both lists
+// Fixes:
+// - Never shows "unknown" for source label
+// - Subtitles rewritten to permanent user-facing language
+// - Adds /feeds link in header
 //
-// URL params:
-// - q=keyword
-// - view=newest|ranked  (mobile toggle; desktop still shows both)
+// Keeps:
+// - published_at newest in center
+// - mobile single scroll toggle view=newest|ranked
+// - pods from tags-first
 
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
@@ -47,6 +47,19 @@ function safeHostname(rawUrl: string): string | null {
   }
 }
 
+function pickSourceLabel(it: NewsItem): string {
+  const a = (it.source_name ?? "").trim();
+  if (a) return a;
+
+  const b = (it.source_key ?? "").trim();
+  if (b) return b;
+
+  const h = safeHostname(it.url);
+  if (h) return h;
+
+  return "MotoCODEX";
+}
+
 function normalizePod(s: string): string {
   return s
     .toLowerCase()
@@ -71,8 +84,13 @@ function derivePodsFromTagsFirst(item: NewsItem): string[] {
   const host = safeHostname(item.url);
   if (host) return [normalizePod(host)];
 
-  if (item.source_name && item.source_name.trim().length) return [normalizePod(item.source_name)];
-  return [normalizePod(item.source_key)];
+  const name = (item.source_name ?? "").trim();
+  if (name) return [normalizePod(name)];
+
+  const key = (item.source_key ?? "").trim();
+  if (key) return [normalizePod(key)];
+
+  return ["motocodex"];
 }
 
 function isProbablyYouTube(url: string) {
@@ -131,7 +149,7 @@ export default async function Page({
     pageError = e?.message ? String(e.message) : "Unknown server error.";
   }
 
-  // Pods: build counts from BOTH lists (more coverage)
+  // Pods: build counts from BOTH lists
   const podCounts = new Map<string, number>();
   for (const it of [...newestItems, ...rankedItems]) {
     for (const pod of derivePodsFromTagsFirst(it)) {
@@ -201,7 +219,7 @@ export default async function Page({
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ fontWeight: 900, lineHeight: 1.2 }}>{it.title}</div>
         <div style={{ marginTop: 7, fontSize: 12, opacity: 0.78, display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
+          <span>{pickSourceLabel(it)}</span>
           <span>•</span>
           <span>{safeHostname(it.url) ?? "link"}</span>
           {it.tags?.length ? (
@@ -216,12 +234,10 @@ export default async function Page({
     </a>
   );
 
-  // Mobile feed list selection
   const mobileItems = view === "ranked" ? rankedItems : newestItems;
 
   return (
     <main style={{ minHeight: "100vh", background: "#0b0b0d", color: "#eaeaea" }}>
-      {/* TOP BAR */}
       <div
         style={{
           position: "sticky",
@@ -238,8 +254,23 @@ export default async function Page({
               MotoCODEX <span style={{ opacity: 0.6, fontWeight: 700 }}>Phase 2</span>
             </div>
 
-            {/* Mobile toggle (also visible desktop but only *matters* on mobile feed) */}
-            <div style={{ display: "flex", gap: 8, marginLeft: "auto", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: 10, marginLeft: "auto", flexWrap: "wrap", alignItems: "center" }}>
+              <Link
+                href="/feeds"
+                style={{
+                  padding: "8px 10px",
+                  borderRadius: 10,
+                  textDecoration: "none",
+                  border: "1px solid rgba(255,255,255,0.10)",
+                  background: "rgba(255,255,255,0.06)",
+                  color: "#eaeaea",
+                  fontSize: 13,
+                  fontWeight: 900,
+                }}
+              >
+                MotoFEEDS
+              </Link>
+
               <Link
                 href={hrefWith({ view: "newest" })}
                 style={{
@@ -250,7 +281,7 @@ export default async function Page({
                   background: view === "newest" ? "rgba(255,0,60,0.20)" : "transparent",
                   color: "#eaeaea",
                   fontSize: 13,
-                  fontWeight: 800,
+                  fontWeight: 900,
                 }}
               >
                 Mobile: Newest
@@ -265,7 +296,7 @@ export default async function Page({
                   background: view === "ranked" ? "rgba(255,0,60,0.20)" : "transparent",
                   color: "#eaeaea",
                   fontSize: 13,
-                  fontWeight: 800,
+                  fontWeight: 900,
                 }}
               >
                 Mobile: Ranked
@@ -317,7 +348,7 @@ export default async function Page({
                     background: "transparent",
                     color: "#eaeaea",
                     textDecoration: "none",
-                    fontWeight: 800,
+                    fontWeight: 900,
                   }}
                 >
                   Clear
@@ -346,7 +377,7 @@ export default async function Page({
                 background: "rgba(255,0,60,0.12)",
                 color: "#ffd6df",
                 fontSize: 13,
-                fontWeight: 800,
+                fontWeight: 900,
                 lineHeight: 1.4,
               }}
             >
@@ -370,9 +401,11 @@ export default async function Page({
         >
           <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
             <div style={{ fontWeight: 900 }}>
-              Mobile Feed • {view === "ranked" ? "Ranked (desktop left)" : "Newest (desktop center)"}
+              Latest Breaking News • {view === "ranked" ? "Ranked Feed" : "Newest Feed"}
             </div>
-            <div style={{ opacity: 0.65, fontSize: 12 }}>Single scroll. Tap to open source.</div>
+            <div style={{ opacity: 0.65, fontSize: 12 }}>
+              Single scroll. Default is newest by published date.
+            </div>
           </div>
           <div style={{ padding: 8 }}>
             {mobileItems.slice(0, 160).map((it) => renderCard(it, "MB"))}
@@ -380,33 +413,30 @@ export default async function Page({
         </section>
 
         {/* DESKTOP 3 COLUMN */}
-        <div
-          className="desktopOnly"
-          style={{ display: "grid", gridTemplateColumns: "1fr 1.35fr 0.75fr", gap: 14 }}
-        >
-          {/* LEFT: Ranked */}
+        <div className="desktopOnly" style={{ display: "grid", gridTemplateColumns: "1fr 1.35fr 0.75fr", gap: 14 }}>
+          {/* LEFT */}
           <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Inside Rut</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Ranked list (importance → published_at)</div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Ranked Feed (importance → published date)</div>
             </div>
             <div style={{ padding: 8 }}>
               {rankedItems.slice(0, 70).map((it) => renderCard(it, "L"))}
             </div>
           </section>
 
-          {/* CENTER: Newest by published_at */}
+          {/* CENTER */}
           <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Main Line</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Newest by published date (published_at → created_at)</div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Latest Breaking News (published date → ingest time)</div>
             </div>
             <div style={{ padding: 8 }}>
               {newestItems.slice(0, 110).map((it) => renderCard(it, "M"))}
             </div>
           </section>
 
-          {/* RIGHT: Pods as topic clusters */}
+          {/* RIGHT */}
           <aside style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Outside Berm</div>
@@ -444,7 +474,7 @@ export default async function Page({
             </div>
 
             <div style={{ padding: "0 12px 12px 12px", opacity: 0.65, fontSize: 12, lineHeight: 1.35 }}>
-              Pods are now topics again (injuries, rider names, teams, etc.). We’ll expand the dictionary continuously.
+              Pods are topics (injuries, riders, teams). We’ll keep expanding the tag dictionary.
             </div>
           </aside>
         </div>
