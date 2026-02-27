@@ -1,13 +1,12 @@
 ﻿// FILE: C:\MotoCODEX\app\api\ingest\run\route.ts
 // Replace the ENTIRE file with this.
 //
-// Adds:
-// - thumbnail_url extraction (YouTube + generic RSS where present)
-// - writes news_items.thumbnail_url
-// - per-feed chosen_url reporting
-//
-// IMPORTANT:
-// - You MUST have applied the DB migration adding thumbnail_url first.
+// Changes:
+// - writes published_at (true publish date)
+// - stops setting created_at (DB insertion time stays valid)
+// - writes tags based on deterministic topic inference (pods become clusters again)
+// - thumbnail_url remains optional (won’t break if column missing; insert will ignore if column absent?)
+//   NOTE: If your table does NOT have thumbnail_url, remove it from row below or add the column.
 
 import { NextResponse } from "next/server";
 import RSSParser from "rss-parser";
@@ -70,38 +69,35 @@ function pickTitle(item: any): string | null {
   return (typeof item?.title === "string" && item.title.trim()) ? item.title.trim() : null;
 }
 
-function safeIsoDate(item: any): string | null {
-  const raw =
-    item?.isoDate ||
-    item?.pubDate ||
-    item?.published ||
-    item?.date ||
-    null;
-
+function safeIsoDate(raw: any): string | null {
   if (!raw) return null;
-
   const d = new Date(raw);
   if (Number.isNaN(d.getTime())) return null;
   return d.toISOString();
 }
 
+function pickPublishedAt(item: any): string | null {
+  // rss-parser commonly gives isoDate; otherwise pubDate
+  return (
+    safeIsoDate(item?.isoDate) ||
+    safeIsoDate(item?.pubDate) ||
+    safeIsoDate(item?.published) ||
+    safeIsoDate(item?.date) ||
+    null
+  );
+}
+
 function pickThumbnail(item: any): string | null {
-  // YouTube RSS commonly exposes:
-  // - media:group -> media:thumbnail
-  // rss-parser often maps media:thumbnail as item["media:thumbnail"] or item.media?.thumbnail
   try {
-    // 1) rss-parser common shape
     const mt = item?.["media:thumbnail"];
     if (mt && typeof mt?.url === "string" && mt.url) return mt.url;
     if (Array.isArray(mt) && mt[0]?.url) return mt[0].url;
 
-    // 2) media:group (sometimes)
     const mg = item?.["media:group"] || item?.media?.group;
     const thumb = mg?.["media:thumbnail"] || mg?.thumbnail;
     if (thumb && typeof thumb?.url === "string" && thumb.url) return thumb.url;
     if (Array.isArray(thumb) && thumb[0]?.url) return thumb[0].url;
 
-    // 3) enclosure (podcasts etc)
     const enc = item?.enclosure;
     if (enc && typeof enc?.url === "string" && enc.url) return enc.url;
 
@@ -109,6 +105,59 @@ function pickThumbnail(item: any): string | null {
   } catch {
     return null;
   }
+}
+
+// ---- Topic inference (deterministic, fast, expandable)
+function norm(s: string) {
+  return s.toLowerCase();
+}
+
+const RIDER_TAGS: Array<{ tag: string; re: RegExp }> = [
+  { tag: "webb", re: /\bcooper\s+webb\b|\bwebb\b/i },
+  { tag: "sexton", re: /\bchase\s+sexton\b|\bsexton\b/i },
+  { tag: "tomac", re: /\bel(i|l)?\s+tomac\b|\btomac\b/i },
+  { tag: "jett", re: /\bjett\s+lawrence\b|\bjett\b/i },
+  { tag: "hunter", re: /\bhunter\s+lawrence\b/i },
+  { tag: "roczen", re: /\bken\s+roczen\b|\broczen\b/i },
+  { tag: "anderson", re: /\bjason\s+anderson\b|\banderson\b/i },
+  { tag: "stewart", re: /\bmalcolm\s+stewart\b|\bstewart\b/i },
+  { tag: "plinger", re: /\bpl(i|l)nger\b/i },
+  { tag: "hampshire", re: /\brj\s+hampshire\b|\bhampshire\b/i },
+  { tag: "deegan", re: /\bhaiden\s+deegan\b|\bdeegan\b/i },
+];
+
+const TEAM_TAGS: Array<{ tag: string; re: RegExp }> = [
+  { tag: "honda", re: /\bhonda\b|\bcrf\b/i },
+  { tag: "yamaha", re: /\byamaha\b|\byzf\b/i },
+  { tag: "kawasaki", re: /\bkawasaki\b|\bkx\b/i },
+  { tag: "ktm", re: /\bktm\b/i },
+  { tag: "husqvarna", re: /\bhusqvarna\b|\bhusky\b/i },
+  { tag: "gasgas", re: /\bgasgas\b/i },
+  { tag: "clubmx", re: /\bclub\s*mx\b|\bclubmx\b/i },
+  { tag: "star", re: /\bstar\s+racing\b|\bmonster\s+energy\s+star\b/i },
+];
+
+const TOPIC_TAGS: Array<{ tag: string; re: RegExp }> = [
+  { tag: "injuries", re: /\binjur(y|ies)\b|\bout\b|\bwill miss\b|\bfractur(e|ed)\b|\bbroken\b|\bacl\b|\bconcussion\b/i },
+  { tag: "breaking", re: /\bbreaking\b|\bconfirmed\b|\bofficial\b|\bannounced\b/i },
+  { tag: "sillyseason", re: /\bsigned\b|\bdeal\b|\bcontract\b|\bjoins\b|\bteam\b|\btransfer\b/i },
+  { tag: "results", re: /\bresults\b|\bqualifying\b|\bmain event\b|\bheats?\b|\blap times?\b/i },
+  { tag: "pressday", re: /\bpress day\b|\bmedia day\b/i },
+  { tag: "bike-tech", re: /\bsetup\b|\bsuspension\b|\bfork\b|\bshock\b|\bengine\b|\bprototype\b|\btest\b/i },
+];
+
+function inferTags(title: string): string[] {
+  const t = norm(title);
+  const out = new Set<string>();
+
+  for (const x of RIDER_TAGS) if (x.re.test(t)) out.add(x.tag);
+  for (const x of TEAM_TAGS) if (x.re.test(t)) out.add(x.tag);
+  for (const x of TOPIC_TAGS) if (x.re.test(t)) out.add(x.tag);
+
+  // If we have "injuries" we also treat it as "breaking" when very fresh wording appears
+  if (out.has("injuries") && /\bout\b|\bmiss\b|\bwill miss\b|\bconfirmed\b/i.test(t)) out.add("breaking");
+
+  return Array.from(out);
 }
 
 async function parseFirstWorkingFeed(
@@ -184,7 +233,6 @@ export async function GET(req: Request) {
       b.fetched = true;
       b.parsedCount = items.length;
 
-      // Limit per feed to prevent one source dominating
       const slice = items.slice(0, 40);
 
       for (const it of slice) {
@@ -197,6 +245,8 @@ export async function GET(req: Request) {
 
         b.attempted += 1;
 
+        const published_at = pickPublishedAt(it);
+        const tags = inferTags(title);
         const thumb = pickThumbnail(it);
 
         const row: any = {
@@ -204,10 +254,11 @@ export async function GET(req: Request) {
           source_name: feed.name,
           title,
           url,
-          tags: null,
           importance: baseImportanceForTier(feed.tier),
+          published_at: published_at ?? null,
+          tags: tags.length ? tags : null,
+          // If your DB does NOT have thumbnail_url yet, remove the next line OR add the column.
           thumbnail_url: thumb ?? null,
-          created_at: safeIsoDate(it) ?? undefined,
         };
 
         const { error } = await supabase.from("news_items").insert(row);
@@ -219,11 +270,8 @@ export async function GET(req: Request) {
             msg.toLowerCase().includes("unique") ||
             msg.toLowerCase().includes("violates");
 
-          if (isDupe) {
-            b.dupesOrSkipped += 1;
-          } else {
-            b.errors.push(msg);
-          }
+          if (isDupe) b.dupesOrSkipped += 1;
+          else b.errors.push(msg);
         } else {
           b.inserted += 1;
         }

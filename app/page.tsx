@@ -1,15 +1,15 @@
 // FILE: C:\MotoCODEX\app\page.tsx
 // Replace the ENTIRE file with this.
 //
-// Change vs current:
-// - Does NOT hard-require thumbnail_url in the initial select.
-// - Attempts a second query including thumbnail_url if the first query succeeds.
-// - If thumbnail_url doesn't exist, it silently falls back (no site-wide blackout).
+// Implements:
+// - Middle column uses published_at newest->oldest (truth)
+// - Mobile single feed (Instagram-style) with toggle view=newest|ranked
+// - Pods are topic clusters from tags (fallback: infer from hostname ONLY if tags missing)
+// - Search applies across both lists
 //
-// Keeps:
-// - pods fallback
-// - safe sorting
-// - error banner when things genuinely break
+// URL params:
+// - q=keyword
+// - view=newest|ranked  (mobile toggle; desktop still shows both)
 
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
@@ -17,7 +17,7 @@ import { createClient } from "@supabase/supabase-js";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-type NewsItemBase = {
+type NewsItem = {
   id: string;
   title: string;
   url: string;
@@ -25,21 +25,15 @@ type NewsItemBase = {
   source_name: string | null;
   tags: string[] | null;
   importance: number | null;
+  thumbnail_url?: string | null;
+  published_at: string | null;
   created_at: string | null;
-};
-
-type NewsItem = NewsItemBase & {
-  thumbnail_url?: string | null; // optional on purpose
 };
 
 function supabasePublic() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!url || !anon) {
-    throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY in environment.");
-  }
-
+  if (!url || !anon) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY.");
   return createClient(url, anon, { auth: { persistSession: false } });
 }
 
@@ -65,7 +59,7 @@ function normalizePod(s: string): string {
     .replace(/^-|-$/g, "");
 }
 
-function derivePods(item: NewsItem): string[] {
+function derivePodsFromTagsFirst(item: NewsItem): string[] {
   const tags = (item.tags ?? [])
     .filter(Boolean)
     .map((t) => normalizePod(String(t)))
@@ -73,13 +67,11 @@ function derivePods(item: NewsItem): string[] {
 
   if (tags.length) return tags;
 
+  // LAST resort fallback (only if tags missing)
   const host = safeHostname(item.url);
   if (host) return [normalizePod(host)];
 
-  if (item.source_name && item.source_name.trim().length) {
-    return [normalizePod(item.source_name)];
-  }
-
+  if (item.source_name && item.source_name.trim().length) return [normalizePod(item.source_name)];
   return [normalizePod(item.source_key)];
 }
 
@@ -90,90 +82,73 @@ function isProbablyYouTube(url: string) {
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { q?: string; sort?: "newest" | "ranked" };
+  searchParams: { q?: string; view?: "newest" | "ranked" };
 }) {
   const q = (searchParams?.q ?? "").trim();
-  const sort = (searchParams?.sort ?? "ranked") as "newest" | "ranked";
+  const view = (searchParams?.view ?? "newest") as "newest" | "ranked";
 
-  let items: NewsItem[] = [];
+  let newestItems: NewsItem[] = [];
+  let rankedItems: NewsItem[] = [];
   let pageError: string | null = null;
 
   try {
     const supabase = supabasePublic();
 
-    // --- Base query (schema-safe)
-    let baseQuery = supabase
-      .from("news_items")
-      .select("id,title,url,source_key,source_name,tags,importance,created_at")
-      .limit(240);
+    const selectCols =
+      "id,title,url,source_key,source_name,tags,importance,thumbnail_url,published_at,created_at";
 
-    if (q.length) {
-      baseQuery = baseQuery.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
+    // --- NEWEST (published_at desc, fallback created_at)
+    let newestQ = supabase.from("news_items").select(selectCols).limit(240);
+
+    if (q.length) newestQ = newestQ.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
+
+    newestQ = newestQ.order("published_at", { ascending: false, nullsFirst: false });
+    newestQ = newestQ.order("created_at", { ascending: false, nullsFirst: false });
+
+    const newestRes = await newestQ;
+    if (newestRes.error) {
+      pageError = `Supabase query error (newest): ${newestRes.error.message}`;
+    } else {
+      newestItems = (newestRes.data ?? []) as any;
     }
 
-    if (sort === "newest") {
-      baseQuery = baseQuery.order("created_at", { ascending: false, nullsFirst: false });
+    // --- RANKED (importance desc, tie-break by published_at desc)
+    let rankedQ = supabase.from("news_items").select(selectCols).limit(240);
+
+    if (q.length) rankedQ = rankedQ.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
+
+    rankedQ = rankedQ.order("importance", { ascending: false, nullsFirst: false });
+    rankedQ = rankedQ.order("published_at", { ascending: false, nullsFirst: false });
+    rankedQ = rankedQ.order("created_at", { ascending: false, nullsFirst: false });
+
+    const rankedRes = await rankedQ;
+    if (rankedRes.error) {
+      pageError = pageError ?? `Supabase query error (ranked): ${rankedRes.error.message}`;
     } else {
-      baseQuery = baseQuery.order("importance", { ascending: false, nullsFirst: false });
-      baseQuery = baseQuery.order("created_at", { ascending: false, nullsFirst: false });
-    }
-
-    const baseRes = await baseQuery;
-
-    if (baseRes.error) {
-      pageError = `Supabase query error: ${baseRes.error.message}`;
-    } else {
-      items = (baseRes.data ?? []) as any;
-
-      // --- Try to enrich with thumbnail_url (optional)
-      // If the column doesn't exist, we ignore and keep base items.
-      try {
-        let thumbQuery = supabase
-          .from("news_items")
-          .select("id,thumbnail_url")
-          .limit(240);
-
-        if (q.length) {
-          thumbQuery = thumbQuery.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
-        }
-
-        if (sort === "newest") {
-          thumbQuery = thumbQuery.order("created_at", { ascending: false, nullsFirst: false });
-        } else {
-          thumbQuery = thumbQuery.order("importance", { ascending: false, nullsFirst: false });
-          thumbQuery = thumbQuery.order("created_at", { ascending: false, nullsFirst: false });
-        }
-
-        const thumbRes = await thumbQuery;
-
-        if (!thumbRes.error && Array.isArray(thumbRes.data)) {
-          const map = new Map<string, string | null>();
-          for (const r of thumbRes.data as any[]) {
-            if (r?.id) map.set(String(r.id), r.thumbnail_url ?? null);
-          }
-          items = items.map((it) => ({ ...it, thumbnail_url: map.get(it.id) ?? null }));
-        }
-      } catch {
-        // ignore optional thumbnail enrichment failure
-      }
+      rankedItems = (rankedRes.data ?? []) as any;
     }
   } catch (e: any) {
     pageError = e?.message ? String(e.message) : "Unknown server error.";
   }
 
+  // Pods: build counts from BOTH lists (more coverage)
   const podCounts = new Map<string, number>();
-  for (const it of items) {
-    for (const pod of derivePods(it)) {
+  for (const it of [...newestItems, ...rankedItems]) {
+    for (const pod of derivePodsFromTagsFirst(it)) {
       if (!pod) continue;
       podCounts.set(pod, (podCounts.get(pod) ?? 0) + 1);
     }
   }
-  const podsSorted = Array.from(podCounts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 40);
+  const podsSorted = Array.from(podCounts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 50);
 
-  const toggleHref = (nextSort: "newest" | "ranked") => {
+  const hrefWith = (patch: Record<string, string | undefined>) => {
     const params = new URLSearchParams();
     if (q.length) params.set("q", q);
-    params.set("sort", nextSort);
+    params.set("view", view);
+    for (const [k, v] of Object.entries(patch)) {
+      if (v === undefined) params.delete(k);
+      else params.set(k, v);
+    }
     return `/?${params.toString()}`;
   };
 
@@ -182,9 +157,9 @@ export default async function Page({
     return (
       <div
         style={{
-          width: 72,
-          height: 48,
-          borderRadius: 10,
+          width: 84,
+          height: 56,
+          borderRadius: 12,
           overflow: "hidden",
           flex: "0 0 auto",
           border: "1px solid rgba(255,255,255,0.10)",
@@ -204,8 +179,49 @@ export default async function Page({
     );
   };
 
+  const renderCard = (it: NewsItem, keyPrefix: string) => (
+    <a
+      key={`${keyPrefix}-${it.id}`}
+      href={it.url}
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        display: "flex",
+        gap: 12,
+        alignItems: "center",
+        padding: "12px 12px",
+        borderRadius: 14,
+        textDecoration: "none",
+        color: "#eaeaea",
+        border: "1px solid rgba(255,255,255,0.06)",
+        background: "rgba(0,0,0,0.22)",
+        marginBottom: 10,
+      }}
+    >
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontWeight: 900, lineHeight: 1.2 }}>{it.title}</div>
+        <div style={{ marginTop: 7, fontSize: 12, opacity: 0.78, display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
+          <span>•</span>
+          <span>{safeHostname(it.url) ?? "link"}</span>
+          {it.tags?.length ? (
+            <>
+              <span>•</span>
+              <span>{it.tags.slice(0, 4).join(", ")}</span>
+            </>
+          ) : null}
+        </div>
+      </div>
+      <CardThumb it={it} />
+    </a>
+  );
+
+  // Mobile feed list selection
+  const mobileItems = view === "ranked" ? rankedItems : newestItems;
+
   return (
     <main style={{ minHeight: "100vh", background: "#0b0b0d", color: "#eaeaea" }}>
+      {/* TOP BAR */}
       <div
         style={{
           position: "sticky",
@@ -218,51 +234,52 @@ export default async function Page({
       >
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px 14px" }}>
           <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-            <div style={{ fontWeight: 800, letterSpacing: 0.5 }}>
-              MotoCODEX <span style={{ opacity: 0.6, fontWeight: 600 }}>Phase 2</span>
+            <div style={{ fontWeight: 900, letterSpacing: 0.5 }}>
+              MotoCODEX <span style={{ opacity: 0.6, fontWeight: 700 }}>Phase 2</span>
             </div>
 
+            {/* Mobile toggle (also visible desktop but only *matters* on mobile feed) */}
             <div style={{ display: "flex", gap: 8, marginLeft: "auto", flexWrap: "wrap" }}>
               <Link
-                href={toggleHref("newest")}
+                href={hrefWith({ view: "newest" })}
                 style={{
                   padding: "8px 10px",
                   borderRadius: 10,
                   textDecoration: "none",
                   border: "1px solid rgba(255,255,255,0.10)",
-                  background: sort === "newest" ? "rgba(255,0,60,0.20)" : "transparent",
+                  background: view === "newest" ? "rgba(255,0,60,0.20)" : "transparent",
                   color: "#eaeaea",
                   fontSize: 13,
-                  fontWeight: 700,
+                  fontWeight: 800,
                 }}
               >
-                Newest
+                Mobile: Newest
               </Link>
               <Link
-                href={toggleHref("ranked")}
+                href={hrefWith({ view: "ranked" })}
                 style={{
                   padding: "8px 10px",
                   borderRadius: 10,
                   textDecoration: "none",
                   border: "1px solid rgba(255,255,255,0.10)",
-                  background: sort === "ranked" ? "rgba(255,0,60,0.20)" : "transparent",
+                  background: view === "ranked" ? "rgba(255,0,60,0.20)" : "transparent",
                   color: "#eaeaea",
                   fontSize: 13,
-                  fontWeight: 700,
+                  fontWeight: 800,
                 }}
               >
-                Ranked
+                Mobile: Ranked
               </Link>
             </div>
           </div>
 
           <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap" }}>
             <form action="/" style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-              <input type="hidden" name="sort" value={sort} />
+              <input type="hidden" name="view" value={view} />
               <input
                 name="q"
                 defaultValue={q}
-                placeholder="Search (q=) …"
+                placeholder="Search … (q=)"
                 style={{
                   width: 360,
                   maxWidth: "90vw",
@@ -283,7 +300,7 @@ export default async function Page({
                   border: "1px solid rgba(255,255,255,0.10)",
                   background: "rgba(255,0,60,0.18)",
                   color: "#eaeaea",
-                  fontWeight: 800,
+                  fontWeight: 900,
                   cursor: "pointer",
                 }}
               >
@@ -292,7 +309,7 @@ export default async function Page({
 
               {q.length ? (
                 <Link
-                  href={`/?sort=${sort}`}
+                  href={hrefWith({ q: undefined })}
                   style={{
                     padding: "10px 12px",
                     borderRadius: 12,
@@ -300,7 +317,7 @@ export default async function Page({
                     background: "transparent",
                     color: "#eaeaea",
                     textDecoration: "none",
-                    fontWeight: 700,
+                    fontWeight: 800,
                   }}
                 >
                   Clear
@@ -309,13 +326,13 @@ export default async function Page({
             </form>
 
             <div style={{ opacity: 0.75, fontSize: 13, paddingTop: 10 }}>
-              Showing <b>{items.length}</b> items{q.length ? (
+              Newest: <b>{newestItems.length}</b> • Ranked: <b>{rankedItems.length}</b>
+              {q.length ? (
                 <>
                   {" "}
-                  for <b>{q}</b>
+                  • query <b>{q}</b>
                 </>
               ) : null}
-              .
             </div>
           </div>
 
@@ -329,7 +346,7 @@ export default async function Page({
                 background: "rgba(255,0,60,0.12)",
                 color: "#ffd6df",
                 fontSize: 13,
-                fontWeight: 700,
+                fontWeight: 800,
                 lineHeight: 1.4,
               }}
             >
@@ -340,115 +357,60 @@ export default async function Page({
       </div>
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.35fr 0.75fr", gap: 14 }}>
-          {/* LEFT */}
+        {/* MOBILE SINGLE FEED */}
+        <section
+          className="mobileOnly"
+          style={{
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: 14,
+            overflow: "hidden",
+            background: "rgba(255,255,255,0.03)",
+            marginBottom: 14,
+          }}
+        >
+          <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            <div style={{ fontWeight: 900 }}>
+              Mobile Feed • {view === "ranked" ? "Ranked (desktop left)" : "Newest (desktop center)"}
+            </div>
+            <div style={{ opacity: 0.65, fontSize: 12 }}>Single scroll. Tap to open source.</div>
+          </div>
+          <div style={{ padding: 8 }}>
+            {mobileItems.slice(0, 160).map((it) => renderCard(it, "MB"))}
+          </div>
+        </section>
+
+        {/* DESKTOP 3 COLUMN */}
+        <div
+          className="desktopOnly"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1.35fr 0.75fr", gap: 14 }}
+        >
+          {/* LEFT: Ranked */}
           <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Inside Rut</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Stream view ({sort === "newest" ? "Newest" : "Ranked"})</div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Ranked list (importance → published_at)</div>
             </div>
-
             <div style={{ padding: 8 }}>
-              {items.length === 0 ? (
-                <div style={{ padding: 10, opacity: 0.7, fontSize: 13 }}>
-                  No items returned. If you see an error above, it’s schema/env/RLS.
-                </div>
-              ) : (
-                items.slice(0, 70).map((it) => (
-                  <a
-                    key={`L-${it.id}`}
-                    href={it.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      display: "flex",
-                      gap: 10,
-                      alignItems: "center",
-                      padding: "10px 10px",
-                      borderRadius: 12,
-                      textDecoration: "none",
-                      color: "#eaeaea",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      background: "rgba(0,0,0,0.18)",
-                      marginBottom: 8,
-                    }}
-                  >
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontWeight: 800, lineHeight: 1.2 }}>{it.title}</div>
-                      <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                        <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
-                        <span>•</span>
-                        <span>{safeHostname(it.url) ?? "link"}</span>
-                      </div>
-                    </div>
-                    <CardThumb it={it} />
-                  </a>
-                ))
-              )}
+              {rankedItems.slice(0, 70).map((it) => renderCard(it, "L"))}
             </div>
           </section>
 
-          {/* MIDDLE */}
+          {/* CENTER: Newest by published_at */}
           <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Main Line</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Prioritized view (importance → created_at)</div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Newest by published date (published_at → created_at)</div>
             </div>
-
             <div style={{ padding: 8 }}>
-              {items.slice(0, 110).map((it) => (
-                <a
-                  key={`M-${it.id}`}
-                  href={it.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "flex",
-                    gap: 12,
-                    alignItems: "center",
-                    padding: "12px 12px",
-                    borderRadius: 14,
-                    textDecoration: "none",
-                    color: "#eaeaea",
-                    border: "1px solid rgba(255,255,255,0.06)",
-                    background: "rgba(0,0,0,0.22)",
-                    marginBottom: 10,
-                  }}
-                >
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-                      <div style={{ fontWeight: 900, lineHeight: 1.2, flex: 1 }}>{it.title}</div>
-                      {typeof it.importance === "number" ? (
-                        <div style={{ fontWeight: 900, fontSize: 12, padding: "4px 8px", borderRadius: 999, border: "1px solid rgba(255,0,60,0.35)", background: "rgba(255,0,60,0.16)", color: "#ffd6df", whiteSpace: "nowrap" }}>
-                          {it.importance.toFixed(2)}
-                        </div>
-                      ) : null}
-                    </div>
-
-                    <div style={{ marginTop: 7, fontSize: 12, opacity: 0.75, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                      <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
-                      <span>•</span>
-                      <span>{safeHostname(it.url) ?? "link"}</span>
-                      {it.tags?.length ? (
-                        <>
-                          <span>•</span>
-                          <span>{it.tags.slice(0, 3).join(", ")}</span>
-                        </>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <CardThumb it={it} />
-                </a>
-              ))}
+              {newestItems.slice(0, 110).map((it) => renderCard(it, "M"))}
             </div>
           </section>
 
-          {/* RIGHT */}
+          {/* RIGHT: Pods as topic clusters */}
           <aside style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Outside Berm</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Pods (tags → hostname/source)</div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Topic Pods (tags-driven)</div>
             </div>
 
             <div style={{ padding: 10, display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -458,7 +420,7 @@ export default async function Page({
                 podsSorted.map(([pod, count]) => (
                   <Link
                     key={`P-${pod}`}
-                    href={`/?q=${encodeURIComponent(pod)}&sort=${sort}`}
+                    href={hrefWith({ q: pod })}
                     style={{
                       display: "inline-flex",
                       gap: 6,
@@ -470,7 +432,7 @@ export default async function Page({
                       color: "#eaeaea",
                       textDecoration: "none",
                       fontSize: 13,
-                      fontWeight: 800,
+                      fontWeight: 900,
                     }}
                     title={`Filter by: ${pod}`}
                   >
@@ -482,16 +444,18 @@ export default async function Page({
             </div>
 
             <div style={{ padding: "0 12px 12px 12px", opacity: 0.65, fontSize: 12, lineHeight: 1.35 }}>
-              Thumbnails appear when available. If your DB column isn’t present yet, the site still runs.
+              Pods are now topics again (injuries, rider names, teams, etc.). We’ll expand the dictionary continuously.
             </div>
           </aside>
         </div>
 
         <style>{`
+          .mobileOnly { display: none; }
+          .desktopOnly { display: block; }
+
           @media (max-width: 980px) {
-            main > div > div {
-              grid-template-columns: 1fr !important;
-            }
+            .mobileOnly { display: block; }
+            .desktopOnly { display: none; }
           }
         `}</style>
       </div>
