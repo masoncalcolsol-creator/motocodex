@@ -1,8 +1,9 @@
 // FILE: app/page.tsx
-// Replace the ENTIRE file with this.
-// MotoCODEX vNext: Left = LATEST (published_at), Center = RANKED (importance w/ recency decay), Right = PODS
-// URL params: ?q=keyword  (search)   ?sort=ranked|newest  (optional; default newest)
 
+// Replace the ENTIRE file with this.
+// MotoCODEX vNext (restored UI): Dark Drudge-style, 3 columns, real buttons, strong contrast.
+// URL params: ?q=keyword   ?sort=newest|ranked   (default newest)
+<div className="mcx-brand">MotoCODEX // DARK_UI_TEST_001</div>
 import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
@@ -29,7 +30,6 @@ function supabasePublic() {
   return createClient(url, key, {
     auth: { persistSession: false },
     global: {
-      // Hard kill caching in fetch path
       fetch: (input, init) => fetch(input, { ...init, cache: "no-store" }),
     },
   });
@@ -55,7 +55,6 @@ function hoursSince(iso: string | null) {
 }
 
 function recencyBoost(publishedOrCreated: string | null) {
-  // Simple, smooth decay. Newer = bigger boost.
   // 0h -> 1.0, 12h -> ~0.5, 24h -> ~0.33, 72h -> ~0.14, 168h -> ~0.06
   const h = hoursSince(publishedOrCreated);
   if (h === null) return 0.15;
@@ -67,16 +66,11 @@ function rankedScore(item: NewsItem) {
   const cred = clamp(Number(item.credibility ?? 50), 0, 100);
   const mom = clamp(Number(item.momentum ?? 50), 0, 100);
 
-  // Weighted blend that still respects your existing importance values.
-  const blended =
-    base * 0.65 +
-    cred * 0.20 +
-    mom * 0.15;
+  const blended = base * 0.65 + cred * 0.20 + mom * 0.15;
 
   const when = item.published_at ?? item.created_at ?? null;
   const rec = recencyBoost(when);
 
-  // Multiply by recency to keep the center column “alive”.
   return blended * (0.55 + 0.45 * rec);
 }
 
@@ -85,6 +79,7 @@ function getLensFromTag(tag: string) {
   if (t.includes("450")) return "450";
   if (t.includes("250")) return "250";
   if (t.includes("sx")) return "SX";
+  if (t.includes("supercross")) return "SX";
   if (t.includes("mxgp")) return "MXGP";
   if (t.includes("motogp")) return "MotoGP";
   if (t.includes("ama")) return "AMA";
@@ -94,7 +89,6 @@ function getLensFromTag(tag: string) {
 function chipLabel(item: NewsItem) {
   const tags = item.tags || [];
   if (tags.length === 0) return item.source_name || item.source_key;
-  // Prefer a “class/lens” looking tag if present
   const preferred =
     tags.find((t) => /450|250|sx|supercross|mxgp|motogp|ama/i.test(t)) || tags[0];
   return getLensFromTag(preferred);
@@ -104,7 +98,6 @@ function fmtTime(iso: string | null) {
   if (!iso) return "";
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) return "";
-  // Local-ish compact
   return d.toLocaleString(undefined, {
     month: "2-digit",
     day: "2-digit",
@@ -123,11 +116,17 @@ function buildPods(items: NewsItem[]) {
     }
   }
 
-  const arr = Array.from(counts.entries())
+  return Array.from(counts.entries())
     .map(([k, v]) => ({ k, v }))
     .sort((a, b) => b.v - a.v || a.k.localeCompare(b.k));
+}
 
-  return arr;
+function hrefWith(base: string, q: string | null, sortMode: "newest" | "ranked") {
+  const params = new URLSearchParams();
+  if (q) params.set("q", q);
+  params.set("sort", sortMode);
+  const qs = params.toString();
+  return qs ? `${base}?${qs}` : base;
 }
 
 export default async function Page({
@@ -141,9 +140,8 @@ export default async function Page({
   const q = qRaw.length > 0 ? qRaw : null;
 
   const sort = (searchParams?.sort || "").toLowerCase();
-  const sortMode = sort === "ranked" ? "ranked" : "newest";
+  const sortMode: "newest" | "ranked" = sort === "ranked" ? "ranked" : "newest";
 
-  // Pull a bigger slice so ranked + pods have enough data to work with
   let query = supabase
     .from("news_items")
     .select(
@@ -151,8 +149,6 @@ export default async function Page({
     )
     .limit(500);
 
-  // Basic keyword filter (title OR url OR source_name). Simple, fast, good enough.
-  // NOTE: `ilike` is case-insensitive.
   if (q) {
     const like = `%${q.replace(/%/g, "\\%").replace(/_/g, "\\_")}%`;
     query = query.or(
@@ -160,7 +156,7 @@ export default async function Page({
     );
   }
 
-  // Always fetch newest-ish first so the slice contains recent items
+  // Pull newest-ish first so our 500 slice contains the freshest items
   query = query
     .order("published_at", { ascending: false, nullsFirst: false })
     .order("created_at", { ascending: false });
@@ -169,101 +165,66 @@ export default async function Page({
 
   if (error) {
     return (
-      <main style={{ padding: 16, fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial" }}>
-        <h1 style={{ margin: 0 }}>MotoCODEX</h1>
-        <p style={{ opacity: 0.7 }}>DB error</p>
-        <pre style={{ whiteSpace: "pre-wrap" }}>{JSON.stringify(error, null, 2)}</pre>
+      <main className="mcx-shell">
+        <div className="mcx-topbar">
+          <div className="mcx-brand">MotoCODEX</div>
+        </div>
+        <div className="mcx-error">
+          <div className="mcx-errorTitle">DB error</div>
+          <pre className="mcx-pre">{JSON.stringify(error, null, 2)}</pre>
+        </div>
+
+        <style>{GLOBAL_CSS}</style>
       </main>
     );
   }
 
   const items = (data || []) as NewsItem[];
 
-  // LATEST rail (true time-based)
   const latest = [...items].sort((a, b) => {
     const ta = Date.parse(a.published_at || a.created_at || "") || 0;
     const tb = Date.parse(b.published_at || b.created_at || "") || 0;
     return tb - ta;
   });
 
-  // RANKED rail (importance + recency)
   const ranked = [...items].sort((a, b) => rankedScore(b) - rankedScore(a));
-
-  // Center column selection can be either ranked or newest based on sortMode
   const center = sortMode === "ranked" ? ranked : latest;
 
   const pods = buildPods(items);
 
-  const baseUrl = q ? `/?q=${encodeURIComponent(q)}` : `/`;
-  const newestHref = q ? `/?q=${encodeURIComponent(q)}&sort=newest` : `/?sort=newest`;
-  const rankedHref = q ? `/?q=${encodeURIComponent(q)}&sort=ranked` : `/?sort=ranked`;
+  const homeHref = "/";
+  const newestHref = hrefWith("/", q, "newest");
+  const rankedHref = hrefWith("/", q, "ranked");
+  const clearHref = "/";
 
   return (
-    <main style={{ padding: 16, fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, Arial" }}>
+    <main className="mcx-shell">
       {/* TOP BAR */}
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          padding: "12px 10px",
-          margin: "-16px -16px 12px -16px",
-          background: "#0b0b0b",
-          borderBottom: "1px solid rgba(255,255,255,0.10)",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: 12, justifyContent: "space-between" }}>
-          <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-            <div style={{ fontWeight: 800, letterSpacing: 0.5, color: "#fff" }}>MotoCODEX</div>
-            <div style={{ opacity: 0.7, color: "#fff", fontSize: 12 }}>
+      <div className="mcx-topbar">
+        <div className="mcx-topbarRow">
+          <div className="mcx-brandWrap">
+            <div className="mcx-brand">MotoCODEX</div>
+            <div className="mcx-sub">
               {items.length} items{q ? ` • search: "${q}"` : ""}
             </div>
           </div>
 
-          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-            <a
-              href={baseUrl}
-              style={{
-                color: "#fff",
-                opacity: q ? 1 : 0.7,
-                textDecoration: "none",
-                fontSize: 12,
-                padding: "6px 10px",
-                border: "1px solid rgba(255,255,255,0.12)",
-                borderRadius: 999,
-              }}
-              title="Clear search"
-            >
+          <div className="mcx-actions">
+            <a className={`mcx-pill ${q ? "on" : ""}`} href={q ? clearHref : homeHref} title="Home / clear search">
               {q ? "Clear" : "Home"}
             </a>
 
             <a
+              className={`mcx-pill ${sortMode === "newest" ? "active" : ""}`}
               href={newestHref}
-              style={{
-                color: "#fff",
-                textDecoration: "none",
-                fontSize: 12,
-                padding: "6px 10px",
-                borderRadius: 999,
-                border: "1px solid rgba(255,255,255,0.12)",
-                background: sortMode === "newest" ? "rgba(255,255,255,0.08)" : "transparent",
-              }}
               title="Center column = newest"
             >
               Newest
             </a>
 
             <a
+              className={`mcx-pill ${sortMode === "ranked" ? "active" : ""}`}
               href={rankedHref}
-              style={{
-                color: "#fff",
-                textDecoration: "none",
-                fontSize: 12,
-                padding: "6px 10px",
-                borderRadius: 999,
-                border: "1px solid rgba(255,255,255,0.12)",
-                background: sortMode === "ranked" ? "rgba(255,255,255,0.08)" : "transparent",
-              }}
               title="Center column = ranked"
             >
               Ranked
@@ -271,82 +232,41 @@ export default async function Page({
           </div>
         </div>
 
-        {/* simple search bar */}
-        <form
-          action="/"
-          method="get"
-          style={{ marginTop: 10, display: "flex", gap: 8 }}
-        >
+        {/* SEARCH */}
+        <form className="mcx-search" action="/" method="get">
           <input
+            className="mcx-input"
             name="q"
             defaultValue={q || ""}
             placeholder="Search (q=)..."
-            style={{
-              flex: 1,
-              padding: "10px 12px",
-              borderRadius: 12,
-              border: "1px solid rgba(255,255,255,0.12)",
-              background: "rgba(255,255,255,0.06)",
-              color: "#fff",
-              outline: "none",
-            }}
+            autoComplete="off"
           />
           <input type="hidden" name="sort" value={sortMode} />
-          <button
-            type="submit"
-            style={{
-              padding: "10px 14px",
-              borderRadius: 12,
-              border: "1px solid rgba(255,255,255,0.12)",
-              background: "rgba(255,0,0,0.15)",
-              color: "#fff",
-              cursor: "pointer",
-              fontWeight: 700,
-            }}
-          >
+          <button className="mcx-go" type="submit">
             Go
           </button>
         </form>
+
+        <div className="mcx-hairline" />
       </div>
 
       {/* GRID */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1.35fr 0.9fr",
-          gap: 14,
-        }}
-      >
-        {/* LEFT: LATEST */}
-        <section
-          style={{
-            border: "1px solid rgba(0,0,0,0.08)",
-            background: "#fff",
-            borderRadius: 12,
-            padding: 10,
-          }}
-        >
-          <div style={{ fontWeight: 800, marginBottom: 8 }}>Inside Rut • LATEST</div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {latest.slice(0, 70).map((it) => (
-              <a
-                key={it.id}
-                href={it.url}
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  textDecoration: "none",
-                  color: "#111",
-                  lineHeight: 1.25,
-                  borderBottom: "1px solid rgba(0,0,0,0.06)",
-                  paddingBottom: 8,
-                }}
-              >
-                <div style={{ fontWeight: it.is_breaking ? 900 : 650 }}>
+      <div className="mcx-grid">
+        {/* LEFT */}
+        <section className="mcx-card">
+          <div className="mcx-cardTitle">
+            <span className="mcx-railName">Inside Rut</span>
+            <span className="mcx-railMode">LATEST</span>
+          </div>
+
+          <div className="mcx-list">
+            {latest.slice(0, 80).map((it) => (
+              <a key={it.id} className="mcx-item" href={it.url} target="_blank" rel="noreferrer">
+                <div className={`mcx-title ${it.is_breaking ? "breaking" : ""}`}>
                   {it.is_breaking ? "🚨 " : ""}
                   {it.title}
                 </div>
-                <div style={{ fontSize: 12, opacity: 0.72, marginTop: 2 }}>
+                <div className="mcx-meta">
                   {fmtTime(it.published_at || it.created_at)} • {safeHost(it.url)} • {chipLabel(it)}
                 </div>
               </a>
@@ -354,55 +274,32 @@ export default async function Page({
           </div>
         </section>
 
-        {/* CENTER: RANKED (or NEWEST based on toggle) */}
-        <section
-          style={{
-            border: "1px solid rgba(0,0,0,0.08)",
-            background: "#fff",
-            borderRadius: 12,
-            padding: 10,
-          }}
-        >
-          <div style={{ fontWeight: 800, marginBottom: 8 }}>
-            Main Line • {sortMode === "ranked" ? "RANKED" : "NEWEST"}
+        {/* CENTER */}
+        <section className="mcx-card">
+          <div className="mcx-cardTitle">
+            <span className="mcx-railName">Main Line</span>
+            <span className="mcx-railMode">{sortMode === "ranked" ? "RANKED" : "NEWEST"}</span>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {center.slice(0, 60).map((it) => {
+          <div className="mcx-list">
+            {center.slice(0, 70).map((it) => {
               const s = rankedScore(it);
               return (
-                <a
-                  key={it.id}
-                  href={it.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    textDecoration: "none",
-                    color: "#111",
-                    lineHeight: 1.25,
-                    borderBottom: "1px solid rgba(0,0,0,0.06)",
-                    paddingBottom: 10,
-                  }}
-                >
-                  <div style={{ display: "flex", justifyContent: "space-between", gap: 10 }}>
-                    <div style={{ fontWeight: it.is_breaking ? 900 : 750 }}>
+                <a key={it.id} className="mcx-item" href={it.url} target="_blank" rel="noreferrer">
+                  <div className="mcx-row">
+                    <div className={`mcx-title center ${it.is_breaking ? "breaking" : ""}`}>
                       {it.is_breaking ? "🚨 " : ""}
                       {it.title}
                     </div>
-                    <div
-                      style={{
-                        fontSize: 12,
-                        opacity: 0.75,
-                        whiteSpace: "nowrap",
-                        fontWeight: 700,
-                      }}
-                      title="Rank score (importance + credibility + momentum + recency)"
-                    >
-                      {sortMode === "ranked" ? s.toFixed(1) : ""}
-                    </div>
+
+                    {sortMode === "ranked" ? (
+                      <div className="mcx-score" title="Rank score (importance + credibility + momentum + recency)">
+                        {s.toFixed(1)}
+                      </div>
+                    ) : null}
                   </div>
 
-                  <div style={{ fontSize: 12, opacity: 0.72, marginTop: 4 }}>
+                  <div className="mcx-meta">
                     {fmtTime(it.published_at || it.created_at)} • {safeHost(it.url)} •{" "}
                     {it.source_name || it.source_key}
                     {it.importance != null ? ` • imp:${it.importance}` : ""}
@@ -413,68 +310,334 @@ export default async function Page({
           </div>
         </section>
 
-        {/* RIGHT: PODS */}
-        <aside
-          style={{
-            border: "1px solid rgba(0,0,0,0.08)",
-            background: "#fff",
-            borderRadius: 12,
-            padding: 10,
-          }}
-        >
-          <div style={{ fontWeight: 800, marginBottom: 8 }}>Outside Berm • PODS</div>
+        {/* RIGHT */}
+        <aside className="mcx-card">
+          <div className="mcx-cardTitle">
+            <span className="mcx-railName">Outside Berm</span>
+            <span className="mcx-railMode">PODS</span>
+          </div>
 
           {pods.length === 0 ? (
-            <div style={{ opacity: 0.7, fontSize: 13 }}>No tags found yet.</div>
+            <div className="mcx-empty">
+              <div>No tags found yet.</div>
+              <div className="mcx-emptySub">That’s fine — tags show up once your ingest starts tagging.</div>
+            </div>
           ) : (
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {pods.slice(0, 50).map((p) => (
-                <span
-                  key={p.k}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 8,
-                    padding: "7px 10px",
-                    borderRadius: 999,
-                    border: "1px solid rgba(0,0,0,0.10)",
-                    background: "rgba(0,0,0,0.02)",
-                    fontSize: 12,
-                    fontWeight: 700,
-                  }}
-                  title={`Tag: ${p.k}`}
-                >
-                  {p.k}
-                  <span
-                    style={{
-                      fontWeight: 800,
-                      opacity: 0.75,
-                    }}
-                  >
-                    {p.v}
-                  </span>
+            <div className="mcx-pods">
+              {pods.slice(0, 60).map((p) => (
+                <span key={p.k} className="mcx-pod" title={`Tag: ${p.k}`}>
+                  <span className="mcx-podName">{p.k}</span>
+                  <span className="mcx-podCount">{p.v}</span>
                 </span>
               ))}
             </div>
           )}
 
-          <div style={{ marginTop: 12, fontSize: 12, opacity: 0.65, lineHeight: 1.35 }}>
-            Tip: use <b>?q=</b> to filter. Example:{" "}
-            <a href="/?q=deegan&sort=ranked" style={{ color: "#111" }}>
-              q=deegan
-            </a>
+          <div className="mcx-tip">
+            Tip: use <b>?q=</b> to filter •{" "}
+            <a href="/?q=deegan&sort=ranked">q=deegan</a>
           </div>
         </aside>
       </div>
 
-      {/* MOBILE: stack columns */}
-      <style>{`
-        @media (max-width: 1020px) {
-          main > div[style*="gridTemplateColumns"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+      <style>{GLOBAL_CSS}</style>
     </main>
   );
 }
+
+const GLOBAL_CSS = `
+  :root{
+    --bg:#070707;
+    --panel:#0d0d0d;
+    --panel2:#0f0f0f;
+    --text:#f2f2f2;
+    --muted:rgba(255,255,255,.68);
+    --hair:rgba(255,255,255,.10);
+    --hair2:rgba(255,255,255,.14);
+    --accent:rgba(255,0,0,.55);
+    --accent2:rgba(255,0,0,.22);
+    --whitecard:#0e0e0e;
+  }
+
+  html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); }
+  *{ box-sizing:border-box; }
+  a{ color:inherit; }
+
+  .mcx-shell{
+    padding:14px;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  }
+
+  .mcx-topbar{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: -14px -14px 12px -14px;
+    padding: 12px 14px 10px 14px;
+    background: linear-gradient(180deg, rgba(15,15,15,0.98), rgba(10,10,10,0.98));
+    border-bottom: 1px solid var(--hair);
+    backdrop-filter: blur(6px);
+  }
+
+  .mcx-topbarRow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+
+  .mcx-brandWrap{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    min-width: 220px;
+  }
+
+  .mcx-brand{
+    font-weight: 900;
+    letter-spacing: .6px;
+    font-size: 18px;
+  }
+
+  .mcx-sub{
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 54vw;
+  }
+
+  .mcx-actions{
+    display:flex;
+    gap:8px;
+    align-items:center;
+  }
+
+  .mcx-pill{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--hair2);
+    background: rgba(255,255,255,0.04);
+    text-decoration:none;
+    font-size: 12px;
+    font-weight: 800;
+    color: rgba(255,255,255,.9);
+  }
+
+  .mcx-pill.on{
+    border-color: rgba(255,255,255,.22);
+    background: rgba(255,255,255,0.06);
+  }
+
+  .mcx-pill.active{
+    border-color: rgba(255,0,0,.40);
+    background: var(--accent2);
+    box-shadow: 0 0 18px rgba(255,0,0,.12);
+  }
+
+  .mcx-search{
+    display:flex;
+    gap:8px;
+    margin-top: 10px;
+  }
+
+  .mcx-input{
+    flex:1;
+    padding: 11px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--hair2);
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    outline: none;
+  }
+
+  .mcx-go{
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,0,0,.35);
+    background: rgba(255,0,0,.12);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 900;
+  }
+
+  .mcx-go:hover{
+    background: rgba(255,0,0,.16);
+  }
+
+  .mcx-hairline{
+    margin-top: 10px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,0,0,.20), transparent);
+    opacity: .9;
+  }
+
+  .mcx-grid{
+    display:grid;
+    grid-template-columns: 1fr 1.35fr .9fr;
+    gap: 12px;
+  }
+
+  .mcx-card{
+    border: 1px solid var(--hair);
+    background: linear-gradient(180deg, rgba(18,18,18,.92), rgba(10,10,10,.92));
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  .mcx-cardTitle{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:10px;
+    padding: 6px 6px 10px 6px;
+  }
+
+  .mcx-railName{
+    font-weight: 900;
+    letter-spacing: .4px;
+  }
+
+  .mcx-railMode{
+    font-size: 11px;
+    font-weight: 900;
+    color: rgba(255,255,255,.72);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--hair2);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .mcx-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .mcx-item{
+    text-decoration:none;
+    padding: 10px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .mcx-item:hover{
+    border-color: rgba(255,0,0,.22);
+    background: rgba(255,0,0,.05);
+  }
+
+  .mcx-title{
+    font-weight: 800;
+    line-height: 1.22;
+    color: rgba(255,255,255,.96);
+  }
+
+  .mcx-title.center{
+    font-weight: 850;
+  }
+
+  .mcx-title.breaking{
+    text-shadow: 0 0 16px rgba(255,0,0,.16);
+  }
+
+  .mcx-meta{
+    margin-top: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,.68);
+    line-height: 1.2;
+  }
+
+  .mcx-row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    align-items:flex-start;
+  }
+
+  .mcx-score{
+    font-size: 12px;
+    font-weight: 900;
+    color: rgba(255,255,255,.85);
+    white-space: nowrap;
+    padding: 4px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,0,0,.24);
+    background: rgba(255,0,0,.08);
+  }
+
+  .mcx-pods{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .mcx-pod{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.04);
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .mcx-podCount{
+    opacity: .75;
+    font-weight: 900;
+  }
+
+  .mcx-empty{
+    padding: 10px 8px;
+    color: rgba(255,255,255,.75);
+    font-size: 13px;
+  }
+  .mcx-emptySub{
+    margin-top: 6px;
+    color: rgba(255,255,255,.55);
+    font-size: 12px;
+  }
+
+  .mcx-tip{
+    margin-top: 12px;
+    padding: 10px 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,.60);
+    line-height: 1.35;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mcx-tip a{
+    color: rgba(255,255,255,.92);
+  }
+
+  .mcx-error{
+    margin-top: 16px;
+    padding: 14px;
+    border: 1px solid rgba(255,0,0,.25);
+    border-radius: 14px;
+    background: rgba(255,0,0,.06);
+  }
+  .mcx-errorTitle{
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .mcx-pre{
+    white-space: pre-wrap;
+    margin: 0;
+    color: rgba(255,255,255,.9);
+  }
+
+  @media (max-width: 1020px){
+    .mcx-grid{ grid-template-columns: 1fr; }
+    .mcx-sub{ max-width: 70vw; }
+  }
+`;
