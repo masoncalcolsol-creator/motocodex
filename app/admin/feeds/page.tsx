@@ -1,9 +1,6 @@
-# FILE: C:\MotoCODEX\app\feeds\page.tsx
-# Replace the ENTIRE file with this (PowerShell overwrite).
 
-cd C:\MotoCODEX
 
-@'
+
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 
@@ -313,4 +310,4 @@ export default async function FeedsPage({
     </main>
   );
 }
-'@ | Set-Content -Encoding UTF8 C:\MotoCODEX\app\feeds\page.tsx
+'@ | Set-Content -Encoding UTF8 C:\MotoCODEX\app\feeds\page.tsx'
