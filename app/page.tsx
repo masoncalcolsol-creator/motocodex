@@ -1,13 +1,10 @@
 // FILE: C:\MotoCODEX\app\page.tsx
 // Replace the ENTIRE file with this.
 //
-// Purpose:
-// - Guaranteed content render even if schema is minimal.
-// - Pods fallback works when tags are null/empty (hostname -> source_name -> source_key).
-// - Sorting is deterministic with minimal columns:
-//   * sort=newest  -> created_at desc
-//   * sort=ranked  -> importance desc, then created_at desc
-// - Renders Supabase error on page if query fails (so we never fly blind).
+// Adds:
+// - Selects thumbnail_url
+// - Shows thumbnail on cards when present
+// - Keeps pods fallback + safe schema assumptions
 
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
@@ -23,6 +20,7 @@ type NewsItem = {
   source_name: string | null;
   tags: string[] | null;
   importance: number | null;
+  thumbnail_url: string | null;
   created_at: string | null;
 };
 
@@ -79,6 +77,10 @@ function derivePods(item: NewsItem): string[] {
   return [normalizePod(item.source_key)];
 }
 
+function isProbablyYouTube(url: string) {
+  return /youtube\.com|youtu\.be/i.test(url);
+}
+
 export default async function Page({
   searchParams,
 }: {
@@ -95,38 +97,30 @@ export default async function Page({
 
     let query = supabase
       .from("news_items")
-      // ONLY select columns we expect to exist (minimal-safe)
-      .select("id,title,url,source_key,source_name,tags,importance,created_at")
+      .select("id,title,url,source_key,source_name,tags,importance,thumbnail_url,created_at")
       .limit(240);
 
-    // Search filter (safe + simple)
     if (q.length) {
       query = query.or(
         `title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`
       );
     }
 
-    // Sorting (minimal-safe)
     if (sort === "newest") {
       query = query.order("created_at", { ascending: false, nullsFirst: false });
     } else {
-      // ranked: importance desc, then created_at desc
       query = query.order("importance", { ascending: false, nullsFirst: false });
       query = query.order("created_at", { ascending: false, nullsFirst: false });
     }
 
     const { data, error } = await query;
 
-    if (error) {
-      pageError = `Supabase query error: ${error.message}`;
-    } else {
-      items = (data ?? []) as any;
-    }
+    if (error) pageError = `Supabase query error: ${error.message}`;
+    else items = (data ?? []) as any;
   } catch (e: any) {
     pageError = e?.message ? String(e.message) : "Unknown server error.";
   }
 
-  // Pods aggregation w/ fallback (still works even if tags null)
   const podCounts = new Map<string, number>();
   for (const it of items) {
     for (const pod of derivePods(it)) {
@@ -145,9 +139,36 @@ export default async function Page({
     return `/?${params.toString()}`;
   };
 
+  const CardThumb = ({ it }: { it: NewsItem }) => {
+    if (!it.thumbnail_url) return null;
+
+    return (
+      <div
+        style={{
+          width: 72,
+          height: 48,
+          borderRadius: 10,
+          overflow: "hidden",
+          flex: "0 0 auto",
+          border: "1px solid rgba(255,255,255,0.10)",
+          background: "rgba(255,255,255,0.06)",
+        }}
+        title={isProbablyYouTube(it.url) ? "Video" : "Media"}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={it.thumbnail_url}
+          alt=""
+          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+    );
+  };
+
   return (
     <main style={{ minHeight: "100vh", background: "#0b0b0d", color: "#eaeaea" }}>
-      {/* TOP BAR */}
       <div
         style={{
           position: "sticky",
@@ -261,7 +282,6 @@ export default async function Page({
             </div>
           </div>
 
-          {/* If query fails, show the error IN THE UI */}
           {pageError ? (
             <div
               style={{
@@ -282,29 +302,13 @@ export default async function Page({
         </div>
       </div>
 
-      {/* 3-COLUMN GRID */}
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1.35fr 0.75fr",
-            gap: 14,
-          }}
-        >
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1.35fr 0.75fr", gap: 14 }}>
           {/* LEFT */}
-          <section
-            style={{
-              border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: 14,
-              overflow: "hidden",
-              background: "rgba(255,255,255,0.03)",
-            }}
-          >
+          <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Inside Rut</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>
-                Stream view ({sort === "newest" ? "Newest" : "Ranked"})
-              </div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Stream view ({sort === "newest" ? "Newest" : "Ranked"})</div>
             </div>
 
             <div style={{ padding: 8 }}>
@@ -320,7 +324,9 @@ export default async function Page({
                     target="_blank"
                     rel="noreferrer"
                     style={{
-                      display: "block",
+                      display: "flex",
+                      gap: 10,
+                      alignItems: "center",
                       padding: "10px 10px",
                       borderRadius: 12,
                       textDecoration: "none",
@@ -330,18 +336,15 @@ export default async function Page({
                       marginBottom: 8,
                     }}
                   >
-                    <div style={{ fontWeight: 800, lineHeight: 1.2 }}>{it.title}</div>
-                    <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                      <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
-                      <span>•</span>
-                      <span>{safeHostname(it.url) ?? "link"}</span>
-                      {typeof it.importance === "number" ? (
-                        <>
-                          <span>•</span>
-                          <span>imp {it.importance.toFixed(2)}</span>
-                        </>
-                      ) : null}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontWeight: 800, lineHeight: 1.2 }}>{it.title}</div>
+                      <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7, display: "flex", gap: 8, flexWrap: "wrap" }}>
+                        <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
+                        <span>•</span>
+                        <span>{safeHostname(it.url) ?? "link"}</span>
+                      </div>
                     </div>
+                    <CardThumb it={it} />
                   </a>
                 ))
               )}
@@ -349,19 +352,10 @@ export default async function Page({
           </section>
 
           {/* MIDDLE */}
-          <section
-            style={{
-              border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: 14,
-              overflow: "hidden",
-              background: "rgba(255,255,255,0.03)",
-            }}
-          >
+          <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Main Line</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>
-                Prioritized view (importance → created_at)
-              </div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Prioritized view (importance → created_at)</div>
             </div>
 
             <div style={{ padding: 8 }}>
@@ -372,7 +366,9 @@ export default async function Page({
                   target="_blank"
                   rel="noreferrer"
                   style={{
-                    display: "block",
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "center",
                     padding: "12px 12px",
                     borderRadius: 14,
                     textDecoration: "none",
@@ -382,56 +378,40 @@ export default async function Page({
                     marginBottom: 10,
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-                    <div style={{ fontWeight: 900, lineHeight: 1.2, flex: 1 }}>{it.title}</div>
-                    {typeof it.importance === "number" ? (
-                      <div
-                        style={{
-                          fontWeight: 900,
-                          fontSize: 12,
-                          padding: "4px 8px",
-                          borderRadius: 999,
-                          border: "1px solid rgba(255,0,60,0.35)",
-                          background: "rgba(255,0,60,0.16)",
-                          color: "#ffd6df",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {it.importance.toFixed(2)}
-                      </div>
-                    ) : null}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+                      <div style={{ fontWeight: 900, lineHeight: 1.2, flex: 1 }}>{it.title}</div>
+                      {typeof it.importance === "number" ? (
+                        <div style={{ fontWeight: 900, fontSize: 12, padding: "4px 8px", borderRadius: 999, border: "1px solid rgba(255,0,60,0.35)", background: "rgba(255,0,60,0.16)", color: "#ffd6df", whiteSpace: "nowrap" }}>
+                          {it.importance.toFixed(2)}
+                        </div>
+                      ) : null}
+                    </div>
+
+                    <div style={{ marginTop: 7, fontSize: 12, opacity: 0.75, display: "flex", gap: 8, flexWrap: "wrap" }}>
+                      <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
+                      <span>•</span>
+                      <span>{safeHostname(it.url) ?? "link"}</span>
+                      {it.tags?.length ? (
+                        <>
+                          <span>•</span>
+                          <span>{it.tags.slice(0, 3).join(", ")}</span>
+                        </>
+                      ) : null}
+                    </div>
                   </div>
 
-                  <div style={{ marginTop: 7, fontSize: 12, opacity: 0.75, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                    <span>{(it.source_name ?? it.source_key) || "unknown"}</span>
-                    <span>•</span>
-                    <span>{safeHostname(it.url) ?? "link"}</span>
-                    {it.tags?.length ? (
-                      <>
-                        <span>•</span>
-                        <span>{it.tags.slice(0, 3).join(", ")}</span>
-                      </>
-                    ) : null}
-                  </div>
+                  <CardThumb it={it} />
                 </a>
               ))}
             </div>
           </section>
 
           {/* RIGHT */}
-          <aside
-            style={{
-              border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: 14,
-              overflow: "hidden",
-              background: "rgba(255,255,255,0.03)",
-            }}
-          >
+          <aside style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
             <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
               <div style={{ fontWeight: 900 }}>Outside Berm</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>
-                Pods (tags → hostname/source)
-              </div>
+              <div style={{ opacity: 0.65, fontSize: 12 }}>Pods (tags → hostname/source)</div>
             </div>
 
             <div style={{ padding: 10, display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -465,12 +445,11 @@ export default async function Page({
             </div>
 
             <div style={{ padding: "0 12px 12px 12px", opacity: 0.65, fontSize: 12, lineHeight: 1.35 }}>
-              Pods are derived from tags when present; otherwise hostname/source is used so this column never dies.
+              Video thumbnails appear automatically when the source provides media thumbnails (YouTube does).
             </div>
           </aside>
         </div>
 
-        {/* Mobile: stack columns */}
         <style>{`
           @media (max-width: 980px) {
             main > div > div {

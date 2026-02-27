@@ -1,16 +1,17 @@
 // FILE: C:\MotoCODEX\app\api\ingest\feeds.ts
 // Replace the ENTIRE file with this.
 //
-// Change:
-// - FeedDef now supports urls: string[] (try in order).
-// - VitalMX added with a direct feed plus RSS.app fallback placeholder.
-// - Keep tiers as your Phase 2 anti-monoculture lever.
+// Notes:
+// - YouTube channel ingestion uses RSS: https://www.youtube.com/feeds/videos.xml?channel_id=...
+// - You must replace REPLACE_CHANNEL_ID_* placeholders with real channel IDs.
+//   (Channel IDs look like: UCxxxxxxxxxxxxxxxxxxxxxx)
 
 export type FeedDef = {
   key: string;
   name: string;
-  urls: string[];   // try in order until one works
+  urls: string[];
   tier: 1 | 2 | 3;
+  kind?: "rss" | "youtube";
 };
 
 export const FEEDS: FeedDef[] = [
@@ -18,46 +19,65 @@ export const FEEDS: FeedDef[] = [
   // TIER 1 (Weight Up)
   // =========================
 
-  // Racer X — direct feed exists but may block server fetches sometimes.
-  { key: "racerx_posts", name: "Racer X", tier: 1, urls: [
+  { key: "racerx_posts", name: "Racer X", tier: 1, kind: "rss", urls: [
     "https://racerxonline.com/feeds/rss/posts",
     "https://rss.app/feeds/REPLACE_ME_RACERX.xml",
   ]},
 
-  // VitalMX — direct feed exists; if blocked/empty, RSS.app mirror is the stable fix.
-  // Known feed commonly referenced: https://feeds.vitalmx.com/vitalmxhomepage?format=xml
-  { key: "vitalmx", name: "VitalMX", tier: 1, urls: [
+  { key: "vitalmx", name: "VitalMX", tier: 1, kind: "rss", urls: [
     "https://feeds.vitalmx.com/vitalmxhomepage?format=xml",
     "https://rss.app/feeds/REPLACE_ME_VITALMX.xml",
   ]},
 
-  // SupercrossLive — usually no clean RSS; use RSS.app mirror generated from https://www.supercrosslive.com/news/
-  { key: "supercrosslive_news", name: "SupercrossLive", tier: 1, urls: [
+  { key: "supercrosslive_news", name: "SupercrossLive", tier: 1, kind: "rss", urls: [
     "https://rss.app/feeds/REPLACE_ME_SUPERCROSSLIVE.xml",
   ]},
 
-  // Cycle News — easiest via RSS.app mirror(s)
-  { key: "cyclenews_root", name: "Cycle News", tier: 1, urls: [
+  { key: "cyclenews_root", name: "Cycle News", tier: 1, kind: "rss", urls: [
     "https://rss.app/feeds/REPLACE_ME_CYCLENEWS.xml",
   ]},
 
-  // PulpMX (WP feed)
-  { key: "pulpmx", name: "PulpMX", tier: 1, urls: [
+  { key: "pulpmx", name: "PulpMX", tier: 1, kind: "rss", urls: [
     "https://pulpmx.com/feed",
   ]},
 
   // =========================
+  // YOUTUBE (Tiered)
+  // =========================
+  // Replace the channel IDs. You can add/remove channels freely.
+  // Tip: we keep YouTube keys distinct so we can weight + cap independently later.
+
+  { key: "yt_vitalmx", name: "Vital MX (YouTube)", tier: 1, kind: "youtube", urls: [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_VITALMX"
+  ]},
+
+  { key: "yt_racerx", name: "Racer X (YouTube)", tier: 1, kind: "youtube", urls: [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_RACERX"
+  ]},
+
+  { key: "yt_maineventmoto", name: "Main Event Moto (YouTube)", tier: 2, kind: "youtube", urls: [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_MAINEVENTMOTO"
+  ]},
+
+  { key: "yt_mattburkeen", name: "Matt Burkeen (YouTube)", tier: 2, kind: "youtube", urls: [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=REPLACE_CHANNEL_ID_MATTBURKEEN"
+  ]},
+
+  // Add more:
+  // { key: "yt_pulpmx", name: "PulpMX (YouTube)", tier: 1, kind: "youtube", urls: ["https://www.youtube.com/feeds/videos.xml?channel_id=..."] },
+
+  // =========================
   // TIER 2 (Normal)
   // =========================
-  { key: "dirtbike", name: "Dirt Bike Magazine", tier: 2, urls: ["https://dirtbikemagazine.com/feed"] },
-  { key: "mxa", name: "Motocross Action", tier: 2, urls: ["https://motocrossactionmag.com/feed"] },
-  { key: "mxvice", name: "MX Vice", tier: 2, urls: ["https://mxvice.com/feed"] },
-  { key: "mxsports", name: "MX Sports Pro Racing", tier: 2, urls: ["https://mxsportsproracing.com/feeds/posts/default?alt=rss"] },
-  { key: "gatedrop", name: "GateDrop", tier: 2, urls: ["https://gatedrop.com/feed"] },
-  { key: "directmx", name: "Direct Motocross", tier: 2, urls: ["https://directmotocross.com/feed"] },
+  { key: "dirtbike", name: "Dirt Bike Magazine", tier: 2, kind: "rss", urls: ["https://dirtbikemagazine.com/feed"] },
+  { key: "mxa", name: "Motocross Action", tier: 2, kind: "rss", urls: ["https://motocrossactionmag.com/feed"] },
+  { key: "mxvice", name: "MX Vice", tier: 2, kind: "rss", urls: ["https://mxvice.com/feed"] },
+  { key: "mxsports", name: "MX Sports Pro Racing", tier: 2, kind: "rss", urls: ["https://mxsportsproracing.com/feeds/posts/default?alt=rss"] },
+  { key: "gatedrop", name: "GateDrop", tier: 2, kind: "rss", urls: ["https://gatedrop.com/feed"] },
+  { key: "directmx", name: "Direct Motocross", tier: 2, kind: "rss", urls: ["https://directmotocross.com/feed"] },
 
   // =========================
   // TIER 3 (Weight Down / Optional)
   // =========================
-  { key: "motocrosspress", name: "Motocross Press (PR)", tier: 3, urls: ["https://motocrosspress.blogspot.com/feeds/posts/default?alt=rss"] },
+  { key: "motocrosspress", name: "Motocross Press (PR)", tier: 3, kind: "rss", urls: ["https://motocrosspress.blogspot.com/feeds/posts/default?alt=rss"] },
 ];

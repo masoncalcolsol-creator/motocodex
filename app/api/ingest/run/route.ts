@@ -1,11 +1,13 @@
 ﻿// FILE: C:\MotoCODEX\app\api\ingest\run\route.ts
 // Replace the ENTIRE file with this.
 //
-// Change:
-// - Iterates feed.urls[] in order until parse succeeds with items.
-// - Reports chosen_url per feed.
-// - If a URL is placeholder REPLACE_ME_ it is skipped with an explicit error.
-// - Still returns per-feed breakdown.
+// Adds:
+// - thumbnail_url extraction (YouTube + generic RSS where present)
+// - writes news_items.thumbnail_url
+// - per-feed chosen_url reporting
+//
+// IMPORTANT:
+// - You MUST have applied the DB migration adding thumbnail_url first.
 
 import { NextResponse } from "next/server";
 import RSSParser from "rss-parser";
@@ -83,6 +85,32 @@ function safeIsoDate(item: any): string | null {
   return d.toISOString();
 }
 
+function pickThumbnail(item: any): string | null {
+  // YouTube RSS commonly exposes:
+  // - media:group -> media:thumbnail
+  // rss-parser often maps media:thumbnail as item["media:thumbnail"] or item.media?.thumbnail
+  try {
+    // 1) rss-parser common shape
+    const mt = item?.["media:thumbnail"];
+    if (mt && typeof mt?.url === "string" && mt.url) return mt.url;
+    if (Array.isArray(mt) && mt[0]?.url) return mt[0].url;
+
+    // 2) media:group (sometimes)
+    const mg = item?.["media:group"] || item?.media?.group;
+    const thumb = mg?.["media:thumbnail"] || mg?.thumbnail;
+    if (thumb && typeof thumb?.url === "string" && thumb.url) return thumb.url;
+    if (Array.isArray(thumb) && thumb[0]?.url) return thumb[0].url;
+
+    // 3) enclosure (podcasts etc)
+    const enc = item?.enclosure;
+    if (enc && typeof enc?.url === "string" && enc.url) return enc.url;
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 async function parseFirstWorkingFeed(
   parser: RSSParser<any>,
   urls: string[],
@@ -91,7 +119,7 @@ async function parseFirstWorkingFeed(
   for (const url of urls) {
     breakdown.tried_urls.push(url);
 
-    if (url.includes("REPLACE_ME_")) {
+    if (url.includes("REPLACE_ME_") || url.includes("REPLACE_CHANNEL_ID_")) {
       breakdown.errors.push(`Feed URL is placeholder: ${url}`);
       continue;
     }
@@ -100,8 +128,6 @@ async function parseFirstWorkingFeed(
       const parsed = await parser.parseURL(url);
       const items = Array.isArray(parsed?.items) ? parsed.items : [];
 
-      // We treat "0 items" as a failure for fallback purposes,
-      // because some feeds intermittently return empty.
       if (items.length === 0) {
         breakdown.errors.push(`Parsed 0 items from: ${url}`);
         continue;
@@ -171,6 +197,8 @@ export async function GET(req: Request) {
 
         b.attempted += 1;
 
+        const thumb = pickThumbnail(it);
+
         const row: any = {
           source_key: feed.key,
           source_name: feed.name,
@@ -178,6 +206,7 @@ export async function GET(req: Request) {
           url,
           tags: null,
           importance: baseImportanceForTier(feed.tier),
+          thumbnail_url: thumb ?? null,
           created_at: safeIsoDate(it) ?? undefined,
         };
 
