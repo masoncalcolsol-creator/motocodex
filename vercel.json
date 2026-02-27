@@ -1,3 +1,4 @@
+
 {
   "crons": [
     {
@@ -7,6 +8,10 @@
     {
       "path": "/api/feeds/youtube/run?token=${CRON_SECRET}",
       "schedule": "5 * * * *"
+    },
+    {
+      "path": "/api/feeds/rss/run?token=${CRON_SECRET}",
+      "schedule": "10 * * * *"
     }
   ]
 }
