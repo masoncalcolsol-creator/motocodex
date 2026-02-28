@@ -1,6 +1,4 @@
 
-
-
 import Link from "next/link";
 import { createClient } from "@supabase/supabase-js";
 
@@ -297,7 +295,6 @@ export default async function FeedsPage({
 
                   {p.thumbnail_url ? (
                     <div style={{ width: 120, height: 80, borderRadius: 12, overflow: "hidden", flex: "0 0 auto", border: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,255,255,0.06)" }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={p.thumbnail_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" referrerPolicy="no-referrer" />
                     </div>
                   ) : null}
