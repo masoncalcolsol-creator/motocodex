@@ -1,6 +1,7 @@
 import "server-only";
 
 import index from "@/data/motopedia/index.json";
+import sx1977Seed from "@/data/motopedia/supplements/1977-sx-seed.json";
 
 export type MotopediaSeries = {
   key: string;
@@ -65,8 +66,55 @@ export type MotopediaIndex = {
   facts: MotopediaFact[];
 };
 
+type MotopediaSupplement = {
+  generatedAt?: string;
+  run?: Partial<MotopediaIndex["run"]>;
+  documents?: MotopediaDocument[];
+  facts?: MotopediaFact[];
+};
+
+const supplements = [sx1977Seed as MotopediaSupplement];
+
+function byId<T extends { id: string }>(items: T[]): T[] {
+  return Array.from(new Map(items.map((item) => [item.id, item])).values());
+}
+
 export function getMotopediaIndex(): MotopediaIndex {
-  return index as MotopediaIndex;
+  const base = index as MotopediaIndex;
+  const documents = byId([
+    ...base.documents,
+    ...supplements.flatMap((supplement) => supplement.documents ?? []),
+  ]);
+  const facts = byId([
+    ...base.facts,
+    ...supplements.flatMap((supplement) => supplement.facts ?? []),
+  ]);
+  const runTotals = supplements.reduce(
+    (totals, supplement) => ({
+      pagesAttempted: totals.pagesAttempted + (supplement.run?.pagesAttempted ?? 0),
+      pagesAccepted: totals.pagesAccepted + (supplement.run?.pagesAccepted ?? 0),
+      factsExtracted: totals.factsExtracted + (supplement.run?.factsExtracted ?? 0),
+      lastError: supplement.run?.lastError ?? totals.lastError,
+    }),
+    {
+      pagesAttempted: base.run.pagesAttempted,
+      pagesAccepted: base.run.pagesAccepted,
+      factsExtracted: base.run.factsExtracted,
+      lastError: base.run.lastError,
+    },
+  );
+
+  return {
+    ...base,
+    generatedAt: supplements.at(-1)?.generatedAt ?? base.generatedAt,
+    run: {
+      ...base.run,
+      ...runTotals,
+      status: base.run.status,
+    },
+    documents,
+    facts,
+  };
 }
 
 export function filterMotopediaDocuments(
