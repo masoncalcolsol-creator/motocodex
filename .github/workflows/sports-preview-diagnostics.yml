@@ -27,5 +27,16 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
-      - run: npm run build
+      - run: npm ci --silent
+      - name: Build and print only failure tail
+        shell: bash
+        run: |
+          set +e
+          npm run build > build.log 2>&1
+          code=$?
+          if [ $code -ne 0 ]; then
+            echo "===== BUILD FAILURE TAIL ====="
+            tail -120 build.log
+            exit $code
+          fi
+          tail -40 build.log
