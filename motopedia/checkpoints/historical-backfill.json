@@ -1,0 +1,37 @@
+{
+  "id": "checkpoint-motopedia-historical-backfill",
+  "project": "MOTOPEDIA",
+  "updated_at": "2026-07-04T15:09:49Z",
+  "current_focus": "1970s AMA Supercross historical seed coverage",
+  "last_commits": [
+    "443d299e492decf128a277e72eb37473fd720415",
+    "c11700e0215e9436585e2211d2b04fc9869a67c4",
+    "e0c46f2944d7dc5a65a41af9ea99c54cffc9c487"
+  ],
+  "coverage_added": {
+    "source_documents": 2,
+    "atomic_facts": 3,
+    "seasons_touched": [1977, 1978, 1979],
+    "riders_touched": ["Bob Hannah"]
+  },
+  "dedupe_keys": [
+    "source.url",
+    "fact.id",
+    "series + season + class + fact_type + rider"
+  ],
+  "crawler_boundaries": {
+    "respect_robots_txt": true,
+    "rate_limit_policy": "manual/low-volume source inspection only in this run; future crawler should default to one request at a time with delay and cache",
+    "authentication": "no bypass; do not fetch login-only or paywalled materials",
+    "copyright": "store metadata and atomic facts only; do not copy article bodies"
+  },
+  "failure_receipts": [
+    {
+      "id": "failure:racerx-robots-direct-open:2026-07-04",
+      "target": "https://racerxonline.com/robots.txt and https://vault.racerxonline.com/robots.txt",
+      "status": "web_open_cache_miss_or_safety_constraint",
+      "action_taken": "did not crawl aggressively; limited this run to source metadata and small atomic seed facts"
+    }
+  ],
+  "next_suggested_backfill_step": "Verify Racer X Vault rider and season endpoints directly inside the repository crawler with robots.txt cache support, then expand 1978 race-level top-three facts only when source pages are reachable without auth/paywall bypass."
+}
