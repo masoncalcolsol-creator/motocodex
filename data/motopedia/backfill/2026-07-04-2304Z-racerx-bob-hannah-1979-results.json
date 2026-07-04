@@ -2,7 +2,7 @@
   "schema": "motopedia.historical_backfill.v1",
   "ingest_run_id": "motopedia-backfill-2026-07-04T23-04Z-run9",
   "created_utc": "2026-07-04T23:04:00Z",
-  "status": "committed_atomic_facts",
+  "status": "committed_atomic_facts_repaired",
   "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
   "respectful_ingestion_policy": {
     "authentication": "No authentication bypass attempted. Racer X rider-results page was publicly accessible without login in the browsing tool.",
@@ -22,7 +22,8 @@
       "source_span": "Public career race-results rows for 1979, continuing after the documented 1980 gap and the previously committed 1981 checkpoint.",
       "provenance_notes": [
         "The Racer X public rider page lists Bob Hannah career race-result rows with position, series, race/track, class, date, and bike.",
-        "This batch adds the 1979 rows visible immediately after the previously committed 1981 section. No 1980 rows were visible in this sequence, matching the prior checkpoint note."
+        "This batch adds the 1979 rows visible immediately after the previously committed 1981 section. No 1980 rows were visible in this sequence, matching the prior checkpoint note.",
+        "Repair note: source table text wraps each position immediately before the related series/race row; this file was corrected after detecting three position misreads in the first commit of this batch."
       ],
       "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
     }
@@ -70,17 +71,17 @@
     {"fact_id":"racerx-bob-hannah-race-1979-04-01-saddleback-250mx","type":"race_result","series":"Motocross","race":"Saddleback","class":"250MX","date":"1979-04-01","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
     {"fact_id":"racerx-bob-hannah-race-1979-03-25-hangtown-motocross-classic-250mx","type":"race_result","series":"Motocross","race":"Hangtown Motocross Classic","class":"250MX","date":"1979-03-25","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
     {"fact_id":"racerx-bob-hannah-race-1979-03-17-houston-2-250sx","type":"race_result","series":"Supercross","race":"Houston 2","class":"250SX","date":"1979-03-17","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
-    {"fact_id":"racerx-bob-hannah-race-1979-03-16-houston-1-250sx","type":"race_result","series":"Supercross","race":"Houston 1","class":"250SX","date":"1979-03-16","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
-    {"fact_id":"racerx-bob-hannah-race-1979-03-10-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1979-03-10","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-03-16-houston-1-250sx","type":"race_result","series":"Supercross","race":"Houston 1","class":"250SX","date":"1979-03-16","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-03-10-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1979-03-10","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
     {"fact_id":"racerx-bob-hannah-race-1979-03-03-atlanta-250sx","type":"race_result","series":"Supercross","race":"Atlanta","class":"250SX","date":"1979-03-03","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
-    {"fact_id":"racerx-bob-hannah-race-1979-02-10-seattle-2-250sx","type":"race_result","series":"Supercross","race":"Seattle 2","class":"250SX","date":"1979-02-10","rider":"Bob Hannah","position":4,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
-    {"fact_id":"racerx-bob-hannah-race-1979-02-09-seattle-1-250sx","type":"race_result","series":"Supercross","race":"Seattle 1","class":"250SX","date":"1979-02-09","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-02-10-seattle-2-250sx","type":"race_result","series":"Supercross","race":"Seattle 2","class":"250SX","date":"1979-02-10","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-02-09-seattle-1-250sx","type":"race_result","series":"Supercross","race":"Seattle 1","class":"250SX","date":"1979-02-09","rider":"Bob Hannah","position":4,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
     {"fact_id":"racerx-bob-hannah-race-1979-01-18-oakland-250sx","type":"race_result","series":"Supercross","race":"Oakland","class":"250SX","date":"1979-01-18","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86}
   ],
   "dedupe": {
     "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus any later confirming sources.",
     "checkpoint_previous": "Previous committed Bob Hannah Racer X batches covered late career through 1981; prior checkpoint documented no visible 1980 rows in this sequence.",
-    "checkpoint_current": "1979 Racer X Bob Hannah rows captured from High Point Raceway 1979-07-08 through Oakland 1979-01-18.",
+    "checkpoint_current": "1979 Racer X Bob Hannah rows captured from High Point Raceway 1979-07-08 through Oakland 1979-01-18. Corrected positions: Houston 1 first, Daytona second, Seattle 2 first, Seattle 1 fourth.",
     "next_suggested_checkpoint": "Continue backward with 1978 Racer X Bob Hannah rows, beginning with Anaheim 1978-11-11, then RedBud Track 'n Trail 1978-07-02 and following 1978 public result rows."
   },
   "failure_receipts": [
