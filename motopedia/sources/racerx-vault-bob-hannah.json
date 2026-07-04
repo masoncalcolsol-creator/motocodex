@@ -1,0 +1,17 @@
+{
+  "id": "src:racerx-vault:bob-hannah:points",
+  "type": "source_document",
+  "project": "MOTOPEDIA",
+  "title": "Bob Hannah - The Vault - Historical Motocross & Supercross Results",
+  "publisher": "Racer X Online / The Vault",
+  "url": "http://vault.racerxonline.com/#!/rider/bob-hannah/points",
+  "priority": "primary_requested_source",
+  "retrieved_at": "2026-07-04T15:09:49Z",
+  "ingestion_policy": {
+    "respect_robots_txt": true,
+    "no_paywall_or_auth_bypass": true,
+    "no_article_body_copied": true,
+    "stored_content": "metadata_and_atomic_facts_only"
+  },
+  "notes": "Source stub only. Do not store Racer X article/body text. Use this as provenance for source-linked championship/standing facts and future human-verifiable Racer X Vault expansion."
+}
