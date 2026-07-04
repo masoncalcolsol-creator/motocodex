@@ -1,0 +1,37 @@
+{
+  "id": "factset-ama-supercross-champions-1977-1979",
+  "type": "atomic_fact_set",
+  "project": "MOTOPEDIA",
+  "series": "AMA Supercross Championship",
+  "created_at": "2026-07-04T15:09:49Z",
+  "policy": "facts only; source-linked; no article bodies stored",
+  "facts": [
+    {
+      "id": "ama-sx-1977-premier-champion-bob-hannah",
+      "season": 1977,
+      "fact_type": "season_champion",
+      "class": "premier_sx",
+      "rider": "Bob Hannah",
+      "manufacturer": "Yamaha",
+      "sources": ["src:racerx-vault:bob-hannah:points", "src:secondary:wikipedia:ama-supercross-championship"]
+    },
+    {
+      "id": "ama-sx-1978-premier-champion-bob-hannah",
+      "season": 1978,
+      "fact_type": "season_champion",
+      "class": "premier_sx",
+      "rider": "Bob Hannah",
+      "manufacturer": "Yamaha",
+      "sources": ["src:racerx-vault:bob-hannah:points", "src:secondary:wikipedia:ama-supercross-championship", "src:secondary:wikipedia:ama-motocross-championship"]
+    },
+    {
+      "id": "ama-sx-1979-premier-champion-bob-hannah",
+      "season": 1979,
+      "fact_type": "season_champion",
+      "class": "premier_sx",
+      "rider": "Bob Hannah",
+      "manufacturer": "Yamaha",
+      "sources": ["src:racerx-vault:bob-hannah:points", "src:secondary:wikipedia:ama-supercross-championship", "src:secondary:wikipedia:ama-motocross-championship"]
+    }
+  ]
+}
