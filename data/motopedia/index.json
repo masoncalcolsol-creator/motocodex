@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-03T00:00:00.000Z",
+  "run": {
+    "status": "armed",
+    "pagesAttempted": 0,
+    "pagesAccepted": 0,
+    "factsExtracted": 0,
+    "lastError": null
+  },
+  "series": [
+    {
+      "key": "ama-supercross",
+      "name": "AMA Supercross",
+      "discipline": "supercross",
+      "targetStartYear": 1974,
+      "targetEndYear": 2026,
+      "status": "backfill-queued"
+    },
+    {
+      "key": "ama-pro-motocross",
+      "name": "AMA Pro Motocross",
+      "discipline": "motocross",
+      "targetStartYear": 1972,
+      "targetEndYear": 2026,
+      "status": "backfill-queued"
+    },
+    {
+      "key": "supermotocross",
+      "name": "SuperMotocross World Championship",
+      "discipline": "smx",
+      "targetStartYear": 2023,
+      "targetEndYear": 2026,
+      "status": "backfill-queued"
+    },
+    {
+      "key": "fim-motocross-world-championship",
+      "name": "FIM Motocross World Championship / MXGP",
+      "discipline": "mxgp",
+      "targetStartYear": 1957,
+      "targetEndYear": 2026,
+      "status": "backfill-queued"
+    },
+    {
+      "key": "fim-world-supercross",
+      "name": "FIM World Supercross Championship",
+      "discipline": "wsx",
+      "targetStartYear": 2022,
+      "targetEndYear": 2026,
+      "status": "backfill-queued"
+    },
+    {
+      "key": "loretta-lynns-amateur-national",
+      "name": "AMA Amateur National Motocross Championship",
+      "discipline": "amateur",
+      "targetStartYear": 1982,
+      "targetEndYear": 2026,
+      "status": "backfill-queued"
+    }
+  ],
+  "sources": [
+    {
+      "key": "racerx",
+      "name": "Racer X",
+      "baseUrl": "https://racerxonline.com",
+      "priority": 1,
+      "status": "preferred-primary-historical-source"
+    },
+    {
+      "key": "racerx-vault",
+      "name": "Racer X Vault",
+      "baseUrl": "https://vault.racerxonline.com",
+      "priority": 1,
+      "status": "historical-source"
+    },
+    {
+      "key": "racerx-llvault",
+      "name": "Racer X Loretta Lynn's Vault",
+      "baseUrl": "https://llvault.racerxonline.com",
+      "priority": 1,
+      "status": "historical-source"
+    },
+    {
+      "key": "supercrosslive",
+      "name": "Supercross Live",
+      "baseUrl": "https://www.supercrosslive.com",
+      "priority": 2,
+      "status": "official-current-source"
+    },
+    {
+      "key": "promotocross",
+      "name": "Pro Motocross",
+      "baseUrl": "https://promotocross.com",
+      "priority": 2,
+      "status": "official-current-source"
+    }
+  ],
+  "documents": [],
+  "facts": []
+}
