@@ -1,0 +1,220 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-04T17-02Z-run3",
+  "created_utc": "2026-07-04T17:02:47Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X page was publicly accessible through the web tool without login.",
+    "paywalls": "No paywalled article content accessed or copied.",
+    "robots_txt": "Direct robots.txt retrieval remains unresolved by available browsing/search tools in this run, so no automated crawling was launched. Only a small number of user-agent-mediated public page reads were performed.",
+    "rate_limits": "Manual low-volume access only; no bulk crawler launched.",
+    "copyright": "Stored only atomic facts, source URLs, provenance notes, and access metadata. No article bodies or long descriptive passages copied."
+  },
+  "sources": [
+    {
+      "source_key": "racerx_bob_hannah_races",
+      "display_name": "Racer X - Bob Hannah Motocross & Supercross Results",
+      "url": "https://racerxonline.com/rider/bob-hannah/races",
+      "source_type": "primary_public_results_index",
+      "access_result": "resolved_public_page",
+      "retrieved_utc": "2026-07-04T17:02:47Z",
+      "provenance_notes": [
+        "Racer X page identifies Bob Hannah as Whittier, CA and lists championship summary counts: 250MX Champion 2x, 250SX Champion 3x, 250MX Runner-Up 2x.",
+        "The same Racer X page exposes a structured Career Race Results table with atomic rows: position, series, race/track, class, date, and bike."
+      ],
+      "copy_policy": "Use as a facts/provenance source only. Do not copy bodies or narrative descriptions."
+    },
+    {
+      "source_key": "ama_mx_wikipedia_index",
+      "display_name": "AMA Motocross Championship public index",
+      "url": "https://en.wikipedia.org/wiki/AMA_Motocross_Championship",
+      "source_type": "secondary_public_index",
+      "use": "Cross-check Hannah-era champion tables while direct Racer X Vault season pages are still unresolved."
+    }
+  ],
+  "entities": {
+    "riders": [
+      {"id": "rider:bob-hannah", "name": "Bob Hannah", "hometown_from_racerx": "Whittier, CA"}
+    ],
+    "tracks": [
+      {"id": "track:moto-x-338", "name": "Moto-X 338"},
+      {"id": "track:lakewood-sportcycle-park", "name": "Lakewood Sportcycle Park"},
+      {"id": "track:secession-mx-park", "name": "Secession MX Park"},
+      {"id": "track:high-point-raceway", "name": "High Point Raceway"},
+      {"id": "track:hangtown-motocross-classic", "name": "Hangtown Motocross Classic"},
+      {"id": "track:gatorback-cycle-park", "name": "Gatorback Cycle Park"},
+      {"id": "track:seattle", "name": "Seattle"}
+    ],
+    "manufacturers": ["Suzuki", "Honda", "Yamaha"]
+  },
+  "facts": [
+    {
+      "fact_id": "racerx-rider-bob-hannah-profile-summary",
+      "type": "rider_profile_summary",
+      "rider": "Bob Hannah",
+      "hometown": "Whittier, CA",
+      "championship_summary": [
+        {"series_class": "250MX", "result": "Champion", "count": 2},
+        {"series_class": "250SX", "result": "Champion", "count": 3},
+        {"series_class": "250MX", "result": "Runner-Up", "count": 2}
+      ],
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.88
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1989-05-21-moto-x-338-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "Moto-X 338",
+      "class": "250MX",
+      "date": "1989-05-21",
+      "rider": "Bob Hannah",
+      "position": 9,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1988-05-22-moto-x-338-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "Moto-X 338",
+      "class": "250MX",
+      "date": "1988-05-22",
+      "rider": "Bob Hannah",
+      "position": 8,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-06-14-lakewood-sportcycle-park-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "Lakewood Sportcycle Park",
+      "class": "250MX",
+      "date": "1987-06-14",
+      "rider": "Bob Hannah",
+      "position": 19,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-05-31-secession-mx-park-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "Secession MX Park",
+      "class": "250MX",
+      "date": "1987-05-31",
+      "rider": "Bob Hannah",
+      "position": 8,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-05-24-high-point-raceway-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "High Point Raceway",
+      "class": "250MX",
+      "date": "1987-05-24",
+      "rider": "Bob Hannah",
+      "position": 9,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-05-17-moto-x-338-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "Moto-X 338",
+      "class": "250MX",
+      "date": "1987-05-17",
+      "rider": "Bob Hannah",
+      "position": 2,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-03-29-seattle-2-250sx",
+      "type": "race_result",
+      "series": "Supercross",
+      "race": "Seattle 2",
+      "class": "250SX",
+      "date": "1987-03-29",
+      "rider": "Bob Hannah",
+      "position": 4,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-03-28-seattle-1-250sx",
+      "type": "race_result",
+      "series": "Supercross",
+      "race": "Seattle 1",
+      "class": "250SX",
+      "date": "1987-03-28",
+      "rider": "Bob Hannah",
+      "position": 9,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-03-22-hangtown-motocross-classic-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "Hangtown Motocross Classic",
+      "class": "250MX",
+      "date": "1987-03-22",
+      "rider": "Bob Hannah",
+      "position": 16,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    },
+    {
+      "fact_id": "racerx-bob-hannah-race-1987-03-01-gatorback-cycle-park-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "race": "Gatorback Cycle Park",
+      "class": "250MX",
+      "date": "1987-03-01",
+      "rider": "Bob Hannah",
+      "position": 5,
+      "manufacturer": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    }
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and add source evidence rather than duplicate rows.",
+    "known_existing_repo_search": "Repository code search remains unavailable/unindexed, so duplicate prevention is path/fact_id based within newly authored files plus known prior checkpoint file review."
+  },
+  "failure_receipts": [
+    {
+      "scope": "Racer X Vault season pages",
+      "result": "Main Racer X rider results page resolved. Direct Vault/season result URLs were still not resolved by search in this run.",
+      "next_action": "Use page-discovered links and/or public URL patterns to resolve season points pages once safe URL opening allows them."
+    },
+    {
+      "scope": "robots.txt verification",
+      "result": "Search/open tools did not return Racer X robots.txt. No automated crawling launched without verified robots boundaries.",
+      "next_action": "Fetch robots.txt through a direct HTTP client in the repo crawler runtime before any bulk harvest."
+    }
+  ],
+  "checkpoint": {
+    "last_completed_scope": "Resolved direct Racer X public rider results page for Bob Hannah and added the first small batch of source-linked late-career atomic race-result facts plus profile summary counts.",
+    "next_priority": [
+      "Resolve Racer X Bob Hannah points standings link from the public rider page.",
+      "Resolve direct Racer X Vault / season pages for Hannah-era AMA MX/SX points.",
+      "Add event-level standings only where source pages are public, provenance is retained, and robots policy permits."
+    ]
+  }
+}
