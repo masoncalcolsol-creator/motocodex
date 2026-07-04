@@ -1,0 +1,31 @@
+name: Sports Preview Diagnostics
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'app/mlb/**'
+      - 'app/npb/**'
+      - 'app/nfl/**'
+      - 'app/nhl/**'
+      - 'app/nascar/**'
+      - 'app/ufc/**'
+      - 'app/sports/**'
+      - 'app/api/sports/**'
+      - 'components/SportsBeta*'
+      - 'components/SportsPwa.tsx'
+      - 'lib/sports-beta.ts'
+      - 'public/sports-*'
+      - '.github/workflows/sports-preview-diagnostics.yml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
