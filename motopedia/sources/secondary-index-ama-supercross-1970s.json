@@ -1,0 +1,27 @@
+{
+  "id": "source-index-ama-supercross-1970s",
+  "type": "source_index",
+  "project": "MOTOPEDIA",
+  "created_at": "2026-07-04T15:09:49Z",
+  "policy": "source metadata only; no article bodies stored; do not bypass access controls",
+  "sources": [
+    {
+      "id": "src:secondary:wikipedia:ama-supercross-championship",
+      "title": "AMA Supercross Championship",
+      "url": "https://en.wikipedia.org/wiki/AMA_Supercross_Championship",
+      "use": "secondary cross-check for series history and champion list"
+    },
+    {
+      "id": "src:secondary:wikipedia:ama-motocross-championship",
+      "title": "AMA Motocross Championship",
+      "url": "https://en.wikipedia.org/wiki/AMA_Motocross_Championship",
+      "use": "secondary cross-check for combined AMA motocross/supercross champions table"
+    },
+    {
+      "id": "src:official:supermotocross:about",
+      "title": "SuperMotocross official about page",
+      "url": "https://www.supermotocross.com/about/",
+      "use": "official-series context source for modern SMX/AMA Supercross lineage; not used for 1977-1979 champion facts unless later verified on-page"
+    }
+  ]
+}
