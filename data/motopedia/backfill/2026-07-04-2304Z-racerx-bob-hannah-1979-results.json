@@ -1,0 +1,94 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-04T23-04Z-run9",
+  "created_utc": "2026-07-04T23:04:00Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled article content accessed or copied.",
+    "robots_txt": "Direct robots.txt retrieval remained unavailable through the browsing tool URL-safety constraint in this run, so no automated crawl or bulk harvest was launched.",
+    "rate_limits": "Manual low-volume source review only; one public rider-results page section reviewed and one robots boundary check carried forward from the active checkpoint.",
+    "copyright": "Stored only atomic result facts, source URL, provenance notes, checkpoint details, dedupe policy, and failure receipts. No article bodies, narrative recaps, or long descriptions copied."
+  },
+  "sources": [
+    {
+      "source_key": "racerx_bob_hannah_races",
+      "display_name": "Racer X - Bob Hannah Motocross & Supercross Results",
+      "url": "https://racerxonline.com/rider/bob-hannah/races",
+      "source_type": "primary_public_results_index",
+      "access_result": "resolved_public_page",
+      "retrieved_utc": "2026-07-04T23:04:00Z",
+      "source_span": "Public career race-results rows for 1979, continuing after the documented 1980 gap and the previously committed 1981 checkpoint.",
+      "provenance_notes": [
+        "The Racer X public rider page lists Bob Hannah career race-result rows with position, series, race/track, class, date, and bike.",
+        "This batch adds the 1979 rows visible immediately after the previously committed 1981 section. No 1980 rows were visible in this sequence, matching the prior checkpoint note."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  ],
+  "entities": {
+    "riders": [
+      {"id": "rider:bob-hannah", "name": "Bob Hannah", "hometown_from_racerx": "Whittier, CA"}
+    ],
+    "tracks": [
+      {"id": "track:high-point-raceway", "name": "High Point Raceway"},
+      {"id": "track:redbud-track-n-trail", "name": "RedBud Track 'n Trail"},
+      {"id": "track:lakewood-sports-cycle-park", "name": "Lakewood Sports Cycle Park"},
+      {"id": "track:sears-point-international-raceway", "name": "Sears Point International Raceway"},
+      {"id": "track:new-orleans", "name": "New Orleans"},
+      {"id": "track:atlanta-international-raceway", "name": "Atlanta International Raceway"},
+      {"id": "track:moto-x-338", "name": "Moto-X 338"},
+      {"id": "track:pontiac-2", "name": "Pontiac 2"},
+      {"id": "track:pontiac-1", "name": "Pontiac 1"},
+      {"id": "track:omaha-moto-park", "name": "Omaha Moto Park"},
+      {"id": "track:canyon-raceway", "name": "Canyon Raceway"},
+      {"id": "track:saddleback", "name": "Saddleback"},
+      {"id": "track:hangtown-motocross-classic", "name": "Hangtown Motocross Classic"},
+      {"id": "track:houston-2", "name": "Houston 2"},
+      {"id": "track:houston-1", "name": "Houston 1"},
+      {"id": "track:daytona", "name": "Daytona"},
+      {"id": "track:atlanta", "name": "Atlanta"},
+      {"id": "track:seattle-2", "name": "Seattle 2"},
+      {"id": "track:seattle-1", "name": "Seattle 1"},
+      {"id": "track:oakland", "name": "Oakland"}
+    ],
+    "manufacturers": ["Yamaha"]
+  },
+  "facts": [
+    {"fact_id":"racerx-bob-hannah-race-1979-07-08-high-point-raceway-250mx","type":"race_result","series":"Motocross","race":"High Point Raceway","class":"250MX","date":"1979-07-08","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-07-01-redbud-track-n-trail-250mx","type":"race_result","series":"Motocross","race":"RedBud Track 'n Trail","class":"250MX","date":"1979-07-01","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-06-24-lakewood-sports-cycle-park-250mx","type":"race_result","series":"Motocross","race":"Lakewood Sports Cycle Park","class":"250MX","date":"1979-06-24","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-06-17-sears-point-international-raceway-250mx","type":"race_result","series":"Motocross","race":"Sears Point International Raceway","class":"250MX","date":"1979-06-17","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-06-02-new-orleans-250sx","type":"race_result","series":"Supercross","race":"New Orleans","class":"250SX","date":"1979-06-02","rider":"Bob Hannah","position":6,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-05-27-atlanta-international-raceway-250mx","type":"race_result","series":"Motocross","race":"Atlanta International Raceway","class":"250MX","date":"1979-05-27","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-05-20-moto-x-338-250mx","type":"race_result","series":"Motocross","race":"Moto-X 338","class":"250MX","date":"1979-05-20","rider":"Bob Hannah","position":10,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-04-29-pontiac-2-250sx","type":"race_result","series":"Supercross","race":"Pontiac 2","class":"250SX","date":"1979-04-29","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-04-28-pontiac-1-250sx","type":"race_result","series":"Supercross","race":"Pontiac 1","class":"250SX","date":"1979-04-28","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-04-22-omaha-moto-park-250mx","type":"race_result","series":"Motocross","race":"Omaha Moto Park","class":"250MX","date":"1979-04-22","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-04-08-canyon-raceway-250mx","type":"race_result","series":"Motocross","race":"Canyon Raceway","class":"250MX","date":"1979-04-08","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-04-01-saddleback-250mx","type":"race_result","series":"Motocross","race":"Saddleback","class":"250MX","date":"1979-04-01","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-03-25-hangtown-motocross-classic-250mx","type":"race_result","series":"Motocross","race":"Hangtown Motocross Classic","class":"250MX","date":"1979-03-25","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-03-17-houston-2-250sx","type":"race_result","series":"Supercross","race":"Houston 2","class":"250SX","date":"1979-03-17","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-03-16-houston-1-250sx","type":"race_result","series":"Supercross","race":"Houston 1","class":"250SX","date":"1979-03-16","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-03-10-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1979-03-10","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-03-03-atlanta-250sx","type":"race_result","series":"Supercross","race":"Atlanta","class":"250SX","date":"1979-03-03","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-02-10-seattle-2-250sx","type":"race_result","series":"Supercross","race":"Seattle 2","class":"250SX","date":"1979-02-10","rider":"Bob Hannah","position":4,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-02-09-seattle-1-250sx","type":"race_result","series":"Supercross","race":"Seattle 1","class":"250SX","date":"1979-02-09","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1979-01-18-oakland-250sx","type":"race_result","series":"Supercross","race":"Oakland","class":"250SX","date":"1979-01-18","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus any later confirming sources.",
+    "checkpoint_previous": "Previous committed Bob Hannah Racer X batches covered late career through 1981; prior checkpoint documented no visible 1980 rows in this sequence.",
+    "checkpoint_current": "1979 Racer X Bob Hannah rows captured from High Point Raceway 1979-07-08 through Oakland 1979-01-18.",
+    "next_suggested_checkpoint": "Continue backward with 1978 Racer X Bob Hannah rows, beginning with Anaheim 1978-11-11, then RedBud Track 'n Trail 1978-07-02 and following 1978 public result rows."
+  },
+  "failure_receipts": [
+    {
+      "type": "robots_txt_check_blocked_by_tool_url_safety",
+      "target": "https://racerxonline.com/robots.txt",
+      "result": "not_fetched",
+      "mitigation": "No automated crawl launched; performed one low-volume manual public page review only."
+    }
+  ]
+}
