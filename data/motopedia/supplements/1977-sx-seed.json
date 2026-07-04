@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-04T11:10:45.000Z",
+  "ingestionPolicy": {
+    "sourcePriority": ["racerx-vault", "racerx", "supercrosslive", "promotocross"],
+    "robotsBoundary": "Respect robots.txt and public access boundaries; do not bypass authentication, paywalls, rate limits, or 403 responses.",
+    "bodyCopyPolicy": "No article or page bodies are copied. This file stores compact factual metadata, event facts, top-three result facts, source URLs, and failure receipts only.",
+    "rateLimitPolicy": "Small-batch historical ingestion only; preserve checkpoints and stop on access blocks."
+  },
+  "run": {
+    "status": "backfill-active",
+    "pagesAttempted": 4,
+    "pagesAccepted": 3,
+    "factsExtracted": 16,
+    "lastError": "1977 Daytona 250SX Racer X Vault page returned 403 Forbidden during public fetch; not retried aggressively and not bypassed."
+  },
+  "documents": [
+    {
+      "id": "rxv-1977-sx-races",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977/sx/races",
+      "title": "1977 Supercross Races",
+      "fetchedAt": "2026-07-04T11:10:45.000Z",
+      "publishedAt": null,
+      "year": 1977,
+      "seriesKey": "ama-supercross",
+      "documentType": "season-race-index",
+      "tableCount": 1,
+      "factCount": 10,
+      "contentHash": "rxv-1977-sx-races"
+    },
+    {
+      "id": "rxv-1977-03-05-atlanta-250sx",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977-03-05/250sx/fulton-county-stadium",
+      "title": "1977 Atlanta - 250SX",
+      "fetchedAt": "2026-07-04T11:10:45.000Z",
+      "publishedAt": "1977-03-05",
+      "year": 1977,
+      "seriesKey": "ama-supercross",
+      "documentType": "race-results",
+      "tableCount": 1,
+      "factCount": 3,
+      "contentHash": "rxv-1977-atlanta-250sx"
+    },
+    {
+      "id": "rxv-1977-03-18-houston-1-250sx",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977-03-18/250sx/astrodome",
+      "title": "1977 Houston 1 - 250SX",
+      "fetchedAt": "2026-07-04T11:10:45.000Z",
+      "publishedAt": "1977-03-18",
+      "year": 1977,
+      "seriesKey": "ama-supercross",
+      "documentType": "race-results",
+      "tableCount": 1,
+      "factCount": 3,
+      "contentHash": "rxv-1977-houston-1-250sx"
+    }
+  ],
+  "facts": [
+    {"id":"1977-sx-race-atlanta-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Atlanta","factType":"event-date","value":"1977-03-05","context":{"class":"250SX","venue":"Fulton County Stadium","location":"Atlanta, GA"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-daytona-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Daytona","factType":"event-date","value":"1977-03-12","context":{"class":"250SX","venue":"Daytona International Speedway","location":"Daytona, FL"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-houston-1-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Houston 1","factType":"event-date","value":"1977-03-18","context":{"class":"250SX","venue":"Astrodome","location":"Houston, TX"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-houston-2-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Houston 2","factType":"event-date","value":"1977-03-19","context":{"class":"250SX","venue":"Astrodome","location":"Houston, TX"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-irving-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Irving","factType":"event-date","value":"1977-03-26","context":{"class":"250SX","venue":"Texas Stadium","location":"Irving, TX"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-pontiac-1-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Pontiac 1","factType":"event-date","value":"1977-04-02","context":{"class":"250SX","venue":"Silverdome","location":"Pontiac, MI"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-pontiac-2-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Pontiac 2","factType":"event-date","value":"1977-04-03","context":{"class":"250SX","venue":"Silverdome","location":"Pontiac, MI"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-new-orleans-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"New Orleans","factType":"event-date","value":"1977-06-04","context":{"class":"250SX","venue":"Superdome","location":"New Orleans, LA"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-los-angeles-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Los Angeles","factType":"event-date","value":"1977-07-09","context":{"class":"250SX","venue":"Los Angeles Memorial Coliseum","location":"Los Angeles, CA"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-race-anaheim-date","documentId":"rxv-1977-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"event","entityName":"Anaheim","factType":"event-date","value":"1977-11-12","context":{"class":"250SX","venue":"Anaheim Stadium","location":"Anaheim, CA"},"provenanceUrl":"https://vault.racerxonline.com/1977/sx/races","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-atlanta-250sx-result-1","documentId":"rxv-1977-03-05-atlanta-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Bob Hannah","factType":"race-finish-position","value":1,"context":{"event":"Atlanta","date":"1977-03-05","class":"250SX","venue":"Fulton County Stadium","location":"Atlanta, GA","hometown":"Whittier, CA","machine":"Yamaha"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-05/250sx/fulton-county-stadium","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-atlanta-250sx-result-2","documentId":"rxv-1977-03-05-atlanta-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Jim Pomeroy","factType":"race-finish-position","value":2,"context":{"event":"Atlanta","date":"1977-03-05","class":"250SX","venue":"Fulton County Stadium","location":"Atlanta, GA","hometown":"Yakima, WA","machine":"Honda"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-05/250sx/fulton-county-stadium","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-atlanta-250sx-result-3","documentId":"rxv-1977-03-05-atlanta-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Jimmy Ellis","factType":"race-finish-position","value":3,"context":{"event":"Atlanta","date":"1977-03-05","class":"250SX","venue":"Fulton County Stadium","location":"Atlanta, GA","hometown":"Cobalt, CT","machine":"Can-am"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-05/250sx/fulton-county-stadium","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-houston-1-250sx-result-1","documentId":"rxv-1977-03-18-houston-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Tony DiStefano","factType":"race-finish-position","value":1,"context":{"event":"Houston 1","date":"1977-03-18","class":"250SX","venue":"Astrodome","location":"Houston, TX","hometown":"Bristol, PA","machine":"Suzuki"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-18/250sx/astrodome","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-houston-1-250sx-result-2","documentId":"rxv-1977-03-18-houston-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Jim Pomeroy","factType":"race-finish-position","value":2,"context":{"event":"Houston 1","date":"1977-03-18","class":"250SX","venue":"Astrodome","location":"Houston, TX","hometown":"Yakima, WA","machine":"Honda"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-18/250sx/astrodome","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-houston-1-250sx-result-3","documentId":"rxv-1977-03-18-houston-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Bob Hannah","factType":"race-finish-position","value":3,"context":{"event":"Houston 1","date":"1977-03-18","class":"250SX","venue":"Astrodome","location":"Houston, TX","hometown":"Whittier, CA","machine":"Yamaha"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-18/250sx/astrodome","extractedAt":"2026-07-04T11:10:45.000Z"}
+  ]
+}
