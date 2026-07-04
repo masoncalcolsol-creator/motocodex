@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T09:33:14.114Z",
+  "updatedAt": "2026-07-04T11:48:21.013Z",
   "queue": [
     {
       "url": "https://www.supercrosslive.com/gallery/anaheim-supercross-gallery-january-2016-2/",
@@ -3072,202 +3072,207 @@
   },
   "failed": {
     "https://www.supercrosslive.com/gallery/anaheim-supercross-gallery-january-2016-2/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:49.228Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:52.112Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/anaheim-supercross-gallery-january-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:50.150Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:53.140Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/arlington-supercross-gallery-february-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:51.071Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:54.156Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/atlanta-supercross-gallery-february-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:51.993Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:55.160Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/daytona-supercross-gallery-march-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:52.916Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:56.181Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/detroit-supercross-gallery-march-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:53.838Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:57.169Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/east-rutherford-supercross-gallery-april-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:54.760Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:58.208Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/foxboro-supercross-gallery-april-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:55.680Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:47:59.264Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/glendale-supercross-gallery-february-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:56.601Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:00.330Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/indianapolis-supercross-gallery-april-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:57.525Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:01.392Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/las-vegas-supercross-gallery-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:58.447Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:02.374Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/oakland-supercross-gallery-january-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:32:59.368Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:03.399Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/san-diego-supercross-gallery-february-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:00.292Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:04.468Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/san-diego-supercross-gallery-january-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:01.214Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:05.516Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/santa-clara-supercross-gallery-april-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:02.136Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:06.552Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/st-louis-supercross-gallery-april-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:03.058Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:07.571Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/toronto-supercross-gallery-march-2016/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:03.979Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:08.574Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/roczen-kicks-off-2017-season-with-dominant-victory-in-anaheim/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:04.905Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:09.568Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/tickets-for-2017-monster-energy-supercross-season-on-sale-now/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:05.834Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:10.573Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/anaheim-2-supercross-gallery-january-2017/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:06.756Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:11.554Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/anaheim-supercross-gallery-january-2017/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:07.678Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:12.563Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/arlington-supercross-gallery-february-2017/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:08.599Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:13.590Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/atlanta-supercross-gallery-february-2017/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:09.525Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:14.585Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/minneapolis-supercross-gallery-february-2017/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:10.447Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:15.611Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/oakland-supercross-gallery-february-2017/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:11.370Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:16.649Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/phoenix-supercross-gallery-january-2017/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:12.292Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:17.690Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/san-diego-supercross-gallery-january-2017/": {
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-04T11:48:18.709Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/toronto-supercross-gallery-march-2017/": {
       "attempts": 1,
-      "lastAttemptAt": "2026-07-04T09:33:13.213Z",
+      "lastAttemptAt": "2026-07-04T11:48:20.113Z",
       "error": "Page did not contain durable historical result metadata"
     }
   },
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:14.400Z",
+      "checkedAt": "2026-07-04T11:47:31.002Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:16.065Z",
+      "checkedAt": "2026-07-04T11:47:32.759Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:17.729Z",
+      "checkedAt": "2026-07-04T11:47:34.515Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-04T09:32:18.629Z",
+      "checkedAt": "2026-07-04T11:47:35.416Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:19.468Z",
+      "checkedAt": "2026-07-04T11:47:36.514Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:21.137Z",
+      "checkedAt": "2026-07-04T11:47:38.267Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:22.818Z",
+      "checkedAt": "2026-07-04T11:47:40.021Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-04T09:32:23.719Z",
+      "checkedAt": "2026-07-04T11:47:40.920Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:24.613Z",
+      "checkedAt": "2026-07-04T11:47:42.030Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:26.367Z",
+      "checkedAt": "2026-07-04T11:47:43.797Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:28.144Z",
+      "checkedAt": "2026-07-04T11:47:45.564Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-04T09:32:29.045Z",
+      "checkedAt": "2026-07-04T11:47:46.464Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -3284,25 +3289,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:43.999Z",
+      "checkedAt": "2026-07-04T11:47:47.408Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:45.663Z",
+      "checkedAt": "2026-07-04T11:47:49.157Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T09:32:47.328Z",
+      "checkedAt": "2026-07-04T11:47:50.905Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-04T09:32:48.228Z",
+      "checkedAt": "2026-07-04T11:47:51.806Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 28
+  "cursor": 56
 }
