@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-04T17:29:44.790Z",
+  "generatedAt": "2026-07-04T19:40:59.622Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 1,
+    "pagesAccepted": 0,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
