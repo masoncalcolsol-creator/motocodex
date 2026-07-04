@@ -9,7 +9,7 @@ on:
       - ".github/workflows/motopedia-backfill.yml"
   workflow_dispatch:
   schedule:
-    - cron: "17 */2 * * *"
+    - cron: "17 * * * *"
 
 permissions:
   contents: write
@@ -21,11 +21,13 @@ concurrency:
 jobs:
   backfill:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 50
 
     steps:
       - name: Check out MotoCODEX
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -38,11 +40,10 @@ jobs:
           MOTOPEDIA_MAX_PAGES: "28"
           MOTOPEDIA_MAX_FACTS_PER_PAGE: "100"
           MOTOPEDIA_DELAY_MS: "900"
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node scripts/motopedia-backfill.mjs
 
       - name: Commit updated library and checkpoint
+        if: always()
         run: |
           git config user.name "MotoPEDIA Backfill"
           git config user.email "actions@users.noreply.github.com"
