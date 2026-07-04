@@ -1,351 +1,175 @@
-
 import Link from "next/link";
-import { createClient } from "@supabase/supabase-js";
+import MotoHeader from "@/components/MotoHeader";
+import { filterMotoItems, getSocial, topTags, type MotoItem } from "@/lib/moto";
+import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-type SocialPost = {
-  id: string;
-  platform: string;
-  source_id: string;
-  url: string;
-  title: string | null;
-  thumbnail_url: string | null;
-  published_at: string | null;
-  created_at: string | null;
+type SearchParams = {
+  q?: string;
+  platform?: "all" | "youtube" | "instagram";
+  tag?: string;
 };
 
-type SocialSource = {
-  id: string;
-  platform: string;
-  title: string | null;
-  handle: string | null;
-  enabled: boolean;
-};
-
-function supabasePublic() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !anon) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY.");
-
-  return createClient(url, anon, {
-    auth: { persistSession: false },
-    global: {
-      fetch: (input: any, init?: any) =>
-        fetch(input, {
-          ...(init || {}),
-          cache: "no-store",
-          headers: {
-            ...(init?.headers || {}),
-            "cache-control": "no-store",
-            pragma: "no-cache",
-          },
-        }),
-    },
-  });
+function formatDate(value: string | null) {
+  if (!value) return "Unknown publish time";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "Unknown publish time";
+  return date.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 }
 
-function safeHostname(rawUrl: string): string | null {
-  try {
-    const u = new URL(rawUrl);
-    const h = u.hostname.replace(/^www\./i, "").trim();
-    return h.length ? h : null;
-  } catch {
-    return null;
-  }
+function FeedCard({ item, large = false }: { item: MotoItem; large?: boolean }) {
+  return (
+    <a href={item.url} target="_blank" rel="noreferrer" className={large ? styles.largeCard : styles.feedCard}>
+      <div className={styles.media}>
+        {item.thumbnailUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={item.thumbnailUrl} alt="" loading="lazy" referrerPolicy="no-referrer" />
+        ) : (
+          <div className={styles.mediaFallback}>{item.platform === "youtube" ? "▶" : "◎"}</div>
+        )}
+        <span className={item.platform === "youtube" ? styles.youtubePill : styles.instagramPill}>{item.platform}</span>
+      </div>
+      <div className={styles.cardCopy}>
+        <div className={styles.sourceLine}>
+          <strong>{item.sourceName}</strong>
+          <span>{formatDate(item.publishedAt || item.createdAt)}</span>
+        </div>
+        <h3>{item.title}</h3>
+        <div className={styles.tags}>{item.tags.slice(0, 4).map((tag) => <span key={tag}>{tag}</span>)}</div>
+      </div>
+    </a>
+  );
 }
 
-function fmt(ts?: string | null) {
-  if (!ts) return "—";
-  const d = new Date(ts);
-  if (Number.isNaN(d.getTime())) return ts;
-  return d.toLocaleString();
-}
+export default async function FeedsPage({ searchParams }: { searchParams: SearchParams }) {
+  const query = String(searchParams?.q ?? "").trim();
+  const platform = searchParams?.platform === "youtube" || searchParams?.platform === "instagram" ? searchParams.platform : "all";
+  const tag = String(searchParams?.tag ?? "all").trim().toLowerCase();
 
-function first(sp: Record<string, string | string[] | undefined>, key: string): string {
-  const v = sp[key];
-  return Array.isArray(v) ? (v[0] ?? "") : (v ?? "");
-}
+  const data = await getSocial(700);
+  const filtered = filterMotoItems(data.items, { query, platform, tag });
+  const tags = topTags(data.items, 16);
+  const youtubeCount = data.items.filter((item) => item.platform === "youtube").length;
+  const instagramCount = data.items.filter((item) => item.platform === "instagram").length;
+  const lead = filtered[0];
+  const gridItems = filtered.slice(lead ? 1 : 0);
+  const sources = Array.from(new Set(data.items.map((item) => item.sourceName))).sort();
 
-function supabaseHostHint() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-  try {
-    const u = new URL(url);
-    const host = u.host || "";
-    const ref = host.split(".")[0] || host;
-    return ref ? `${ref}…` : "unknown";
-  } catch {
-    return "unknown";
-  }
-}
-
-export default async function FeedsPage({
-  searchParams,
-}: {
-  searchParams: Record<string, string | string[] | undefined>;
-}) {
-  const renderNonce = Date.now();
-
-  const q = first(searchParams, "q").trim();
-  const platformParam = first(searchParams, "platform").trim().toLowerCase();
-
-  const platform =
-    platformParam === "youtube" ? "youtube" :
-    platformParam === "instagram" ? "instagram" :
-    "all";
-
-  const adminTokenParam = first(searchParams, "admin").trim();
-  const adminTokenEnv = (process.env.ADMIN_TOKEN ?? "").trim();
-  const isAdmin = Boolean(adminTokenEnv && adminTokenParam && adminTokenParam === adminTokenEnv);
-
-  let posts: SocialPost[] = [];
-  let sources: SocialSource[] = [];
-  let pageError: string | null = null;
-
-  try {
-    const supabase = supabasePublic();
-
-    const srcRes = await supabase
-      .from("social_sources")
-      .select("id,platform,title,handle,enabled")
-      .eq("enabled", true);
-
-    if (srcRes.error) throw new Error(`Supabase sources error: ${srcRes.error.message}`);
-    sources = (srcRes.data ?? []) as any;
-
-    let query = supabase
-      .from("social_posts")
-      .select("id,platform,source_id,url,title,thumbnail_url,published_at,created_at")
-      .order("published_at", { ascending: false, nullsFirst: false })
-      .order("created_at", { ascending: false, nullsFirst: false })
-      .limit(1000);
-
-    if (platform === "all") query = query.in("platform", ["youtube", "instagram"]);
-    else query = query.eq("platform", platform);
-
-    if (q.length) query = query.ilike("title", `%${q}%`);
-
-    const { data, error } = await query;
-    if (error) throw new Error(`Supabase posts error: ${error.message}`);
-    posts = (data ?? []) as any;
-  } catch (e: any) {
-    pageError = e?.message ? String(e.message) : "Unknown server error.";
-  }
-
-  const sourceMap = new Map<string, SocialSource>();
-  for (const s of sources) sourceMap.set(s.id, s);
-
-  const ytCount = posts.filter((p) => p.platform === "youtube").length;
-  const igCount = posts.filter((p) => p.platform === "instagram").length;
-
-  const qs = (p: string) => {
-    const u = new URL("https://example.com/feeds");
-    if (q) u.searchParams.set("q", q);
-    if (p !== "all") u.searchParams.set("platform", p);
-    if (isAdmin) u.searchParams.set("admin", adminTokenParam);
-    return u.pathname + u.search;
+  const hrefWith = (patch: Partial<SearchParams>) => {
+    const next = { q: query || undefined, platform, tag: tag === "all" ? undefined : tag, ...patch };
+    const params = new URLSearchParams();
+    if (next.q) params.set("q", next.q);
+    if (next.platform && next.platform !== "all") params.set("platform", next.platform);
+    if (next.tag && next.tag !== "all") params.set("tag", next.tag);
+    const value = params.toString();
+    return value ? `/feeds?${value}` : "/feeds";
   };
 
-  const adminHref = (() => {
-    const u = new URL("https://example.com/admin/feeds");
-    u.searchParams.set("token", adminTokenParam);
-    return u.pathname + u.search;
-  })();
-
-  const runYtIngestHref = (() => {
-    const u = new URL("https://example.com/api/feeds/youtube/run");
-    u.searchParams.set("token", adminTokenParam);
-    return u.pathname + u.search;
-  })();
-
   return (
-    <main style={{ minHeight: "100vh", background: "#0b0b0d", color: "#eaeaea" }}>
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          borderBottom: "1px solid rgba(255,255,255,0.08)",
-          background: "rgba(11,11,13,0.92)",
-          backdropFilter: "blur(10px)",
-        }}
-      >
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px 14px" }}>
-          <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-            <div style={{ fontWeight: 900, letterSpacing: 0.5 }}>
-              MotoFEEDS <span style={{ opacity: 0.6, fontWeight: 700 }}>YT + IG</span>
-            </div>
+    <main className={styles.page}>
+      <div className={styles.shell}>
+        <MotoHeader active="feeds" />
 
-            <div style={{ marginLeft: "auto", display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <Link
-                href="/"
-                style={{
-                  padding: "8px 10px",
-                  borderRadius: 10,
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: "rgba(255,255,255,0.06)",
-                  color: "#eaeaea",
-                  fontSize: 13,
-                  fontWeight: 900,
-                }}
-              >
-                Back to MotoCODEX
-              </Link>
-
-              {isAdmin ? (
-                <>
-                  <a
-                    href={runYtIngestHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      padding: "8px 10px",
-                      borderRadius: 10,
-                      textDecoration: "none",
-                      border: "1px solid rgba(255,0,60,0.35)",
-                      background: "rgba(255,0,60,0.12)",
-                      color: "#ffd6df",
-                      fontSize: 13,
-                      fontWeight: 900,
-                    }}
-                    title="Run YouTube ingest now"
-                  >
-                    Run ingest
-                  </a>
-
-                  <a
-                    href={adminHref}
-                    style={{
-                      padding: "8px 10px",
-                      borderRadius: 10,
-                      textDecoration: "none",
-                      border: "1px solid rgba(255,255,255,0.10)",
-                      background: "rgba(255,255,255,0.06)",
-                      color: "#eaeaea",
-                      fontSize: 13,
-                      fontWeight: 900,
-                    }}
-                  >
-                    Admin
-                  </a>
-                </>
-              ) : null}
-            </div>
-          </div>
-
-          <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-              <a href={qs("all")} style={{ textDecoration: "none" }}>
-                <button style={{ padding: "8px 10px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: platform === "all" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>All</button>
-              </a>
-              <a href={qs("youtube")} style={{ textDecoration: "none" }}>
-                <button style={{ padding: "8px 10px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: platform === "youtube" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>YouTube</button>
-              </a>
-              <a href={qs("instagram")} style={{ textDecoration: "none" }}>
-                <button style={{ padding: "8px 10px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: platform === "instagram" ? "rgba(255,0,60,0.20)" : "rgba(255,255,255,0.06)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>Instagram</button>
-              </a>
-            </div>
-
-            <form action="/feeds" style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+        <section className={styles.hero}>
+          <div className={styles.heroCopy}>
+            <div className={styles.eyebrow}>VIDEO / SOCIAL / PODCAST SIGNAL</div>
+            <h1>MotoFEEDS</h1>
+            <p>
+              One master feed for the creators, teams, riders, channels, and social sources shaping the moto conversation right now.
+            </p>
+            <form action="/feeds" className={styles.searchForm}>
               {platform !== "all" ? <input type="hidden" name="platform" value={platform} /> : null}
-              {isAdmin ? <input type="hidden" name="admin" value={adminTokenParam} /> : null}
-              <input
-                name="q"
-                defaultValue={q}
-                placeholder="Search titles… (q=)"
-                style={{
-                  width: 420,
-                  maxWidth: "92vw",
-                  padding: "10px 12px",
-                  borderRadius: 12,
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: "rgba(255,255,255,0.06)",
-                  color: "#eaeaea",
-                  outline: "none",
-                  fontSize: 14,
-                }}
-              />
-              <button type="submit" style={{ padding: "10px 12px", borderRadius: 12, border: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,0,60,0.18)", color: "#eaeaea", fontWeight: 900, cursor: "pointer" }}>
-                Go
-              </button>
+              {tag !== "all" ? <input type="hidden" name="tag" value={tag} /> : null}
+              <input name="q" defaultValue={query} placeholder="Search creators, riders, videos, topics…" />
+              <button type="submit">Search feed</button>
             </form>
+          </div>
 
-            <div style={{ marginLeft: "auto", opacity: 0.75, fontSize: 12 }}>
-              Debug: render={renderNonce} • supabase={supabaseHostHint()} • returned yt={ytCount} ig={igCount} (limit 1000)
+          <div className={styles.dashboard}>
+            <div><strong>{data.items.length}</strong><span>posts loaded</span></div>
+            <div><strong>{sources.length}</strong><span>active sources</span></div>
+            <div><strong>{youtubeCount}</strong><span>YouTube</span></div>
+            <div><strong>{instagramCount}</strong><span>Instagram</span></div>
+            <div className={styles.modeCard}>
+              <span>Feed transport</span>
+              <strong>{data.mode === "supabase" ? "Historical social store" : data.mode === "live-rss" ? "Live RSS failover" : "Awaiting source data"}</strong>
+              <small>Refreshed {new Date(data.fetchedAt).toLocaleTimeString()} · {data.sourceCount} sources responsive</small>
             </div>
-          </div>
-
-          {pageError ? (
-            <div style={{ marginTop: 10, padding: "10px 12px", borderRadius: 12, border: "1px solid rgba(255,0,60,0.35)", background: "rgba(255,0,60,0.12)", color: "#ffd6df", fontSize: 13, fontWeight: 900, lineHeight: 1.4 }}>
-              {pageError}
-            </div>
-          ) : null}
-
-          <div style={{ marginTop: 8, opacity: 0.75, fontSize: 13 }}>
-            Showing <b>{posts.length}</b> items (YT={ytCount}, IG={igCount}){q.length ? <> for <b>{q}</b></> : null}.
-          </div>
-        </div>
-      </div>
-
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px" }}>
-        <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
-          <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-            <div style={{ fontWeight: 900 }}>Master Moto Feed</div>
-            <div style={{ opacity: 0.65, fontSize: 12 }}>Newest by published time • YT + IG</div>
-          </div>
-
-          <div style={{ padding: 8 }}>
-            {posts.map((p) => {
-              const src = sourceMap.get(p.source_id);
-              const label = (src?.title ?? "").trim() || (src?.handle ? `@${src.handle}` : "") || safeHostname(p.url) || "MotoFEEDS";
-              const host = safeHostname(p.url) ?? p.platform;
-
-              return (
-                <a
-                  key={p.id}
-                  href={p.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "flex",
-                    gap: 12,
-                    alignItems: "center",
-                    padding: "12px 12px",
-                    borderRadius: 14,
-                    textDecoration: "none",
-                    color: "#eaeaea",
-                    border: "1px solid rgba(255,255,255,0.06)",
-                    background: "rgba(0,0,0,0.22)",
-                    marginBottom: 10,
-                  }}
-                >
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontWeight: 900, lineHeight: 1.2 }}>{p.title ?? "(untitled)"}</div>
-                    <div style={{ marginTop: 7, fontSize: 12, opacity: 0.78, display: "flex", gap: 8, flexWrap: "wrap" }}>
-                      <span>{label}</span>
-                      <span>•</span>
-                      <span style={{ textTransform: "uppercase" }}>{p.platform}</span>
-                      <span>•</span>
-                      <span>{host}</span>
-                      <span>•</span>
-                      <span>{fmt(p.published_at ?? p.created_at)}</span>
-                    </div>
-                  </div>
-
-                  {p.thumbnail_url ? (
-                    <div style={{ width: 120, height: 80, borderRadius: 12, overflow: "hidden", flex: "0 0 auto", border: "1px solid rgba(255,255,255,0.10)", background: "rgba(255,255,255,0.06)" }}>
-                      <img src={p.thumbnail_url} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} loading="lazy" referrerPolicy="no-referrer" />
-                    </div>
-                  ) : null}
-                </a>
-              );
-            })}
           </div>
         </section>
+
+        <section className={styles.controls}>
+          <div className={styles.platformToggle}>
+            <Link href={hrefWith({ platform: "all" })} className={platform === "all" ? styles.active : undefined}>All</Link>
+            <Link href={hrefWith({ platform: "youtube" })} className={platform === "youtube" ? styles.active : undefined}>YouTube <span>{youtubeCount}</span></Link>
+            <Link href={hrefWith({ platform: "instagram" })} className={platform === "instagram" ? styles.active : undefined}>Instagram <span>{instagramCount}</span></Link>
+          </div>
+          <div className={styles.tagRail}>
+            <Link href={hrefWith({ tag: "all" })} className={tag === "all" ? styles.activeTag : undefined}>All topics</Link>
+            {tags.map((entry) => (
+              <Link key={entry.tag} href={hrefWith({ tag: entry.tag })} className={tag === entry.tag ? styles.activeTag : undefined}>
+                {entry.tag}<span>{entry.count}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {data.errors.length ? (
+          <details className={styles.telemetry}>
+            <summary>Feed telemetry · {data.errors.length} recoverable issue{data.errors.length === 1 ? "" : "s"}</summary>
+            <div>{data.errors.slice(0, 10).map((error) => <p key={error}>{error}</p>)}</div>
+          </details>
+        ) : null}
+
+        <section className={styles.sourceStrip}>
+          <span>Sources in current window</span>
+          <div>{sources.slice(0, 18).map((source) => <b key={source}>{source}</b>)}</div>
+        </section>
+
+        {lead ? (
+          <>
+            <section className={styles.leadSection}>
+              <div className={styles.sectionHeading}>
+                <div><span>01</span><strong>Latest signal</strong></div>
+                <small>{filtered.length} items in this view</small>
+              </div>
+              <FeedCard item={lead} large />
+            </section>
+
+            <section className={styles.feedSection}>
+              <div className={styles.sectionHeading}>
+                <div><span>02</span><strong>Master moto feed</strong></div>
+                <small>newest published first</small>
+              </div>
+              <div className={styles.feedGrid}>
+                {gridItems.map((item) => <FeedCard key={item.id} item={item} />)}
+              </div>
+            </section>
+          </>
+        ) : (
+          <section className={styles.emptyState}>
+            <strong>No matching feed signal.</strong>
+            <p>The selected source lane may be empty. Clear the filters to return to the combined feed.</p>
+            <Link href="/feeds">Reset MotoFEEDS</Link>
+          </section>
+        )}
+
+        <section className={styles.libraryBridge}>
+          <div>
+            <span>From signal to memory</span>
+            <strong>MotoFEEDS captures what the moto world is saying now.</strong>
+            <p>MOTOPEDIA preserves the durable facts—seasons, rounds, riders, results, standings, and source provenance—so the signal can become historical intelligence.</p>
+          </div>
+          <Link href="/motopedia">Open MOTOPEDIA →</Link>
+        </section>
+
+        <footer className={styles.footer}>
+          <span>MotoFEEDS · MotoINTELLIGENCE social layer</span>
+          <strong>Public posts remain owned and controlled by their source platforms.</strong>
+        </footer>
       </div>
     </main>
   );
 }
-'@ | Set-Content -Encoding UTF8 C:\MotoCODEX\app\feeds\page.tsx'
