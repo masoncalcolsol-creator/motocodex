@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-04T14:05:30.000Z",
+  "ingestionPolicy": {
+    "sourcePriority": ["racerx-vault", "racerx", "supercrosslive", "promotocross"],
+    "robotsBoundary": "Respect robots.txt and public access boundaries; do not bypass authentication, paywalls, rate limits, or 403 responses.",
+    "bodyCopyPolicy": "No article or page bodies are copied. This file stores compact factual metadata, event facts, source URLs, and failure receipts only.",
+    "rateLimitPolicy": "Small-batch historical ingestion only; preserve checkpoints and stop on access blocks."
+  },
+  "run": {
+    "status": "backfill-active",
+    "pagesAttempted": 8,
+    "pagesAccepted": 1,
+    "factsExtracted": 11,
+    "lastError": "1978 individual Racer X Vault result pages sampled in this run returned cache-miss/transient fetch failures. No bypass attempted."
+  },
+  "failureReceipts": [
+    {"id":"rxv-1978-seattle-250sx-cache-miss-run8","sourceKey":"racerx-vault","url":"https://vault.racerxonline.com/1978-02-18/250sx/kingdome","status":"fetch-cache-miss","observedAt":"2026-07-04T14:05:30.000Z","policyAction":"No aggressive retry; leave for a later respectful small-batch run."},
+    {"id":"rxv-1978-atlanta-250sx-cache-miss-run8","sourceKey":"racerx-vault","url":"https://vault.racerxonline.com/1978-03-04/250sx/fulton-county-stadium","status":"fetch-cache-miss","observedAt":"2026-07-04T14:05:30.000Z","policyAction":"No aggressive retry; leave for a later respectful small-batch run."},
+    {"id":"rxv-1978-daytona-250sx-cache-miss-run8","sourceKey":"racerx-vault","url":"https://vault.racerxonline.com/1978-03-11/250sx/daytona-international-speedway","status":"fetch-cache-miss","observedAt":"2026-07-04T14:05:30.000Z","policyAction":"No aggressive retry; leave for a later respectful small-batch run."},
+    {"id":"rxv-1978-houston-1-250sx-cache-miss-run8","sourceKey":"racerx-vault","url":"https://vault.racerxonline.com/1978-03-17/250sx/astrodome","status":"fetch-cache-miss","observedAt":"2026-07-04T14:05:30.000Z","policyAction":"No aggressive retry; leave for a later respectful small-batch run."},
+    {"id":"rxv-1978-houston-2-250sx-cache-miss-run8","sourceKey":"racerx-vault","url":"https://vault.racerxonline.com/1978-03-18/250sx/astrodome","status":"fetch-cache-miss","observedAt":"2026-07-04T14:05:30.000Z","policyAction":"No aggressive retry; leave for a later respectful small-batch run."},
+    {"id":"rxv-1978-pontiac-1-250sx-cache-miss-run8","sourceKey":"racerx-vault","url":"https://vault.racerxonline.com/1978-04-01/250sx/silverdome","status":"fetch-cache-miss","observedAt":"2026-07-04T14:05:30.000Z","policyAction":"No aggressive retry; leave for a later respectful small-batch run."},
+    {"id":"rxv-1978-pontiac-2-250sx-cache-miss-run8","sourceKey":"racerx-vault","url":"https://vault.racerxonline.com/1978-04-02/250sx/silverdome","status":"fetch-cache-miss","observedAt":"2026-07-04T14:05:30.000Z","policyAction":"No aggressive retry; leave for a later respectful small-batch run."}
+  ],
+  "documents": [
+    {
+      "id": "rxv-1978-sx-races",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1978/sx/races",
+      "title": "1978 Supercross Races",
+      "fetchedAt": "2026-07-04T14:05:30.000Z",
+      "publishedAt": null,
+      "year": 1978,
+      "seriesKey": "ama-supercross",
+      "documentType": "season-race-index",
+      "tableCount": 1,
+      "factCount": 11,
+      "contentHash": "rxv-1978-sx-races"
+    }
+  ],
+  "facts": [
+    {"id":"1978-sx-race-seattle-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Seattle","factType":"event-date","value":"1978-02-18","context":{"class":"250SX","venue":"Kingdome","location":"Seattle, WA"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-atlanta-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Atlanta","factType":"event-date","value":"1978-03-04","context":{"class":"250SX","venue":"Fulton County Stadium","location":"Atlanta, GA"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-daytona-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Daytona","factType":"event-date","value":"1978-03-11","context":{"class":"250SX","venue":"Daytona International Speedway","location":"Daytona, FL"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-houston-1-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Houston 1","factType":"event-date","value":"1978-03-17","context":{"class":"250SX","venue":"Astrodome","location":"Houston, TX"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-houston-2-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Houston 2","factType":"event-date","value":"1978-03-18","context":{"class":"250SX","venue":"Astrodome","location":"Houston, TX"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-pontiac-1-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Pontiac 1","factType":"event-date","value":"1978-04-01","context":{"class":"250SX","venue":"Silverdome","location":"Pontiac, MI"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-pontiac-2-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Pontiac 2","factType":"event-date","value":"1978-04-02","context":{"class":"250SX","venue":"Silverdome","location":"Pontiac, MI"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-pittsburgh-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Pittsburgh","factType":"event-date","value":"1978-05-13","context":{"class":"250SX","venue":"Three Rivers Stadium","location":"Pittsburgh, PA"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-new-orleans-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"New Orleans","factType":"event-date","value":"1978-05-20","context":{"class":"250SX","venue":"Superdome","location":"New Orleans, LA"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-los-angeles-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Los Angeles","factType":"event-date","value":"1978-06-24","context":{"class":"250SX","venue":"Los Angeles Memorial Coliseum","location":"Los Angeles, CA"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"},
+    {"id":"1978-sx-race-anaheim-date","documentId":"rxv-1978-sx-races","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1978,"entityType":"event","entityName":"Anaheim","factType":"event-date","value":"1978-11-11","context":{"class":"250SX","venue":"Anaheim Stadium","location":"Anaheim, CA"},"provenanceUrl":"https://vault.racerxonline.com/1978/sx/races","extractedAt":"2026-07-04T14:05:30.000Z"}
+  ]
+}
