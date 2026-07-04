@@ -28,15 +28,24 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci --silent
-      - name: Build and print only failure tail
+      - name: Exact production build
+        id: exact_build
         shell: bash
         run: |
           set +e
           npm run build > build.log 2>&1
           code=$?
-          if [ $code -ne 0 ]; then
-            echo "===== BUILD FAILURE TAIL ====="
-            tail -120 build.log
-            exit $code
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit 0
+      - name: Upload raw build log
+        uses: actions/upload-artifact@v4
+        with:
+          name: sports-build-log
+          path: build.log
+          retention-days: 1
+      - name: Enforce build result
+        shell: bash
+        run: |
+          if [ "${{ steps.exact_build.outputs.exit_code }}" != "0" ]; then
+            exit 1
           fi
-          tail -40 build.log
