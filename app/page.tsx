@@ -1,493 +1,227 @@
-// FILE: C:\MotoCODEX\app\page.tsx
-// Replace the ENTIRE file with this.
-//
-// Fixes:
-// - Never shows "unknown" for source label
-// - Subtitles rewritten to permanent user-facing language
-// - Adds /feeds link in header
-//
-// Keeps:
-// - published_at newest in center
-// - mobile single scroll toggle view=newest|ranked
-// - pods from tags-first
-
 import Link from "next/link";
-import { createClient } from "@supabase/supabase-js";
+import MotoHeader from "@/components/MotoHeader";
+import { filterMotoItems, getNews, topTags, type MotoItem } from "@/lib/moto";
+import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-type NewsItem = {
-  id: string;
-  title: string;
-  url: string;
-  source_key: string;
-  source_name: string | null;
-  tags: string[] | null;
-  importance: number | null;
-  thumbnail_url?: string | null;
-  published_at: string | null;
-  created_at: string | null;
+type SearchParams = {
+  q?: string;
+  tag?: string;
+  view?: "newest" | "ranked";
 };
 
-function supabasePublic() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !anon) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY.");
-  return createClient(url, anon, { auth: { persistSession: false } });
+function formatAge(value: string | null) {
+  if (!value) return "time unknown";
+  const delta = Date.now() - new Date(value).getTime();
+  if (!Number.isFinite(delta)) return "time unknown";
+  const minutes = Math.max(0, Math.floor(delta / 60_000));
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
 }
 
-function safeHostname(rawUrl: string): string | null {
-  try {
-    const u = new URL(rawUrl);
-    const h = u.hostname.replace(/^www\./i, "").trim();
-    return h.length ? h : null;
-  } catch {
-    return null;
-  }
+function itemDate(item: MotoItem) {
+  return item.publishedAt || item.createdAt;
 }
 
-function pickSourceLabel(it: NewsItem): string {
-  const a = (it.source_name ?? "").trim();
-  if (a) return a;
-
-  const b = (it.source_key ?? "").trim();
-  if (b) return b;
-
-  const h = safeHostname(it.url);
-  if (h) return h;
-
-  return "MotoCODEX";
-}
-
-function normalizePod(s: string): string {
-  return s
-    .toLowerCase()
-    .trim()
-    .replace(/^https?:\/\//, "")
-    .replace(/^www\./, "")
-    .replace(/\/.*$/, "")
-    .replace(/[^a-z0-9.\-]+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
-function derivePodsFromTagsFirst(item: NewsItem): string[] {
-  const tags = (item.tags ?? [])
-    .filter(Boolean)
-    .map((t) => normalizePod(String(t)))
-    .filter(Boolean);
-
-  if (tags.length) return tags;
-
-  // LAST resort fallback (only if tags missing)
-  const host = safeHostname(item.url);
-  if (host) return [normalizePod(host)];
-
-  const name = (item.source_name ?? "").trim();
-  if (name) return [normalizePod(name)];
-
-  const key = (item.source_key ?? "").trim();
-  if (key) return [normalizePod(key)];
-
-  return ["motocodex"];
-}
-
-function isProbablyYouTube(url: string) {
-  return /youtube\.com|youtu\.be/i.test(url);
-}
-
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: { q?: string; view?: "newest" | "ranked" };
-}) {
-  const q = (searchParams?.q ?? "").trim();
-  const view = (searchParams?.view ?? "newest") as "newest" | "ranked";
-
-  let newestItems: NewsItem[] = [];
-  let rankedItems: NewsItem[] = [];
-  let pageError: string | null = null;
-
-  try {
-    const supabase = supabasePublic();
-
-    const selectCols =
-      "id,title,url,source_key,source_name,tags,importance,thumbnail_url,published_at,created_at";
-
-    // --- NEWEST (published_at desc, fallback created_at)
-    let newestQ = supabase.from("news_items").select(selectCols).limit(240);
-
-    if (q.length) newestQ = newestQ.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
-
-    newestQ = newestQ.order("published_at", { ascending: false, nullsFirst: false });
-    newestQ = newestQ.order("created_at", { ascending: false, nullsFirst: false });
-
-    const newestRes = await newestQ;
-    if (newestRes.error) {
-      pageError = `Supabase query error (newest): ${newestRes.error.message}`;
-    } else {
-      newestItems = (newestRes.data ?? []) as any;
-    }
-
-    // --- RANKED (importance desc, tie-break by published_at desc)
-    let rankedQ = supabase.from("news_items").select(selectCols).limit(240);
-
-    if (q.length) rankedQ = rankedQ.or(`title.ilike.%${q}%,source_name.ilike.%${q}%,source_key.ilike.%${q}%`);
-
-    rankedQ = rankedQ.order("importance", { ascending: false, nullsFirst: false });
-    rankedQ = rankedQ.order("published_at", { ascending: false, nullsFirst: false });
-    rankedQ = rankedQ.order("created_at", { ascending: false, nullsFirst: false });
-
-    const rankedRes = await rankedQ;
-    if (rankedRes.error) {
-      pageError = pageError ?? `Supabase query error (ranked): ${rankedRes.error.message}`;
-    } else {
-      rankedItems = (rankedRes.data ?? []) as any;
-    }
-  } catch (e: any) {
-    pageError = e?.message ? String(e.message) : "Unknown server error.";
-  }
-
-  // Pods: build counts from BOTH lists
-  const podCounts = new Map<string, number>();
-  for (const it of [...newestItems, ...rankedItems]) {
-    for (const pod of derivePodsFromTagsFirst(it)) {
-      if (!pod) continue;
-      podCounts.set(pod, (podCounts.get(pod) ?? 0) + 1);
-    }
-  }
-  const podsSorted = Array.from(podCounts.entries()).sort((a, b) => b[1] - a[1]).slice(0, 50);
-
-  const hrefWith = (patch: Record<string, string | undefined>) => {
-    const params = new URLSearchParams();
-    if (q.length) params.set("q", q);
-    params.set("view", view);
-    for (const [k, v] of Object.entries(patch)) {
-      if (v === undefined) params.delete(k);
-      else params.set(k, v);
-    }
-    return `/?${params.toString()}`;
-  };
-
-  const CardThumb = ({ it }: { it: NewsItem }) => {
-    if (!it.thumbnail_url) return null;
-    return (
-      <div
-        style={{
-          width: 84,
-          height: 56,
-          borderRadius: 12,
-          overflow: "hidden",
-          flex: "0 0 auto",
-          border: "1px solid rgba(255,255,255,0.10)",
-          background: "rgba(255,255,255,0.06)",
-        }}
-        title={isProbablyYouTube(it.url) ? "Video" : "Media"}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={it.thumbnail_url}
-          alt=""
-          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-        />
-      </div>
-    );
-  };
-
-  const renderCard = (it: NewsItem, keyPrefix: string) => (
-    <a
-      key={`${keyPrefix}-${it.id}`}
-      href={it.url}
-      target="_blank"
-      rel="noreferrer"
-      style={{
-        display: "flex",
-        gap: 12,
-        alignItems: "center",
-        padding: "12px 12px",
-        borderRadius: 14,
-        textDecoration: "none",
-        color: "#eaeaea",
-        border: "1px solid rgba(255,255,255,0.06)",
-        background: "rgba(0,0,0,0.22)",
-        marginBottom: 10,
-      }}
-    >
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontWeight: 900, lineHeight: 1.2 }}>{it.title}</div>
-        <div style={{ marginTop: 7, fontSize: 12, opacity: 0.78, display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <span>{pickSourceLabel(it)}</span>
-          <span>•</span>
-          <span>{safeHostname(it.url) ?? "link"}</span>
-          {it.tags?.length ? (
-            <>
-              <span>•</span>
-              <span>{it.tags.slice(0, 4).join(", ")}</span>
-            </>
-          ) : null}
+function StoryCard({ item, emphasis = false }: { item: MotoItem; emphasis?: boolean }) {
+  return (
+    <a href={item.url} target="_blank" rel="noreferrer" className={emphasis ? styles.featureCard : styles.storyCard}>
+      {item.thumbnailUrl ? (
+        <div className={styles.thumbnail}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={item.thumbnailUrl} alt="" loading="lazy" referrerPolicy="no-referrer" />
+        </div>
+      ) : (
+        <div className={styles.thumbnailFallback}>{item.sourceName.slice(0, 2).toUpperCase()}</div>
+      )}
+      <div className={styles.storyCopy}>
+        <div className={styles.storyMeta}>
+          <span>{item.sourceName}</span>
+          <i />
+          <span>{formatAge(itemDate(item))}</span>
+          {item.platform !== "web" ? <b>{item.platform}</b> : null}
+        </div>
+        <h3>{item.title}</h3>
+        {emphasis && item.summary ? <p>{item.summary}</p> : null}
+        <div className={styles.tagRow}>
+          {item.tags.slice(0, emphasis ? 5 : 3).map((tag) => <span key={tag}>{tag}</span>)}
         </div>
       </div>
-      <CardThumb it={it} />
     </a>
   );
+}
 
-  const mobileItems = view === "ranked" ? rankedItems : newestItems;
+function HeadlineRow({ item, rank }: { item: MotoItem; rank?: number }) {
+  return (
+    <a href={item.url} target="_blank" rel="noreferrer" className={styles.headlineRow}>
+      {rank ? <span className={styles.rank}>{String(rank).padStart(2, "0")}</span> : null}
+      <div>
+        <strong>{item.title}</strong>
+        <span>{item.sourceName} · {formatAge(itemDate(item))}</span>
+      </div>
+      <b>{Math.round(item.importance)}</b>
+    </a>
+  );
+}
+
+export default async function HomePage({ searchParams }: { searchParams: SearchParams }) {
+  const query = String(searchParams?.q ?? "").trim();
+  const tag = String(searchParams?.tag ?? "all").trim().toLowerCase();
+  const view = searchParams?.view === "ranked" ? "ranked" : "newest";
+
+  const data = await getNews(300);
+  const filtered = filterMotoItems(data.items, { query, tag });
+  const newest = [...filtered].sort((left, right) => {
+    const leftTime = itemDate(left) ? new Date(itemDate(left)!).getTime() : 0;
+    const rightTime = itemDate(right) ? new Date(itemDate(right)!).getTime() : 0;
+    return rightTime - leftTime;
+  });
+  const ranked = [...filtered].sort((left, right) => right.importance - left.importance || newest.indexOf(left) - newest.indexOf(right));
+  const activeItems = view === "ranked" ? ranked : newest;
+  const tags = topTags(data.items, 20);
+  const lead = activeItems[0];
+  const supporting = activeItems.slice(1, 5);
+  const wire = newest.slice(0, 18);
+  const rankedTop = ranked.slice(0, 15);
+  const sourceNames = new Set(data.items.map((item) => item.sourceName));
+  const fresh24 = data.items.filter((item) => {
+    const date = itemDate(item);
+    return date ? Date.now() - new Date(date).getTime() < 86_400_000 : false;
+  }).length;
+
+  const makeHref = (patch: Partial<SearchParams>) => {
+    const params = new URLSearchParams();
+    const next = { q: query || undefined, tag: tag === "all" ? undefined : tag, view, ...patch };
+    if (next.q) params.set("q", next.q);
+    if (next.tag && next.tag !== "all") params.set("tag", next.tag);
+    if (next.view && next.view !== "newest") params.set("view", next.view);
+    const value = params.toString();
+    return value ? `/?${value}` : "/";
+  };
 
   return (
-    <main style={{ minHeight: "100vh", background: "#0b0b0d", color: "#eaeaea" }}>
-      <div
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          borderBottom: "1px solid rgba(255,255,255,0.08)",
-          background: "rgba(11,11,13,0.92)",
-          backdropFilter: "blur(10px)",
-        }}
-      >
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px 14px" }}>
-          <div style={{ display: "flex", gap: 12, alignItems: "center", flexWrap: "wrap" }}>
-            <div style={{ fontWeight: 900, letterSpacing: 0.5 }}>
-              MotoCODEX <span style={{ opacity: 0.6, fontWeight: 700 }}>Phase 2</span>
-            </div>
+    <main className={styles.page}>
+      <div className={styles.shell}>
+        <MotoHeader active="codex" />
 
-            <div style={{ display: "flex", gap: 10, marginLeft: "auto", flexWrap: "wrap", alignItems: "center" }}>
-              <Link
-                href="/feeds"
-                style={{
-                  padding: "8px 10px",
-                  borderRadius: 10,
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: "rgba(255,255,255,0.06)",
-                  color: "#eaeaea",
-                  fontSize: 13,
-                  fontWeight: 900,
-                }}
-              >
-                MotoFEEDS
-              </Link>
-
-              <Link
-                href={hrefWith({ view: "newest" })}
-                style={{
-                  padding: "8px 10px",
-                  borderRadius: 10,
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: view === "newest" ? "rgba(255,0,60,0.20)" : "transparent",
-                  color: "#eaeaea",
-                  fontSize: 13,
-                  fontWeight: 900,
-                }}
-              >
-                Mobile: Newest
-              </Link>
-              <Link
-                href={hrefWith({ view: "ranked" })}
-                style={{
-                  padding: "8px 10px",
-                  borderRadius: 10,
-                  textDecoration: "none",
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: view === "ranked" ? "rgba(255,0,60,0.20)" : "transparent",
-                  color: "#eaeaea",
-                  fontSize: 13,
-                  fontWeight: 900,
-                }}
-              >
-                Mobile: Ranked
-              </Link>
-            </div>
-          </div>
-
-          <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <form action="/" style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-              <input type="hidden" name="view" value={view} />
-              <input
-                name="q"
-                defaultValue={q}
-                placeholder="Search … (q=)"
-                style={{
-                  width: 360,
-                  maxWidth: "90vw",
-                  padding: "10px 12px",
-                  borderRadius: 12,
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: "rgba(255,255,255,0.06)",
-                  color: "#eaeaea",
-                  outline: "none",
-                  fontSize: 14,
-                }}
-              />
-              <button
-                type="submit"
-                style={{
-                  padding: "10px 12px",
-                  borderRadius: 12,
-                  border: "1px solid rgba(255,255,255,0.10)",
-                  background: "rgba(255,0,60,0.18)",
-                  color: "#eaeaea",
-                  fontWeight: 900,
-                  cursor: "pointer",
-                }}
-              >
-                Go
-              </button>
-
-              {q.length ? (
-                <Link
-                  href={hrefWith({ q: undefined })}
-                  style={{
-                    padding: "10px 12px",
-                    borderRadius: 12,
-                    border: "1px solid rgba(255,255,255,0.10)",
-                    background: "transparent",
-                    color: "#eaeaea",
-                    textDecoration: "none",
-                    fontWeight: 900,
-                  }}
-                >
-                  Clear
-                </Link>
-              ) : null}
+        <section className={styles.hero}>
+          <div className={styles.heroCopy}>
+            <div className={styles.eyebrow}>LIVE MOTOCROSS INTELLIGENCE · NEWS / RESULTS / RIDERS / TEAMS</div>
+            <h1>The whole moto world.<br /><span>One signal board.</span></h1>
+            <p>
+              MotoCODEX aggregates the fastest-moving Supercross, Motocross, SMX, MXGP, WSX, amateur, team, rider, and technical signals into one ranked operating feed.
+            </p>
+            <form action="/" className={styles.searchForm}>
+              {tag !== "all" ? <input type="hidden" name="tag" value={tag} /> : null}
+              {view !== "newest" ? <input type="hidden" name="view" value={view} /> : null}
+              <input name="q" defaultValue={query} placeholder="Search riders, teams, series, injuries, results…" />
+              <button type="submit">Search intelligence</button>
             </form>
-
-            <div style={{ opacity: 0.75, fontSize: 13, paddingTop: 10 }}>
-              Newest: <b>{newestItems.length}</b> • Ranked: <b>{rankedItems.length}</b>
-              {q.length ? (
-                <>
-                  {" "}
-                  • query <b>{q}</b>
-                </>
-              ) : null}
-            </div>
           </div>
 
-          {pageError ? (
-            <div
-              style={{
-                marginTop: 10,
-                padding: "10px 12px",
-                borderRadius: 12,
-                border: "1px solid rgba(255,0,60,0.35)",
-                background: "rgba(255,0,60,0.12)",
-                color: "#ffd6df",
-                fontSize: 13,
-                fontWeight: 900,
-                lineHeight: 1.4,
-              }}
-            >
-              {pageError}
+          <div className={styles.heroMetrics}>
+            <div><strong>{data.items.length}</strong><span>signals loaded</span></div>
+            <div><strong>{sourceNames.size}</strong><span>sources online</span></div>
+            <div><strong>{fresh24}</strong><span>last 24 hours</span></div>
+            <div><strong>{data.mode === "supabase" ? "DB" : data.mode === "live-rss" ? "LIVE" : "SAFE"}</strong><span>ingest mode</span></div>
+            <div className={styles.modeReceipt}>
+              <span>Current source path</span>
+              <strong>{data.mode === "supabase" ? "Supabase historical store" : data.mode === "live-rss" ? "Live RSS failover" : "No current items"}</strong>
+              <small>{data.sourceCount} responsive sources · refreshed {new Date(data.fetchedAt).toLocaleTimeString()}</small>
             </div>
-          ) : null}
-        </div>
-      </div>
-
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "14px" }}>
-        {/* MOBILE SINGLE FEED */}
-        <section
-          className="mobileOnly"
-          style={{
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 14,
-            overflow: "hidden",
-            background: "rgba(255,255,255,0.03)",
-            marginBottom: 14,
-          }}
-        >
-          <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-            <div style={{ fontWeight: 900 }}>
-              Latest Breaking News • {view === "ranked" ? "Ranked Feed" : "Newest Feed"}
-            </div>
-            <div style={{ opacity: 0.65, fontSize: 12 }}>
-              Single scroll. Default is newest by published date.
-            </div>
-          </div>
-          <div style={{ padding: 8 }}>
-            {mobileItems.slice(0, 160).map((it) => renderCard(it, "MB"))}
           </div>
         </section>
 
-        {/* DESKTOP 3 COLUMN */}
-        <div className="desktopOnly" style={{ display: "grid", gridTemplateColumns: "1fr 1.35fr 0.75fr", gap: 14 }}>
-          {/* LEFT */}
-          <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
-            <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <div style={{ fontWeight: 900 }}>Inside Rut</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Ranked Feed (importance → published date)</div>
+        <section className={styles.controlBar}>
+          <div className={styles.viewToggle}>
+            <Link href={makeHref({ view: "newest" })} className={view === "newest" ? styles.activeControl : undefined}>Newest</Link>
+            <Link href={makeHref({ view: "ranked" })} className={view === "ranked" ? styles.activeControl : undefined}>Ranked</Link>
+          </div>
+          <div className={styles.tagScroller}>
+            <Link href={makeHref({ tag: "all" })} className={tag === "all" ? styles.activeTag : undefined}>All signals</Link>
+            {tags.map((entry) => (
+              <Link key={entry.tag} href={makeHref({ tag: entry.tag })} className={tag === entry.tag ? styles.activeTag : undefined}>
+                {entry.tag}<span>{entry.count}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {data.errors.length ? (
+          <details className={styles.telemetryReceipt}>
+            <summary>Ingest telemetry · {data.errors.length} recoverable source issue{data.errors.length === 1 ? "" : "s"}</summary>
+            <div>{data.errors.slice(0, 12).map((error) => <p key={error}>{error}</p>)}</div>
+          </details>
+        ) : null}
+
+        {lead ? (
+          <section className={styles.commandGrid}>
+            <div className={styles.leadColumn}>
+              <div className={styles.sectionHeader}>
+                <div><span>01</span><strong>{view === "ranked" ? "Highest-value signal" : "Latest lead signal"}</strong></div>
+                <small>{filtered.length} matching items</small>
+              </div>
+              <StoryCard item={lead} emphasis />
+              <div className={styles.supportGrid}>
+                {supporting.map((item) => <StoryCard key={item.id} item={item} />)}
+              </div>
             </div>
-            <div style={{ padding: 8 }}>
-              {rankedItems.slice(0, 70).map((it) => renderCard(it, "L"))}
-            </div>
+
+            <aside className={styles.wireColumn}>
+              <div className={styles.sectionHeader}>
+                <div><span>02</span><strong>Live wire</strong></div>
+                <small>published time</small>
+              </div>
+              <div className={styles.wireList}>
+                {wire.map((item) => <HeadlineRow key={`wire-${item.id}`} item={item} />)}
+              </div>
+            </aside>
           </section>
-
-          {/* CENTER */}
-          <section style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
-            <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <div style={{ fontWeight: 900 }}>Main Line</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Latest Breaking News (published date → ingest time)</div>
-            </div>
-            <div style={{ padding: 8 }}>
-              {newestItems.slice(0, 110).map((it) => renderCard(it, "M"))}
-            </div>
+        ) : (
+          <section className={styles.emptyState}>
+            <strong>No matching signal.</strong>
+            <p>Clear the search or try another topic pod. The live fallback will continue checking available feeds.</p>
+            <Link href="/">Reset MotoCODEX</Link>
           </section>
+        )}
 
-          {/* RIGHT */}
-          <aside style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: 14, overflow: "hidden", background: "rgba(255,255,255,0.03)" }}>
-            <div style={{ padding: "10px 12px", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
-              <div style={{ fontWeight: 900 }}>Outside Berm</div>
-              <div style={{ opacity: 0.65, fontSize: 12 }}>Topic Pods (tags-driven)</div>
+        <section className={styles.lowerGrid}>
+          <div className={styles.rankPanel}>
+            <div className={styles.sectionHeader}>
+              <div><span>03</span><strong>Signal ranking</strong></div>
+              <small>importance + freshness</small>
             </div>
+            <div>{rankedTop.map((item, index) => <HeadlineRow key={`rank-${item.id}`} item={item} rank={index + 1} />)}</div>
+          </div>
 
-            <div style={{ padding: 10, display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {podsSorted.length === 0 ? (
-                <div style={{ opacity: 0.7, fontSize: 13 }}>No pods yet.</div>
-              ) : (
-                podsSorted.map(([pod, count]) => (
-                  <Link
-                    key={`P-${pod}`}
-                    href={hrefWith({ q: pod })}
-                    style={{
-                      display: "inline-flex",
-                      gap: 6,
-                      alignItems: "center",
-                      padding: "8px 10px",
-                      borderRadius: 999,
-                      border: "1px solid rgba(255,255,255,0.10)",
-                      background: "rgba(0,0,0,0.25)",
-                      color: "#eaeaea",
-                      textDecoration: "none",
-                      fontSize: 13,
-                      fontWeight: 900,
-                    }}
-                    title={`Filter by: ${pod}`}
-                  >
-                    <span>{pod}</span>
-                    <span style={{ opacity: 0.7, fontWeight: 900 }}>({count})</span>
-                  </Link>
-                ))
-              )}
+          <div className={styles.ecosystemPanel}>
+            <div className={styles.sectionHeader}>
+              <div><span>04</span><strong>MotoINTELLIGENCE stack</strong></div>
             </div>
+            <Link href="/feeds" className={styles.productCard}>
+              <span>MotoFEEDS</span>
+              <strong>Video and social signal</strong>
+              <p>Unified YouTube and Instagram monitoring with source-level telemetry.</p>
+              <b>Open feed →</b>
+            </Link>
+            <Link href="/motopedia" className={styles.productCard}>
+              <span>MOTOPEDIA</span>
+              <strong>Historical race memory</strong>
+              <p>Results, riders, seasons, standings, and provenance rebuilt as a queryable library.</p>
+              <b>Open library →</b>
+            </Link>
+          </div>
+        </section>
 
-            <div style={{ padding: "0 12px 12px 12px", opacity: 0.65, fontSize: 12, lineHeight: 1.35 }}>
-              Pods are topics (injuries, riders, teams). We’ll keep expanding the tag dictionary.
-            </div>
-          </aside>
-        </div>
-
-        <style>{`
-          .mobileOnly { display: none; }
-          .desktopOnly { display: block; }
-
-          @media (max-width: 980px) {
-            .mobileOnly { display: block; }
-            .desktopOnly { display: none; }
-          }
-        `}</style>
+        <footer className={styles.footer}>
+          <span>MotoCODEX · MotoINTELLIGENCE operating layer</span>
+          <strong>Sources remain authoritative. MotoCODEX preserves the route back.</strong>
+        </footer>
       </div>
     </main>
   );
