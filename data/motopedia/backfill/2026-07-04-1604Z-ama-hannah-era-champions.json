@@ -1,0 +1,99 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-04T16-04Z-run2",
+  "created_utc": "2026-07-04T16:04:11Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "This file contains manually verified source-linked factual records from public pages discovered during the automation run. It does not claim that a live crawler, Supabase insert, or deployment executed. No article bodies were copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted.",
+    "paywalls": "No paywalled pages accessed or copied.",
+    "robots_txt": "Robots.txt boundaries were treated as required crawl boundaries. Direct robots.txt retrieval was blocked by the browsing safety wrapper during this run, so no automated crawling of Racer X or official series pages was attempted.",
+    "rate_limits": "Manual low-volume source discovery only; no bulk crawler launched.",
+    "copyright": "Only atomic facts, source names, URLs, and brief provenance notes are stored; article bodies are not copied."
+  },
+  "source_priority": [
+    "Racer X / The Vault and historical result/stat pages",
+    "Official series / sanctioning-body sources",
+    "Secondary public reference indexes when primary pages are unavailable in-run"
+  ],
+  "sources": [
+    {
+      "source_key": "racerx_vault_target",
+      "display_name": "Racer X Online historical vault / career statistics target",
+      "base_url": "https://racerxonline.com/",
+      "source_type": "target_primary_or_near_primary_index",
+      "access_result": "Search snippets confirmed Racer X references for Bob Hannah career statistics, The Vault: A History of American MX Results, 1977 Overall Supercross Points Standings, and 1977 Overall Motocross Points Standings, but direct result URLs were not resolved by the web tool in this run.",
+      "copy_policy": "Do not copy article bodies. Store URLs, retrieved dates, and atomic facts only when direct pages are resolved."
+    },
+    {
+      "source_key": "ama_mx_wikipedia_index",
+      "display_name": "AMA Motocross Championship public index",
+      "url": "https://en.wikipedia.org/wiki/AMA_Motocross_Championship",
+      "source_type": "secondary_public_index",
+      "use": "Cross-check championship tables for AMA Motocross and Supercross historical champions."
+    },
+    {
+      "source_key": "bob_hannah_wikipedia_index",
+      "display_name": "Bob Hannah public biography index",
+      "url": "https://en.wikipedia.org/wiki/Bob_Hannah",
+      "source_type": "secondary_public_index",
+      "use": "Cross-check Bob Hannah career championship list and biographical/career context."
+    }
+  ],
+  "entities": {
+    "riders": [
+      {"id": "rider:bob-hannah", "name": "Bob Hannah", "nicknames": ["Hurricane Hannah"]},
+      {"id": "rider:marty-smith", "name": "Marty Smith"},
+      {"id": "rider:tony-distefano", "name": "Tony DiStefano"},
+      {"id": "rider:broc-glover", "name": "Broc Glover"},
+      {"id": "rider:jimmy-weinert", "name": "Jimmy Weinert"},
+      {"id": "rider:jimmy-ellis", "name": "Jimmy Ellis"},
+      {"id": "rider:pierre-karsmakers", "name": "Pierre Karsmakers"},
+      {"id": "rider:mike-bell", "name": "Mike Bell"},
+      {"id": "rider:mark-barnett", "name": "Mark Barnett"},
+      {"id": "rider:donnie-hansen", "name": "Donnie Hansen"}
+    ],
+    "manufacturers": ["Yamaha", "Honda", "Suzuki", "Kawasaki", "Can-Am", "Husqvarna"]
+  },
+  "facts": [
+    {"fact_id": "ama-sx-premier-champion-1974", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1974, "rider": "Pierre Karsmakers", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-sx-premier-champion-1975", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1975, "rider": "Jimmy Ellis", "manufacturer": "Can-Am", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-sx-premier-champion-1976", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1976, "rider": "Jimmy Weinert", "manufacturer": "Kawasaki", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-sx-premier-champion-1977", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1977, "rider": "Bob Hannah", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index", "bob_hannah_wikipedia_index"], "confidence": 0.78},
+    {"fact_id": "ama-sx-premier-champion-1978", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1978, "rider": "Bob Hannah", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index", "bob_hannah_wikipedia_index"], "confidence": 0.78},
+    {"fact_id": "ama-sx-premier-champion-1979", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1979, "rider": "Bob Hannah", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index", "bob_hannah_wikipedia_index"], "confidence": 0.78},
+    {"fact_id": "ama-sx-premier-champion-1980", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1980, "rider": "Mike Bell", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-sx-premier-champion-1981", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1981, "rider": "Mark Barnett", "manufacturer": "Suzuki", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-sx-premier-champion-1982", "type": "season_champion", "series": "AMA Supercross", "class": "premier/250cc two-stroke era", "season": 1982, "rider": "Donnie Hansen", "manufacturer": "Honda", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-mx-125-champion-1976", "type": "season_champion", "series": "AMA Motocross", "class": "125cc", "season": 1976, "rider": "Bob Hannah", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index", "bob_hannah_wikipedia_index"], "confidence": 0.78},
+    {"fact_id": "ama-mx-250-champion-1978", "type": "season_champion", "series": "AMA Motocross", "class": "250cc two-stroke era", "season": 1978, "rider": "Bob Hannah", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index", "bob_hannah_wikipedia_index"], "confidence": 0.78},
+    {"fact_id": "ama-mx-250-champion-1979", "type": "season_champion", "series": "AMA Motocross", "class": "250cc two-stroke era", "season": 1979, "rider": "Bob Hannah", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index", "bob_hannah_wikipedia_index"], "confidence": 0.78},
+    {"fact_id": "ama-mx-500-champion-1977", "type": "season_champion", "series": "AMA Motocross", "class": "500cc", "season": 1977, "rider": "Marty Smith", "manufacturer": "Honda", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-mx-250-champion-1977", "type": "season_champion", "series": "AMA Motocross", "class": "250cc two-stroke era", "season": 1977, "rider": "Tony DiStefano", "manufacturer": "Suzuki", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72},
+    {"fact_id": "ama-mx-125-champion-1977", "type": "season_champion", "series": "AMA Motocross", "class": "125cc", "season": 1977, "rider": "Broc Glover", "manufacturer": "Yamaha", "sources": ["ama_mx_wikipedia_index"], "confidence": 0.72}
+  ],
+  "dedupe": {
+    "strategy": "fact_id is deterministic: lowercase series + class + fact type + season. A later crawler should merge higher-confidence primary-source evidence into the same fact_id rather than create duplicates.",
+    "known_existing_repo_search": "Repository code search was unavailable/not indexed, so direct duplicate search could not be completed. File path includes run timestamp to avoid overwrite."
+  },
+  "failure_receipts": [
+    {
+      "scope": "Racer X direct page resolution",
+      "result": "Search snippets exposed Racer X historical references, but direct Racer X result URLs were not returned by the web search tool in this run.",
+      "next_action": "Resolve Racer X Vault/stat URLs directly before promoting Racer X-sourced confidence above secondary index confidence."
+    },
+    {
+      "scope": "robots.txt verification",
+      "result": "Direct robots.txt open attempts for racerxonline.com and supercrosslive.com were blocked by browsing safety constraints rather than by the target sites. No crawling was attempted without verified robots boundaries.",
+      "next_action": "When direct URL access is available, fetch robots.txt first, cache policy, and only crawl allowed paths at conservative rate."
+    }
+  ],
+  "checkpoint": {
+    "last_completed_scope": "Hannah-era AMA champion skeleton facts, 1974-1982 Supercross plus selected 1976-1979 Motocross champion facts around Bob Hannah/Marty Smith/Tony DiStefano/Broc Glover.",
+    "next_priority": [
+      "Resolve direct Racer X Vault URLs for A History of American MX Results and Bob Hannah career statistics.",
+      "Add event-level standings only after direct source pages are resolved and robots.txt permits access.",
+      "Add official series source URLs for all-time Supercross champions if accessible."
+    ]
+  }
+}
