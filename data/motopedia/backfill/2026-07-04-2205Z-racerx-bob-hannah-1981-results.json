@@ -1,0 +1,92 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-04T22-05Z-run8",
+  "created_utc": "2026-07-04T22:05:00Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled article content accessed or copied.",
+    "robots_txt": "Direct robots.txt retrieval remained unavailable through the browsing tool URL-safety constraint in this run, so no automated crawl or bulk harvest was launched.",
+    "rate_limits": "Manual low-volume source review only; one public rider-results page section reviewed and one robots boundary check attempted.",
+    "copyright": "Stored only atomic result facts, source URL, provenance notes, checkpoint details, dedupe policy, and failure receipts. No article bodies, narrative recaps, or long descriptions copied."
+  },
+  "sources": [
+    {
+      "source_key": "racerx_bob_hannah_races",
+      "display_name": "Racer X - Bob Hannah Motocross & Supercross Results",
+      "url": "https://racerxonline.com/rider/bob-hannah/races",
+      "source_type": "primary_public_results_index",
+      "access_result": "resolved_public_page",
+      "retrieved_utc": "2026-07-04T22:05:00Z",
+      "source_span": "Public career race-results rows for 1981, continuing after the 1982 checkpoint.",
+      "provenance_notes": [
+        "The Racer X public rider page lists Bob Hannah career race-result rows with position, series, race/track, class, date, and bike.",
+        "This batch adds the 1981 rows visible immediately after the previously committed 1982 section."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  ],
+  "entities": {
+    "riders": [
+      {"id": "rider:bob-hannah", "name": "Bob Hannah", "hometown_from_racerx": "Whittier, CA"}
+    ],
+    "tracks": [
+      {"id": "track:los-angeles", "name": "Los Angeles"},
+      {"id": "track:cdr-tech-track", "name": "CDR Tech Track"},
+      {"id": "track:sunshine-speedway", "name": "Sunshine Speedway"},
+      {"id": "track:high-point-raceway", "name": "High Point Raceway"},
+      {"id": "track:moto-x-338", "name": "Moto-X 338"},
+      {"id": "track:road-atlanta", "name": "Road Atlanta"},
+      {"id": "track:kansas-city", "name": "Kansas City"},
+      {"id": "track:pontiac-2", "name": "Pontiac 2"},
+      {"id": "track:pontiac-1", "name": "Pontiac 1"},
+      {"id": "track:lake-whitney-cycle-ranch", "name": "Lake Whitney Cycle Ranch"},
+      {"id": "track:saddleback-park", "name": "Saddleback Park"},
+      {"id": "track:hangtown-motocross-classic", "name": "Hangtown Motocross Classic"},
+      {"id": "track:houston-2", "name": "Houston 2"},
+      {"id": "track:houston-1", "name": "Houston 1"},
+      {"id": "track:daytona", "name": "Daytona"},
+      {"id": "track:atlanta", "name": "Atlanta"},
+      {"id": "track:seattle-2", "name": "Seattle 2"},
+      {"id": "track:seattle-1", "name": "Seattle 1"},
+      {"id": "track:anaheim", "name": "Anaheim"}
+    ],
+    "manufacturers": ["Yamaha"]
+  },
+  "facts": [
+    {"fact_id":"racerx-bob-hannah-race-1981-07-11-los-angeles-250sx","type":"race_result","series":"Supercross","race":"Los Angeles","class":"250SX","date":"1981-07-11","rider":"Bob Hannah","position":5,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-06-14-cdr-tech-track-250mx","type":"race_result","series":"Motocross","race":"CDR Tech Track","class":"250MX","date":"1981-06-14","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-06-07-sunshine-speedway-250mx","type":"race_result","series":"Motocross","race":"Sunshine Speedway","class":"250MX","date":"1981-06-07","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-05-24-high-point-raceway-250mx","type":"race_result","series":"Motocross","race":"High Point Raceway","class":"250MX","date":"1981-05-24","rider":"Bob Hannah","position":6,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-05-17-moto-x-338-250mx","type":"race_result","series":"Motocross","race":"Moto-X 338","class":"250MX","date":"1981-05-17","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-05-10-road-atlanta-250mx","type":"race_result","series":"Motocross","race":"Road Atlanta","class":"250MX","date":"1981-05-10","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-05-02-kansas-city-250sx","type":"race_result","series":"Supercross","race":"Kansas City","class":"250SX","date":"1981-05-02","rider":"Bob Hannah","position":6,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-04-26-pontiac-2-250sx","type":"race_result","series":"Supercross","race":"Pontiac 2","class":"250SX","date":"1981-04-26","rider":"Bob Hannah","position":5,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-04-25-pontiac-1-250sx","type":"race_result","series":"Supercross","race":"Pontiac 1","class":"250SX","date":"1981-04-25","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-04-12-lake-whitney-cycle-ranch-250mx","type":"race_result","series":"Motocross","race":"Lake Whitney Cycle Ranch","class":"250MX","date":"1981-04-12","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-04-05-saddleback-park-250mx","type":"race_result","series":"Motocross","race":"Saddleback Park","class":"250MX","date":"1981-04-05","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-03-29-hangtown-motocross-classic-250mx","type":"race_result","series":"Motocross","race":"Hangtown Motocross Classic","class":"250MX","date":"1981-03-29","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-03-14-houston-2-250sx","type":"race_result","series":"Supercross","race":"Houston 2","class":"250SX","date":"1981-03-14","rider":"Bob Hannah","position":5,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-03-13-houston-1-250sx","type":"race_result","series":"Supercross","race":"Houston 1","class":"250SX","date":"1981-03-13","rider":"Bob Hannah","position":6,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-03-07-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1981-03-07","rider":"Bob Hannah","position":17,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-02-28-atlanta-250sx","type":"race_result","series":"Supercross","race":"Atlanta","class":"250SX","date":"1981-02-28","rider":"Bob Hannah","position":5,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-02-15-seattle-2-250sx","type":"race_result","series":"Supercross","race":"Seattle 2","class":"250SX","date":"1981-02-15","rider":"Bob Hannah","position":7,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-02-14-seattle-1-250sx","type":"race_result","series":"Supercross","race":"Seattle 1","class":"250SX","date":"1981-02-14","rider":"Bob Hannah","position":12,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1981-01-31-anaheim-250sx","type":"race_result","series":"Supercross","race":"Anaheim","class":"250SX","date":"1981-01-31","rider":"Bob Hannah","position":6,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus any later confirming sources.",
+    "checkpoint_previous": "Previous committed Bob Hannah Racer X batches covered late career through 1982.",
+    "checkpoint_current": "1981 Racer X Bob Hannah rows captured from Los Angeles 1981-07-11 through Anaheim 1981-01-31.",
+    "next_suggested_checkpoint": "Continue backward after the documented 1980 gap with 1979 Racer X Bob Hannah rows, then pivot to official series sources or Racer X vault coverage only for non-copyrighted atomic facts."
+  },
+  "failure_receipts": [
+    {
+      "type": "robots_txt_check_blocked_by_tool_url_safety",
+      "target": "https://racerxonline.com/robots.txt",
+      "result": "not_fetched",
+      "mitigation": "No automated crawl launched; performed one low-volume manual public page review only."
+    }
+  ]
+}
