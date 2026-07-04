@@ -3,6 +3,7 @@ import "server-only";
 import index from "@/data/motopedia/index.json";
 import sx1977Seed from "@/data/motopedia/supplements/1977-sx-seed.json";
 import sx1977Run7 from "@/data/motopedia/supplements/1977-sx-run7.json";
+import sx1978Seed from "@/data/motopedia/supplements/1978-sx-seed.json";
 
 export type MotopediaSeries = {
   key: string;
@@ -74,7 +75,11 @@ type MotopediaSupplement = {
   facts?: MotopediaFact[];
 };
 
-const supplements = [sx1977Seed as MotopediaSupplement, sx1977Run7 as MotopediaSupplement];
+const supplements = [
+  sx1977Seed as MotopediaSupplement,
+  sx1977Run7 as MotopediaSupplement,
+  sx1978Seed as MotopediaSupplement,
+];
 
 function byId<T extends { id: string }>(items: T[]): T[] {
   return Array.from(new Map(items.map((item) => [item.id, item])).values());
