@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-04T11:10:45.000Z",
+  "generatedAt": "2026-07-04T12:05:01.000Z",
   "ingestionPolicy": {
     "sourcePriority": ["racerx-vault", "racerx", "supercrosslive", "promotocross"],
     "robotsBoundary": "Respect robots.txt and public access boundaries; do not bypass authentication, paywalls, rate limits, or 403 responses.",
@@ -9,11 +9,45 @@
   },
   "run": {
     "status": "backfill-active",
-    "pagesAttempted": 4,
-    "pagesAccepted": 3,
-    "factsExtracted": 16,
-    "lastError": "1977 Daytona 250SX Racer X Vault page returned 403 Forbidden during public fetch; not retried aggressively and not bypassed."
+    "pagesAttempted": 8,
+    "pagesAccepted": 4,
+    "factsExtracted": 19,
+    "lastError": "1977 Houston 2 and Irving Racer X Vault page fetches returned cache-miss/transient fetch failures; 1977 Pontiac 2 returned 403 Forbidden during public fetch. No bypass attempted."
   },
+  "failureReceipts": [
+    {
+      "id": "rxv-1977-daytona-250sx-403",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977-03-12/250sx/daytona-international-speedway",
+      "status": "403-forbidden",
+      "observedAt": "2026-07-04T11:10:45.000Z",
+      "policyAction": "Stopped on access block; no authentication, paywall, or rate-limit bypass attempted."
+    },
+    {
+      "id": "rxv-1977-houston-2-250sx-cache-miss",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977-03-19/250sx/astrodome",
+      "status": "fetch-cache-miss",
+      "observedAt": "2026-07-04T12:05:01.000Z",
+      "policyAction": "No aggressive retry; leave for a later respectful small-batch run."
+    },
+    {
+      "id": "rxv-1977-irving-250sx-cache-miss",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977-03-26/250sx/texas-stadium",
+      "status": "fetch-cache-miss",
+      "observedAt": "2026-07-04T12:05:01.000Z",
+      "policyAction": "No aggressive retry; leave for a later respectful small-batch run."
+    },
+    {
+      "id": "rxv-1977-pontiac-2-250sx-403",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977-04-03/250sx/silverdome",
+      "status": "403-forbidden",
+      "observedAt": "2026-07-04T12:05:01.000Z",
+      "policyAction": "Stopped on access block; no authentication, paywall, or rate-limit bypass attempted."
+    }
+  ],
   "documents": [
     {
       "id": "rxv-1977-sx-races",
@@ -56,6 +90,20 @@
       "tableCount": 1,
       "factCount": 3,
       "contentHash": "rxv-1977-houston-1-250sx"
+    },
+    {
+      "id": "rxv-1977-04-02-pontiac-1-250sx",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/1977-04-02/250sx/silverdome",
+      "title": "1977 Pontiac 1 - 250SX",
+      "fetchedAt": "2026-07-04T12:05:01.000Z",
+      "publishedAt": "1977-04-02",
+      "year": 1977,
+      "seriesKey": "ama-supercross",
+      "documentType": "race-results",
+      "tableCount": 1,
+      "factCount": 3,
+      "contentHash": "rxv-1977-pontiac-1-250sx"
     }
   ],
   "facts": [
@@ -74,6 +122,9 @@
     {"id":"1977-sx-atlanta-250sx-result-3","documentId":"rxv-1977-03-05-atlanta-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Jimmy Ellis","factType":"race-finish-position","value":3,"context":{"event":"Atlanta","date":"1977-03-05","class":"250SX","venue":"Fulton County Stadium","location":"Atlanta, GA","hometown":"Cobalt, CT","machine":"Can-am"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-05/250sx/fulton-county-stadium","extractedAt":"2026-07-04T11:10:45.000Z"},
     {"id":"1977-sx-houston-1-250sx-result-1","documentId":"rxv-1977-03-18-houston-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Tony DiStefano","factType":"race-finish-position","value":1,"context":{"event":"Houston 1","date":"1977-03-18","class":"250SX","venue":"Astrodome","location":"Houston, TX","hometown":"Bristol, PA","machine":"Suzuki"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-18/250sx/astrodome","extractedAt":"2026-07-04T11:10:45.000Z"},
     {"id":"1977-sx-houston-1-250sx-result-2","documentId":"rxv-1977-03-18-houston-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Jim Pomeroy","factType":"race-finish-position","value":2,"context":{"event":"Houston 1","date":"1977-03-18","class":"250SX","venue":"Astrodome","location":"Houston, TX","hometown":"Yakima, WA","machine":"Honda"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-18/250sx/astrodome","extractedAt":"2026-07-04T11:10:45.000Z"},
-    {"id":"1977-sx-houston-1-250sx-result-3","documentId":"rxv-1977-03-18-houston-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Bob Hannah","factType":"race-finish-position","value":3,"context":{"event":"Houston 1","date":"1977-03-18","class":"250SX","venue":"Astrodome","location":"Houston, TX","hometown":"Whittier, CA","machine":"Yamaha"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-18/250sx/astrodome","extractedAt":"2026-07-04T11:10:45.000Z"}
+    {"id":"1977-sx-houston-1-250sx-result-3","documentId":"rxv-1977-03-18-houston-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Bob Hannah","factType":"race-finish-position","value":3,"context":{"event":"Houston 1","date":"1977-03-18","class":"250SX","venue":"Astrodome","location":"Houston, TX","hometown":"Whittier, CA","machine":"Yamaha"},"provenanceUrl":"https://vault.racerxonline.com/1977-03-18/250sx/astrodome","extractedAt":"2026-07-04T11:10:45.000Z"},
+    {"id":"1977-sx-pontiac-1-250sx-result-1","documentId":"rxv-1977-04-02-pontiac-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Bob Hannah","factType":"race-finish-position","value":1,"context":{"event":"Pontiac 1","date":"1977-04-02","class":"250SX","venue":"Silverdome","location":"Pontiac, MI","hometown":"Whittier, CA","machine":"Yamaha"},"provenanceUrl":"https://vault.racerxonline.com/1977-04-02/250sx/silverdome","extractedAt":"2026-07-04T12:05:01.000Z"},
+    {"id":"1977-sx-pontiac-1-250sx-result-2","documentId":"rxv-1977-04-02-pontiac-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Tony DiStefano","factType":"race-finish-position","value":2,"context":{"event":"Pontiac 1","date":"1977-04-02","class":"250SX","venue":"Silverdome","location":"Pontiac, MI","hometown":"Bristol, PA","machine":"Suzuki"},"provenanceUrl":"https://vault.racerxonline.com/1977-04-02/250sx/silverdome","extractedAt":"2026-07-04T12:05:01.000Z"},
+    {"id":"1977-sx-pontiac-1-250sx-result-3","documentId":"rxv-1977-04-02-pontiac-1-250sx","sourceKey":"racerx-vault","seriesKey":"ama-supercross","year":1977,"entityType":"rider","entityName":"Jim Pomeroy","factType":"race-finish-position","value":3,"context":{"event":"Pontiac 1","date":"1977-04-02","class":"250SX","venue":"Silverdome","location":"Pontiac, MI","hometown":"Yakima, WA","machine":"Honda"},"provenanceUrl":"https://vault.racerxonline.com/1977-04-02/250sx/silverdome","extractedAt":"2026-07-04T12:05:01.000Z"}
   ]
 }
