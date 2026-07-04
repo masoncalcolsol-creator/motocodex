@@ -1,0 +1,35 @@
+name: Sports Production Smoke
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/sports-production-smoke.yml'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify production routes and health endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://motocodex.vercel.app"
+          sports=(mlb npb nfl nhl nascar ufc)
+          : > smoke.txt
+          for sport in "${sports[@]}"; do
+            page_code=$(curl -L -sS -o "/tmp/${sport}.html" -w "%{http_code}" "$base/$sport")
+            health_code=$(curl -L -sS -o "/tmp/${sport}.json" -w "%{http_code}" "$base/api/sports/$sport/health")
+            title=$(grep -o '<title>[^<]*' "/tmp/${sport}.html" | head -1 | sed 's/<title>//' || true)
+            health=$(cat "/tmp/${sport}.json")
+            echo "$sport page=$page_code health=$health_code title=$title payload=$health" | tee -a smoke.txt
+            test "$page_code" = "200"
+            test "$health_code" = "200"
+            grep -q '"ok":true' "/tmp/${sport}.json"
+            grep -q "\"sport\":\"$sport\"" "/tmp/${sport}.json"
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sports-production-smoke-receipt
+          path: smoke.txt
+          retention-days: 1
