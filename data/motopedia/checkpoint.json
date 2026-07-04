@@ -1,14 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-04T15:33:56.324Z",
+  "updatedAt": "2026-07-04T17:29:44.790Z",
   "queue": [
-    {
-      "url": "https://www.supercrosslive.com/gallery/toronto-supercross-gallery-march-2017/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2017,
-      "score": 31
-    },
     {
       "url": "https://www.supercrosslive.com/gallery/2018-mec-press-day/",
       "sourceKey": "supercrosslive",
@@ -127,13 +120,6 @@
       "discoveredAt": "2026-07-04T09:32:13.449Z",
       "yearHint": 2018,
       "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/2019-rider-head-shots/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 69
     },
     {
       "url": "https://www.supercrosslive.com/gallery/2019-monster-energy-cup/",
@@ -2879,6 +2865,12 @@
       "documentId": "e33bab55ec6e2abafee4bb1cf008",
       "contentHash": "70f0338e27ff5e47af6b78c7dcfad93bb8c04f88",
       "factCount": 0
+    },
+    "https://www.supercrosslive.com/gallery/2019-rider-head-shots/": {
+      "processedAt": "2026-07-04T17:29:32.320Z",
+      "documentId": "177fa0446477b48091b241a2d66d",
+      "contentHash": "fcf493fe306848698176e10e16db3c51085ca313",
+      "factCount": 0
     }
   },
   "failed": {
@@ -3018,72 +3010,202 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/toronto-supercross-gallery-march-2017/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-04T15:33:55.424Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-04T17:29:09.863Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/2018-mec-press-day/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:11.166Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/2018-monster-energy-cup-track/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:12.379Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/anaheim-jan-20-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:13.602Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/anaheim-round-1-jan-6-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:14.818Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/arlington-feb-17-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:16.135Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/atlanta-mar-3-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:17.389Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/foxborough-april-21-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:18.695Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/glendale-jan-27-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:20.139Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/indianapolis-mar-24-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:21.059Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/las-vegas-may-5-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:22.367Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/minneapolis-april-14-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:23.592Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/oakland-feb-3-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:24.921Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/salt-lake-city-april-28-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:26.305Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/san-diego-feb-10-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:27.606Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/seattle-april-7-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:28.905Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/st-louis-mar-17-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:29.828Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/tampa-feb-24-2018/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:31.067Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/2019-monster-energy-cup/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:33.566Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/anaheim-1-2019-qualifying/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:34.895Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/anaheim-2-2019-qualifying/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:36.128Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/arlington-2019-qualifying/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:37.577Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/atlanta-2019-qualifying/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:38.840Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/best-of-2019/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:40.090Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/daytona-2019-qualifying/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:41.427Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/denver-2019-qualifying/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:42.671Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/detroit-2019-qualifying/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-04T17:29:43.889Z",
       "error": "Page did not contain durable historical result metadata"
     }
   },
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:10.273Z",
+      "checkedAt": "2026-07-04T17:28:48.933Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:11.939Z",
+      "checkedAt": "2026-07-04T17:28:50.598Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:13.615Z",
+      "checkedAt": "2026-07-04T17:28:52.278Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-04T15:33:14.515Z",
+      "checkedAt": "2026-07-04T17:28:53.178Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:15.445Z",
+      "checkedAt": "2026-07-04T17:28:54.088Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:17.110Z",
+      "checkedAt": "2026-07-04T17:28:56.572Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:18.809Z",
+      "checkedAt": "2026-07-04T17:28:58.232Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-04T15:33:19.710Z",
+      "checkedAt": "2026-07-04T17:28:59.132Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:20.686Z",
+      "checkedAt": "2026-07-04T17:29:00.214Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:22.449Z",
+      "checkedAt": "2026-07-04T17:29:01.967Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:24.208Z",
+      "checkedAt": "2026-07-04T17:29:03.719Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-04T15:33:25.108Z",
+      "checkedAt": "2026-07-04T17:29:04.619Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -3100,25 +3222,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:25.928Z",
+      "checkedAt": "2026-07-04T17:29:05.474Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:27.597Z",
+      "checkedAt": "2026-07-04T17:29:07.134Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-04T15:33:29.265Z",
+      "checkedAt": "2026-07-04T17:29:08.791Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-04T15:33:30.165Z",
+      "checkedAt": "2026-07-04T17:29:09.692Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 112
+  "cursor": 140
 }

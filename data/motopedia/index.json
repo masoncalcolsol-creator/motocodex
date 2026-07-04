@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-04T15:33:56.324Z",
+  "generatedAt": "2026-07-04T17:29:44.790Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 0,
+    "pagesAccepted": 1,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
@@ -308,6 +308,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "70f0338e27ff5e47af6b78c7dcfad93bb8c04f88"
+    },
+    {
+      "id": "177fa0446477b48091b241a2d66d",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/gallery/2019-rider-head-shots/",
+      "title": "Untitled historical source",
+      "fetchedAt": "2026-07-04T17:29:32.320Z",
+      "publishedAt": "2026-07-04T17:29:32.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "fcf493fe306848698176e10e16db3c51085ca313"
     }
   ],
   "facts": [
