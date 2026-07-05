@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-05T16:20:37.450Z",
+  "generatedAt": "2026-07-05T18:18:31.371Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 1,
+    "pagesAccepted": 2,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
@@ -504,6 +504,34 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "24d254a7ae03b9c7b74f3c13f9ac5e98e18ab489"
+    },
+    {
+      "id": "b2c465764e5b7d86c86803112ba4",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/rockstar-energy-husqvarna-factory-racing-introduce-2022-rider-lineup/",
+      "title": "Rockstar Energy Husqvarna Factory Racing Introduce 2022 Rider Lineup | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-05T18:18:08.610Z",
+      "publishedAt": "2021-12-13T23:56:11.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "853c644f86146036a30efabd7175a1641402f723"
+    },
+    {
+      "id": "befd925ff5b899b20bfe735453a0",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/video/supercross-world-championship-2022-pre-race-press-conference/",
+      "title": "Supercross World Championship 2022 Pre-Race Press Conference | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-05T18:18:14.175Z",
+      "publishedAt": "2022-05-07T06:17:14.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "30d763f934410e6f461096ae437ea9b1089a437b"
     },
     {
       "id": "db21dbbc20f9bd640ec4db8adc99",
