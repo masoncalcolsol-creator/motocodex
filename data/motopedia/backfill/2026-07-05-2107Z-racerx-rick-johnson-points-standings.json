@@ -1,0 +1,98 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T21-07Z-run16",
+  "created_utc": "2026-07-05T21:07:00Z",
+  "status": "committed_atomic_standings_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault rider index and Rick Johnson points page were publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic season standing fields were captured: year, class, overall position, points, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This run remained a manual source-linked lookup against public Racer X Vault pages. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed or unavailable, stop and record a failure receipt.",
+    "rate_limit": "Manual two-page lookup via browser-visible pages. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider standings pages",
+      "Racer X Vault public historical race-results pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_riders_j_index": {
+      "name": "Racer X Vault — Riders: J index",
+      "url": "https://vault.racerxonline.com/riders/j",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T21:07:00Z",
+      "source_span": "Public rider index row identifying Rick Johnson, El Cajon, CA, and linking to his rider page.",
+      "copy_policy": "Use as navigation/provenance only. Do not copy article bodies or narrative content."
+    },
+    "racerx_rick_johnson_points": {
+      "name": "Racer X Vault — Rick Johnson Overall Points Standings",
+      "url": "https://vault.racerxonline.com/rider/rick-johnson/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T21:07:00Z",
+      "source_span": "Public Rick Johnson overall season-results table from 1981 through 1991, listing year, class, overall position, and points.",
+      "provenance_notes": [
+        "The Racer X Vault rider page lists Rick Johnson's overall points standings with year, class, overall position, and points.",
+        "This batch adds season-standing atomic facts, not individual race rows, because Jeff Ward's individual-race table reached its visible terminal 1978 checkpoint and the next suggested work was high-value source-linked standings coverage.",
+        "Linked year/class labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic standings facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Rick Johnson",
+    "slug": "rick-johnson",
+    "display_aliases": ["Ricky Johnson"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/rick-johnson/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-rick-johnson-standing-1991-250sx","type":"season_standing","series":"Supercross","year":1991,"class":"250SX","rider":"Rick Johnson","overall_position":20,"points":47,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1990-250sx","type":"season_standing","series":"Supercross","year":1990,"class":"250SX","rider":"Rick Johnson","overall_position":15,"points":95,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1990-500mx","type":"season_standing","series":"Motocross","year":1990,"class":"500MX","rider":"Rick Johnson","overall_position":4,"points":219,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1990-250mx","type":"season_standing","series":"Motocross","year":1990,"class":"250MX","rider":"Rick Johnson","overall_position":10,"points":97,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1989-500mx","type":"season_standing","series":"Motocross","year":1989,"class":"500MX","rider":"Rick Johnson","overall_position":3,"points":199,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1989-250mx","type":"season_standing","series":"Motocross","year":1989,"class":"250MX","rider":"Rick Johnson","overall_position":14,"points":84,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1989-250sx","type":"season_standing","series":"Supercross","year":1989,"class":"250SX","rider":"Rick Johnson","overall_position":9,"points":147,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1988-500mx","type":"season_standing","series":"Motocross","year":1988,"class":"500MX","rider":"Rick Johnson","overall_position":1,"points":276,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1988-250mx","type":"season_standing","series":"Motocross","year":1988,"class":"250MX","rider":"Rick Johnson","overall_position":2,"points":257,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1988-250sx","type":"season_standing","series":"Supercross","year":1988,"class":"250SX","rider":"Rick Johnson","overall_position":1,"points":233,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1987-250sx","type":"season_standing","series":"Supercross","year":1987,"class":"250SX","rider":"Rick Johnson","overall_position":2,"points":246,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1987-250mx","type":"season_standing","series":"Motocross","year":1987,"class":"250MX","rider":"Rick Johnson","overall_position":1,"points":279,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1987-500mx","type":"season_standing","series":"Motocross","year":1987,"class":"500MX","rider":"Rick Johnson","overall_position":1,"points":289,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1986-250sx","type":"season_standing","series":"Supercross","year":1986,"class":"250SX","rider":"Rick Johnson","overall_position":1,"points":280,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1986-250mx","type":"season_standing","series":"Motocross","year":1986,"class":"250MX","rider":"Rick Johnson","overall_position":1,"points":242,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1986-500mx","type":"season_standing","series":"Motocross","year":1986,"class":"500MX","rider":"Rick Johnson","overall_position":2,"points":267,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1985-250sx","type":"season_standing","series":"Supercross","year":1985,"class":"250SX","rider":"Rick Johnson","overall_position":4,"points":211,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1985-250mx","type":"season_standing","series":"Motocross","year":1985,"class":"250MX","rider":"Rick Johnson","overall_position":3,"points":381,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1984-250mx","type":"season_standing","series":"Motocross","year":1984,"class":"250MX","rider":"Rick Johnson","overall_position":1,"points":419,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1984-250sx","type":"season_standing","series":"Supercross","year":1984,"class":"250SX","rider":"Rick Johnson","overall_position":3,"points":291,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1983-250sx","type":"season_standing","series":"Supercross","year":1983,"class":"250SX","rider":"Rick Johnson","overall_position":16,"points":97,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1983-250mx","type":"season_standing","series":"Motocross","year":1983,"class":"250MX","rider":"Rick Johnson","overall_position":6,"points":271,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1982-250mx","type":"season_standing","series":"Motocross","year":1982,"class":"250MX","rider":"Rick Johnson","overall_position":2,"points":297,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1982-250sx","type":"season_standing","series":"Supercross","year":1982,"class":"250SX","rider":"Rick Johnson","overall_position":10,"points":111,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1981-125mx","type":"season_standing","series":"Motocross","year":1981,"class":"125MX","rider":"Rick Johnson","overall_position":7,"points":209,"sources":["racerx_rick_johnson_points"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-standing-1981-250sx","type":"season_standing","series":"Supercross","year":1981,"class":"250SX","rider":"Rick Johnson","overall_position":26,"points":19,"sources":["racerx_rick_johnson_points"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Season-standing fact_id uses source namespace, rider slug, year, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Jeff Ward individual-race Racer X/Vault coverage reached the visible terminal 1978 row and repaired its incomplete Hangtown atomic result via the public event-results page.",
+    "checkpoint_current": "Rick Johnson Racer X/Vault overall points standings captured from 1981 through 1991 for listed 125MX, 250MX, 500MX, and 250SX classes.",
+    "next_suggested_checkpoint": "Continue Rick Johnson with Individual Races from the public Racer X Vault page, preferably one year per batch backward from 1991, or crosscheck championship-season standings against official AMA/series historical sources when accessible."
+  },
+  "failure_receipts": [
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no authentication or paywall path was attempted; this run used public Racer X Vault pages opened manually through the browsing tool."
+    },
+    {
+      "type": "robots_txt_not_refetched_for_manual_lookup",
+      "detail": "This was a manual public-page lookup rather than an automated crawl. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this standings batch; Racer X Vault public historical standings were used as the direct source, with official AMA/series sources still prioritized for future corroboration."
+    }
+  ],
+  "commit_intent": "Add source-linked Rick Johnson overall points standings as atomic MOTOPEDIA facts without copying article text."
+}
