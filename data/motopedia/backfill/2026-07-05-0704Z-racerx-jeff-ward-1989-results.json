@@ -1,0 +1,81 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T07-04Z-run17",
+  "created_utc": "2026-07-05T07:04:00Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic factual race-result fields were captured: position, series, race/venue, class, date, rider, manufacturer, and source URL. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Direct robots.txt retrieval through the browsing tool remained blocked by tool URL safety rules unless discovered as a prior search result. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical race-results pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_jeff_ward_races": {
+      "name": "Racer X / Racer X Vault — Jeff Ward Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeff-ward/races",
+      "observed_url": "https://vault.racerxonline.com/rider/jeff-ward/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T07:04:00Z",
+      "source_span": "Public Jeff Ward individual-race rows for 1989, from Gatorback Cycle Park 1989-03-05 through Unadilla Motocross 1989-10-15.",
+      "provenance_notes": [
+        "The Racer X rider page lists Jeff Ward career individual-race rows with overall position, race/venue, class, date, and machine.",
+        "This batch continues the Jeff Ward rider table backward from the committed 1990 checkpoint.",
+        "Rows were captured as atomic facts only; linked venue/manufacturer labels were normalized to plain text while retaining the source page URL."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeff Ward",
+    "slug": "jeff-ward",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeff-ward/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeff-ward-race-1989-10-15-unadilla-motocross-500mx","type":"race_result","series":"Motocross","race":"Unadilla Motocross","class":"500MX","date":"1989-10-15","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-10-08-budds-creek-motocross-500mx","type":"race_result","series":"Motocross","race":"Budds Creek Motocross","class":"500MX","date":"1989-10-08","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-10-01-steel-city-raceway-500mx","type":"race_result","series":"Motocross","race":"Steel City Raceway","class":"500MX","date":"1989-10-01","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-09-24-broome-tioga-sports-center-500mx","type":"race_result","series":"Motocross","race":"Broome-Tioga Sports Center","class":"500MX","date":"1989-09-24","rider":"Jeff Ward","position":4,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-08-27-washougal-motocross-500mx","type":"race_result","series":"Motocross","race":"Washougal Motocross","class":"500MX","date":"1989-08-27","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-08-20-spring-creek-motocross-500mx","type":"race_result","series":"Motocross","race":"Spring Creek Motocross","class":"500MX","date":"1989-08-20","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-07-16-kenworthys-motocross-park-250mx","type":"race_result","series":"Motocross","race":"Kenworthy's Motocross Park","class":"250MX","date":"1989-07-16","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-07-02-redbud-track-n-trail-250mx","type":"race_result","series":"Motocross","race":"RedBud Track 'n Trail","class":"250MX","date":"1989-07-02","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-06-10-los-angeles-250sx","type":"race_result","series":"Supercross","race":"Los Angeles","class":"250SX","date":"1989-06-10","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-06-04-oklahoma-city-250sx","type":"race_result","series":"Supercross","race":"Oklahoma City","class":"250SX","date":"1989-06-04","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-05-28-high-point-raceway-250mx","type":"race_result","series":"Motocross","race":"High Point Raceway","class":"250MX","date":"1989-05-28","rider":"Jeff Ward","position":4,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-05-21-moto-x-338-250mx","type":"race_result","series":"Motocross","race":"Moto-X 338","class":"250MX","date":"1989-05-21","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-05-06-east-rutherford-250sx","type":"race_result","series":"Supercross","race":"East Rutherford","class":"250SX","date":"1989-05-06","rider":"Jeff Ward","position":21,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-04-30-lake-sugar-tree-mx-park-250mx","type":"race_result","series":"Motocross","race":"Lake Sugar Tree MX Park","class":"250MX","date":"1989-04-30","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-04-23-hangtown-motocross-classic-250mx","type":"race_result","series":"Motocross","race":"Hangtown Motocross Classic","class":"250MX","date":"1989-04-23","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-04-16-pontiac-2-250sx","type":"race_result","series":"Supercross","race":"Pontiac 2","class":"250SX","date":"1989-04-16","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-04-15-pontiac-1-250sx","type":"race_result","series":"Supercross","race":"Pontiac 1","class":"250SX","date":"1989-04-15","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-04-01-irving-250sx","type":"race_result","series":"Supercross","race":"Irving","class":"250SX","date":"1989-04-01","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-03-25-tampa-250sx","type":"race_result","series":"Supercross","race":"Tampa","class":"250SX","date":"1989-03-25","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-03-18-houston-250sx","type":"race_result","series":"Supercross","race":"Houston","class":"250SX","date":"1989-03-18","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-03-11-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1989-03-11","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1989-03-05-gatorback-cycle-park-250mx","type":"race_result","series":"Motocross","race":"Gatorback Cycle Park","class":"250MX","date":"1989-03-05","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Prior Jeff Ward individual-race backfill captured visible 1990 rows from Anaheim 1990-01-27 through Unadilla Motocross 1990-10-14.",
+    "checkpoint_current": "Jeff Ward 1989 Racer X visible rows captured from Gatorback Cycle Park 1989-03-05 through Unadilla Motocross 1989-10-15.",
+    "next_suggested_checkpoint": "Continue Jeff Ward individual-race backfill backward with visible 1988 Racer X rows, starting at Houston 1988-02-06 and ending at Washougal Motocross 1988-08-28, or add Jeff Ward 1989 points standings if official series corroboration is prioritized."
+  },
+  "failure_receipts": [
+    {
+      "type": "robots_txt_unverified_for_automation",
+      "detail": "No automated crawler was executed in this run. Browser-visible public Racer X/Vault table was used manually. Direct robots.txt retrieval was not used for automated collection. Future crawler must fetch and honor robots.txt before automated collection."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this atomic batch; Racer X Vault was used as the public historical source, with official sources still prioritized for future crosschecks when available."
+    }
+  ],
+  "commit_intent": "Add source-linked Jeff Ward 1989 atomic Racer X/Vault race-result facts to MOTOPEDIA historical backfill."
+}
