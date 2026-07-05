@@ -1,0 +1,72 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T19-03Z-run26",
+  "created_utc": "2026-07-05T19:03:00Z",
+  "status": "committed_atomic_facts_with_partial_row_receipt",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic factual race-result fields were captured: position, series, race/venue, class, date, rider, manufacturer, and source URL. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This run remained a single manual source-linked lookup against an already-open public rider-results page. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed or unavailable, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical race-results pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_jeff_ward_races": {
+      "name": "Racer X / Racer X Vault — Jeff Ward Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeff-ward/races",
+      "observed_url": "https://racerxonline.com/rider/jeff-ward/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T19:03:00Z",
+      "source_span": "Public Jeff Ward individual-race rows for 1978, from Hangtown Motocross Classic 1978-04-09 through Sunshine Speedway 1978-08-27. The visible text did not expose the Hangtown position in the parsed page, so that row was not committed as a complete atomic result fact.",
+      "provenance_notes": [
+        "The Racer X rider page lists Jeff Ward career individual-race rows with overall position, race/venue, class, date, and machine.",
+        "This batch continues the Jeff Ward rider table backward from the committed 1979 checkpoint.",
+        "Rows were captured as atomic facts only; linked venue/manufacturer labels were normalized to plain text while retaining the source page URL.",
+        "The 1978 Hangtown row was observed with series, venue, class, date, and manufacturer, but the position value was not visible in the parsed source text; it is preserved in failure_receipts and excluded from facts until rechecked visually or against another source."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeff Ward",
+    "slug": "jeff-ward",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeff-ward/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeff-ward-race-1978-08-27-sunshine-speedway-125mx","type":"race_result","series":"Motocross","race":"Sunshine Speedway","class":"125MX","date":"1978-08-27","rider":"Jeff Ward","position":9,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1978-08-20-metrolina-speedway-park-125mx","type":"race_result","series":"Motocross","race":"Metrolina Speedway Park","class":"125MX","date":"1978-08-20","rider":"Jeff Ward","position":14,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1978-08-13-agency-motocross-125mx","type":"race_result","series":"Motocross","race":"Agency Motocross","class":"125MX","date":"1978-08-13","rider":"Jeff Ward","position":8,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1978-08-06-pine-top-motorcycle-park-125mx","type":"race_result","series":"Motocross","race":"Pine Top Motorcycle Park","class":"125MX","date":"1978-08-06","rider":"Jeff Ward","position":10,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1978-05-07-moto-x-338-125mx","type":"race_result","series":"Motocross","race":"Moto-X 338","class":"125MX","date":"1978-05-07","rider":"Jeff Ward","position":4,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1978-04-30-omaha-moto-park-125mx","type":"race_result","series":"Motocross","race":"Omaha Moto Park","class":"125MX","date":"1978-04-30","rider":"Jeff Ward","position":14,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1978-04-23-rio-bravo-mx-park-125mx","type":"race_result","series":"Motocross","race":"Rio Bravo MX Park","class":"125MX","date":"1978-04-23","rider":"Jeff Ward","position":6,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1978-04-16-racing-world-125mx","type":"race_result","series":"Motocross","race":"Racing World","class":"125MX","date":"1978-04-16","rider":"Jeff Ward","position":16,"manufacturer":"Suzuki","sources":["racerx_jeff_ward_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Prior Jeff Ward individual-race backfill captured visible 1979 rows from Seattle 2 1979-02-10 through Sunshine Speedway 1979-08-26.",
+    "checkpoint_current": "Jeff Ward 1978 Racer X visible complete rows captured from Racing World 1978-04-16 through Sunshine Speedway 1978-08-27; Hangtown 1978-04-09 observed but not committed because the parsed visible position was missing.",
+    "next_suggested_checkpoint": "Recheck Jeff Ward 1978 Hangtown position visually or against official/corroborating sources, then determine whether Racer X has earlier Jeff Ward rows or move to the next historically central rider/standings source."
+  },
+  "failure_receipts": [
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no authentication or paywall path was attempted; this run used a single public rider-results page opened manually through the browsing tool."
+    },
+    {
+      "type": "partial_visible_row_not_committed",
+      "detail": "Racer X parsed text showed Jeff Ward at Hangtown Motocross Classic, 125MX, 1978-04-09, Suzuki, but did not expose a visible parsed position value. The row is intentionally excluded from facts until the missing position is corroborated."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this atomic backfill; Racer X Vault was used as the public historical source, with official sources still prioritized for future corroborating standings or season documents."
+    }
+  ],
+  "commit_intent": "Add source-linked Jeff Ward 1978 atomic race-result facts to MOTOPEDIA historical backfill without copying article text."
+}
