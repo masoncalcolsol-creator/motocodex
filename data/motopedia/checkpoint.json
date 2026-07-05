@@ -1,28 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T18:18:31.370Z",
+  "updatedAt": "2026-07-05T20:32:49.620Z",
   "queue": [
-    {
-      "url": "https://www.supercrosslive.com/news/five-comeback-rides-from-the-2022-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/five-dramatic-moments-from-the-2022-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/five-feel-good-moments-from-the-2022-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2022,
-      "score": 44
-    },
     {
       "url": "https://www.supercrosslive.com/news/musquin-extends-red-bull-racing-contract-through-2022-season/",
       "sourceKey": "supercrosslive",
@@ -2838,162 +2817,207 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/five-comeback-rides-from-the-2022-supercross-season/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T18:18:03.032Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T20:32:16.638Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/five-dramatic-moments-from-the-2022-supercross-season/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T18:18:03.979Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T20:32:17.585Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/five-feel-good-moments-from-the-2022-supercross-season/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T18:18:04.923Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T20:32:18.535Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/musquin-extends-red-bull-racing-contract-through-2022-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:06.835Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:19.483Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/roczen-pulls-out-of-2022-supercross-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:10.544Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:20.425Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/supercross-video-pass-to-offer-international-streaming-of-2022-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:12.133Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:21.374Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-1-angel-stadium-of-anaheim-anaheim-ca/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:15.512Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:22.327Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-10-ford-field-detroit-mi/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:16.750Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:23.271Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-11-lucas-oil-stadium-indianapolis/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:18.029Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:24.210Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-12-lumen-field-seattle/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:19.313Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:25.150Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-13-the-dome-at-americas-center-st-louis/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:20.624Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:26.091Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-14-atlanta-motor-speedway-atlanta/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:21.620Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:27.394Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-15-gillette-stadium-foxborough/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:22.970Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:28.331Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-16-empower-field-at-mile-high-denver/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:24.251Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:29.272Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-2-ringcentral-coliseum-oaklandca/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:25.508Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:30.220Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-3-petco-park-san-diego-ca/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:26.822Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:31.160Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-4-angel-stadium-of-anaheim-anaheim-ca/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:27.821Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:32.100Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-5-state-farm-stadium-glendale-az/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:29.057Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:33.039Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-6-angel-stadium-of-anaheim-anaheim-ca/": {
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-05T20:32:33.979Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/2022-round-7-u-s-bank-stadium-minneapolis-mn/": {
       "attempts": 1,
-      "lastAttemptAt": "2026-07-05T18:18:30.470Z",
+      "lastAttemptAt": "2026-07-05T20:32:35.310Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/2022-round-8-att-stadium-arlington-tx/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:36.638Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/gallery/2022-round-9-daytona-international-speedway-daytona-fl/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:38.082Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/recaps/2022-round-1-race-day-recap-anaheim-ca/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:40.062Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/recaps/eli-tomac-first-repeat-winner-of-2022/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:41.057Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/recaps/supercross-round-10-recap-detroit-mar-12th-2022/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:42.828Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/recaps/supercross-round-11-recap-indianapolis-mar-19th-2022/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:44.912Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/recaps/supercross-round-12-recap-seattle-mar-26th-2022/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:46.671Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/recaps/supercross-round-13-recap-st-louis-apr-9th-2022/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-05T20:32:48.721Z",
       "error": "Page did not contain durable historical result metadata"
     }
   },
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:34.644Z",
+      "checkedAt": "2026-07-05T20:31:55.360Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:36.395Z",
+      "checkedAt": "2026-07-05T20:31:57.110Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:38.139Z",
+      "checkedAt": "2026-07-05T20:31:58.862Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-05T18:17:39.040Z",
+      "checkedAt": "2026-07-05T20:31:59.762Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:40.102Z",
+      "checkedAt": "2026-07-05T20:32:00.921Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:41.856Z",
+      "checkedAt": "2026-07-05T20:32:02.761Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:43.607Z",
+      "checkedAt": "2026-07-05T20:32:04.624Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-05T18:17:44.506Z",
+      "checkedAt": "2026-07-05T20:32:05.525Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:45.585Z",
+      "checkedAt": "2026-07-05T20:32:06.592Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:47.356Z",
+      "checkedAt": "2026-07-05T20:32:08.377Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:49.124Z",
+      "checkedAt": "2026-07-05T20:32:10.151Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-05T18:17:50.025Z",
+      "checkedAt": "2026-07-05T20:32:11.052Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -3010,25 +3034,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:51.071Z",
+      "checkedAt": "2026-07-05T20:32:12.012Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:52.826Z",
+      "checkedAt": "2026-07-05T20:32:13.771Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T18:17:54.580Z",
+      "checkedAt": "2026-07-05T20:32:15.525Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-05T18:17:55.480Z",
+      "checkedAt": "2026-07-05T20:32:16.425Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 476
+  "cursor": 504
 }
