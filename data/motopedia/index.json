@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-05T12:44:47.576Z",
+  "generatedAt": "2026-07-05T14:54:39.701Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 4,
+    "pagesAccepted": 1,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
@@ -476,6 +476,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "e88c1c9cf6557f1cef874ec37dfe4eb59e88ee1a"
+    },
+    {
+      "id": "bb61deddc6cbd6c4f6596512ab94",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/4-rider-red-bull-ktm-factory-racing-team-ready-to-race-2022-season/",
+      "title": "4-Rider Red Bull KTM Factory Racing Team Ready to Race 2022 Season | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-05T14:54:33.360Z",
+      "publishedAt": "2021-12-09T23:12:22.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "700ba98f48c788d77ae3dd6fed88224605787b75"
     },
     {
       "id": "db21dbbc20f9bd640ec4db8adc99",
