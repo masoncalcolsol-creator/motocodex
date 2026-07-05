@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-05T14:54:39.701Z",
+  "generatedAt": "2026-07-05T16:20:37.450Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
@@ -490,6 +490,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "700ba98f48c788d77ae3dd6fed88224605787b75"
+    },
+    {
+      "id": "69ce740514d7b24ade8e0853f196",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/five-points-of-controversy-from-the-2022-supercross-season/",
+      "title": "Five Points of Controversy from the 2022 Supercross Season | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-05T16:20:36.549Z",
+      "publishedAt": "2022-07-28T21:26:09.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "24d254a7ae03b9c7b74f3c13f9ac5e98e18ab489"
     },
     {
       "id": "db21dbbc20f9bd640ec4db8adc99",
