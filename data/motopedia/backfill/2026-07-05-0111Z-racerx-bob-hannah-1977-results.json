@@ -1,0 +1,84 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T01-11Z-run11",
+  "created_utc": "2026-07-05T01:11:00Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X Vault rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic factual race-result fields were captured: position, race/venue, class, date, rider, manufacturer, and source URL. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This manual backfill used browser-visible public result rows. Future automated crawler must check and honor https://vault.racerxonline.com/robots.txt before fetching; if blocked, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical race-results pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_bob_hannah_races": {
+      "name": "Racer X Vault — Bob Hannah Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/bob-hannah/races",
+      "publisher": "Filter Publications LLC / Racer X Vault",
+      "accessed_utc": "2026-07-05T01:11:00Z",
+      "source_span": "Public Bob Hannah individual-race rows for 1977, continuing backward from the prior 1978 Seattle checkpoint and stopping before the first 1976 row.",
+      "provenance_notes": [
+        "The Racer X Vault rider page lists Bob Hannah career individual-race rows with overall position, race/venue, class, date, and machine.",
+        "This batch captures the 1977 rows visible after the 1978 Seattle checkpoint and before the 1976 Motocross West checkpoint.",
+        "1977 includes multiple classes: 250SX, 500MX, 125MX, and 250MX. Class is preserved exactly as an atomic field rather than normalized into a single season assumption."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Bob Hannah",
+    "slug": "bob-hannah",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/bob-hannah/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-bob-hannah-race-1977-11-12-anaheim-250sx","type":"race_result","series":"Supercross","race":"Anaheim","class":"250SX","date":"1977-11-12","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-08-28-sunshine-speedway-500mx","type":"race_result","series":"Motocross","race":"Sunshine Speedway","class":"500MX","date":"1977-08-28","rider":"Bob Hannah","position":14,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-08-21-burnt-hickory-motocross-500mx","type":"race_result","series":"Motocross","race":"Burnt Hickory Motocross","class":"500MX","date":"1977-08-21","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-08-14-cycle-rama-125mx","type":"race_result","series":"Motocross","race":"Cycle-Rama","class":"125MX","date":"1977-08-14","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-08-07-metrolina-speedway-park-500mx","type":"race_result","series":"Motocross","race":"Metrolina Speedway Park","class":"500MX","date":"1977-08-07","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-07-31-unadilla-motocross-500mx","type":"race_result","series":"Motocross","race":"Unadilla Motocross","class":"500MX","date":"1977-07-31","rider":"Bob Hannah","position":7,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-07-23-cycle-world-usa-500mx","type":"race_result","series":"Motocross","race":"Cycle World USA","class":"500MX","date":"1977-07-23","rider":"Bob Hannah","position":6,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-07-17-lake-whitney-cycle-ranch-500mx","type":"race_result","series":"Motocross","race":"Lake Whitney Cycle Ranch","class":"500MX","date":"1977-07-17","rider":"Bob Hannah","position":4,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-07-09-los-angeles-250sx","type":"race_result","series":"Supercross","race":"Los Angeles","class":"250SX","date":"1977-07-09","rider":"Bob Hannah","position":7,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-07-03-agency-motocross-125mx","type":"race_result","series":"Motocross","race":"Agency Motocross","class":"125MX","date":"1977-07-03","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-06-26-rio-bravo-mx-park-125mx","type":"race_result","series":"Motocross","race":"Rio Bravo MX Park","class":"125MX","date":"1977-06-26","rider":"Bob Hannah","position":4,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-06-19-midland-motocross-park-125mx","type":"race_result","series":"Motocross","race":"Midland Motocross Park","class":"125MX","date":"1977-06-19","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-06-12-sandy-oaks-raceway-125mx","type":"race_result","series":"Motocross","race":"Sandy Oaks Raceway","class":"125MX","date":"1977-06-12","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-06-04-new-orleans-250sx","type":"race_result","series":"Supercross","race":"New Orleans","class":"250SX","date":"1977-06-04","rider":"Bob Hannah","position":2,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-05-29-high-point-raceway-250mx","type":"race_result","series":"Motocross","race":"High Point Raceway","class":"250MX","date":"1977-05-29","rider":"Bob Hannah","position":17,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-05-22-redbud-track-n-trail-250mx","type":"race_result","series":"Motocross","race":"RedBud Track 'n Trail","class":"250MX","date":"1977-05-22","rider":"Bob Hannah","position":7,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-05-15-lake-sugar-tree-mx-park-250mx","type":"race_result","series":"Motocross","race":"Lake Sugar Tree MX Park","class":"250MX","date":"1977-05-15","rider":"Bob Hannah","position":8,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-04-24-omaha-moto-park-250mx","type":"race_result","series":"Motocross","race":"Omaha Moto Park","class":"250MX","date":"1977-04-24","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-04-17-hillside-park-250mx","type":"race_result","series":"Motocross","race":"Hillside Park","class":"250MX","date":"1977-04-17","rider":"Bob Hannah","position":3,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-04-10-hangtown-motocross-classic-125mx","type":"race_result","series":"Motocross","race":"Hangtown Motocross Classic","class":"125MX","date":"1977-04-10","rider":"Bob Hannah","position":24,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-04-03-pontiac-2-250sx","type":"race_result","series":"Supercross","race":"Pontiac 2","class":"250SX","date":"1977-04-03","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-04-02-pontiac-1-250sx","type":"race_result","series":"Supercross","race":"Pontiac 1","class":"250SX","date":"1977-04-02","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-03-26-irving-250sx","type":"race_result","series":"Supercross","race":"Irving","class":"250SX","date":"1977-03-26","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-03-19-houston-2-250sx","type":"race_result","series":"Supercross","race":"Houston 2","class":"250SX","date":"1977-03-19","rider":"Bob Hannah","position":10,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-03-18-houston-1-250sx","type":"race_result","series":"Supercross","race":"Houston 1","class":"250SX","date":"1977-03-18","rider":"Bob Hannah","position":3,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-03-12-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1977-03-12","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-race-1977-03-05-atlanta-250sx","type":"race_result","series":"Supercross","race":"Atlanta","class":"250SX","date":"1977-03-05","rider":"Bob Hannah","position":1,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Prior Bob Hannah Racer X batch covered 1978 rows from Anaheim 1978-11-11 through Seattle 1978-02-18 and suggested continuing with 1977 Anaheim 1977-11-12.",
+    "checkpoint_current": "1977 Racer X Bob Hannah rows captured from Anaheim 1977-11-12 through Atlanta 1977-03-05.",
+    "next_suggested_checkpoint": "Continue backward with 1976 Racer X Bob Hannah rows, beginning with Motocross West 1976-08-29, then Rio Bravo MX Park 1976-08-22 and following public result rows. Watch for class changes across 125MX, 250MX, 500MX, and 250SX."
+  },
+  "failure_receipts": [
+    {
+      "type": "robots_txt_unverified_for_automation",
+      "detail": "No automated crawler was executed in this run. Browser-visible public Racer X Vault table was used manually. Future crawler must fetch and honor robots.txt before automated collection."
+    },
+    {
+      "type": "official_series_crosscheck_pending",
+      "detail": "Official series corroboration not completed in this run; Racer X Vault remains the primary source for this batch."
+    }
+  ]
+}
