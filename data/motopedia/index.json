@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-05T11:15:38.521Z",
+  "generatedAt": "2026-07-05T12:44:47.576Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 0,
+    "pagesAccepted": 4,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
@@ -448,6 +448,62 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "813f0b269ca94bef7b012572a97a4fa7db53a0d8"
+    },
+    {
+      "id": "0cc53b466a7eb240184d9b5c8f80",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/fantasy/2022-rmfantasysx-season-now-open/",
+      "title": "2022 RMFantasySX Season Now Open | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-05T12:44:37.057Z",
+      "publishedAt": "2021-12-15T02:06:22.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "source-page",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "a5307e836a526cd01dadef3144aa9713c1a872e0"
+    },
+    {
+      "id": "ae4c4c3583c80ad6c88463b3c258",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/power-rankings/2022-supercross-preseason-power-rankings/",
+      "title": "2022 Supercross Preseason Power Rankings | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-05T12:44:40.104Z",
+      "publishedAt": "2021-12-31T23:30:57.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "source-page",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e88c1c9cf6557f1cef874ec37dfe4eb59e88ee1a"
+    },
+    {
+      "id": "db21dbbc20f9bd640ec4db8adc99",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/recaps/supercross-world-championship-2022-recap-salt-lake-city-may-7-2022/",
+      "title": "SUPERCROSS WORLD CHAMPIONSHIP 2022 RECAP | SALT LAKE CITY| MAY 7, 2022 | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-05T12:44:41.127Z",
+      "publishedAt": "2022-05-08T12:01:13.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "ddc5dd9496afe62e902a01747ecb169535b6281f"
+    },
+    {
+      "id": "a766d23e9e033659e1d177152804",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/gallery/supercross-world-championship-2022-rice-eccles-stadium-salt-lake-city/",
+      "title": "Untitled historical source",
+      "fetchedAt": "2026-07-05T12:44:38.428Z",
+      "publishedAt": "2026-07-05T12:44:38.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "30ed79162a82c1f3a9b55f8857622fce8087f75c"
     }
   ],
   "facts": [
