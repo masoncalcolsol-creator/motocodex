@@ -1,0 +1,64 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T03-03Z-run13",
+  "created_utc": "2026-07-05T03:03:00Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic factual race-result fields were captured: position, race/venue, class, date, rider, manufacturer, and source URL. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Browser-visible public result rows were used manually. A direct robots.txt open attempt through the browsing tool remained blocked by tool URL safety rules, so future automated crawler work must fetch and honor robots.txt before collection; if disallowed, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical race-results pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_bob_hannah_races": {
+      "name": "Racer X / Racer X Vault — Bob Hannah Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/bob-hannah/races",
+      "observed_url": "https://racerxonline.com/rider/bob-hannah/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T03:03:00Z",
+      "source_span": "Public Bob Hannah individual-race row for 1975, the terminal visible row after the 1976 Daytona checkpoint.",
+      "provenance_notes": [
+        "The Racer X rider page lists Bob Hannah career individual-race rows with overall position, series, race/venue, class, date, and machine.",
+        "This batch captures the single visible 1975 row after the prior 1976 Daytona row: Cycle-Rama, 125MX, August 24, 1975, Yamaha, position 6.",
+        "This appears to complete the public Bob Hannah individual-race table as exposed by the browsing tool, which shows no earlier Bob Hannah race rows after the 1975 Cycle-Rama entry.",
+        "The browsing search snippet from a non-primary source claims Hannah entered his first AMA National at San Antonio/Cycle-Rama in late August 1975 and finished sixth; because MOTOPEDIA source priority favors Racer X/Vault here, that snippet was used only as a low-confidence contextual crosscheck and not as a separate source fact. Date retained from Racer X visible row."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Bob Hannah",
+    "slug": "bob-hannah",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/bob-hannah/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-bob-hannah-race-1975-08-24-cycle-rama-125mx","type":"race_result","series":"Motocross","race":"Cycle-Rama","class":"125MX","date":"1975-08-24","rider":"Bob Hannah","position":6,"manufacturer":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Prior Bob Hannah Racer X batch covered 1976 rows from Motocross West 1976-08-29 through Daytona 1976-03-06 and suggested continuing with the visible 1975 Cycle-Rama row.",
+    "checkpoint_current": "1975 Racer X Bob Hannah terminal visible row captured: Cycle-Rama 1975-08-24, 125MX, Yamaha, position 6.",
+    "next_suggested_checkpoint": "Bob Hannah individual-race backfill from Racer X/Vault appears complete from the visible public table. Recommended next work: either add source-linked overall points standings for Bob Hannah from Racer X/Vault, or move to another historically central rider/season using the same one-year checkpoint pattern."
+  },
+  "failure_receipts": [
+    {
+      "type": "robots_txt_unverified_for_automation",
+      "detail": "No automated crawler was executed in this run. Browser-visible public Racer X/Vault table was used manually. Direct robots.txt retrieval was attempted again and failed because the browsing tool rejected the direct robots.txt URL as unsafe unless discovered as a prior search result. Future crawler must fetch and honor robots.txt before automated collection."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration for the single 1975 Cycle-Rama row was not located in this run. A general search result snippet corroborated that Hannah's first AMA National was Cycle-Rama in late August 1975 with sixth place, but it was not promoted to primary provenance because Racer X/Vault is the direct source used for the atomic fact."
+    },
+    {
+      "type": "terminal_table_boundary",
+      "detail": "The Racer X/Vault browser text shows no earlier Bob Hannah individual-race rows after Cycle-Rama 1975-08-24. Future work should verify with page-level HTML or official archives before declaring historical completeness beyond the visible table."
+    }
+  ]
+}
