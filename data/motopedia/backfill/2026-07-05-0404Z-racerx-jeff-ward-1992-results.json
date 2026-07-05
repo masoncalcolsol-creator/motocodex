@@ -1,0 +1,80 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T04-04Z-run14",
+  "created_utc": "2026-07-05T04:04:00Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic factual race-result fields were captured: position, series, race/venue, class, date, rider, manufacturer, and source URL. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Direct robots.txt retrieval through the browsing tool remained blocked by tool URL safety rules unless discovered as a prior search result. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical race-results pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_jeff_ward_races": {
+      "name": "Racer X / Racer X Vault — Jeff Ward Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeff-ward/races",
+      "observed_url": "https://racerxonline.com/rider/jeff-ward/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T04:04:00Z",
+      "source_span": "Public Jeff Ward individual-race rows for 1992, from Orlando 1992-01-11 through Budds Creek Motocross 1992-10-04.",
+      "provenance_notes": [
+        "The Racer X rider page lists Jeff Ward career individual-race rows with overall position, series, race/venue, class, date, and machine.",
+        "This batch begins the Jeff Ward rider table after Bob Hannah's visible individual-race backfill was completed in the prior checkpoint.",
+        "Rows were captured as atomic facts only; linked venue/manufacturer labels were normalized to plain text while retaining the source page URL."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeff Ward",
+    "slug": "jeff-ward",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeff-ward/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeff-ward-race-1992-10-04-budds-creek-motocross-500mx","type":"race_result","series":"Motocross","race":"Budds Creek Motocross","class":"500MX","date":"1992-10-04","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-09-27-steel-city-raceway-500mx","type":"race_result","series":"Motocross","race":"Steel City Raceway","class":"500MX","date":"1992-09-27","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-08-30-broome-tioga-sports-center-500mx","type":"race_result","series":"Motocross","race":"Broome-Tioga Sports Center","class":"500MX","date":"1992-08-30","rider":"Jeff Ward","position":4,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-08-16-spring-creek-motocross-500mx","type":"race_result","series":"Motocross","race":"Spring Creek Motocross","class":"500MX","date":"1992-08-16","rider":"Jeff Ward","position":6,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-08-02-washougal-motocross-500mx","type":"race_result","series":"Motocross","race":"Washougal Motocross","class":"500MX","date":"1992-08-02","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-07-26-kenworthys-motocross-park-250mx","type":"race_result","series":"Motocross","race":"Kenworthy's Motocross Park","class":"250MX","date":"1992-07-26","rider":"Jeff Ward","position":4,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-07-11-los-angeles-250sx","type":"race_result","series":"Supercross","race":"Los Angeles","class":"250SX","date":"1992-07-11","rider":"Jeff Ward","position":20,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-07-05-redbud-track-n-trail-250mx","type":"race_result","series":"Motocross","race":"RedBud Track 'n Trail","class":"250MX","date":"1992-07-05","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-05-30-irving-250sx","type":"race_result","series":"Supercross","race":"Irving","class":"250SX","date":"1992-05-30","rider":"Jeff Ward","position":11,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-05-24-high-point-raceway-250mx","type":"race_result","series":"Motocross","race":"High Point Raceway","class":"250MX","date":"1992-05-24","rider":"Jeff Ward","position":12,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-05-17-moto-x-338-250mx","type":"race_result","series":"Motocross","race":"Moto-X 338","class":"250MX","date":"1992-05-17","rider":"Jeff Ward","position":10,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-03-28-tampa-250sx","type":"race_result","series":"Supercross","race":"Tampa","class":"250SX","date":"1992-03-28","rider":"Jeff Ward","position":15,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-03-21-indianapolis-250sx","type":"race_result","series":"Supercross","race":"Indianapolis","class":"250SX","date":"1992-03-21","rider":"Jeff Ward","position":12,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-03-14-charlotte-250sx","type":"race_result","series":"Supercross","race":"Charlotte","class":"250SX","date":"1992-03-14","rider":"Jeff Ward","position":7,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-03-07-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1992-03-07","rider":"Jeff Ward","position":17,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-03-01-gatorback-cycle-park-250mx","type":"race_result","series":"Motocross","race":"Gatorback Cycle Park","class":"250MX","date":"1992-03-01","rider":"Jeff Ward","position":4,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-02-22-atlanta-250sx","type":"race_result","series":"Supercross","race":"Atlanta","class":"250SX","date":"1992-02-22","rider":"Jeff Ward","position":20,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-02-08-san-diego-250sx","type":"race_result","series":"Supercross","race":"San Diego","class":"250SX","date":"1992-02-08","rider":"Jeff Ward","position":14,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-02-01-seattle-250sx","type":"race_result","series":"Supercross","race":"Seattle","class":"250SX","date":"1992-02-01","rider":"Jeff Ward","position":19,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-01-25-anaheim-250sx","type":"race_result","series":"Supercross","race":"Anaheim","class":"250SX","date":"1992-01-25","rider":"Jeff Ward","position":7,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-01-18-houston-250sx","type":"race_result","series":"Supercross","race":"Houston","class":"250SX","date":"1992-01-18","rider":"Jeff Ward","position":10,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1992-01-11-orlando-250sx","type":"race_result","series":"Supercross","race":"Orlando","class":"250SX","date":"1992-01-11","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Prior Racer X Bob Hannah individual-race backfill reached its terminal visible 1975 row and recommended moving to another historically central rider/season.",
+    "checkpoint_current": "Jeff Ward 1992 Racer X visible rows captured from Orlando 1992-01-11 through Budds Creek Motocross 1992-10-04.",
+    "next_suggested_checkpoint": "Continue Jeff Ward individual-race backfill backward with visible 1991 Racer X rows, starting at Orlando 1991-01-12 and ending at Unadilla Motocross 1991-10-14, or add Jeff Ward points standings if official series corroboration is prioritized."
+  },
+  "failure_receipts": [
+    {
+      "type": "robots_txt_unverified_for_automation",
+      "detail": "No automated crawler was executed in this run. Browser-visible public Racer X/Vault table was used manually. Direct robots.txt retrieval was attempted and failed because the browsing tool rejected the direct robots.txt URL as unsafe unless discovered as a prior search result. Future crawler must fetch and honor robots.txt before automated collection."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration for the 1992 Jeff Ward rows was not completed in this run. Atomic facts remain sourced to Racer X/Vault only."
+    }
+  ]
+}
