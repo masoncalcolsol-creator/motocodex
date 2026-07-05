@@ -1,0 +1,69 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T22-07Z-run17",
+  "created_utc": "2026-07-05T22:07:00Z",
+  "status": "committed_atomic_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Rick Johnson individual-race page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, race name, class, event date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. A robots.txt lookup was attempted through the browsing tool but did not yield an accessible robots file in this runtime. This run therefore remained a manual source-linked lookup against a public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed or unavailable, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_rick_johnson_races": {
+      "name": "Racer X Vault — Rick Johnson Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/rick-johnson/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T22:07:00Z",
+      "source_span": "Public Rick Johnson individual-race results table rows for 1991, listing overall finish, race, class, date, and machine.",
+      "provenance_notes": [
+        "This batch continues from the prior Rick Johnson season-standings checkpoint into individual race-result facts.",
+        "Only visible 1991 rows were captured in this batch to keep review and deduplication small and auditable.",
+        "Machine link labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Rick Johnson",
+    "slug": "rick-johnson",
+    "display_aliases": ["Ricky Johnson"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/rick-johnson/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-rick-johnson-result-1991-02-09-san-diego-250sx","type":"race_result","series":"Supercross","year":1991,"event_date":"1991-02-09","race":"San Diego","class":"250SX","rider":"Rick Johnson","overall_position":8,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1991-02-02-seattle-250sx","type":"race_result","series":"Supercross","year":1991,"event_date":"1991-02-02","race":"Seattle","class":"250SX","rider":"Rick Johnson","overall_position":10,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1991-01-26-anaheim-250sx","type":"race_result","series":"Supercross","year":1991,"event_date":"1991-01-26","race":"Anaheim","class":"250SX","rider":"Rick Johnson","overall_position":10,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1991-01-19-houston-250sx","type":"race_result","series":"Supercross","year":1991,"event_date":"1991-01-19","race":"Houston","class":"250SX","rider":"Rick Johnson","overall_position":10,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1991-01-12-orlando-250sx","type":"race_result","series":"Supercross","year":1991,"event_date":"1991-01-12","race":"Orlando","class":"250SX","rider":"Rick Johnson","overall_position":20,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, event date, normalized race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Rick Johnson Racer X/Vault overall points standings captured from 1981 through 1991.",
+    "checkpoint_current": "Rick Johnson Racer X/Vault individual race-result facts captured for visible 1991 rows: Orlando, Houston, Anaheim, Seattle, and San Diego 250SX.",
+    "next_suggested_checkpoint": "Continue Rick Johnson individual-race result facts one year per batch backward from 1990, or crosscheck championship-season standings against official AMA/series historical sources when accessible."
+  },
+  "failure_receipts": [
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."
+    },
+    {
+      "type": "robots_txt_not_available_in_runtime",
+      "detail": "A robots.txt lookup was attempted through the browsing tool but did not return an accessible robots policy in this runtime. Because this was manual public-page lookup rather than automated crawling, ingestion was limited to a small visible atomic-fact batch. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this race-result batch; Racer X Vault public historical rider results were used as the direct source, with official AMA/series sources still prioritized for future corroboration."
+    }
+  ],
+  "commit_intent": "Add source-linked Rick Johnson 1991 individual race-result facts as atomic MOTOPEDIA facts without copying article text."
+}
