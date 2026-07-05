@@ -1,126 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05T05:10:39.774Z",
+  "updatedAt": "2026-07-05T08:20:33.964Z",
   "queue": [
-    {
-      "url": "https://www.supercrosslive.com/gallery/las-vegas-2019-qualifying/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/minneapolis-2019-qualifying/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/monster-energy-cup-2019-track/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/nashville-2019-qualifying/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/oakland-2019-qualifying/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/seattle-2019-qualifying/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/toyota-camp-m2m-2019/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2019,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/2020-preseason-supercross-power-rankings/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2020,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/2020-rmfantasysx-season-now-open/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2020,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/cooper-webb-out-the-rest-of-2020-season-due-to-back-injury/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2020,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/2020-monster-energy-supercross-track-maps/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2020,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/qualifying-st-louis-2020/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2020,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/video/2021-season-preview-show-trailer/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2021,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/video/watch-the-2021-season-preview-special-now/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2021,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/2021-round-1-nrg-stadium-houston-tx/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2021,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/2021-round-10-att-stadium-arlington-tx/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2021,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/gallery/2021-round-11-att-stadium-arlington-tx/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2021,
-      "score": 31
-    },
     {
       "url": "https://www.supercrosslive.com/gallery/2021-round-12-att-stadium-arlington-tx/",
       "sourceKey": "supercrosslive",
@@ -2950,207 +2831,207 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/las-vegas-2019-qualifying/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:12.890Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:19:58.459Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/minneapolis-2019-qualifying/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:13.808Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:19:59.717Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/monster-energy-cup-2019-track/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:14.727Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:00.639Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/nashville-2019-qualifying/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:15.646Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:01.969Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/oakland-2019-qualifying/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:16.566Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:03.180Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/seattle-2019-qualifying/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:17.486Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:04.431Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/toyota-camp-m2m-2019/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:18.777Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:05.659Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/2020-preseason-supercross-power-rankings/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:19.702Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:07.366Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/2020-rmfantasysx-season-now-open/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:20.627Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:09.097Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/cooper-webb-out-the-rest-of-2020-season-due-to-back-injury/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:21.549Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:10.021Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2020-monster-energy-supercross-track-maps/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:22.502Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:10.943Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/qualifying-st-louis-2020/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:23.423Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:12.194Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/video/2021-season-preview-show-trailer/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:24.353Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:13.906Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/video/watch-the-2021-season-preview-special-now/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:25.277Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:15.589Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-1-nrg-stadium-houston-tx/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:26.198Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:16.862Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-10-att-stadium-arlington-tx/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:27.536Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:18.215Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-11-att-stadium-arlington-tx/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-05T05:10:28.453Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-05T08:20:19.437Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-12-att-stadium-arlington-tx/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:29.402Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:20.362Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-13-atlanta-motor-speedway-atlanta-ga/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:30.370Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:21.696Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-14-atlanta-motor-speedway-atlanta-ga/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:31.320Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:22.996Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-15-atlanta-motor-speedway-atlanta-ga/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:32.293Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:24.246Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-16-rice-eccles-stadium-salt-lake-city-ut/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:33.212Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:25.463Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-17-rice-eccles-stadium-salt-lake-city-ut/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:34.153Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:26.719Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-2-nrg-stadium-houston-tx/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:35.122Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:27.967Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-3-nrg-stadium-houston-tx/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:36.075Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:29.254Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-4-lucas-oil-stadium-indianapolis-in/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:37.036Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:30.591Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-5-lucas-oil-stadium-indianapolis-in/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:37.957Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:31.823Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2021-round-6-lucas-oil-stadium-indianapolis-in/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-05T05:10:38.873Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-05T08:20:33.064Z",
       "error": "Page did not contain durable historical result metadata"
     }
   },
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:09:52.457Z",
+      "checkedAt": "2026-07-05T08:19:38.307Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:09:54.242Z",
+      "checkedAt": "2026-07-05T08:19:39.971Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:09:56.025Z",
+      "checkedAt": "2026-07-05T08:19:41.637Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-05T05:09:56.926Z",
+      "checkedAt": "2026-07-05T08:19:42.537Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:09:57.989Z",
+      "checkedAt": "2026-07-05T08:19:43.472Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:09:59.763Z",
+      "checkedAt": "2026-07-05T08:19:45.137Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:10:01.538Z",
+      "checkedAt": "2026-07-05T08:19:46.802Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-05T05:10:02.438Z",
+      "checkedAt": "2026-07-05T08:19:47.702Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:10:03.222Z",
+      "checkedAt": "2026-07-05T08:19:48.801Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:10:04.851Z",
+      "checkedAt": "2026-07-05T08:19:50.555Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:10:06.481Z",
+      "checkedAt": "2026-07-05T08:19:52.307Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-05T05:10:07.382Z",
+      "checkedAt": "2026-07-05T08:19:53.208Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -3167,25 +3048,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:10:08.317Z",
+      "checkedAt": "2026-07-05T08:19:54.065Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:10:10.109Z",
+      "checkedAt": "2026-07-05T08:19:55.731Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-05T05:10:11.899Z",
+      "checkedAt": "2026-07-05T08:19:57.396Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-05T05:10:12.799Z",
+      "checkedAt": "2026-07-05T08:19:58.296Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 308
+  "cursor": 336
 }
