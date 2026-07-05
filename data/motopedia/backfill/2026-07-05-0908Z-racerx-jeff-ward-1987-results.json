@@ -1,0 +1,84 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-05T09-08Z-run17",
+  "created_utc": "2026-07-05T09:08:00Z",
+  "status": "committed_atomic_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault rider-results page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic factual race-result fields were captured: position, series, race/venue, class, date, rider, manufacturer, and source URL. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Direct robots.txt retrieval was not used for automated collection in this run. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical race-results pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_jeff_ward_races": {
+      "name": "Racer X / Racer X Vault — Jeff Ward Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeff-ward/races",
+      "observed_url": "https://vault.racerxonline.com/rider/jeff-ward/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-05T09:08:00Z",
+      "source_span": "Public Jeff Ward individual-race rows for 1987, from Anaheim 1987-01-31 through Spring Creek Motocross 1987-08-23.",
+      "provenance_notes": [
+        "The Racer X rider page lists Jeff Ward career individual-race rows with overall position, race/venue, class, date, and machine.",
+        "This batch continues the Jeff Ward rider table backward from the committed 1988 checkpoint.",
+        "Rows were captured as atomic facts only; linked venue/manufacturer labels were normalized to plain text while retaining the source page URL."
+      ],
+      "copy_policy": "Use as facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeff Ward",
+    "slug": "jeff-ward",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeff-ward/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeff-ward-race-1987-08-23-spring-creek-motocross-500mx","type":"race_result","series":"Motocross","race":"Spring Creek Motocross","class":"500MX","date":"1987-08-23","rider":"Jeff Ward","position":16,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-08-09-kenworthys-motocross-park-500mx","type":"race_result","series":"Motocross","race":"Kenworthy's Motocross Park","class":"500MX","date":"1987-08-09","rider":"Jeff Ward","position":15,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-08-02-broome-tioga-sports-center-500mx","type":"race_result","series":"Motocross","race":"Broome-Tioga Sports Center","class":"500MX","date":"1987-08-02","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-07-05-redbud-track-n-trail-500mx","type":"race_result","series":"Motocross","race":"RedBud Track 'n Trail","class":"500MX","date":"1987-07-05","rider":"Jeff Ward","position":9,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-06-27-los-angeles-250sx","type":"race_result","series":"Supercross","race":"Los Angeles","class":"250SX","date":"1987-06-27","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-06-21-good-times-mx-park-500mx","type":"race_result","series":"Motocross","race":"Good Times MX Park","class":"500MX","date":"1987-06-21","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-06-14-lakewood-sportcycle-park-250mx","type":"race_result","series":"Motocross","race":"Lakewood Sportcycle Park","class":"250MX","date":"1987-06-14","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-06-07-east-rutherford-250sx","type":"race_result","series":"Supercross","race":"East Rutherford","class":"250SX","date":"1987-06-07","rider":"Jeff Ward","position":5,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-05-31-secession-mx-park-250mx","type":"race_result","series":"Motocross","race":"Secession MX Park","class":"250MX","date":"1987-05-31","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-05-24-high-point-raceway-250mx","type":"race_result","series":"Motocross","race":"High Point Raceway","class":"250MX","date":"1987-05-24","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-05-17-moto-x-338-250mx","type":"race_result","series":"Motocross","race":"Moto-X 338","class":"250MX","date":"1987-05-17","rider":"Jeff Ward","position":6,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-05-02-tempe-250sx","type":"race_result","series":"Supercross","race":"Tempe","class":"250SX","date":"1987-05-02","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-04-25-tampa-250sx","type":"race_result","series":"Supercross","race":"Tampa","class":"250SX","date":"1987-04-25","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-04-12-pontiac-2-250sx","type":"race_result","series":"Supercross","race":"Pontiac 2","class":"250SX","date":"1987-04-12","rider":"Jeff Ward","position":4,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-04-11-pontiac-1-250sx","type":"race_result","series":"Supercross","race":"Pontiac 1","class":"250SX","date":"1987-04-11","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-04-04-irving-250sx","type":"race_result","series":"Supercross","race":"Irving","class":"250SX","date":"1987-04-04","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-03-29-seattle-2-250sx","type":"race_result","series":"Supercross","race":"Seattle 2","class":"250SX","date":"1987-03-29","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-03-28-seattle-1-250sx","type":"race_result","series":"Supercross","race":"Seattle 1","class":"250SX","date":"1987-03-28","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-03-22-hangtown-motocross-classic-250mx","type":"race_result","series":"Motocross","race":"Hangtown Motocross Classic","class":"250MX","date":"1987-03-22","rider":"Jeff Ward","position":2,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-03-07-daytona-250sx","type":"race_result","series":"Supercross","race":"Daytona","class":"250SX","date":"1987-03-07","rider":"Jeff Ward","position":20,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-03-01-gatorback-cycle-park-250mx","type":"race_result","series":"Motocross","race":"Gatorback Cycle Park","class":"250MX","date":"1987-03-01","rider":"Jeff Ward","position":4,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-02-21-miami-250sx","type":"race_result","series":"Supercross","race":"Miami","class":"250SX","date":"1987-02-21","rider":"Jeff Ward","position":3,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-02-14-san-diego-250sx","type":"race_result","series":"Supercross","race":"San Diego","class":"250SX","date":"1987-02-14","rider":"Jeff Ward","position":7,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-02-07-houston-250sx","type":"race_result","series":"Supercross","race":"Houston","class":"250SX","date":"1987-02-07","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeff-ward-race-1987-01-31-anaheim-250sx","type":"race_result","series":"Supercross","race":"Anaheim","class":"250SX","date":"1987-01-31","rider":"Jeff Ward","position":1,"manufacturer":"Kawasaki","sources":["racerx_jeff_ward_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Prior Jeff Ward individual-race backfill captured visible 1988 rows from Houston 1988-02-06 through Washougal Motocross 1988-08-28.",
+    "checkpoint_current": "Jeff Ward 1987 Racer X visible rows captured from Anaheim 1987-01-31 through Spring Creek Motocross 1987-08-23.",
+    "next_suggested_checkpoint": "Continue Jeff Ward individual-race backfill backward with visible 1986 Racer X rows, or add Jeff Ward 1987 points standings if official series corroboration is prioritized."
+  },
+  "failure_receipts": [
+    {
+      "type": "robots_txt_unverified_for_automation",
+      "detail": "No automated crawler was executed in this run. Browser-visible public Racer X/Vault table was used manually. Future crawler must fetch and honor robots.txt before automated collection."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this atomic batch; Racer X Vault was used as the public historical source, with official sources still prioritized for future crosschecks when available."
+    }
+  ],
+  "commit_intent": "Add source-linked Jeff Ward 1987 atomic Racer X/Vault race-result facts to MOTOPEDIA historical backfill."
+}
