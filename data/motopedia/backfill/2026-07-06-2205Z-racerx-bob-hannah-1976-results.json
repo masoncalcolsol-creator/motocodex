@@ -1,0 +1,74 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-06T22-05Z-run23",
+  "created_utc": "2026-07-06T22:05:00Z",
+  "status": "committed_atomic_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Bob Hannah individual-races page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, event, class, date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This remained a manual source-linked lookup against one public Racer X Vault page. Direct robots.txt retrieval was not available through the browsing tool URL-safety boundary in this run; future automated crawler work must fetch and honor robots.txt before collection and stop with a failure receipt if disallowed or unavailable.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible"
+    ]
+  },
+  "sources": {
+    "racerx_bob_hannah_races": {
+      "name": "Racer X Vault — Bob Hannah Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/bob-hannah/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-06T22:05:00Z",
+      "source_span": "Public Bob Hannah individual-race result table rows visible for 1976, listing overall finish, event, class, date, and machine.",
+      "provenance_notes": [
+        "This batch continues the Bob Hannah individual-race checkpoint backward after the visible 1977 rows.",
+        "Only the visible 1976 individual-race rows were captured to keep the checkpoint small, auditable, and deduplicable.",
+        "Class and machine labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text.",
+        "The 1976 rows include visible 125MX, 250MX, 500MX, and 250SX facts from the public Racer X Vault table."
+      ],
+      "copy_policy": "Use as atomic race-result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Bob Hannah",
+    "slug": "bob-hannah",
+    "display_aliases": ["Robert William Hannah", "Hurricane Hannah"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/bob-hannah/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-bob-hannah-result-1976-08-29-motocross-west-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-08-29","event":"Motocross West","class":"125MX","rider":"Bob Hannah","overall_position":2,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-08-22-rio-bravo-mx-park-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-08-22","event":"Rio Bravo MX Park","class":"125MX","rider":"Bob Hannah","overall_position":4,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-08-15-cycle-rama-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-08-15","event":"Cycle-Rama","class":"125MX","rider":"Bob Hannah","overall_position":1,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-08-01-delta-motorsport-park-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-08-01","event":"Delta Motorsport Park","class":"125MX","rider":"Bob Hannah","overall_position":1,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-07-18-cycle-world-usa-500mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-07-18","event":"Cycle World USA","class":"500MX","rider":"Bob Hannah","overall_position":9,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-07-04-appalachian-highlands-motorsport-park-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-07-04","event":"Appalachian Highlands Motorsport Park","class":"125MX","rider":"Bob Hannah","overall_position":8,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-06-20-midland-motocross-park-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-06-20","event":"Midland Motocross Park","class":"125MX","rider":"Bob Hannah","overall_position":1,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-06-13-lake-sugar-tree-mx-park-500mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-06-13","event":"Lake Sugar Tree MX Park","class":"500MX","rider":"Bob Hannah","overall_position":7,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-06-06-moto-x-338-250mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-06-06","event":"Moto-X 338","class":"250MX","rider":"Bob Hannah","overall_position":5,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-05-30-moto-masters-park-500mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-05-30","event":"Moto-Masters Park","class":"500MX","rider":"Bob Hannah","overall_position":2,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-05-23-redbud-track-n-trail-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-05-23","event":"RedBud Track 'n Trail","class":"125MX","rider":"Bob Hannah","overall_position":1,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-05-16-appalachian-highlands-motorsport-park-250mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-05-16","event":"Appalachian Highlands Motorsport Park","class":"250MX","rider":"Bob Hannah","overall_position":1,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-05-02-towaligo-river-park-250mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-05-02","event":"Towaligo River Park","class":"250MX","rider":"Bob Hannah","overall_position":6,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-04-25-rio-bravo-mx-park-250mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-04-25","event":"Rio Bravo MX Park","class":"250MX","rider":"Bob Hannah","overall_position":3,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-04-11-fastrack-motocross-park-250mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-04-11","event":"Fastrack Motocross Park","class":"250MX","rider":"Bob Hannah","overall_position":7,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-04-04-hangtown-motocross-classic-125mx","type":"race_result","series":"Motocross","year":1976,"date":"1976-04-04","event":"Hangtown Motocross Classic","class":"125MX","rider":"Bob Hannah","overall_position":1,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-03-19-irving-250sx","type":"race_result","series":"Supercross","year":1976,"date":"1976-03-19","event":"Irving","class":"250SX","rider":"Bob Hannah","overall_position":5,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-03-12-houston-250sx","type":"race_result","series":"Supercross","year":1976,"date":"1976-03-12","event":"Houston","class":"250SX","rider":"Bob Hannah","overall_position":5,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-result-1976-03-06-daytona-250sx","type":"race_result","series":"Supercross","year":1976,"date":"1976-03-06","event":"Daytona","class":"250SX","rider":"Bob Hannah","overall_position":10,"machine":"Yamaha","sources":["racerx_bob_hannah_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, event slug, and normalized class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Bob Hannah Racer X/Vault individual race-result facts captured for visible 1977 rows.",
+    "checkpoint_current": "Bob Hannah Racer X/Vault individual race-result facts captured for visible 1976 rows.",
+    "next_suggested_checkpoint": "Continue Bob Hannah individual-race results backward with the visible 1975 row, then confirm whether the Bob Hannah Racer X/Vault individual-race table is exhausted before moving to the next priority rider or official-series corroboration."
+  },
+  "failure_receipts": [
+    {"type":"automated_crawl_not_run","detail":"No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."},
+    {"type":"robots_txt_not_used_for_crawl_permission","target":"https://vault.racerxonline.com/robots.txt","result":"not_fetched_by_browser_tool_url_safety_boundary","detail":"Because no automated crawl was run, robots.txt was not used to authorize broad collection. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."},
+    {"type":"official_series_crosscheck_limited","detail":"Official series corroboration was not added in this race-result batch; Racer X Vault public historical rider results were used as the direct source, with official AMA/series sources still prioritized for future corroboration."}
+  ]
+}
