@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-06T21:03:42.567Z",
+  "generatedAt": "2026-07-06T22:41:22.633Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 9,
-    "factsExtracted": 0,
+    "pagesAccepted": 2,
+    "factsExtracted": 100,
     "lastError": null,
     "supabaseSync": {
       "attempted": false
@@ -798,9 +798,2237 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "ca98ce984a17f53c81a990cf3f0e003669bae87f"
+    },
+    {
+      "id": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "title": "2025 National and Career Pro Numbers for Supercross and Motocross | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-06T22:41:16.404Z",
+      "publishedAt": "2024-09-27T17:49:31.000Z",
+      "year": 2025,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 1,
+      "factCount": 100,
+      "contentHash": "3e2719db250ea650cd853c98c57800311ddd71ee"
+    },
+    {
+      "id": "fc8f317715d3106ffd6cdc0d2987",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/2025-smx-world-championship-broadcast-schedule/",
+      "title": "2025 SMX World Championship U.S. Broadcast Schedule | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-06T22:41:17.331Z",
+      "publishedAt": "2024-11-21T17:58:50.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "schedule",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "8c35e0de27236f67547a99639460f982de4f47e6"
     }
   ],
   "facts": [
+    {
+      "id": "0072effa36af580886d235024146",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"6*\",\"first_name\":\"Jeremy\",\"last_name\":\"Martin\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 10,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "02eac869dca50602644d5d42383a",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"52\",\"first_name\":\"Anthony\",\"last_name\":\"Bourdon\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 54,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "0676d5fb4a16738315b308724eee",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"71\",\"first_name\":\"Broc\",\"last_name\":\"Tickle\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 73,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "082a7599d5bea0ef42f901160033",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"48\",\"first_name\":\"Talon\",\"last_name\":\"Hawkins\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 50,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "08787b2ea1d09e6c706e7d1913c6",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"64\",\"first_name\":\"Robbie\",\"last_name\":\"Wageman\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 66,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "0f0e90160767f12cadbfc5ec8012",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"33\",\"first_name\":\"Fredrik\",\"last_name\":\"Noren\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 35,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "0fe8eeed82dc6b100f4744e6f6d6",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"29\",\"first_name\":\"Phillip\",\"last_name\":\"Nicoletti\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 31,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "1325fc65f3a7d1fe4f45536e3ef4",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"65\",\"first_name\":\"Lux\",\"last_name\":\"Turner\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 67,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "15b501d75a7e9e841706f418949c",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"79\",\"first_name\":\"Max\",\"last_name\":\"Miller\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 81,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "16e3a479f5bf950bf310ecf5952c",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"20\",\"first_name\":\"Pierce\",\"last_name\":\"Brown\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 22,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "1891b06bd6b9231c3758a52d44a6",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"97\",\"first_name\":\"Bryce\",\"last_name\":\"Shelly\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 99,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "19c41ac153784100ce4888d6f7e6",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"67\",\"first_name\":\"Joshua\",\"last_name\":\"Varize\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 69,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "1b72ecf6ada744071d233b876c41",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1‐250 MX\",\"first_name\":\"Haiden\",\"last_name\":\"Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 4,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "1c2baa023b230b88d44775f9a24b",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"23\",\"first_name\":\"Julien\",\"last_name\":\"Beaumer\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 25,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "1df9de2b7eac389dfe7734148e96",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"63\",\"first_name\":\"Hunter\",\"last_name\":\"Yoder\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 65,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "1f26d95d0ec59bc1f504fabab9ba",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"18*\",\"first_name\":\"Jett\",\"last_name\":\"Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 20,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "1fec347427b41085b3634da977a9",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"86\",\"first_name\":\"Mitchell\",\"last_name\":\"Harrison\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 88,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "27e0f3e5c803f93c574c7ab781f7",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"15*\",\"first_name\":\"Dean\",\"last_name\":\"Wilson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 17,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "2acccf0b0edc089766178f41d93c",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"76\",\"first_name\":\"Ryder\",\"last_name\":\"McNabb\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 78,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "2bb925b7f80be0a2ae8db3248293",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"62\",\"first_name\":\"Mark\",\"last_name\":\"Fineis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 64,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "33cf8d458c2e1d3df6a20e6df4fd",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"85\",\"first_name\":\"Max\",\"last_name\":\"Sanford\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 87,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "33e87fbdef8186d2b05cb8396c7f",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"36\",\"first_name\":\"Garrett\",\"last_name\":\"Marchbanks\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 38,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "34e9f93e985a42072e57aad2145f",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"31\",\"first_name\":\"Max\",\"last_name\":\"Anstie\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 33,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "36680027f2e2d4344137c9eac07e",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1-250 SMX\",\"first_name\":\"Haiden\",\"last_name\":\"Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 3,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "372218aa03412cf72e0bb2f41fda",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"11*\",\"first_name\":\"Kyle\",\"last_name\":\"Chisholm\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 14,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "39c30fcd82e3e4fbcbb269760227",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"68\",\"first_name\":\"Jeremy\",\"last_name\":\"Hand\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 70,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "44d376177771be05b4d47b06fa2a",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1W\",\"first_name\":\"RJ\",\"last_name\":\"Hampshire\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 6,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "4b822584bd943e8dd7809bcf6775",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"39\",\"first_name\":\"Nicholas\",\"last_name\":\"Romano\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 41,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "4c489d5ef546b063841258d6b548",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"78\",\"first_name\":\"Cade\",\"last_name\":\"Clason\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 80,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "4ce6fcf47c975526ffd8740b8bb9",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"75\",\"first_name\":\"Gage\",\"last_name\":\"Linville\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 77,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "4d750b3a54bdcf4dcbd9c25f7e3c",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"46*\",\"first_name\":\"Justin\",\"last_name\":\"Hill\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 48,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "4f1ce6bdcbf5fec91bac2533edeb",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"38*\",\"first_name\":\"Haiden\",\"last_name\":\"Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 40,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "5564dd540c9ac1a98d3984b49917",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"45*\",\"first_name\":\"Colt\",\"last_name\":\"Nichols\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 47,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "57a5bbe556a45ab619ff0458a9dc",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"35\",\"first_name\":\"Marshal\",\"last_name\":\"Weltin\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 37,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "58978d8cbda500455461211ee747",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"80\",\"first_name\":\"Derek\",\"last_name\":\"Drake\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 82,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "590f93deb51f55605fc70097768f",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"14*\",\"first_name\":\"Dylan\",\"last_name\":\"Ferrandis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 16,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "610e08bdb7a45e6b3c50a25f71ea",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"84\",\"first_name\":\"Guillem\",\"last_name\":\"Farres\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 86,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "642ecee9fe828b09cf3d9eec5cbe",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"95\",\"first_name\":\"Alvin\",\"last_name\":\"Östlund\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 97,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "6a8f3acb37d39985dabd246e27ea",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"28*\",\"first_name\":\"Christian\",\"last_name\":\"Craig\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 30,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "6f67aa04c07a931ff03ac5bb729b",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"26\",\"first_name\":\"Ty\",\"last_name\":\"Masterpool\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 28,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "71bc3d5b8cf071974a38b3dabbe3",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"47*\",\"first_name\":\"Levi\",\"last_name\":\"Kitchen\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 49,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "74726338b5de6fa10c8aba4a9266",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"21*\",\"first_name\":\"Jason\",\"last_name\":\"Anderson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 23,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "794dc36cf45564ee22e4be067f42",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"55\",\"first_name\":\"Henry\",\"last_name\":\"Miller\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 57,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "7bdac076da332db2af2c712fd853",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"93\",\"first_name\":\"Michael\",\"last_name\":\"Mosiman\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 95,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "7ea009080ca8721d4f8264a711c6",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"7*\",\"first_name\":\"Aaron\",\"last_name\":\"Plessinger\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 11,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "82bddc9eb2acd4721775aea22a37",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1-450 SMX\",\"first_name\":\"Jett\",\"last_name\":\"Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 0,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "8312abb15e2396c345beccc4bc10",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"16**\",\"first_name\":\"Tom\",\"last_name\":\"Vialle\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 18,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "83bd408713efbaee5f754ca33320",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"59\",\"first_name\":\"Cullin\",\"last_name\":\"Park\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 61,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "89ce58ce37e1fb39a57f1dd11712",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"2*\",\"first_name\":\"Cooper\",\"last_name\":\"Webb\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 7,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "8a923f595db9fb99e2a8646eef47",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"17*\",\"first_name\":\"Joey\",\"last_name\":\"Savatgy\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 19,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "8b94cf51a90021ee532b0996945e",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"41\",\"first_name\":\"Nate\",\"last_name\":\"Thrasher\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 43,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "8dc6bb1ab2ad97bea45a3b0a6851",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"4*\",\"first_name\":\"Chase\",\"last_name\":\"Sexton\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 9,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "8f94dc60311f41c85bcb1c17f99f",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"44\",\"first_name\":\"Dilan\",\"last_name\":\"Schwartz\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 46,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "9461e56cbb3c6499bdc03cec43ac",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"43\",\"first_name\":\"Grant\",\"last_name\":\"Harlan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 45,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "9477cb37a4a92bdf6bc8bfd7430a",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"87\",\"first_name\":\"Hardy\",\"last_name\":\"Munoz\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 89,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "949ce62d248cdbcb50bf0dd65c43",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"56\",\"first_name\":\"Seth\",\"last_name\":\"Hammaker\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 58,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "97d0dc6b2038b4374ff6f9539f83",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"83\",\"first_name\":\"Austin\",\"last_name\":\"Forkner\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 85,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "986fa46af79b8f01cad5e4e2b3aa",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"70\",\"first_name\":\"Jorge\",\"last_name\":\"Prado\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 72,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "9c7511e54813f4f71d9a2ff11315",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"25\",\"first_name\":\"Ryder\",\"last_name\":\"DiFrancesco\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 27,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "9e2d827633b1916e24767f026a01",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"57\",\"first_name\":\"Benny\",\"last_name\":\"Bloss\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 59,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "a51709f05e0d6ff4882409a7350a",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"12*\",\"first_name\":\"Shane\",\"last_name\":\"McElrath\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 15,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "a5b33ac86a8db30cff4a1023e958",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"53\",\"first_name\":\"Romain\",\"last_name\":\"Pape\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 55,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "a7d73f3ece98bfc081c96f7aa5aa",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"10\",\"first_name\":\"Chance\",\"last_name\":\"Hymas\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 13,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "a9cbb2519461233a0db255cc05b2",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"60\",\"first_name\":\"Carson\",\"last_name\":\"Mumford\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 62,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "aa4a44403eb9fa57c9d98d12f95e",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"88\",\"first_name\":\"Devin\",\"last_name\":\"Simonson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 90,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "b0530fce1881d6765273b1d6147c",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"89\",\"first_name\":\"Trevor\",\"last_name\":\"Colip\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 91,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "b0b3c322368a97de9853abc7ab50",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"82\",\"first_name\":\"Ryder\",\"last_name\":\"Floyd\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 84,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "b2b21c9890910e40357c15bcccf6",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"9*\",\"first_name\":\"Adam\",\"last_name\":\"Cianciarulo\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 12,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "b44681611dd149363a880c566bf1",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"54\",\"first_name\":\"Jett\",\"last_name\":\"Reynolds\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 56,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "b5ffeb76504c49c1f0a1ffed21ab",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"37\",\"first_name\":\"Coty\",\"last_name\":\"Schock\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 39,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "b6ff4db3c9ae4d93083af2efa218",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"77\",\"first_name\":\"Jerry\",\"last_name\":\"Robin\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 79,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "bd1ce1958123a3486b9f5be7ff5e",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1E\",\"first_name\":\"Tom\",\"last_name\":\"Vialle\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 5,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "bdb733b24aadd225fb05ecf26d47",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"42\",\"first_name\":\"Harri\",\"last_name\":\"Kullas\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 44,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c040b439af3ce39908f33323b750",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"40\",\"first_name\":\"Casey\",\"last_name\":\"Cochran\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 42,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c3a578e2388a67f7a05980fcee22",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"24*\",\"first_name\":\"RJ\",\"last_name\":\"Hampshire\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 26,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c5d96eec1c5eee8e06c2da33c811",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"27*\",\"first_name\":\"Malcolm\",\"last_name\":\"Stewart\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 29,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c63c53d5ab7cd91ec3952c84fb43",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"74\",\"first_name\":\"Lorenzo\",\"last_name\":\"Locurcio\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 76,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c767640b863c0500387b32eaa43c",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"49\",\"first_name\":\"Mitchell\",\"last_name\":\"Oldenburg\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 51,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c7c98fb24dff16b6234f7cb21c3d",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"91\",\"first_name\":\"Tj\",\"last_name\":\"Albright\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 93,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c87a2b75742c03d8574c21aec58f",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1‐450 MX\",\"first_name\":\"Chase\",\"last_name\":\"Sexton\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 2,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c89d9aa467da73217ccb347dcc99",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1‐450 SX\",\"first_name\":\"Jett\",\"last_name\":\"Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 1,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "c9e025187b0ae5d8fba183b85f7f",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"58\",\"first_name\":\"Derek\",\"last_name\":\"Kelley\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 60,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "ccf84b46d8f6315d5ec037ca727d",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"81\",\"first_name\":\"Matti\",\"last_name\":\"Jorgensen\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 83,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "ce8d1e4e07ec3badab97a30bd0a7",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"3*\",\"first_name\":\"Eli\",\"last_name\":\"Tomac\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 8,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "d33507657a6e845abaf0f70a0d03",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"72\",\"first_name\":\"Anthony\",\"last_name\":\"Rodriguez\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 74,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "da65b17f44637188c02f810429fd",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"51*\",\"first_name\":\"Justin\",\"last_name\":\"Barcia\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 53,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "de9474e5631f3caf69910d67b217",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"34\",\"first_name\":\"Daxton\",\"last_name\":\"Bennick\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 36,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "dfc1b7e85e561851e30d78c63936",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"90\",\"first_name\":\"Jorgen-Matthias\",\"last_name\":\"Talviku\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 92,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "e1396a96adae06b569a0ac566ded",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"94*\",\"first_name\":\"Ken\",\"last_name\":\"Roczen\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 96,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "e6d73aa99949982287873abcd3e1",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"50\",\"first_name\":\"Cameron\",\"last_name\":\"McAdoo\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 52,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "e71c7b6472e65762330f3c547122",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"92\",\"first_name\":\"Maximus\",\"last_name\":\"Vohland\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 94,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "e81ff37b1f8247a4bf9bb5bac12a",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"61\",\"first_name\":\"Cole\",\"last_name\":\"Thompson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 63,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "ea736bb089f6f5fad9666e73b8d1",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"22\",\"first_name\":\"Jalek\",\"last_name\":\"Swoll\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 24,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "ec878772ae20331f9cae47eeefc9",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"30*\",\"first_name\":\"Jo\",\"last_name\":\"Shimoda\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 32,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "ec8fd4b05fe00996f01c948b71dd",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"73\",\"first_name\":\"Preston\",\"last_name\":\"Boespflug\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 75,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "f074e092b622f8ceaacdc17a6715",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"19\",\"first_name\":\"Jordon\",\"last_name\":\"Smith\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 21,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "f3fe49155fde999a7c55faf46631",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"66\",\"first_name\":\"Vince\",\"last_name\":\"Friese\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 68,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "f67777b132ed795d067c5d7b8dc7",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"96*\",\"first_name\":\"Hunter\",\"last_name\":\"Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 98,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "fbd35f1f76569f7aa0ad4ea2306e",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"32*\",\"first_name\":\"Justin\",\"last_name\":\"Cooper\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 34,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "fd69f108865d99a0d3988b1c8033",
+      "documentId": "98baafcc71d2606d7c8554a66b49",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"69\",\"first_name\":\"Kyle\",\"last_name\":\"Webster\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 71,
+        "headers": [
+          "rider_number",
+          "first_name",
+          "last_name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
+      "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
     {
       "id": "1972-mx-250-champion-note",
       "documentId": "rxv-1972-mx-intro",
