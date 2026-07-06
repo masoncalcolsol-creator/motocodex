@@ -1,0 +1,87 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-06T03-08Z-run22",
+  "created_utc": "2026-07-06T03:08:00Z",
+  "status": "committed_atomic_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Rick Johnson individual-race page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, race name, class, event date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. A robots.txt lookup was not used as crawl permission for this run; this remained a manual source-linked lookup against one public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed or unavailable, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_rick_johnson_races": {
+      "name": "Racer X Vault — Rick Johnson Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/rick-johnson/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-06T03:08:00Z",
+      "source_span": "Public Rick Johnson individual-race results table rows for 1986, listing overall finish, race, class, date, and machine.",
+      "provenance_notes": [
+        "This batch continues backward from the Rick Johnson 1987 individual-race checkpoint.",
+        "Only visible 1986 rows were captured in this batch to keep review and deduplication small and auditable.",
+        "Machine link labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Rick Johnson",
+    "slug": "rick-johnson",
+    "display_aliases": ["Ricky Johnson"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/rick-johnson/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-rick-johnson-result-1986-08-24-washougal-motocross-500mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-08-24","race":"Washougal Motocross","class":"500MX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-08-17-hollister-hills-500mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-08-17","race":"Hollister Hills","class":"500MX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-08-10-spring-creek-motocross-500mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-08-10","race":"Spring Creek Motocross","class":"500MX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-08-03-broome-tioga-sports-center-500mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-08-03","race":"Broome-Tioga Sports Center","class":"500MX","rider":"Rick Johnson","overall_position":3,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-07-13-lake-sugar-tree-mx-park-500mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-07-13","race":"Lake Sugar Tree MX Park","class":"500MX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-07-06-redbud-track-n-trail-500mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-07-06","race":"RedBud Track 'n Trail","class":"500MX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-06-07-los-angeles-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-06-07","race":"Los Angeles","class":"250SX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-06-01-lakewood-sports-center-250mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-06-01","race":"Lakewood Sports Center","class":"250MX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-05-25-high-point-raceway-250mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-05-25","race":"High Point Raceway","class":"250MX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-05-18-moto-x-338-250mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-05-18","race":"Moto-X 338","class":"250MX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-05-10-tempe-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-05-10","race":"Tempe","class":"250SX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-04-26-irving-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-04-26","race":"Irving","class":"250SX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-04-13-pontiac-2-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-04-13","race":"Pontiac 2","class":"250SX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-04-12-pontiac-1-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-04-12","race":"Pontiac 1","class":"250SX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-04-06-hangtown-motocross-classic-250mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-04-06","race":"Hangtown Motocross Classic","class":"250MX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-03-08-daytona-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-03-08","race":"Daytona","class":"250SX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-03-02-gatorback-cycle-park-250mx","type":"race_result","series":"Motocross","year":1986,"event_date":"1986-03-02","race":"Gatorback Cycle Park","class":"250MX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-02-22-atlanta-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-02-22","race":"Atlanta","class":"250SX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-02-16-seattle-2-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-02-16","race":"Seattle 2","class":"250SX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-02-15-seattle-1-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-02-15","race":"Seattle 1","class":"250SX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-02-08-san-diego-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-02-08","race":"San Diego","class":"250SX","rider":"Rick Johnson","overall_position":1,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-02-02-houston-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-02-02","race":"Houston","class":"250SX","rider":"Rick Johnson","overall_position":3,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1986-01-18-anaheim-250sx","type":"race_result","series":"Supercross","year":1986,"event_date":"1986-01-18","race":"Anaheim","class":"250SX","rider":"Rick Johnson","overall_position":2,"machine":"Honda","sources":["racerx_rick_johnson_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, event date, normalized race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Rick Johnson Racer X/Vault individual race-result facts captured for visible 1987 rows from Houston 250SX through Spring Creek Motocross 500MX.",
+    "checkpoint_current": "Rick Johnson Racer X/Vault individual race-result facts captured for visible 1986 rows from Anaheim 250SX through Washougal Motocross 500MX.",
+    "next_suggested_checkpoint": "Continue Rick Johnson individual-race result facts one year per batch backward from 1985, or crosscheck championship-season standings against official AMA/series historical sources when accessible."
+  },
+  "failure_receipts": [
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."
+    },
+    {
+      "type": "robots_txt_not_used_for_crawl_permission",
+      "detail": "Because no automated crawl was run, robots.txt was not used to authorize broad collection. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this race-result batch; Racer X Vault public historical rider results were used as the direct source, with official AMA/series sources still prioritized for future corroboration."
+    }
+  ],
+  "commit_intent": "Add source-linked Rick Johnson 1986 individual race-result facts as atomic MOTOPEDIA facts without copying article text."
+}
