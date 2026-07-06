@@ -1,0 +1,74 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-06T09-05Z-run27",
+  "created_utc": "2026-07-06T09:05:00Z",
+  "status": "committed_atomic_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Rick Johnson individual-race page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, race name, class, event date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. A robots.txt lookup attempt through the browsing tool produced no usable result in prior batches, so it was not treated as crawl permission. This remained a manual source-linked lookup against one public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed or unavailable, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_rick_johnson_races": {
+      "name": "Racer X Vault — Rick Johnson Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/rick-johnson/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-06T09:05:00Z",
+      "source_span": "Public Rick Johnson individual-race results table rows for 1981, listing overall finish, race, class, date, and machine.",
+      "provenance_notes": [
+        "This batch continues backward from the Rick Johnson 1982 individual-race checkpoint.",
+        "Only visible 1981 rows were captured in this batch to keep review and deduplication small and auditable.",
+        "Machine link labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Rick Johnson",
+    "slug": "rick-johnson",
+    "display_aliases": ["Ricky Johnson"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/rick-johnson/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-rick-johnson-result-1981-11-14-san-diego-250sx","type":"race_result","series":"Supercross","year":1981,"event_date":"1981-11-14","race":"San Diego","class":"250SX","rider":"Rick Johnson","overall_position":15,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-08-16-carlsbad-raceway-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-08-16","race":"Carlsbad Raceway","class":"125MX","rider":"Rick Johnson","overall_position":2,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-08-02-washougal-motocross-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-08-02","race":"Washougal Motocross","class":"125MX","rider":"Rick Johnson","overall_position":13,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-07-05-redbud-track-n-trail-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-07-05","race":"RedBud Track 'n Trail","class":"125MX","rider":"Rick Johnson","overall_position":15,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-06-28-broome-tioga-sports-center-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-06-28","race":"Broome-Tioga Sports Center","class":"125MX","rider":"Rick Johnson","overall_position":17,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-05-10-road-atlanta-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-05-10","race":"Road Atlanta","class":"125MX","rider":"Rick Johnson","overall_position":5,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-04-12-lake-whitney-cycle-ranch-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-04-12","race":"Lake Whitney Cycle Ranch","class":"125MX","rider":"Rick Johnson","overall_position":2,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-04-05-saddleback-park-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-04-05","race":"Saddleback Park","class":"125MX","rider":"Rick Johnson","overall_position":6,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-03-29-hangtown-motocross-classic-125mx","type":"race_result","series":"Motocross","year":1981,"event_date":"1981-03-29","race":"Hangtown Motocross Classic","class":"125MX","rider":"Rick Johnson","overall_position":5,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-02-14-seattle-1-250sx","type":"race_result","series":"Supercross","year":1981,"event_date":"1981-02-14","race":"Seattle 1","class":"250SX","rider":"Rick Johnson","overall_position":17,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86},
+    {"fact_id":"racerx-rick-johnson-result-1981-01-31-anaheim-250sx","type":"race_result","series":"Supercross","year":1981,"event_date":"1981-01-31","race":"Anaheim","class":"250SX","rider":"Rick Johnson","overall_position":12,"machine":"Yamaha","sources":["racerx_rick_johnson_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, event date, normalized race slug, and class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Rick Johnson Racer X/Vault individual race-result facts captured for visible 1982 rows from Anaheim 250SX through San Diego 250SX.",
+    "checkpoint_current": "Rick Johnson Racer X/Vault individual race-result facts captured for visible 1981 rows from Anaheim 250SX through San Diego 250SX.",
+    "next_suggested_checkpoint": "Rick Johnson individual-race rows appear exhausted at 1981 on the public Racer X Vault page. Continue with another historically central rider from Racer X Vault standings/results, or crosscheck championship-season standings against official AMA/series historical sources when accessible."
+  },
+  "failure_receipts": [
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."
+    },
+    {
+      "type": "robots_txt_not_used_for_crawl_permission",
+      "detail": "Because no automated crawl was run, robots.txt was not used to authorize broad collection. A prior browsing-tool robots.txt lookup did not return a usable robots file. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this race-result batch; Racer X Vault public historical rider results were used as the direct source, with official AMA/series sources still prioritized for future corroboration."
+    }
+  ]
+}
