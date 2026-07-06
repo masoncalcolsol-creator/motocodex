@@ -1,0 +1,77 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-06T12-06Z-run16",
+  "created_utc": "2026-07-06T12:06:00Z",
+  "status": "committed_atomic_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Bob Hannah individual-races page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, event, class, date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This remained a manual source-linked lookup against one public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed or unavailable, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible"
+    ]
+  },
+  "sources": {
+    "racerx_bob_hannah_races": {
+      "name": "Racer X Vault — Bob Hannah Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/bob-hannah/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-06T12:06:00Z",
+      "source_span": "Public Bob Hannah individual-race result table row visible for 1989, listing overall finish, event, class, date, and machine.",
+      "provenance_notes": [
+        "This batch continues the Bob Hannah coverage after the prior public Racer X overall-points standings batch captured 1976 through 1989.",
+        "Only the visible 1989 individual-race row was captured to keep the checkpoint small, auditable, and deduplicable.",
+        "Class and machine labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic race-result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Bob Hannah",
+    "slug": "bob-hannah",
+    "display_aliases": ["Robert William Hannah", "Hurricane Hannah"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/bob-hannah/races"
+  },
+  "facts": [
+    {
+      "fact_id": "racerx-bob-hannah-result-1989-05-21-moto-x-338-250mx",
+      "type": "race_result",
+      "series": "Motocross",
+      "year": 1989,
+      "date": "1989-05-21",
+      "event": "Moto-X 338",
+      "class": "250MX",
+      "rider": "Bob Hannah",
+      "overall_position": 9,
+      "machine": "Suzuki",
+      "sources": ["racerx_bob_hannah_races"],
+      "confidence": 0.86
+    }
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, event slug, and normalized class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Bob Hannah Racer X/Vault overall season-standing facts captured for all visible rows from 1976 through 1989.",
+    "checkpoint_current": "Bob Hannah Racer X/Vault individual race-result facts captured for visible 1989 row.",
+    "next_suggested_checkpoint": "Continue Bob Hannah individual-race results backward with the visible 1988 Moto-X 338 250MX row, then continue by year while preserving small auditable batches."
+  },
+  "failure_receipts": [
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."
+    },
+    {
+      "type": "robots_txt_not_used_for_crawl_permission",
+      "detail": "Because no automated crawl was run, robots.txt was not used to authorize broad collection. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this single-row race-result batch; Racer X Vault public historical rider results were used as the direct source, with official AMA/series sources still prioritized for future corroboration."
+    }
+  ]
+}
