@@ -1,0 +1,89 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-06T10-09Z-run28",
+  "created_utc": "2026-07-06T10:09:00Z",
+  "status": "committed_atomic_season_standing_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Bob Hannah overall-points page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic season-standing fields were captured: year, class, overall finish, points, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. A robots.txt lookup attempt through the browsing tool produced no usable result in prior batches, so it was not treated as crawl permission. This remained a manual source-linked lookup against one public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection; if disallowed or unavailable, stop and record a failure receipt.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when available"
+    ]
+  },
+  "sources": {
+    "racerx_bob_hannah_points": {
+      "name": "Racer X Vault — Bob Hannah Overall Points Standings",
+      "url": "https://vault.racerxonline.com/rider/bob-hannah/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-06T10:09:00Z",
+      "source_span": "Public Bob Hannah overall season results table rows for 1976 through 1989, listing year, class, overall finish, and points.",
+      "provenance_notes": [
+        "This batch begins Bob Hannah coverage after the Rick Johnson public individual-race table appeared exhausted at 1981.",
+        "Only visible overall season-result rows were captured in this batch to keep review and deduplication small and auditable.",
+        "Class labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic season-standing facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Bob Hannah",
+    "slug": "bob-hannah",
+    "display_aliases": ["Robert William Hannah", "Hurricane Hannah"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/bob-hannah/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-bob-hannah-standing-1989-250mx","type":"season_standing","series":"Motocross","year":1989,"class":"250MX","rider":"Bob Hannah","overall_position":28,"points":20,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1988-250mx","type":"season_standing","series":"Motocross","year":1988,"class":"250MX","rider":"Bob Hannah","overall_position":26,"points":23,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1987-250mx","type":"season_standing","series":"Motocross","year":1987,"class":"250MX","rider":"Bob Hannah","overall_position":7,"points":143,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1987-250sx","type":"season_standing","series":"Supercross","year":1987,"class":"250SX","rider":"Bob Hannah","overall_position":26,"points":30,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1986-250mx","type":"season_standing","series":"Motocross","year":1986,"class":"250MX","rider":"Bob Hannah","overall_position":15,"points":56,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1985-250sx","type":"season_standing","series":"Supercross","year":1985,"class":"250SX","rider":"Bob Hannah","overall_position":11,"points":106,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1985-250mx","type":"season_standing","series":"Motocross","year":1985,"class":"250MX","rider":"Bob Hannah","overall_position":4,"points":359,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1984-250mx","type":"season_standing","series":"Motocross","year":1984,"class":"250MX","rider":"Bob Hannah","overall_position":10,"points":191,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1984-250sx","type":"season_standing","series":"Supercross","year":1984,"class":"250SX","rider":"Bob Hannah","overall_position":10,"points":157,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1983-250mx","type":"season_standing","series":"Motocross","year":1983,"class":"250MX","rider":"Bob Hannah","overall_position":3,"points":374,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1983-250sx","type":"season_standing","series":"Supercross","year":1983,"class":"250SX","rider":"Bob Hannah","overall_position":3,"points":252,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1982-125mx","type":"season_standing","series":"Motocross","year":1982,"class":"125MX","rider":"Bob Hannah","overall_position":6,"points":206,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1982-250sx","type":"season_standing","series":"Supercross","year":1982,"class":"250SX","rider":"Bob Hannah","overall_position":9,"points":123,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1981-250mx","type":"season_standing","series":"Motocross","year":1981,"class":"250MX","rider":"Bob Hannah","overall_position":2,"points":345,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1981-250sx","type":"season_standing","series":"Supercross","year":1981,"class":"250SX","rider":"Bob Hannah","overall_position":5,"points":161,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1979-250mx","type":"season_standing","series":"Motocross","year":1979,"class":"250MX","rider":"Bob Hannah","overall_position":1,"points":454,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1979-250sx","type":"season_standing","series":"Supercross","year":1979,"class":"250SX","rider":"Bob Hannah","overall_position":1,"points":227,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1978-250sx","type":"season_standing","series":"Supercross","year":1978,"class":"250SX","rider":"Bob Hannah","overall_position":1,"points":241,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1978-250mx","type":"season_standing","series":"Motocross","year":1978,"class":"250MX","rider":"Bob Hannah","overall_position":1,"points":410,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1977-500mx","type":"season_standing","series":"Motocross","year":1977,"class":"500MX","rider":"Bob Hannah","overall_position":2,"points":199,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1977-250sx","type":"season_standing","series":"Supercross","year":1977,"class":"250SX","rider":"Bob Hannah","overall_position":1,"points":217,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1977-250mx","type":"season_standing","series":"Motocross","year":1977,"class":"250MX","rider":"Bob Hannah","overall_position":7,"points":152,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1977-125mx","type":"season_standing","series":"Motocross","year":1977,"class":"125MX","rider":"Bob Hannah","overall_position":3,"points":227,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1976-250mx","type":"season_standing","series":"Motocross","year":1976,"class":"250MX","rider":"Bob Hannah","overall_position":6,"points":175,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1976-500mx","type":"season_standing","series":"Motocross","year":1976,"class":"500MX","rider":"Bob Hannah","overall_position":12,"points":94,"sources":["racerx_bob_hannah_points"],"confidence":0.86},
+    {"fact_id":"racerx-bob-hannah-standing-1976-125mx","type":"season_standing","series":"Motocross","year":1976,"class":"125MX","rider":"Bob Hannah","overall_position":1,"points":347,"sources":["racerx_bob_hannah_points"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Season-standing fact_id uses source namespace, rider slug, year, and normalized class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Rick Johnson Racer X/Vault individual race-result facts captured through visible 1981 rows; Rick Johnson individual-race table appeared exhausted at 1981.",
+    "checkpoint_current": "Bob Hannah Racer X/Vault overall season-standing facts captured for all visible rows from 1976 through 1989.",
+    "next_suggested_checkpoint": "Continue Bob Hannah individual-race results backward by year, starting with visible 1989 row, or prioritize official AMA/series historical sources for corroboration when accessible."
+  },
+  "failure_receipts": [
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."
+    },
+    {
+      "type": "robots_txt_not_used_for_crawl_permission",
+      "detail": "Because no automated crawl was run, robots.txt was not used to authorize broad collection. A prior browsing-tool robots.txt lookup did not return a usable robots file. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Official series corroboration was not added in this season-standing batch; Racer X Vault public historical rider standings were used as the direct source, with official AMA/series sources still prioritized for future corroboration."
+    }
+  ]
+}
