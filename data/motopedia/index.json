@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T08:46:17.099Z",
+  "generatedAt": "2026-07-07T12:12:06.853Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 9,
-    "factsExtracted": 154,
+    "pagesAccepted": 19,
+    "factsExtracted": 100,
     "lastError": null,
     "supabaseSync": {
       "attempted": false
@@ -506,6 +506,20 @@
       "contentHash": "24d254a7ae03b9c7b74f3c13f9ac5e98e18ab489"
     },
     {
+      "id": "610b74c6ffda786e94f28ec18945",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/recaps/points-leader-eli-tomac-takes-first-450sx-class-win-of-season/",
+      "title": "Points Leader Eli Tomac Takes First 450SX Class Win of Season | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T12:11:41.846Z",
+      "publishedAt": "2022-01-30T17:53:43.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "5f5fb0314c15fdd9986051ae7494171ecbfaf264"
+    },
+    {
       "id": "b2c465764e5b7d86c86803112ba4",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/rockstar-energy-husqvarna-factory-racing-introduce-2022-rider-lineup/",
@@ -730,6 +744,20 @@
       "contentHash": "6dc6ef9e0de2c0fb6b4723b84ebcf65c0e1de44c"
     },
     {
+      "id": "39d304bf6ffa19ba6389c23d0dff",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/power-rankings/monster-energy-supercross-pre-season-power-rankings/",
+      "title": "Monster Energy Supercross Pre-Season Power Rankings | Power Rankings | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T12:11:40.872Z",
+      "publishedAt": "2024-01-03T20:11:03.000Z",
+      "year": 2024,
+      "seriesKey": "ama-supercross",
+      "documentType": "source-page",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "b5342bdf282cb87ff427c257f91caed19d65dacd"
+    },
+    {
       "id": "db6544539b694a9e46737db50889",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/smx-insider-2024-season-wrap-up-2025-schedule-release/",
@@ -940,6 +968,76 @@
       "contentHash": "d43d84c6cacff0f4a460577169cd617d2aced97a"
     },
     {
+      "id": "74ab82e3ca7d49526e8ec481640f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/aaron-plessinger/",
+      "title": "Aaron Plessinger",
+      "fetchedAt": "2026-07-07T12:11:43.714Z",
+      "publishedAt": "2026-07-07T05:09:40.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "54e7ae0c7567484f28ed0eda4afbfb552c04ac9f"
+    },
+    {
+      "id": "4df2ec50a16acb9f3ed0b0ce2963",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/austin-forkner/",
+      "title": "Austin Forkner",
+      "fetchedAt": "2026-07-07T12:11:44.679Z",
+      "publishedAt": "2026-07-07T12:11:44.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "981950a655f3cf9744a13039d5e503d780def014"
+    },
+    {
+      "id": "3844efc213e458c355cab9a8d2a1",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/caden-dudney/",
+      "title": "Caden Dudney | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T12:11:47.007Z",
+      "publishedAt": "2026-07-07T12:11:46.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "114f96d40e987fd7226791c5b0e186ba882667b9"
+    },
+    {
+      "id": "e341028a3bffc14663247e0e3e5b",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/cameron-mcadoo/",
+      "title": "Cameron Mcadoo",
+      "fetchedAt": "2026-07-07T12:11:47.962Z",
+      "publishedAt": "2026-07-07T12:11:47.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "7563ecf6b30cca04975abe50b952ac7dd1b60f7b"
+    },
+    {
+      "id": "5be1843f275d1f6c53f97864943b",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/casey-cochran/",
+      "title": "Casey Cochran | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T12:11:50.141Z",
+      "publishedAt": "2026-07-07T12:11:50.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "0d9dd4efa502aa2fad526010d7ebe46c08754245"
+    },
+    {
       "id": "4f52a35f4c86b77060d1eaec4419",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/championship-standings/",
@@ -954,6 +1052,146 @@
       "contentHash": "bd00e828922b467bec953606ec909a69da3dbdee"
     },
     {
+      "id": "005fb8346e49150811e017989600",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/chance-hymas/",
+      "title": "Chance Hymas",
+      "fetchedAt": "2026-07-07T12:11:51.960Z",
+      "publishedAt": "2026-07-07T12:11:51.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "97a41567520602b377d8f4027a3f127a4d3eb663"
+    },
+    {
+      "id": "c0f690552275f41fe2557f97e096",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/chase-sexton/",
+      "title": "Chase Sexton",
+      "fetchedAt": "2026-07-07T12:11:52.899Z",
+      "publishedAt": "2026-07-07T12:11:52.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "3e167f5430d9cef54094f6dc905dcc71910e4a89"
+    },
+    {
+      "id": "b9436c6b36fbb80d075d0b48c306",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/cole-davies/",
+      "title": "Cole Davies | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T12:11:53.851Z",
+      "publishedAt": "2026-07-07T12:11:53.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "a32c638400ca114b8028f78d032a163a5973cee1"
+    },
+    {
+      "id": "5cc7fc94a2ba9bd8f01a23604d18",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/colt-nichols/",
+      "title": "Colt Nichols",
+      "fetchedAt": "2026-07-07T12:11:55.649Z",
+      "publishedAt": "2026-07-07T12:11:55.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "d539e5f1539a10eb469af40cb41f80b8a756ea8f"
+    },
+    {
+      "id": "b1f0fcea8fc42aa47f9262be3635",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/cooper-webb/",
+      "title": "Cooper Webb",
+      "fetchedAt": "2026-07-07T12:11:57.565Z",
+      "publishedAt": "2026-07-07T12:11:57.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "2d098b06948e162cbaf61ac990b7c0f017aeefaa"
+    },
+    {
+      "id": "36adacd7dfccc2cb6f1469c378dd",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/daxton-bennick/",
+      "title": "Daxton Bennick",
+      "fetchedAt": "2026-07-07T12:11:59.305Z",
+      "publishedAt": "2026-07-07T12:11:59.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "432f516857ffbb833762fd81acd044802fa1f590"
+    },
+    {
+      "id": "f04b5e7a42ab429405fee208b5c4",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/drew-adams/",
+      "title": "Drew Adams | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T12:12:01.168Z",
+      "publishedAt": "2026-07-07T12:12:01.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "242d880a58f370be7ca3bd9eb9f3d92d3fb3b35c"
+    },
+    {
+      "id": "0701507b4d2ab7d1697d4afdf2db",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/dylan-ferrandis/",
+      "title": "Dylan Ferrandis",
+      "fetchedAt": "2026-07-07T12:12:03.047Z",
+      "publishedAt": "2026-07-07T12:12:03.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "1fae6138c93595a19dc6cd2047bf70b7a797e116"
+    },
+    {
+      "id": "ea732fe11ccee64df425d372a898",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/eli-tomac/",
+      "title": "Eli Tomac",
+      "fetchedAt": "2026-07-07T12:12:04.015Z",
+      "publishedAt": "2026-07-07T12:12:03.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "6ab06df94ee7777a15acf741cffe653618c9b104"
+    },
+    {
+      "id": "bc91f0e2c230d50116f38a41569f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/garrett-marchbanks/",
+      "title": "Garrett Marchbanks",
+      "fetchedAt": "2026-07-07T12:12:05.951Z",
+      "publishedAt": "2026-07-07T12:12:05.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "07f9fc50f8b145953892de5e90652a038eb78a10"
+    },
+    {
       "id": "6e13bec489533e07c98c9dd3ac02",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/jason-anderson-signs-for-suzuki-for-2026-smx-world-championship/",
@@ -966,6 +1204,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "c78e85f1d5039084b9de824737d7b82282844a84"
+    },
+    {
+      "id": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/results/",
+      "title": "Results | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T12:11:42.779Z",
+      "publishedAt": "2026-07-07T03:25:12.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 16,
+      "factCount": 100,
+      "contentHash": "dc3a6bb1da27128312082b6eafc4dc31a1afecf3"
     },
     {
       "id": "14b74869883ffd5b6b5eb23570ad",
@@ -1022,6 +1274,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "4a18fd6334a2e69cf0df4f462cc04c60eba1e0a6"
+    },
+    {
+      "id": "de028bec5e1846bf430f5b1e4c51",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/gallery/supercross-riders-visit-indianapolis-motor-speedway/",
+      "title": "Untitled historical source",
+      "fetchedAt": "2026-07-07T12:11:39.135Z",
+      "publishedAt": "2026-07-07T12:11:39.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e255dd4e952c139d200d31b2348b616511cdd5d9"
     }
   ],
   "facts": [
@@ -6566,6 +6832,2160 @@
       },
       "provenanceUrl": "https://www.supercrosslive.com/news/2025-national-and-career-pro-numbers-for-supercross-and-motocross/",
       "extractedAt": "2026-07-06T22:41:16.404Z"
+    },
+    {
+      "id": "01d2f32644860f3c4b24e1d2a80c",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 5:\",\"column_2\":\"Detroit\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 5,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "055c1086faf692a23ee3e0a600ee",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 13:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 13,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "0623390cb3936f94fe471a7d7128",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Year:\",\"column_2\":\"2023\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 0,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "063d97d297a2703312d3b21fe9d9",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 12:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 12,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "07bfd38a481486d77ed1aaaed12f",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 12:\",\"column_2\":\"St. Louis\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 12,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "0ad11d36f2cbe375fc6579e0a5b6",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2026\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 0,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "115d7840e25889786d66f3d44edb",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"15 – Pittsburgh\",\"column_2\":\"15 – Philadelphia\",\"column_3\":\"15 – Nashville\",\"column_4\":\"15 – Foxborough\",\"column_5\":\"15 – Atlanta 3\",\"column_6\":\"15 – Salt Lake City 5\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 15,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "115ffab7820f810bdb0129e683d3",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 4:\",\"column_2\":\"Anaheim II\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 3,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "12e47a7372dac5713e97718b6691",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 17:\",\"column_2\":\"Salt Lake City\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 17,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "16ff994cd8d9233b0d8c7c345a96",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 14:\",\"column_2\":\"Cleveland\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 14,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "1aadc1ed424e011e6fa27c2ba5d6",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"13 – Philadelphia\",\"column_2\":\"13 – Foxborough\",\"column_3\":\"13 – Atlanta\",\"column_4\":\"13 – St. Louis\",\"column_5\":\"13 – Atlanta 1\",\"column_6\":\"13 – Salt Lake City 3\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 13,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "1f953fd38efd559010f5a43f7f07",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 10:\",\"column_2\":\"Indianapolis\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 10,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "215c55e924de503ca69e493a62b7",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"04 – Houston\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 4,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "22eff5802b1710cd34f9e4e5604e",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 5:\",\"column_2\":\"Glendale\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 5,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "24de6e80ea8258fbefb6d62711ba",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"16 – Denver\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 16,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "2823c83406ad5c33da9c089422af",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 17:\",\"column_2\":\"Salt Lake City\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 17,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "2a73ec8bab457d87856f3704f558",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 5:\",\"column_2\":\"Houston\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 4,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "2d2591b87097e6f3b868d9c38e1c",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 14:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 14,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "2d644d6bfe4ac81c41c2494355f9",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"10 – Birmingham\",\"column_2\":\"10 – Indianapolis\",\"column_3\":\"10 – Detroit\",\"column_4\":\"10 – Detroit\",\"column_5\":\"10 – Arlington 1\",\"column_6\":\"10 – Daytona\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 10,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "2ea7e7f5679cdf704a9ee7f834ed",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 6:\",\"column_2\":\"Glendale\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 6,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "2ffcb3d843792cef4c0e4fac34de",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"16 – Denver\",\"column_2\":\"16 – Denver\",\"column_3\":\"16 – Denver\",\"column_4\":\"16 – Denver\",\"column_5\":\"16 – Salt Lake City 1\",\"column_6\":\"16 – Salt Lake City 6\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 16,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "306c0c07fd7689baf664b40f8f91",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2025\",\"column_2\":\"2024\",\"column_3\":\"2023\",\"column_4\":\"2022\",\"column_5\":\"2021\",\"column_6\":\"2020\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 0,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "3122cc992c41ef8d5b0a5b10edf6",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 11:\",\"column_2\":\"Seattle\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 11,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "321c4689d921e4cf7bc4572113d7",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 10:\",\"column_2\":\"Birmingham\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 10,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "32e17dc9d353eda43675198f0c05",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 11:\",\"column_2\":\"Detroit\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 11,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "332e9c0a1e2e47610406130520c8",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"12 – Foxborough\",\"column_2\":\"12 – St. Louis\",\"column_3\":\"12 – Glendale\",\"column_4\":\"12 – Seattle\",\"column_5\":\"12 – Arlington 3\",\"column_6\":\"12 – Salt Lake City 2\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 12,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "35b72f34f658c950d73d0592d0d6",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1 – Anaheim I\",\"column_2\":\"01 – Anaheim I\",\"column_3\":\"01 – Anaheim I\",\"column_4\":\"01 – Anaheim I\",\"column_5\":\"01 – Houston 1\",\"column_6\":\"01 – Anaheim 1\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 1,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "37c48aa1135f9a6efc5b8a6c270e",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 7:\",\"column_2\":\"Arlington\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 7,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "388469809e4452b39081f852311c",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"11 – Seattle\",\"column_2\":\"11 – Seattle\",\"column_3\":\"11 – Seattle\",\"column_4\":\"11 – Indy\",\"column_5\":\"11 – Arlington 2\",\"column_6\":\"11 – Salt Lake City I\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 11,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "3ea70d98d726fc0df7659d4480ba",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"07 – Arlington\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 7,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "457a846e1e0a7cdadef9b989fee5",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"02 – San Diego\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 2,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "5096dced6213052bba41dd4fcfb8",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 9:\",\"column_2\":\"Indy\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 9,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "50ef6e4fdb93d5a1fee41b9f04f2",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 8:\",\"column_2\":\"Daytona\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 8,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "536abe72d14f86f52fd80fb88241",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"01 – Anaheim I\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 1,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "572d822cc49b70c2eea1edbaab54",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"14 – East Rutherford\",\"column_2\":\"14 – Nashville\",\"column_3\":\"14 – East Rutherford\",\"column_4\":\"14 – Atlanta\",\"column_5\":\"14 – Atlanta 2\",\"column_6\":\"14 – Salt Lake City 4\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 14,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "57e2301101e149956428a97a5e2f",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 7:\",\"column_2\":\"Arlington\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 7,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "5b0c22707975bac69d3bba5bf9ed",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 9:\",\"column_2\":\"Indianapolis\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 9,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "610aea94ef1b13f8cdfb048c6508",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"11 – Detroit\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 11,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "630bc84dad4a87e944c7ae34fd38",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"9 – Indianapolis\",\"column_2\":\"09 – Birmingham\",\"column_3\":\"09 – Indy\",\"column_4\":\"09 – Daytona\",\"column_5\":\"09 – Daytona\",\"column_6\":\"09 – Atlanta\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 9,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "63e8dad5cd1bbedd9d6dde4e7d86",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"3 – Anaheim II\",\"column_2\":\"03 – San Diego\",\"column_3\":\"03 – San Diego\",\"column_4\":\"03 – San Diego\",\"column_5\":\"03 – Houston 3\",\"column_6\":\"03 – Anaheim 2\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 3,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "65f2e3308ce39c9bd767c3f12c78",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 15:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 15,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "6c8b02a4f75d50f192a05e44b4bb",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 11:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 11,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "7224d28fd8f83dd7433e0f44ad3c",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"03 – Anaheim II\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 3,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "72a08174e8776805afb4498d5bd4",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 7:\",\"column_2\":\"Arlington\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 7,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "73d81d2e18c6c0eb2d34e9ebfb50",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 6:\",\"column_2\":\"Seattle\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 6,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "745e7c62a9d16294a029570d6073",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"15 – Philadelphia\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 15,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "77d583a25f2c19dcdadf2ed2868e",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 3:\",\"column_2\":\"San Diego\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 3,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "7a503d1f1f74bfaae3b52c1f70b9",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 3:\",\"column_2\":\"San Diego\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 2,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "7e8ca8b26015ff3f16b7b405b686",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 12:\",\"column_2\":\"St. Louis\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 12,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "803563af69d8f5fa4f815a5280d2",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"14 – Cleveland\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 14,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "82ef1491358414d33b1aea8f3d73",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2 – San Diego\",\"column_2\":\"02 – San Francisco\",\"column_3\":\"02 – Oakland\",\"column_4\":\"02 – Oakland\",\"column_5\":\"02 – Houston 2\",\"column_6\":\"02 – St. Louis\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 2,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "8343d55fb1d9a3fd2ec9e2c5b783",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"06 – Seattle\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 6,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "8353e6f04db04e0913d4f8583a56",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 1:\",\"column_2\":\"Anaheim I\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 1,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "8acc0968b7d353be437da753314e",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Year:\",\"column_2\":\"2024\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 0,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "8b28d6f706fddb329aec620f6341",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 4:\",\"column_2\":\"Anaheim II\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 4,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "8bbd8085a5db03f6fcd1f0c41897",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 13:\",\"column_2\":\"Foxborough\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 13,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "8d99ba1292dd0d43fdcae6d34ae8",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 16:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 16,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "9011e7eefdec5338d604a2c6f64c",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 6:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 6,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "90a2d60a45828275cb411ec6afac",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 17:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 17,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "91333565a75afa2cf7ccc423b6d1",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"12 – St. Louis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 12,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "917abb335883fc1371c3220b955a",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 1:\",\"column_2\":\"Anaheim I\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 1,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "9257cdcc3599fc04d3e28b45e430",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 9:\",\"column_2\":\"Birmingham\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 9,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "9634ec079f2ce2720e76a95bab47",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"13 – Nashville\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 13,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "96a1e80587fb7a2e6c457112d045",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"6 – Detroit\",\"column_2\":\"06 – Glendale\",\"column_3\":\"06 – Tampa\",\"column_4\":\"06 – Anaheim III\",\"column_5\":\"06 – Indianapolis 3\",\"column_6\":\"06 – San Diego\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 6,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "9ca0fc737ad4284ec2a8a90b54a3",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"8 – Daytona Beach\",\"column_2\":\"08 – Daytona\",\"column_3\":\"08 – Daytona\",\"column_4\":\"08 – Arlington\",\"column_5\":\"08 – Orlando 2\",\"column_6\":\"08 – Arlington\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 8,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "a1a4c3c2cc9a260481b9e0f44cd3",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 6:\",\"column_2\":\"Tampa\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 5,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "a52650b48bd26e76213d06403f15",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 7:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 7,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "a75d16f9e0fbb97b60de5c093f0a",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"09 – Indianapolis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 9,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "a9ea1e7730ca4e1e0209321a546f",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 3:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 3,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "b0844e73c59bc111bdd31d413b91",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"08 – Daytona Beach\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 8,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "b0c43eff7eda072efea92f1b44ca",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 2:\",\"column_2\":\"San Diego\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 2,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "b5b388cba3603998f57a20f739ee",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 10:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 10,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "b684c07f17c64ec2fccddffd5ad6",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"10 – Birmingham\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 10,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "baeeb3bf2aa292aa6c839c75817e",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 4:\",\"column_2\":\"Houston\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 4,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "bc636b39d19f4ec0476a68b007b9",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 13:\",\"column_2\":\"Nashville\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 13,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "bcd50116b459dc294682e41d4645",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"7 – Arlington\",\"column_2\":\"07 – Arlington\",\"column_3\":\"07 – Arlington\",\"column_4\":\"07 – Minneapolis\",\"column_5\":\"07 – Orlando 1\",\"column_6\":\"07 – Tampa\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 7,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "be23d951cfde7ad8d1d3604da644",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"17 – Salt Lake City\",\"column_2\":\"17 – Salt Lake City\",\"column_3\":\"17 – Salt Lake City\",\"column_4\":\"17 – Salt Lake City\",\"column_5\":\"17 – Salt Lake City 2\",\"column_6\":\"17 – Salt Lake City 7\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 17,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "c50ec8b19801034d1e6cf10975bb",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 8:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 8,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "c5f79fe4d31f2136113631cf2ac5",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 3:\",\"column_2\":\"Anaheim II\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 3,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "c6562a9d3a504c4a27d288bcceef",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 15:\",\"column_2\":\"Philadelphia\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 15,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "c7e94c3d795b365c80d31f123e35",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 2:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 2,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "d14ba8dd7e8d0e5630fb4fcd4a63",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 8:\",\"column_2\":\"Daytona Beach\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 8,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "d19b46783c34bfaad107303488e7",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"17 – Salt Lake City\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 17,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "d1b490b9324ec36534f9143c6a9d",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 8:\",\"column_2\":\"Daytona\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 8,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "d20dee2857c5ccbd7ae3b7def914",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 2:\",\"column_2\":\"Oakland\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 6,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "d388f5e8cc1dfb3267fd8a99dd10",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"5 – Tampa\",\"column_2\":\"05 – Detroit\",\"column_3\":\"05 – Houston\",\"column_4\":\"05 – Glendale\",\"column_5\":\"05 – Indianapolis 2\",\"column_6\":\"05 – Oakland\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 5,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "d5542eff4e8b4f4b3e0e82ee91e9",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"05 – Glendale\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 5,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "e109059c6bd4077144d05d61a7c1",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 15:\",\"column_2\":\"Philadelphia\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 15,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "e1f561468689c6c278ce8970995e",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Year:\",\"column_2\":\"2025\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 0,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "e397109d733d9ce871ffcc5aa9a8",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 4:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 4,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "e52e3bb0d5c1663c27d468b03f06",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 14:\",\"column_2\":\"Nashville\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 14,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "e6d9ba97065fe17c61fc4b2597c7",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 1:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 1,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "e6f6368fce3e7e9721ca6b22acb7",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 1:\",\"column_2\":\"Anaheim I\"}",
+      "context": {
+        "tableIndex": 5,
+        "rowIndex": 1,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "ec10dd19f1a325cff16f6ddc1360",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 2:\",\"column_2\":\"San Francisco\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 2,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "ec5d18b9d6636eb5279cf21670af",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Year:\",\"column_2\":\"2026\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 0,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "ec84d5c9d484725cd85c1bb39d84",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 9:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 9,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "ef12a14294f8606a4562fe73b86e",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 16:\",\"column_2\":\"Denver\"}",
+      "context": {
+        "tableIndex": 4,
+        "rowIndex": 16,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "f158d08dcd7d206529077d0a6929",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 16:\",\"column_2\":\"Denver\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 16,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "f504679b9d1818ddd4a982cdd911",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"4 – Glendale\",\"column_2\":\"04 – Anaheim II\",\"column_3\":\"04 – Anaheim II\",\"column_4\":\"04 – Anaheim II\",\"column_5\":\"04 – Indianapolis 1\",\"column_6\":\"04 – Glendale\"}",
+      "context": {
+        "tableIndex": 2,
+        "rowIndex": 4,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
+    },
+    {
+      "id": "f6e4cbfc14d6312490fb746d7672",
+      "documentId": "c5fa8f779929a68622f8fb7b4ef8",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Round 5:\"}",
+      "context": {
+        "tableIndex": 3,
+        "rowIndex": 5,
+        "headers": [
+          "column_1",
+          "column_2"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/results/",
+      "extractedAt": "2026-07-07T12:11:42.779Z"
     },
     {
       "id": "1972-mx-250-champion-note",
