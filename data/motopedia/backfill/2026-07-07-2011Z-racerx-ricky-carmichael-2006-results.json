@@ -1,0 +1,97 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T20-11Z-run45",
+  "created_utc": "2026-07-07T20:11:23Z",
+  "status": "committed_racerx_atomic_individual_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible individual race-result rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic race-result fields visible in the public page were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue, class token, event date, and machine token. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to a manually opened public Racer X Vault rider individual-races page. Prior robots.txt direct lookup remained unavailable through the browsing route; crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_ricky_carmichael_races": {
+      "name": "Racer X Vault — Ricky Carmichael Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T20:11:23Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public Individual Race Results rows for Ricky Carmichael for calendar year 2006, from Anaheim 1 through Glen Helen Raceway.",
+      "provenance_notes": [
+        "Racer X/Vault was used as the priority public source route for this batch.",
+        "Rows were captured as atomic facts only; venue names, class tokens, dates, overall finish positions, and machine tokens.",
+        "This continues the prior Ricky Carmichael 2007 individual-race backfill checkpoint."
+      ],
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-ricky-carmichael-race-2006-09-10-glen-helen-raceway-mx-38","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-09-10","venue":"Glen Helen Raceway","class":"MX","rider":"Ricky Carmichael","overall_finish":38,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-09-03-steel-city-raceway-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-09-03","venue":"Steel City Raceway","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-08-20-broome-tioga-sports-center-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-08-20","venue":"Broome-Tioga Sports Center","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-08-13-spring-creek-motocross-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-08-13","venue":"Spring Creek Motocross","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-07-30-washougal-motocross-mx-2","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-07-30","venue":"Washougal Motocross","class":"MX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-07-23-thunder-valley-motocross-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-07-23","venue":"Thunder Valley Motocross","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-07-16-unadilla-motocross-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-07-16","venue":"Unadilla Motocross","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-07-02-redbud-track-n-trail-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-07-02","venue":"RedBud Track 'n Trail","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-06-18-budds-creek-motocross-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-06-18","venue":"Budds Creek Motocross","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-06-11-moto-x-338-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-06-11","venue":"Moto-X 338","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-05-28-high-point-raceway-mx-1","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-05-28","venue":"High Point Raceway","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-05-21-hangtown-motocross-classic-mx-2","type":"individual_race_result","series":"Motocross","year":2006,"event_date":"2006-05-21","venue":"Hangtown Motocross Classic","class":"MX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-05-06-las-vegas-sx-2","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-05-06","venue":"Las Vegas","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-04-29-seattle-sx-3","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-04-29","venue":"Seattle","class":"SX","rider":"Ricky Carmichael","overall_finish":3,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-04-22-irving-sx-6","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-04-22","venue":"Irving","class":"SX","rider":"Ricky Carmichael","overall_finish":6,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-04-01-houston-sx-2","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-04-01","venue":"Houston","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-03-25-detroit-sx-2","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-03-25","venue":"Detroit","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-03-18-orlando-sx-2","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-03-18","venue":"Orlando","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-03-10-daytona-sx-1","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-03-10","venue":"Daytona","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-03-04-indianapolis-sx-1","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-03-04","venue":"Indianapolis","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-02-25-atlanta-sx-1","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-02-25","venue":"Atlanta","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-02-18-st-louis-sx-20","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-02-18","venue":"St. Louis","class":"SX","rider":"Ricky Carmichael","overall_finish":20,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-02-11-san-diego-sx-2","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-02-11","venue":"San Diego","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-02-04-anaheim-3-sx-1","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-02-04","venue":"Anaheim 3","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-01-28-san-francisco-sx-2","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-01-28","venue":"San Francisco","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-01-21-anaheim-2-sx-1","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-01-21","venue":"Anaheim 2","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-01-14-phoenix-sx-1","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-01-14","venue":"Phoenix","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2006-01-07-anaheim-1-sx-3","type":"individual_race_result","series":"Supercross","year":2006,"event_date":"2006-01-07","venue":"Anaheim 1","class":"SX","rider":"Ricky Carmichael","overall_finish":3,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93}
+  ],
+  "deduplication": {
+    "strategy": "Deterministic fact_id composed from source scope, rider slug, event date, venue slug, class token, and overall finish.",
+    "checked_against_prior_batches": true,
+    "prior_batches_reviewed": [
+      "2026-07-07-1810Z-racerx-ricky-carmichael-season-standings.json captured season standings only, not individual race-result rows.",
+      "2026-07-07-1903Z-racerx-ricky-carmichael-2007-results.json captured 2007 individual race-result rows only.",
+      "GitHub code search for racerx-ricky-carmichael-2006-results returned no existing matching backfill file before commit."
+    ],
+    "duplicate_facts_committed": false
+  },
+  "checkpoint": {
+    "rider_slug": "ricky-carmichael",
+    "source_route": "/rider/ricky-carmichael/races",
+    "last_completed_scope": "Racer X Vault visible individual race-result rows for Ricky Carmichael calendar year 2006",
+    "next_recommended_action": "Continue Racer X/Vault Ricky Carmichael individual-race backfill with the next chronological/public visible slice, starting 2005 rows, while preserving deduplication against season-standings-only and prior individual-race batches.",
+    "failure_receipts": [
+      {
+        "stage": "robots_txt_direct_open",
+        "status": "tool_safety_open_error_prior_run",
+        "detail": "Prior attempt to open https://vault.racerxonline.com/robots.txt through the available browsing route returned a non-retryable safe-open error rather than robots content. No automated crawler was run in this batch."
+      }
+    ]
+  }
+}
