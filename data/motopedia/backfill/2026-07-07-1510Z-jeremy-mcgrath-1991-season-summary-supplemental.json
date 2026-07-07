@@ -1,0 +1,125 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T15-10Z-run40",
+  "created_utc": "2026-07-07T15:10:00Z",
+  "status": "committed_supplemental_atomic_season_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied. This batch is supplemental because the preferred Racer X/Vault rider-races route returned a fetch/cache miss during this run.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No private or logged-in source was accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic season-result fields were captured: year, discipline/class, placing or title status, rider, team/machine when available, and source URLs. No article bodies or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Racer X/Vault was attempted as a single public-page lookup and failed with a cache miss; no repeated crawling or bypass attempt was made.",
+    "rate_limit": "Manual lookup only. Future crawler default remains 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Supplemental public reference pages only when preferred/official sources are unavailable in-run"
+    ]
+  },
+  "sources": {
+    "racerx_jeremy_mcgrath_races_attempt": {
+      "name": "Racer X Vault — Jeremy McGrath Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T15:10:00Z",
+      "access_status": "fetch_cache_miss_this_run",
+      "copy_policy": "Preferred source for replacement/corroboration when accessible. Do not copy article bodies or narrative content."
+    },
+    "wikipedia_jeremy_mcgrath_public_reference": {
+      "name": "Wikipedia — Jeremy McGrath",
+      "url": "https://en.wikipedia.org/wiki/Jeremy_McGrath",
+      "publisher": "Wikimedia Foundation / community-edited public reference",
+      "accessed_utc": "2026-07-07T15:10:00Z",
+      "source_span": "Public rider bio/career-results table indicating the 1991 AMA 125cc West Supercross title and a 1991 125 SX-W season row with overall place 1st.",
+      "provenance_notes": [
+        "Used only as a low-confidence supplemental bridge after the preferred Racer X route failed in-run.",
+        "Atomic facts should be replaced or corroborated by Racer X Vault or official-series sources when available."
+      ],
+      "copy_policy": "Use as supplemental public reference only. Do not copy article bodies or narrative content."
+    },
+    "wikipedia_team_pro_circuit_public_reference": {
+      "name": "Wikipedia — Team Pro Circuit",
+      "url": "https://en.wikipedia.org/wiki/Team_Pro_Circuit",
+      "publisher": "Wikimedia Foundation / community-edited public reference",
+      "accessed_utc": "2026-07-07T15:10:00Z",
+      "source_span": "Public team-results table listing Jeremy McGrath in 1991 with Supercross Lites West result 1 and AMA Motocross result 5.",
+      "provenance_notes": [
+        "Used only as low-confidence supplemental context for team/series result fields.",
+        "Not treated as an official series source."
+      ],
+      "copy_policy": "Use as supplemental public reference only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races"
+  },
+  "facts": [
+    {
+      "fact_id": "supplemental-jeremy-mcgrath-season-1991-125-sx-west-title",
+      "type": "season_championship_result",
+      "series": "Supercross",
+      "year": 1991,
+      "class": "125SX West / Supercross Lites West",
+      "rider": "Jeremy McGrath",
+      "season_position": 1,
+      "champion": true,
+      "team_or_program": "Team Pro Circuit / Peak Honda",
+      "machine": "Honda",
+      "sources": ["wikipedia_jeremy_mcgrath_public_reference", "wikipedia_team_pro_circuit_public_reference"],
+      "confidence": 0.62,
+      "replacement_priority": "Replace or corroborate with Racer X Vault or official AMA/Supercross archival standings when accessible."
+    },
+    {
+      "fact_id": "supplemental-jeremy-mcgrath-season-1991-125-mx-fifth",
+      "type": "season_standings_result",
+      "series": "Motocross",
+      "year": 1991,
+      "class": "125MX",
+      "rider": "Jeremy McGrath",
+      "season_position": 5,
+      "team_or_program": "Team Pro Circuit / Peak Honda",
+      "machine": "Honda",
+      "sources": ["wikipedia_team_pro_circuit_public_reference"],
+      "confidence": 0.54,
+      "replacement_priority": "Replace or corroborate with Racer X Vault or official AMA/Motocross archival standings when accessible."
+    }
+  ],
+  "deduplication": {
+    "strategy": "Deterministic fact_id composed from supplemental status, rider slug, season year, discipline/class, and result type.",
+    "checked_against_prior_batches": true,
+    "prior_batches_reviewed": [
+      "Jeremy McGrath Racer X 1992 result facts",
+      "Jeremy McGrath Racer X season standings facts",
+      "Jeremy McGrath 1995 supplemental season-summary facts"
+    ],
+    "duplicate_facts_committed": false
+  },
+  "checkpoint": {
+    "rider_slug": "jeremy-mcgrath",
+    "source_route": "/rider/jeremy-mcgrath/races",
+    "last_completed_year": 1991,
+    "next_recommended_action": "Retry Racer X/Vault Jeremy McGrath individual-race rows for 1991; if still unavailable, continue backward with 1990 only as clearly marked supplemental or wait for Racer X/official-source access.",
+    "failure_receipts": [
+      {
+        "stage": "racerx_rider_races_open",
+        "status": "fetch_cache_miss",
+        "detail": "Direct open of https://vault.racerxonline.com/rider/jeremy-mcgrath/races returned a cache miss in the browsing tool during this run. No repeated crawler requests or bypass attempts were made."
+      },
+      {
+        "stage": "racerx_standings_direct_open",
+        "status": "not_opened_by_browsing_tool_safety_rule",
+        "detail": "Direct open of the guessed /standings route was not allowed because the URL had not appeared in search results or user-provided content in this run."
+      },
+      {
+        "stage": "robots_txt_direct_open",
+        "status": "not_checked_by_browsing_tool",
+        "detail": "No crawler was run. Robots.txt was not fetched separately because this run used manual lookup only and respected the existing no-crawl boundary."
+      }
+    ]
+  }
+}
