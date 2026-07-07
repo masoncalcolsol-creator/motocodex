@@ -1,28 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T12:12:06.853Z",
+  "updatedAt": "2026-07-07T15:18:46.016Z",
   "queue": [
-    {
-      "url": "https://www.supercrosslive.com/news/smx-2025-season-preview-show/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2025,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/fan-sweepstakes-2025/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2025,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/slc-2025-survey-sweepstakes-rules/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": 2025,
-      "score": 31
-    },
     {
       "url": "https://www.supercrosslive.com/news/ken-roczen-returns-to-suzuki-for-2026-smx-season/",
       "sourceKey": "supercrosslive",
@@ -50,153 +29,6 @@
       "discoveredAt": "2026-07-04T09:32:13.449Z",
       "yearHint": 2026,
       "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/haiden-deegan/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/hunter-lawrence/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/jason-anderson/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/jett-lawrence/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/jo-shimoda/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/jordon-smith/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/jorge-prado/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/julien-beaumer/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/justin-barcia/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/justin-cooper/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/ken-roczen/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/landen-gordon/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/levi-kitchen/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/malcolm-stewart/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/max-anstie/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/michael-mosiman/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/nate-thrasher/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/nick-romano/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/pierce-brown/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/rj-hampshire/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
-    },
-    {
-      "url": "https://www.supercrosslive.com/rider/ryder-difrancesco/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 54
     },
     {
       "url": "https://www.supercrosslive.com/rider/seth-hammaker/",
@@ -1633,6 +1465,132 @@
       "documentId": "bc91f0e2c230d50116f38a41569f",
       "contentHash": "07f9fc50f8b145953892de5e90652a038eb78a10",
       "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/haiden-deegan/": {
+      "processedAt": "2026-07-07T15:18:14.952Z",
+      "documentId": "ed4b3a704f6fb5f830e4b543b68f",
+      "contentHash": "0e84a69763605ba5abbf17129213ba80e0ffd700",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/hunter-lawrence/": {
+      "processedAt": "2026-07-07T15:18:15.905Z",
+      "documentId": "b43d97ffc3573cf9ef1300b82551",
+      "contentHash": "a0c66f5bba879ac70ba63cc043fed4f833cdc0ee",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/jason-anderson/": {
+      "processedAt": "2026-07-07T15:18:16.860Z",
+      "documentId": "4bb201ae336f5bc2b7255c71967a",
+      "contentHash": "268071ac3a87c0ae4b43ff03e4e5c272d8760c7c",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/jett-lawrence/": {
+      "processedAt": "2026-07-07T15:18:17.811Z",
+      "documentId": "cdec1fdcf700b5bb87ee4bb95aa0",
+      "contentHash": "dd43e82f0f2548b821d3c9d0dee683787e3cdf0f",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/jo-shimoda/": {
+      "processedAt": "2026-07-07T15:18:18.762Z",
+      "documentId": "37e024d8796ab789bf7354b44812",
+      "contentHash": "3593a0e4fa43ec3d7d48ed1d0cba9cb58cc0d63f",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/jordon-smith/": {
+      "processedAt": "2026-07-07T15:18:20.692Z",
+      "documentId": "8eb6cc231aff03eda75e8dff8ec3",
+      "contentHash": "171f7ed9e5f19bb18f0773b8b05968397bd40beb",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/jorge-prado/": {
+      "processedAt": "2026-07-07T15:18:22.768Z",
+      "documentId": "9a21516fe3fa2a705f9a3f16b2d0",
+      "contentHash": "d62db7a40a2af095c8bd89eb9618cd86b846ccd7",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/julien-beaumer/": {
+      "processedAt": "2026-07-07T15:18:25.212Z",
+      "documentId": "540a317a77c7ddd04d72b66d1f1e",
+      "contentHash": "8c0149eedea7a08dfadfa9c628c572bd8644e7b2",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/justin-barcia/": {
+      "processedAt": "2026-07-07T15:18:26.173Z",
+      "documentId": "7d18dddfb234fcf5a3408aa1bb83",
+      "contentHash": "2520672fdbd169aecad9f2212242c42ff8c36600",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/justin-cooper/": {
+      "processedAt": "2026-07-07T15:18:28.271Z",
+      "documentId": "7cbdf7cbbe82663d756fdf75d19e",
+      "contentHash": "7aefe49e719d9122cc9778a0f6dc6879169e3667",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/ken-roczen/": {
+      "processedAt": "2026-07-07T15:18:29.226Z",
+      "documentId": "189111e3647c2c53abe1ddf092cd",
+      "contentHash": "9c9dc62598d5599f2a60404f33b852944e34aed7",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/landen-gordon/": {
+      "processedAt": "2026-07-07T15:18:30.227Z",
+      "documentId": "b36e17f5c8312799f038640723af",
+      "contentHash": "b6199b8c6712379c0ad50fd84aabca8bb1c0d1e1",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/levi-kitchen/": {
+      "processedAt": "2026-07-07T15:18:31.181Z",
+      "documentId": "a162b8de3313c3b674f4a7e6fc1c",
+      "contentHash": "1d5732e76510891542bd949b9c64c30eb6d8dd88",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/malcolm-stewart/": {
+      "processedAt": "2026-07-07T15:18:32.141Z",
+      "documentId": "a6db1e2a710444f7f070647715e6",
+      "contentHash": "4d23361c28832f82c73e63707337b2d596c34e1e",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/max-anstie/": {
+      "processedAt": "2026-07-07T15:18:33.162Z",
+      "documentId": "cc40d9a9e8dd2ce8d9ca3a7940d9",
+      "contentHash": "f78cad0c23b32c859d7606efb9aab464622bf7fe",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/michael-mosiman/": {
+      "processedAt": "2026-07-07T15:18:35.247Z",
+      "documentId": "26df2ab75e11a56500eb25b06e19",
+      "contentHash": "0e9bedf8a49f2e157ab458f676bc80db920ed415",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/nate-thrasher/": {
+      "processedAt": "2026-07-07T15:18:36.198Z",
+      "documentId": "9a48278920e81a10822a41371148",
+      "contentHash": "d271ff4960c9a6b8d07262c00e16333ad7db27fa",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/nick-romano/": {
+      "processedAt": "2026-07-07T15:18:38.655Z",
+      "documentId": "322a48269126e0d108f39507c30c",
+      "contentHash": "ac0a720174ec464111ead5670e023c0c0c5e3bd5",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/pierce-brown/": {
+      "processedAt": "2026-07-07T15:18:40.680Z",
+      "documentId": "e4b3ef6756455719f5f05ee655f5",
+      "contentHash": "1966b2e82e853f98a442aae7ddd8b6ae67216acd",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/rj-hampshire/": {
+      "processedAt": "2026-07-07T15:18:42.769Z",
+      "documentId": "9ad20b183c728cdd7b0036d4b35d",
+      "contentHash": "bc8bb11d46c650f60822c5a637786e8d485c5266",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/rider/ryder-difrancesco/": {
+      "processedAt": "2026-07-07T15:18:45.116Z",
+      "documentId": "c7e457199dfe4bf1e187d8b5d778",
+      "contentHash": "3b9f064e32bfae523a6e221e85d6050d4315ad5e",
+      "factCount": 0
     }
   },
   "failed": {
@@ -2612,102 +2570,102 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/smx-2025-season-preview-show/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-07T12:11:32.186Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-07T15:18:08.112Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/fan-sweepstakes-2025/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-07T12:11:33.113Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-07T15:18:09.064Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/slc-2025-survey-sweepstakes-rules/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-07T12:11:34.037Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-07T15:18:10.021Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ken-roczen-returns-to-suzuki-for-2026-smx-season/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T12:11:34.960Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-07T15:18:11.026Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/watch-smx-2026-season-preview-show/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T12:11:35.913Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-07T15:18:12.019Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/2026-track-maps/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T12:11:36.853Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-07T15:18:12.978Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/slc-2026-survey-sweepstakes-rules/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T12:11:37.778Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-07T15:18:14.000Z",
       "error": "Page did not contain durable historical result metadata"
     }
   },
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:09.425Z",
+      "checkedAt": "2026-07-07T15:17:46.726Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:11.216Z",
+      "checkedAt": "2026-07-07T15:17:48.482Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:13.009Z",
+      "checkedAt": "2026-07-07T15:17:50.243Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-07T12:11:13.908Z",
+      "checkedAt": "2026-07-07T15:17:51.144Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:15.012Z",
+      "checkedAt": "2026-07-07T15:17:52.292Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:16.800Z",
+      "checkedAt": "2026-07-07T15:17:54.146Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:18.587Z",
+      "checkedAt": "2026-07-07T15:17:55.999Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-07T12:11:19.487Z",
+      "checkedAt": "2026-07-07T15:17:56.900Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:20.274Z",
+      "checkedAt": "2026-07-07T15:17:57.994Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:21.904Z",
+      "checkedAt": "2026-07-07T15:17:59.769Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:23.531Z",
+      "checkedAt": "2026-07-07T15:18:01.545Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-07T12:11:24.431Z",
+      "checkedAt": "2026-07-07T15:18:02.445Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -2724,25 +2682,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:25.731Z",
+      "checkedAt": "2026-07-07T15:18:03.397Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:27.530Z",
+      "checkedAt": "2026-07-07T15:18:05.147Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T12:11:29.330Z",
+      "checkedAt": "2026-07-07T15:18:06.898Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-07T12:11:30.230Z",
+      "checkedAt": "2026-07-07T15:18:07.799Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 868
+  "cursor": 896
 }
