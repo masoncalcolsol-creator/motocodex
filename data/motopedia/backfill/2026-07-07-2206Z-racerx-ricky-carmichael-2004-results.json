@@ -1,0 +1,71 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T22-06Z-run47",
+  "created_utc": "2026-07-07T22:06:47Z",
+  "status": "committed_racerx_atomic_individual_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible individual race-result rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic race-result fields visible in the public page were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue, class token, event date, and machine token. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to a manually opened public Racer X Vault rider individual-races page. Prior robots.txt direct lookup remained unavailable through the browsing route; crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_ricky_carmichael_races": {
+      "name": "Racer X Vault — Ricky Carmichael Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T22:06:47Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public Individual Race Results rows for Ricky Carmichael for calendar year 2004, from Hangtown Motocross Classic through Glen Helen Raceway.",
+      "provenance_notes": [
+        "Racer X/Vault was used as the priority public source route for this batch.",
+        "Rows were captured as atomic facts only; venue names, class tokens, dates, overall finish positions, and machine tokens.",
+        "This continues the prior Ricky Carmichael 2005 individual-race backfill checkpoint. The visible 2004 slice contains motocross rows only."
+      ],
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-ricky-carmichael-race-2004-09-12-glen-helen-raceway-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-09-12","venue":"Glen Helen Raceway","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-09-05-steel-city-raceway-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-09-05","venue":"Steel City Raceway","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-08-22-broome-tioga-sports-center-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-08-22","venue":"Broome-Tioga Sports Center","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-08-15-spring-creek-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-08-15","venue":"Spring Creek Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-08-01-washougal-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-08-01","venue":"Washougal Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-07-25-kenworthys-motocross-park-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-07-25","venue":"Kenworthy's Motocross Park","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-07-18-unadilla-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-07-18","venue":"Unadilla Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-07-04-redbud-track-n-trail-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-07-04","venue":"RedBud Track 'n Trail","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-06-20-budds-creek-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-06-20","venue":"Budds Creek Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-06-13-moto-x-338-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-06-13","venue":"Moto-X 338","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-05-30-high-point-raceway-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-05-30","venue":"High Point Raceway","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2004-05-16-hangtown-motocross-classic-250mx-1","type":"individual_race_result","series":"Motocross","year":2004,"event_date":"2004-05-16","venue":"Hangtown Motocross Classic","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Honda CRF450R","sources":["racerx_ricky_carmichael_races"],"confidence":0.93}
+  ],
+  "deduplication": {
+    "primary_keys": ["fact_id", "rider", "event_date", "venue", "class", "overall_finish"],
+    "prior_checkpoint": "data/motopedia/backfill/2026-07-07-2106Z-racerx-ricky-carmichael-2005-results.json",
+    "next_recommended_checkpoint": "Continue Ricky Carmichael Racer X/Vault individual race-result backfill with 2003 visible rows, unless official series source corroboration is prioritized first.",
+    "duplicate_policy": "Do not re-add a fact_id already present in existing backfill files. If the same race appears from an official source later, add that source key to corroboration rather than creating a second factual duplicate."
+  },
+  "failure_receipts": [
+    {
+      "scope": "automated crawler",
+      "status": "not_run",
+      "reason": "Robots.txt verification remains unresolved through the available browsing path, so this run used manual public-page inspection only."
+    }
+  ]
+}
