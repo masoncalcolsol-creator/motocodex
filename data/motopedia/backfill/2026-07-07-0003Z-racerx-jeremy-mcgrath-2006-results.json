@@ -1,0 +1,60 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T00-03Z-run25",
+  "created_utc": "2026-07-07T00:03:00Z",
+  "status": "committed_atomic_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Jeremy McGrath individual-races page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, event, class, date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This remained a manual source-linked lookup against one public Racer X Vault page. Direct robots.txt retrieval was not available through the browsing tool URL-safety boundary in this run; future automated crawler work must fetch and honor robots.txt before collection and stop with a failure receipt if disallowed or unavailable.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible"
+    ]
+  },
+  "sources": {
+    "racerx_jeremy_mcgrath_races": {
+      "name": "Racer X Vault — Jeremy McGrath Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T00:03:00Z",
+      "source_span": "Public Jeremy McGrath individual-race result table rows visible for 2006, listing overall finish, event, class, date, and machine.",
+      "provenance_notes": [
+        "This batch starts a Jeremy McGrath individual-race checkpoint after prior rider endpoints were completed or already present.",
+        "Only the visible 2006 rows were captured to keep the checkpoint small, auditable, and deduplicable.",
+        "Class and machine labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic race-result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross"],
+    "hometown_source_text": "Sun City, CA, United States",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeremy-mcgrath-result-2006-02-11-san-diego-sx","type":"race_result","series":"Supercross","year":2006,"date":"2006-02-11","event":"San Diego","class":"SX","rider":"Jeremy McGrath","overall_position":4,"machine":"Honda CRF450R","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-2006-02-04-anaheim-3-sx","type":"race_result","series":"Supercross","year":2006,"date":"2006-02-04","event":"Anaheim 3","class":"SX","rider":"Jeremy McGrath","overall_position":16,"machine":"Honda CR250R","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-2006-01-21-anaheim-2-sx","type":"race_result","series":"Supercross","year":2006,"date":"2006-01-21","event":"Anaheim 2","class":"SX","rider":"Jeremy McGrath","overall_position":5,"machine":"Honda CR250R","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-2006-01-14-phoenix-sx","type":"race_result","series":"Supercross","year":2006,"date":"2006-01-14","event":"Phoenix","class":"SX","rider":"Jeremy McGrath","overall_position":4,"machine":"Honda CR250R","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-2006-01-07-anaheim-1-sx","type":"race_result","series":"Supercross","year":2006,"date":"2006-01-07","event":"Anaheim 1","class":"SX","rider":"Jeremy McGrath","overall_position":11,"machine":"Honda CR250R","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, event slug, and normalized class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Bob Hannah Racer X/Vault individual-race table endpoint reached at the visible 1975 row; Jeff Ward backfill commits were already present in repository history.",
+    "checkpoint_current": "Jeremy McGrath Racer X/Vault individual race-result facts captured for visible 2006 rows.",
+    "next_suggested_checkpoint": "Continue Jeremy McGrath Racer X/Vault individual race-result facts backward with visible 2005 rows, then 2004/2002 as separate auditable batches unless official series corroboration is prioritized first."
+  },
+  "failure_receipts": [
+    {"type":"automated_crawl_not_run","detail":"No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."},
+    {"type":"robots_txt_not_used_for_crawl_permission","target":"https://vault.racerxonline.com/robots.txt","result":"not_fetched_by_browser_tool_url_safety_boundary","detail":"Because no automated crawl was run, robots.txt was not used to authorize broad collection. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."},
+    {"type":"official_series_crosscheck_limited","detail":"Official series corroboration was not added in this race-result batch; Racer X Vault public historical rider results were used as the direct source, with official AMA/series sources still prioritized for future corroboration."}
+  ]
+}
