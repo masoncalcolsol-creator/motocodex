@@ -1,0 +1,74 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T06-08Z-run31",
+  "created_utc": "2026-07-07T06:08:00Z",
+  "status": "committed_atomic_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Jeremy McGrath individual-races page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, event, class, date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This remained a manual source-linked lookup against one public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection and stop with a failure receipt if disallowed or unavailable.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible"
+    ]
+  },
+  "sources": {
+    "racerx_jeremy_mcgrath_races": {
+      "name": "Racer X Vault — Jeremy McGrath Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T06:08:00Z",
+      "source_span": "Public Jeremy McGrath individual-race result table rows visible for 1998, listing overall finish, event, class, date, and machine.",
+      "provenance_notes": [
+        "This batch continues the Jeremy McGrath individual-race checkpoint after the committed 1999 batch.",
+        "The 1998 checkpoint contains the visible 250SX rows from Los Angeles through Las Vegas plus the visible Glen Helen Raceway, Hangtown Motocross Classic, and High Point Raceway 250MX rows.",
+        "Class and machine labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic race-result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross"],
+    "hometown_source_text": "Sun City, CA, United States",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-05-24-high-point-raceway-250mx","type":"race_result","series":"Motocross","year":1998,"date":"1998-05-24","event":"High Point Raceway","class":"250MX","rider":"Jeremy McGrath","overall_position":6,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-05-17-hangtown-motocross-classic-250mx","type":"race_result","series":"Motocross","year":1998,"date":"1998-05-17","event":"Hangtown Motocross Classic","class":"250MX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-05-10-glen-helen-raceway-250mx","type":"race_result","series":"Motocross","year":1998,"date":"1998-05-10","event":"Glen Helen Raceway","class":"250MX","rider":"Jeremy McGrath","overall_position":2,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-05-02-las-vegas-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-05-02","event":"Las Vegas","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-04-25-irving-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-04-25","event":"Irving","class":"250SX","rider":"Jeremy McGrath","overall_position":2,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-04-17-charlotte-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-04-17","event":"Charlotte","class":"250SX","rider":"Jeremy McGrath","overall_position":14,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-04-04-pontiac-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-04-04","event":"Pontiac","class":"250SX","rider":"Jeremy McGrath","overall_position":20,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-03-28-st-louis-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-03-28","event":"St. Louis","class":"250SX","rider":"Jeremy McGrath","overall_position":4,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-03-21-minneapolis-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-03-21","event":"Minneapolis","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-03-14-new-orleans-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-03-14","event":"New Orleans","class":"250SX","rider":"Jeremy McGrath","overall_position":2,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-03-07-daytona-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-03-07","event":"Daytona","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-02-28-tampa-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-02-28","event":"Tampa","class":"250SX","rider":"Jeremy McGrath","overall_position":8,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-02-21-atlanta-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-02-21","event":"Atlanta","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-02-14-indianapolis-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-02-14","event":"Indianapolis","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-02-07-san-diego-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-02-07","event":"San Diego","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-01-31-seattle-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-01-31","event":"Seattle","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-01-24-tempe-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-01-24","event":"Tempe","class":"250SX","rider":"Jeremy McGrath","overall_position":2,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-01-17-houston-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-01-17","event":"Houston","class":"250SX","rider":"Jeremy McGrath","overall_position":2,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1998-01-10-los-angeles-250sx","type":"race_result","series":"Supercross","year":1998,"date":"1998-01-10","event":"Los Angeles","class":"250SX","rider":"Jeremy McGrath","overall_position":3,"machine":"Yamaha","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Race-result fact_id uses source namespace, rider slug, ISO date, event slug, and normalized class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming sources.",
+    "checkpoint_previous": "Jeremy McGrath Racer X/Vault individual race-result facts captured for the visible 1999 250SX rows from Anaheim 1 through Las Vegas plus the visible Glen Helen Raceway and Washougal Motocross 250MX rows.",
+    "checkpoint_current": "Jeremy McGrath Racer X/Vault individual race-result facts captured for the visible 1998 250SX rows from Los Angeles through Las Vegas plus the visible Glen Helen Raceway, Hangtown Motocross Classic, and High Point Raceway 250MX rows.",
+    "next_suggested_checkpoint": "Continue Jeremy McGrath Racer X/Vault individual race-result facts with the visible 1997 SX/MX rows as a separate auditable batch unless official series corroboration is prioritized first."
+  },
+  "failure_receipts": [
+    {"type":"automated_crawl_not_run","detail":"No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault page opened manually through the browsing tool."},
+    {"type":"robots_txt_not_used_for_crawl_permission","target":"https://vault.racerxonline.com/robots.txt","result":"not_fetched_for_broad_crawl","detail":"Because no automated crawl was run, robots.txt was not used to authorize broad collection. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."},
+    {"type":"official_series_crosscheck_limited","detail":"Official series corroboration was not added in this race-result batch; Racer X Vault public historical rider results were used as the direct source, with official AMA/series sources still prioritized for future corroboration."}
+  ]
+}
