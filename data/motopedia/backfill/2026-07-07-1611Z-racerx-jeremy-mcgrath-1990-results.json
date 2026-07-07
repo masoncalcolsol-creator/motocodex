@@ -1,0 +1,80 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T16-11Z-run41",
+  "created_utc": "2026-07-07T16:11:00Z",
+  "status": "committed_atomic_individual_race_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Jeremy McGrath individual-races page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue/race name, class, date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Direct robots.txt fetch was not available through the browsing tool because only previously discovered/source URLs may be opened. This run therefore remained a manual single public-page lookup and did not expand into crawling.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible"
+    ]
+  },
+  "sources": {
+    "racerx_jeremy_mcgrath_races": {
+      "name": "Racer X Vault — Jeremy McGrath Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T16:11:00Z",
+      "source_span": "Public Jeremy McGrath individual-race table rows visible for 1990, from Anaheim through Los Angeles.",
+      "provenance_notes": [
+        "Only the 1990 rows were captured as a separate auditable batch.",
+        "Venue/race names, class labels, dates, and machine labels were normalized to plain text while retaining the source page URL.",
+        "The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic race-result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross"],
+    "hometown_source_text": "Sun City, CA, United States",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-06-23-los-angeles-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-06-23","race":"Los Angeles","class":"125WSX","rider":"Jeremy McGrath","overall_position":3,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-06-16-san-jose-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-06-16","race":"San Jose","class":"125WSX","rider":"Jeremy McGrath","overall_position":6,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-06-10-oklahoma-city-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-06-10","race":"Oklahoma City","class":"125WSX","rider":"Jeremy McGrath","overall_position":2,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-05-27-high-point-raceway-125mx","type":"individual_race_result","series":"Motocross","year":1990,"date":"1990-05-27","race":"High Point Raceway","class":"125MX","rider":"Jeremy McGrath","overall_position":12,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-04-07-irving-125e-wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-04-07","race":"Irving","class":"125E/WSX","rider":"Jeremy McGrath","overall_position":3,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-04-01-hangtown-motocross-classic-125mx","type":"individual_race_result","series":"Motocross","year":1990,"date":"1990-04-01","race":"Hangtown Motocross Classic","class":"125MX","rider":"Jeremy McGrath","overall_position":39,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-03-24-pasadena-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-03-24","race":"Pasadena","class":"125WSX","rider":"Jeremy McGrath","overall_position":3,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-03-17-las-vegas-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-03-17","race":"Las Vegas","class":"125WSX","rider":"Jeremy McGrath","overall_position":1,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-02-17-seattle-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-02-17","race":"Seattle","class":"125WSX","rider":"Jeremy McGrath","overall_position":2,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-02-10-san-diego-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-02-10","race":"San Diego","class":"125WSX","rider":"Jeremy McGrath","overall_position":2,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-02-03-houston-125e-wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-02-03","race":"Houston","class":"125E/WSX","rider":"Jeremy McGrath","overall_position":21,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1990-01-27-anaheim-125wsx","type":"individual_race_result","series":"Supercross","year":1990,"date":"1990-01-27","race":"Anaheim","class":"125WSX","rider":"Jeremy McGrath","overall_position":7,"machine":"Kawasaki","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86}
+  ],
+  "deduplication": {
+    "strategy": "Deterministic fact_id composed from source, rider slug, result year, date, normalized race slug, and class.",
+    "checked_against_prior_batches": true,
+    "prior_batches_reviewed": [
+      "Jeremy McGrath Racer X 1991 result facts",
+      "Jeremy McGrath Racer X 1992 result facts",
+      "Jeremy McGrath Racer X season standings facts",
+      "Jeremy McGrath 1991 supplemental season-summary facts"
+    ],
+    "duplicate_facts_committed": false
+  },
+  "checkpoint": {
+    "rider_slug": "jeremy-mcgrath",
+    "source_route": "/rider/jeremy-mcgrath/races",
+    "last_completed_year": 1990,
+    "next_recommended_action": "Continue backward with Jeremy McGrath 1989 visible Racer X/Vault individual-race rows unless a higher-priority Racer X historical vault gap is identified.",
+    "failure_receipts": [
+      {
+        "stage": "robots_txt_direct_open",
+        "status": "not_checked_by_browsing_tool",
+        "detail": "Direct robots.txt open was blocked by browsing-tool URL safety rules because robots.txt was not previously discovered or user-provided. No crawler was run."
+      }
+    ]
+  }
+}
