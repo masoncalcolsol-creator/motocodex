@@ -1,0 +1,84 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T07-07Z-run32",
+  "created_utc": "2026-07-07T07:07:00Z",
+  "status": "committed_atomic_season_standings_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Jeremy McGrath overall-points page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic season-standing fields were captured: year, class, overall finish, points, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This remained a manual source-linked lookup against one public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection and stop with a failure receipt if disallowed or unavailable.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible"
+    ]
+  },
+  "sources": {
+    "racerx_jeremy_mcgrath_points": {
+      "name": "Racer X Vault — Jeremy McGrath Overall Points Standings",
+      "url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T07:07:00Z",
+      "source_span": "Public Jeremy McGrath overall-points standings table rows visible from 1989 through 2006, listing year, class, overall, and points.",
+      "provenance_notes": [
+        "This batch adds standings facts from the public Racer X Vault Jeremy McGrath overall-points page after the 1998 individual-race checkpoint.",
+        "The individual-races route returned a browser fetch/cache-miss during this run, so the batch used the visible public standings page rather than forcing a blocked race-results fetch.",
+        "Class labels were normalized to plain text while retaining the source page URL. The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic standings facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross"],
+    "hometown_source_text": "Sun City, CA, United States",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeremy-mcgrath-standing-2006-sx","type":"season_standing","series":"Supercross","year":2006,"class":"SX","rider":"Jeremy McGrath","overall_position":17,"points":67,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-2005-250sx","type":"season_standing","series":"Supercross","year":2005,"class":"250SX","rider":"Jeremy McGrath","overall_position":20,"points":61,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-2004-250mx","type":"season_standing","series":"Motocross","year":2004,"class":"250MX","rider":"Jeremy McGrath","overall_position":48,"points":6,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-2002-250sx","type":"season_standing","series":"Supercross","year":2002,"class":"250SX","rider":"Jeremy McGrath","overall_position":3,"points":250,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-2001-250sx","type":"season_standing","series":"Supercross","year":2001,"class":"250SX","rider":"Jeremy McGrath","overall_position":2,"points":328,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-2000-250sx","type":"season_standing","series":"Supercross","year":2000,"class":"250SX","rider":"Jeremy McGrath","overall_position":1,"points":372,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-2000-250mx","type":"season_standing","series":"Motocross","year":2000,"class":"250MX","rider":"Jeremy McGrath","overall_position":23,"points":30,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1999-250sx","type":"season_standing","series":"Supercross","year":1999,"class":"250SX","rider":"Jeremy McGrath","overall_position":1,"points":356,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1999-250mx","type":"season_standing","series":"Motocross","year":1999,"class":"250MX","rider":"Jeremy McGrath","overall_position":21,"points":52,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1998-250sx","type":"season_standing","series":"Supercross","year":1998,"class":"250SX","rider":"Jeremy McGrath","overall_position":1,"points":322,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1998-250mx","type":"season_standing","series":"Motocross","year":1998,"class":"250MX","rider":"Jeremy McGrath","overall_position":14,"points":121,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1997-250sx","type":"season_standing","series":"Supercross","year":1997,"class":"250SX","rider":"Jeremy McGrath","overall_position":2,"points":278,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1997-250mx","type":"season_standing","series":"Motocross","year":1997,"class":"250MX","rider":"Jeremy McGrath","overall_position":3,"points":431,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1996-250sx","type":"season_standing","series":"Supercross","year":1996,"class":"250SX","rider":"Jeremy McGrath","overall_position":1,"points":372,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1996-250mx","type":"season_standing","series":"Motocross","year":1996,"class":"250MX","rider":"Jeremy McGrath","overall_position":2,"points":556,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1995-250sx","type":"season_standing","series":"Supercross","year":1995,"class":"250SX","rider":"Jeremy McGrath","overall_position":1,"points":320,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1995-250mx","type":"season_standing","series":"Motocross","year":1995,"class":"250MX","rider":"Jeremy McGrath","overall_position":1,"points":526,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1994-250sx","type":"season_standing","series":"Supercross","year":1994,"class":"250SX","rider":"Jeremy McGrath","overall_position":1,"points":335,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1994-250mx","type":"season_standing","series":"Motocross","year":1994,"class":"250MX","rider":"Jeremy McGrath","overall_position":3,"points":393,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1993-250sx","type":"season_standing","series":"Supercross","year":1993,"class":"250SX","rider":"Jeremy McGrath","overall_position":1,"points":358,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1993-125mx","type":"season_standing","series":"Motocross","year":1993,"class":"125MX","rider":"Jeremy McGrath","overall_position":3,"points":454,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1992-125wsx","type":"season_standing","series":"Supercross","year":1992,"class":"125WSX","rider":"Jeremy McGrath","overall_position":1,"points":195,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1992-250sx","type":"season_standing","series":"Supercross","year":1992,"class":"250SX","rider":"Jeremy McGrath","overall_position":16,"points":71,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1992-125mx","type":"season_standing","series":"Motocross","year":1992,"class":"125MX","rider":"Jeremy McGrath","overall_position":8,"points":259,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1991-125wsx","type":"season_standing","series":"Supercross","year":1991,"class":"125WSX","rider":"Jeremy McGrath","overall_position":1,"points":179,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1991-125mx","type":"season_standing","series":"Motocross","year":1991,"class":"125MX","rider":"Jeremy McGrath","overall_position":5,"points":349,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1990-125wsx","type":"season_standing","series":"Supercross","year":1990,"class":"125WSX","rider":"Jeremy McGrath","overall_position":2,"points":180,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-standing-1989-125wsx","type":"season_standing","series":"Supercross","year":1989,"class":"125WSX","rider":"Jeremy McGrath","overall_position":8,"points":71,"sources":["racerx_jeremy_mcgrath_points"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Season-standing fact_id uses source namespace, rider slug, year, and normalized class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming official sources.",
+    "checkpoint_previous": "Jeremy McGrath Racer X/Vault individual race-result facts captured through the visible 1998 race rows.",
+    "checkpoint_current": "Jeremy McGrath Racer X/Vault overall season standings facts captured for all visible rows from 1989 through 2006.",
+    "next_suggested_checkpoint": "Retry Jeremy McGrath Racer X/Vault individual-race facts with the visible 1997 SX/MX rows as a separate auditable batch; if the races route remains blocked, continue rider standings or official-series corroboration batches."
+  },
+  "failure_receipts": [
+    {"type":"individual_races_route_fetch_cache_miss","target":"https://vault.racerxonline.com/rider/jeremy-mcgrath/races","result":"browser_fetch_cache_miss","detail":"The public standings page was accessible, but the individual-races route returned a browsing-tool fetch/cache-miss during this run. No authentication, paywall path, scraping workaround, or bypass was attempted."},
+    {"type":"automated_crawl_not_run","detail":"No crawler was run and no authentication or paywall path was attempted; this run used one public Racer X Vault standings page opened manually through the browsing tool."},
+    {"type":"robots_txt_not_used_for_crawl_permission","target":"https://vault.racerxonline.com/robots.txt","result":"not_fetched_for_broad_crawl","detail":"Because no automated crawl was run, robots.txt was not used to authorize broad collection. Future automated collection must fetch and honor robots.txt before crawling and must stop with a failure receipt if robots.txt is disallowed or unavailable."},
+    {"type":"official_series_crosscheck_limited","detail":"Official series corroboration was not added in this standings batch; Racer X Vault public historical rider standings were used as the direct source, with official AMA/series sources still prioritized for future corroboration."}
+  ]
+}
