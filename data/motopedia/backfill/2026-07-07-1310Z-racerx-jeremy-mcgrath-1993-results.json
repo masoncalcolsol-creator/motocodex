@@ -1,0 +1,85 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T13-10Z-run38",
+  "created_utc": "2026-07-07T13:10:00Z",
+  "status": "committed_atomic_individual_race_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Racer X/Vault Jeremy McGrath individual-races page was publicly accessible without login in the browsing tool.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue/race name, class, date, machine, rider, source URL, and source page identity. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. This remained a manual source-linked lookup against one public Racer X Vault page. Future automated crawler work must fetch and honor robots.txt before collection and stop with a failure receipt if disallowed or unavailable.",
+    "rate_limit": "Manual single-page lookup via browser-visible page. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible"
+    ]
+  },
+  "sources": {
+    "racerx_jeremy_mcgrath_races": {
+      "name": "Racer X Vault — Jeremy McGrath Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T13:10:00Z",
+      "source_span": "Public Jeremy McGrath individual-race table rows visible for 1993, from Orlando through Steel City Raceway.",
+      "provenance_notes": [
+        "Only the 1993 rows were captured as a separate auditable batch.",
+        "Venue/race names, class labels, dates, and machine labels were normalized to plain text while retaining the source page URL.",
+        "The source page itself was not copied as article body text."
+      ],
+      "copy_policy": "Use as atomic race-result facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross"],
+    "hometown_source_text": "Sun City, CA, United States",
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-09-05-steel-city-raceway-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-09-05","race":"Steel City Raceway","class":"125MX","rider":"Jeremy McGrath","overall_position":5,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-08-29-broome-tioga-sports-center-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-08-29","race":"Broome-Tioga Sports Center","class":"125MX","rider":"Jeremy McGrath","overall_position":2,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-08-15-spring-creek-motocross-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-08-15","race":"Spring Creek Motocross","class":"125MX","rider":"Jeremy McGrath","overall_position":3,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-08-08-washougal-motocross-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-08-08","race":"Washougal Motocross","class":"125MX","rider":"Jeremy McGrath","overall_position":3,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-08-01-glen-helen-raceway-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-08-01","race":"Glen Helen Raceway","class":"125MX","rider":"Jeremy McGrath","overall_position":6,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-07-25-kenworthys-motocross-park-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-07-25","race":"Kenworthy's Motocross Park","class":"125MX","rider":"Jeremy McGrath","overall_position":4,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-07-11-unadilla-motocross-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-07-11","race":"Unadilla Motocross","class":"125MX","rider":"Jeremy McGrath","overall_position":2,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-07-04-redbud-track-n-trail-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-07-04","race":"RedBud Track 'n Trail","class":"125MX","rider":"Jeremy McGrath","overall_position":2,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-06-20-hangtown-motocross-classic-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-06-20","race":"Hangtown Motocross Classic","class":"125MX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-06-12-las-vegas-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-06-12","race":"Las Vegas","class":"250SX","rider":"Jeremy McGrath","overall_position":9,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-06-05-san-jose-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-06-05","race":"San Jose","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-05-30-high-point-raceway-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-05-30","race":"High Point Raceway","class":"125MX","rider":"Jeremy McGrath","overall_position":3,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-05-15-pasadena-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-05-15","race":"Pasadena","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-05-02-moto-x-338-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-05-02","race":"Moto-X 338","class":"125MX","rider":"Jeremy McGrath","overall_position":13,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-04-24-indianapolis-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-04-24","race":"Indianapolis","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-04-18-pontiac-2-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-04-18","race":"Pontiac 2","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-04-17-pontiac-1-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-04-17","race":"Pontiac 1","class":"250SX","rider":"Jeremy McGrath","overall_position":2,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-04-03-charlotte-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-04-03","race":"Charlotte","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-03-27-irving-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-03-27","race":"Irving","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-03-06-daytona-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-03-06","race":"Daytona","class":"250SX","rider":"Jeremy McGrath","overall_position":2,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-02-21-gatorback-cycle-park-125mx","type":"individual_race_result","series":"Motocross","year":1993,"date":"1993-02-21","race":"Gatorback Cycle Park","class":"125MX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-02-20-atlanta-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-02-20","race":"Atlanta","class":"250SX","rider":"Jeremy McGrath","overall_position":4,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-02-13-tampa-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-02-13","race":"Tampa","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-02-06-san-diego-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-02-06","race":"San Diego","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-01-30-seattle-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-01-30","race":"Seattle","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-01-23-anaheim-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-01-23","race":"Anaheim","class":"250SX","rider":"Jeremy McGrath","overall_position":1,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-01-16-houston-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-01-16","race":"Houston","class":"250SX","rider":"Jeremy McGrath","overall_position":5,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86},
+    {"fact_id":"racerx-jeremy-mcgrath-result-1993-01-09-orlando-250sx","type":"individual_race_result","series":"Supercross","year":1993,"date":"1993-01-09","race":"Orlando","class":"250SX","rider":"Jeremy McGrath","overall_position":4,"machine":"Honda","sources":["racerx_jeremy_mcgrath_races"],"confidence":0.86}
+  ],
+  "dedupe": {
+    "strategy": "Individual race-result fact_id uses source namespace, rider slug, ISO date, normalized race slug, and normalized class. Future imports should merge matching fact_ids and retain earliest provenance plus later confirming official sources.",
+    "checkpoint_previous": "Jeremy McGrath 1994 Racer X/Vault individual race-result facts captured for visible rows from Orlando through Steel City Raceway.",
+    "checkpoint_current": "Jeremy McGrath 1993 Racer X/Vault individual race-result facts captured for all visible rows from Orlando through Steel City Raceway, spanning 250SX and 125MX.",
+    "next_suggested_checkpoint": "Continue backward to Jeremy McGrath 1992 Racer X/Vault individual race-result facts, then later reconcile Racer X facts with official AMA/Supercross/Motocross sources where available."
+  },
+  "failure_receipts": [],
+  "commit_notes": {
+    "meaningful_new_coverage": true,
+    "new_fact_count": 28,
+    "source_citation": "Racer X Vault public Jeremy McGrath individual race-results page, visible 1993 rows.",
+    "source_lines_observed": "Rows visible in the browsing tool around lines 248-275 of the page rendering."
+  }
+}
