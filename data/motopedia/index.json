@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T05:10:16.220Z",
+  "generatedAt": "2026-07-07T08:46:17.099Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 5,
-    "factsExtracted": 0,
+    "pagesAccepted": 9,
+    "factsExtracted": 154,
     "lastError": null,
     "supabaseSync": {
       "attempted": false
@@ -896,9 +896,3477 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "58dc96a8f182a0640f9e16201c85375bd8622dd2"
+    },
+    {
+      "id": "7f14e8f0ddbaf07fdc4edd26c24f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/2026-monster-energy-supercross-schedule-announcement/",
+      "title": "2026 Monster Energy Supercross Schedule Announcement | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T08:46:07.639Z",
+      "publishedAt": "2026-07-07T08:46:07.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "schedule",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "72a2c15de775dae930e285ee27dbf6bd7c686308"
+    },
+    {
+      "id": "a8586da6461593b591b15afd1950",
+      "sourceKey": "promotocross",
+      "url": "https://promotocross.com/2026/races?utm_medium=Social&utm_source=Facebook",
+      "title": "2026 Motocross Race Results - Pro Motocross Championship",
+      "fetchedAt": "2026-07-07T08:46:11.746Z",
+      "publishedAt": null,
+      "year": 2026,
+      "seriesKey": "ama-pro-motocross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "33013fcf3d4c8302e7deb389b9ab35fb091442ca"
+    },
+    {
+      "id": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "title": "2026 National and Career Pro Numbers for SMX | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T08:46:00.412Z",
+      "publishedAt": "2025-10-13T18:47:34.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "rider-profile",
+      "tableCount": 1,
+      "factCount": 100,
+      "contentHash": "d43d84c6cacff0f4a460577169cd617d2aced97a"
+    },
+    {
+      "id": "4f52a35f4c86b77060d1eaec4419",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/championship-standings/",
+      "title": "Championship Standings | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T08:46:13.635Z",
+      "publishedAt": "2026-07-07T08:46:13.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "bd00e828922b467bec953606ec909a69da3dbdee"
+    },
+    {
+      "id": "6e13bec489533e07c98c9dd3ac02",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/jason-anderson-signs-for-suzuki-for-2026-smx-world-championship/",
+      "title": "Jason Anderson Signs for Suzuki for 2026 SMX World Championship | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T08:46:01.334Z",
+      "publishedAt": "2025-10-06T21:15:54.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "c78e85f1d5039084b9de824737d7b82282844a84"
+    },
+    {
+      "id": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/champions/",
+      "title": "Supercross Champions | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T08:46:12.669Z",
+      "publishedAt": "2026-07-07T06:26:43.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 1,
+      "factCount": 54,
+      "contentHash": "1aa1f218af18d115b70a3999ddb7812f65a55120"
+    },
+    {
+      "id": "24a0aa1ce7471ceadfc35c2fafc6",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/tickets-on-sale-for-2026-supercross-championship-smx-next-and-ktm-jr-schedules-revealed/",
+      "title": "Tickets on Sale for 2026 Supercross Championship – SMX Next and KTM Jr. Schedules Revealed | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T08:46:05.089Z",
+      "publishedAt": "2025-10-07T13:55:00.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "schedule",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "fb7237ef5588ba818d5d35ce9f93f7d3607cdddb"
+    },
+    {
+      "id": "a30fddd80fd01728ed79db613d22",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/gallery/salute-to-a-champion/",
+      "title": "Untitled historical source",
+      "fetchedAt": "2026-07-07T08:46:14.906Z",
+      "publishedAt": "2026-07-07T08:46:14.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "7834833c52648da74c3e309a61976daf0ab5994d"
+    },
+    {
+      "id": "9e227bf354ad1f2686455c794e66",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/gallery/supercross-champions/",
+      "title": "Untitled historical source",
+      "fetchedAt": "2026-07-07T08:46:16.198Z",
+      "publishedAt": "2026-07-07T08:46:16.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "4a18fd6334a2e69cf0df4f462cc04c60eba1e0a6"
     }
   ],
   "facts": [
+    {
+      "id": "03b6bd9c3b21a10bb01616a08396",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1985\",\"column_2\":\"Jeff Ward\",\"column_3\":\"Eddie Warren\",\"column_4\":\"Bobby Moore\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 42,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "066f350eead1b26fc09d76b5a1d9",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1977\",\"column_2\":\"Bob Hannah\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 50,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "096c10db415984b11e8007894b8d",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1975\",\"column_2\":\"Jim Ellis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 52,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "26d37576375fd19e45c3041339c0",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2022\",\"column_2\":\"Eli Tomac\",\"column_3\":\"Jett Lawrence\",\"column_4\":\"Christian Craig\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 5,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "2c7db1504448100fe65669676ead",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"Year\",\"column_2\":\"450\",\"column_3\":\"250 East\",\"column_4\":\"250 West\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 0,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "360bd409cfab031a91b9eb4c1308",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2006\",\"column_2\":\"Ricky Carmichael\",\"column_3\":\"Davi Millsaps\",\"column_4\":\"Grant Langston\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 21,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "413641977049d08f42fc958df0ed",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2007\",\"column_2\":\"James Stewart\",\"column_3\":\"Ben Townley\",\"column_4\":\"Ryan Villopoto\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 20,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "47e631b839bfc7c5a46e2a1c2dbb",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1978\",\"column_2\":\"Bob Hannah\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 49,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "533cf11975a6fcdf3671da86f719",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1979\",\"column_2\":\"Bob Hannah\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 48,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "53d717f38eb1818125e192341bc3",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2019\",\"column_2\":\"Cooper Webb\",\"column_3\":\"Chase Sexton\",\"column_4\":\"Dylan Ferrandis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 8,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "566e6e85d33a0b475f114d6865eb",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1989\",\"column_2\":\"Jeff Stanton\",\"column_3\":\"Damon Bradshaw\",\"column_4\":\"Jeff Matiasevich\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 38,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "5939cea3fe0d491722d01acf88bb",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2005\",\"column_2\":\"Ricky Carmichael\",\"column_3\":\"Grant Langston\",\"column_4\":\"Ivan Tedesco\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 22,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "5ed6422a0779999b7a4828b5fc23",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2023\",\"column_2\":\"Chase Sexton\",\"column_3\":\"Hunter Lawrence\",\"column_4\":\"Jett Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 4,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "61f357061fd6bc5fc0bb488c34c2",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1998\",\"column_2\":\"Jeremy McGrath\",\"column_3\":\"Ricky Carmichael\",\"column_4\":\"John Dowd\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 29,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "64eed97d095138d06e4ec098ff16",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1991\",\"column_2\":\"Jean-Michel Bayle\",\"column_3\":\"Brian Swink\",\"column_4\":\"Jeremy McGrath\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 36,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "657c089e10c0230c194939421310",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1986\",\"column_2\":\"Rick Johnson\",\"column_3\":\"Keith Turpin\",\"column_4\":\"Donny Schmit\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 41,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "801e80df7dd16dd84b2128dac38a",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1982\",\"column_2\":\"Donnie Hansen\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 45,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "80d9809d3ffeb55e422d439d5728",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1984\",\"column_2\":\"Johnny O’Mara\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 43,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "8dca9727861fc01afc9871debf25",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2011\",\"column_2\":\"Ryan Villopoto\",\"column_3\":\"Justin Barcia\",\"column_4\":\"Broc Tickle\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 16,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "946f971fe7bd609b0e09ffd2102f",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2014\",\"column_2\":\"Ryan Villopoto\",\"column_3\":\"Justin Bogle\",\"column_4\":\"Jason Anderson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 13,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "958d3cee760e91f8ee8b6ca7557f",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2002\",\"column_2\":\"Ricky Carmichael\",\"column_3\":\"Chad Reed\",\"column_4\":\"Travis Preston\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 25,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "9e2e305b5c1dcfa59c2bbcc090bb",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2008\",\"column_2\":\"Chad Reed\",\"column_3\":\"Trey Canard\",\"column_4\":\"Jason Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 19,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "9fe02ff6e38289b9232f0192a742",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2021\",\"column_2\":\"Cooper Webb\",\"column_3\":\"Colt Nichols\",\"column_4\":\"Justin Cooper\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 6,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "9ff23b43666ef30fbcbd29eb6fa2",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2016\",\"column_2\":\"Ryan Dungey\",\"column_3\":\"Malcolm Stewart\",\"column_4\":\"Cooper Webb\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 11,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "a32b963230abb2cb4ea168b9eba3",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2013\",\"column_2\":\"Ryan Villopoto\",\"column_3\":\"Wil Hahn\",\"column_4\":\"Ken Roczen\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 14,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "a685df32b9653ad9dfc6ffb9b733",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2017\",\"column_2\":\"Ryan Dungey\",\"column_3\":\"Zach Osborne\",\"column_4\":\"Justin Hill\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 10,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "a8875535a840a79240cc05d651c5",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2012\",\"column_2\":\"Ryan Villopoto\",\"column_3\":\"Justin Barcia\",\"column_4\":\"Eli Tomac\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 15,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "b09a0fee1d50518ab611a4ffafda",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1992\",\"column_2\":\"Jeff Stanton\",\"column_3\":\"Brian Swink\",\"column_4\":\"Jeremy McGrath\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 35,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "b37ad815e8edbcd899dbb0b93a35",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1999\",\"column_2\":\"Jeremy McGrath\",\"column_3\":\"Ernesto Fonseca\",\"column_4\":\"Nathan Ramsey\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 28,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "b4a803c23dd99b9173b46659a49e",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2003\",\"column_2\":\"Ricky Carmicahel\",\"column_3\":\"Branden Jesseman\",\"column_4\":\"James Stewart\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 24,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "b78ca630d19b2ae88549d206521e",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2025\",\"column_2\":\"Cooper Webb\",\"column_3\":\"Tom Vialle\",\"column_4\":\"Haiden Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 2,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "be6dc2f15af6224a9d784bdbb668",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2018\",\"column_2\":\"Jason Anderson\",\"column_3\":\"Zach Osborne\",\"column_4\":\"Aaron Plessinger\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 9,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "c1e9ac199f2b1c71480b023722ee",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1988\",\"column_2\":\"Rick Johnson\",\"column_3\":\"Todd DeHoop\",\"column_4\":\"Jeff Matiasevich\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 39,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "c67f738530e8aeead040c999c372",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1996\",\"column_2\":\"Jeremy McGrath\",\"column_3\":\"Mickael Pichon\",\"column_4\":\"Kevin Windham\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 31,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "c747251e7b058fbd67e4ffb2e28e",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2004\",\"column_2\":\"Chad Reed\",\"column_3\":\"James Stewart\",\"column_4\":\"Ivan Tedesco\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 23,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "c79b744cbc97df7d377bebfcdc10",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2026\",\"column_2\":\"Ken Roczen\",\"column_3\":\"Cole Davies\",\"column_4\":\"Haiden Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 1,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "cdb9539952a523e594b357e0d107",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1990\",\"column_2\":\"Jeff Stanton\",\"column_3\":\"Denny Stephenson\",\"column_4\":\"Ty Davis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 37,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "ce4a8e23554aec48d82f3ac94bf0",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1981\",\"column_2\":\"Mark Barnett\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 46,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "cf34483107708eef2d1280548ba2",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1994\",\"column_2\":\"Jeremy McGrath\",\"column_3\":\"Ezra Lusk\",\"column_4\":\"Damon Huffman\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 33,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "d01dfb050f83ac96dcba300401a2",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2010\",\"column_2\":\"Ryan Dungey\",\"column_3\":\"Christophe Pourcel\",\"column_4\":\"Jake Weimer\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 17,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "d2bd17483318fa24a88e5b8ea28f",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1995\",\"column_2\":\"Jeremy McGrath\",\"column_3\":\"Michael Pichon\",\"column_4\":\"Damon Huffman\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 32,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "d310fd4939847fc82f842d893fa5",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2015\",\"column_2\":\"Ryan Dungey\",\"column_3\":\"Marvin Musquin\",\"column_4\":\"Cooper Webb\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 12,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "d364bb9981350cf7d06d72ab9b80",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1976\",\"column_2\":\"Jim Weinert\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 51,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "d7108708a72acb2512fc600d1ba3",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1993\",\"column_2\":\"Jeremy McGrath\",\"column_3\":\"Doug Henry\",\"column_4\":\"Jimmy Gaddis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 34,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "d834cb59e5dff4061ce81aca9faf",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2020\",\"column_2\":\"Eli Tomac\",\"column_3\":\"Chase Sexton\",\"column_4\":\"Dylan Ferrandis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 7,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "de0d14e97846b30ac01a5512f98f",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1974\",\"column_2\":\"Pierre Karsmakers\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 53,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "e26426a73d992d51061a3210d8fc",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2001\",\"column_2\":\"Ricky Carmichael\",\"column_3\":\"Travis Pastrana\",\"column_4\":\"Ernesto Fonseca\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 26,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "e54aea6e35834695bf480ccd7bf0",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2009\",\"column_2\":\"James Stewart\",\"column_3\":\"Christophe Pourcel\",\"column_4\":\"Ryan Dungey\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 18,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "e64677cf0e1b971cde1e8a2377cd",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1987\",\"column_2\":\"Jeff Ward\",\"column_3\":\"Ron Tichenor\",\"column_4\":\"Willie Surratt\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 40,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "ea02cc34d4fd7a91b35ac8332375",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1980\",\"column_2\":\"Mike Bell\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 47,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "f58338b516fedfbd42f24f18ae79",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2024\",\"column_2\":\"Jett Lawrence\",\"column_3\":\"Tom Vialle\",\"column_4\":\"RJ Hampshire\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 3,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "f713afb395f2e08d30878d59ad93",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1997\",\"column_2\":\"Jeff Emig\",\"column_3\":\"Tim Ferry\",\"column_4\":\"Kevin Windham\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 30,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "fd4068b23dfd050df708c761964b",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"2000\",\"column_2\":\"Jeremy McGrath\",\"column_3\":\"Stephane Roncada\",\"column_4\":\"Shae Bentley\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 27,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "ff8eede6f1c78ce8ea4684b408ac",
+      "documentId": "14b74869883ffd5b6b5eb23570ad",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2026,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"1983\",\"column_2\":\"David Bailey\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 44,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/champions/",
+      "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "006d6773a57bae4d3ac1120fef6b",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Kyle Webster",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"76\",\"name\":\"Kyle Webster\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 79,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "038b8ff4ca497daea9a53b1a5504",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Carson Mumford",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"71\",\"name\":\"Carson Mumford\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 74,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "053f6175de280a0478e303bd6c0e",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jorge Prado",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"26\",\"name\":\"Jorge Prado\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 29,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "05de49a1ed733ab6abf1a46c742e",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Nate Thrasher",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"25\",\"name\":\"Nate Thrasher\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 28,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "0bbfea7eaeb5d6690c4bcd60395b",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jerry Robin",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"81\",\"name\":\"Jerry Robin\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 84,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "0f2a8ba89f8f7a578c5ac4a0c6eb",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "John Short IV",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"90\",\"name\":\"John Short IV\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 93,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "11c1f0804bc7a6467fc47919c7ff",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Derek Kelley",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"77\",\"name\":\"Derek Kelley\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 80,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "13271685652f96229e127e92ff10",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Haiden Deegan",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1 – 250 MX\",\"name\":\"Haiden Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 4,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "1db19772b0c78501ba9dbe264f0c",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Bryce Shelly",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"80\",\"name\":\"Bryce Shelly\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 83,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "230e2fad637e09fa10c4b9e181f0",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Justin Cooper",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"32\",\"name\":\"Justin Cooper\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 35,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "246434a8c9f95683b67dfa9bf19d",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Hardy Munoz",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"67\",\"name\":\"Hardy Munoz\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 70,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "25f4527f8279f5b9f44ca65dbf47",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Daxton Bennick",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"58\",\"name\":\"Daxton Bennick\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 61,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2753175286de6e8671253fa52fbb",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jo Shimoda",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1 – 250 SMX\",\"name\":\"Jo Shimoda\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 3,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2adb2d2b19d6782c56fcb6ab5958",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Malcolm Stewart",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"27\",\"name\":\"Malcolm Stewart\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 30,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2bf3a5d3c4aff903af30d5dcb7ec",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Lux Turner",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"43\",\"name\":\"Lux Turner\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 46,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2c4d5d128049600f649be574fe71",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Joey Savatgy",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"17\",\"name\":\"Joey Savatgy\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 20,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2c9999c5196bd8c8674d976d03ab",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Hunter Lawrence",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"96\",\"name\":\"Hunter Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 99,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2d2c5415039a21e8beefa3d7f873",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Dylan Ferrandis",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"14\",\"name\":\"Dylan Ferrandis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 17,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2d36c8fbe700b082cff0daf5a00e",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Enzo Temmerman",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"92\",\"name\":\"Enzo Temmerman\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 95,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "2edbcfc8f81fa48f7809785d6389",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Dilan Schwartz",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"42\",\"name\":\"Dilan Schwartz\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 45,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "3025c06f6a093c9b135dabf6dbeb",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jordon Smith",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"20\",\"name\":\"Jordon Smith\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 23,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "336d4cfbeff0717bf8c9b159d5c9",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Aaron Plessinger",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"7\",\"name\":\"Aaron Plessinger\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 11,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "33af96cdbb28660e02ca2802a1da",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Caden Dudney",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"82\",\"name\":\"Caden Dudney\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 85,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "33f65964adfe4aeb31810c9972bb",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Romain Pape",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"64\",\"name\":\"Romain Pape\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 67,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "36687d464c130a93b5b34fae7943",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jett Lawrence",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"18\",\"name\":\"Jett Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 21,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "39b35b6f60ba731c66414a80f773",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Izaih Clark",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"91\",\"name\":\"Izaih Clark\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 94,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "3ea9bcafd70dbbe485633ace5fd3",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Justin Barcia",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"51\",\"name\":\"Justin Barcia\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 54,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "40f15cb67309635a5a8c4858fee4",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "RJ Hampshire",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"24\",\"name\":\"RJ Hampshire\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 27,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "42bd34c3c7eea515767f606daacb",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Mark Fineis",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"88\",\"name\":\"Mark Fineis\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 91,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "43fed2370f8ab9ad990f52d84af5",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Trevor Colip",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"72\",\"name\":\"Trevor Colip\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 75,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "4461bfae97d65300186442aba22c",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Christian Craig",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"28\",\"name\":\"Christian Craig\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 31,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "46e306351ce37e58c100cc12df51",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Seth Hammaker",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"10\",\"name\":\"Seth Hammaker\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 13,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "48dd1dcada07d0f0b4a5db9b6999",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Avery Long",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"57\",\"name\":\"Avery Long\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 60,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "4bd2080babb163671baf9cd91954",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Haiden Deegan",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"38\",\"name\":\"Haiden Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 41,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "4cba8ded0d290b6a27cc8a819f09",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Chase Sexton",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"4\",\"name\":\"Chase Sexton\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 9,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "4f48ed215534a36d815ab7fcf42e",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jett Lawrence",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1 – 450 SMX\",\"name\":\"Jett Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 0,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "4fc8cb96d8734791af88a34c7096",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Grant Harlan",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"62\",\"name\":\"Grant Harlan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 65,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "52c005993e707eda798f292fd128",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Lorenzo Locurcio",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"50\",\"name\":\"Lorenzo Locurcio\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 53,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "55232b1756f1008880a2a65599c0",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Enzo Lopes",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"68\",\"name\":\"Enzo Lopes\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 71,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "56ee5ce715a01af74f22077a12b2",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Ty Masterpool",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"44\",\"name\":\"Ty Masterpool\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 47,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "573c7b9891e864847b65e8c481b7",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Luke Neese",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"95\",\"name\":\"Luke Neese\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 98,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "5cebc90023663117fdcbf4e3fbc9",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Mitchell Oldenburg",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"52\",\"name\":\"Mitchell Oldenburg\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 55,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "5d47977e4f9adb129dd7d8a48f68",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Kevin Moranz",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"78\",\"name\":\"Kevin Moranz\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 81,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "627208f9e520b4cf6d178658afad",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Dylan Walsh",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"79\",\"name\":\"Dylan Walsh\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 82,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "66a0583b74965d8836f755e8b00f",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Casey Cochran",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"59\",\"name\":\"Casey Cochran\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 62,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "68fd6675fe6f695204b47953a77d",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Gage Linville",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"74\",\"name\":\"Gage Linville\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 77,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "6973c3d6763ceb7073807b21d466",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Ryder DiFrancesco",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"34\",\"name\":\"Ryder DiFrancesco\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 37,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "69d63f37f969bf4c92da37c01ea1",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Parker Ross",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"40\",\"name\":\"Parker Ross\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 43,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "6a2df7ce1a7b13c29b94af0ac7d9",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Valentin Guillod",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"39\",\"name\":\"Valentin Guillod\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 42,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "6ad02f38c4d777880e6dec3b1cf9",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Haiden Deegan",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1 ‐ 250 SX West\",\"name\":\"Haiden Deegan\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 6,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "6c21606fca514fef9ac4c195b2aa",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jason Anderson",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"21\",\"name\":\"Jason Anderson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 24,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "6ebfbc023cf4951302ab13f1574f",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Drew Adams",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"35\",\"name\":\"Drew Adams\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 38,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "6fdab2690e1daeb5e21baa01684e",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Freddie Noren",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"63\",\"name\":\"Freddie Noren\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 66,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "72789c9e95a5953a9c45e5ac51a0",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Alexander Fedortsov",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"85\",\"name\":\"Alexander Fedortsov\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 88,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "7735e31be38bb610c4c922a117c7",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Coty Schock",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"22\",\"name\":\"Coty Schock\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 25,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "77fa494cba868cc2989c8b2c8424",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Dean Wilson",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"15\",\"name\":\"Dean Wilson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 18,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "787de935457805839ed082a146ed",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Cooper Webb",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"2\",\"name\":\"Cooper Webb\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 7,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "7897294c36a6ae3b7427ad59e47d",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Adam Cianciarulo",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"9\",\"name\":\"Adam Cianciarulo\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 12,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "7c021109b9048d5a5f5fd5155d76",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Marshal Weltin",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"65\",\"name\":\"Marshal Weltin\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 68,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "7c72f7f7053b0dcd538840aa0d63",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Eli Tomac",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"3\",\"name\":\"Eli Tomac\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 8,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "7d95fa2964b3d39e3f42285835f4",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "TJ Albright",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"84\",\"name\":\"TJ Albright\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 87,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "7dec8745de85b8fd3c162e59b546",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Cullin Park",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"49\",\"name\":\"Cullin Park\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 52,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "7f3ab765c896382f5cf174d29ffd",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Kyle Chisholm",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"11\",\"name\":\"Kyle Chisholm\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 14,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "82e4c2a2c23054e15119adfa898e",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Levi Kitchen",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"47\",\"name\":\"Levi Kitchen\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 50,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "8383e867f99ca7f78270fad230c3",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jeremy Martin",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"6\",\"name\":\"Jeremy Martin\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 10,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "89c3dd85deed701748c6624c30c0",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Anthony Bourdon",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"70\",\"name\":\"Anthony Bourdon\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 73,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "8a0ca422b846113f28e833a94e00",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Justin Rodbell",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"83\",\"name\":\"Justin Rodbell\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 86,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "8e00f09476aecd8da2c96bc1b993",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jett Reynolds",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"86\",\"name\":\"Jett Reynolds\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 89,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "90c9012b636605fa896571dd65ed",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Maximus Vohland",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"19\",\"name\":\"Maximus Vohland\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 22,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "9141c59cc538aef017b943640c79",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Ken Roczen",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"94\",\"name\":\"Ken Roczen\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 97,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "961cf1a76921cd7858043042e238",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Garrett Marchbanks",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"36\",\"name\":\"Garrett Marchbanks\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 39,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "9689265786b84a3b56a520c953d9",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Benoit Paturel",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"55\",\"name\":\"Benoit Paturel\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 58,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "98804da861768e6e195b458f684c",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Tom Vialle",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"16\",\"name\":\"Tom Vialle\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 19,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "9f24365fc3153a6e2ffdb74eacd5",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Lance Kobusch",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"75\",\"name\":\"Lance Kobusch\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 78,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "a307b9b7fb779783e08654019d4f",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Benny Bloss",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"54\",\"name\":\"Benny Bloss\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 57,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "a4dc6f1bea4c066cf7e9bee0e3ea",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jett Lawrence",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1 ‐ 450 MX\",\"name\":\"Jett Lawrence\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 2,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "a57f056026e6ad7faa891c894837",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Shane McElrath",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"12\",\"name\":\"Shane McElrath\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 15,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "abf2a068ee3a84fc2e677e68f5d8",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Tony Cairoli",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"93\",\"name\":\"Tony Cairoli\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 96,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "ad476c5d46bc882422a7116908a5",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Mikkel Haarup",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"31\",\"name\":\"Mikkel Haarup\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 34,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "bcc27ca0d5368f07e9ba75c5a040",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jalek Swoll",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"56\",\"name\":\"Jalek Swoll\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 59,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "bd74a721985468b4171340d7c458",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Devin Simonson",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"89\",\"name\":\"Devin Simonson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 92,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "c2a64551f310b6131401cd95c712",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Justin Hill",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"46\",\"name\":\"Justin Hill\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 49,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "c724f5658454f6ae5f4bd4c02394",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Austin Forkner",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"33\",\"name\":\"Austin Forkner\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 36,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "ca980d5e20fa4388c6e0cb8e77ac",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Michael Mosiman",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"23\",\"name\":\"Michael Mosiman\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 26,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "cc4a46588f82fb4af7ff46d1ff46",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Cooper Webb",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1 ‐ 450 SX\",\"name\":\"Cooper Webb\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 1,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "cd6f95c545329b1995d102d5cbef",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Gavin Towers",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"73\",\"name\":\"Gavin Towers\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 76,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "cea60f97c0cf04579765744e2f9d",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Harri Kullas",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"48\",\"name\":\"Harri Kullas\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 51,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "d0651350632b9408ca63dd572909",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jo Shimoda",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"30\",\"name\":\"Jo Shimoda\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 33,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "d8d00d73f2c3bcf1daea1de0a8f8",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jeremy Hand",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"87\",\"name\":\"Jeremy Hand\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 90,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "de081ca07329f61d0af7c09db4c1",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Hunter Yoder",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"60\",\"name\":\"Hunter Yoder\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 63,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "e5da7413364cfa800a8077ab288d",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Cole Thompson",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"66\",\"name\":\"Cole Thompson\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 69,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "e815fa8b8b157a783976c5a51527",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Tom Vialle",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"1 – 250 SX East\",\"name\":\"Tom Vialle\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 5,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "ebb706cff89aa41fae96a75ca130",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Cole Davies",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"37\",\"name\":\"Cole Davies\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 40,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "f008deccb36dbbf0238dec40cdd9",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Max Anstie",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"61\",\"name\":\"Max Anstie\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 64,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "f0cbfe8ab0f04e5541e77e29f3b2",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Chance Hymas",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"29\",\"name\":\"Chance Hymas\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 32,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "f26f678a4857cca754dd37b1efb6",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Jack Chambers",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"69\",\"name\":\"Jack Chambers\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 72,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "f3f780f29e8a6f68db08f4b05c23",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Julien Beaumer",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"13\",\"name\":\"Julien Beaumer\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 16,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "f727dd0d4f84b07a3aef570b0bb8",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Colt Nichols",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"45\",\"name\":\"Colt Nichols\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 48,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "f73f53c91498cef5d2eb322dc4af",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Mitchell Harrison",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"41\",\"name\":\"Mitchell Harrison\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 44,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
+    {
+      "id": "fca640c57a0b88fb8591e06ed0ff",
+      "documentId": "74fd982a41db1429aec098820cab",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2026,
+      "entityType": "rider",
+      "entityName": "Henry Miller",
+      "factType": "result-row",
+      "value": "{\"rider_number\":\"53\",\"name\":\"Henry Miller\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 56,
+        "headers": [
+          "rider_number",
+          "name"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
+      "extractedAt": "2026-07-07T08:46:00.412Z"
+    },
     {
       "id": "0072effa36af580886d235024146",
       "documentId": "98baafcc71d2606d7c8554a66b49",
