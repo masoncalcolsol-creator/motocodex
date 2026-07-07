@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T01:10:23.371Z",
+  "generatedAt": "2026-07-07T05:10:16.220Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 0,
+    "pagesAccepted": 5,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
@@ -826,6 +826,76 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "8c35e0de27236f67547a99639460f982de4f47e6"
+    },
+    {
+      "id": "2fdaf38ea4e48650f50730fc4950",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-world-championship-international-video-pass-to-feature-three-language-offerings-in-2025/",
+      "title": "SMX World Championship International Video Pass to Feature Three Language Offerings in 2025 | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T05:10:06.369Z",
+      "publishedAt": "2024-12-05T19:34:17.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "c7bab72001912a1e1627a720c597097b0f94d4da"
+    },
+    {
+      "id": "4fc1bc941fd5639969171007b8ff",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/tickets-on-sale-now-for-the-2025-smx-world-championship-playoffs-and-final/",
+      "title": "Tickets On Sale Now for the 2025 SMX World Championship Playoffs and Final | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T05:10:07.362Z",
+      "publishedAt": "2025-01-28T14:45:12.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "ef83a6af3614747e0bf4fabe1feaed55954dac33"
+    },
+    {
+      "id": "3d57c0af1a6ff1e8e47733bf4f77",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/triumph-factory-racing-announces-2025-smx-riders/",
+      "title": "Triumph Factory Racing Announces 2025 SMX Riders | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T05:10:09.469Z",
+      "publishedAt": "2024-10-31T16:55:37.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "ac90f743ac6137fb1126401ec2749998050da8d5"
+    },
+    {
+      "id": "8ec0dbc0bdb98ce0afc48fa58141",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/2026-monster-energy-smx-world-championship-playoffs-and-final-locations-announced/",
+      "title": "2026 Monster Energy SMX World Championship Playoffs and Final Locations Announced | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T05:10:14.372Z",
+      "publishedAt": "2026-01-09T19:29:28.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "eaf1dc6aef559718e15483f7c26324cece9b1838"
+    },
+    {
+      "id": "84f492d0b0d07de180b8d4cb9ae5",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/2026-monster-energy-smx-world-championship-schedule-revealed/",
+      "title": "2026 Monster Energy SMX World Championship Schedule Revealed | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T05:10:15.320Z",
+      "publishedAt": "2025-09-30T14:00:00.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "schedule",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "58dc96a8f182a0640f9e16201c85375bd8622dd2"
     }
   ],
   "facts": [
