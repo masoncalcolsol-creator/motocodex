@@ -1,0 +1,81 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T19-03Z-run44",
+  "created_utc": "2026-07-07T19:03:42Z",
+  "status": "committed_racerx_atomic_individual_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible individual race-result rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic race-result fields visible in the public page were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue, class token, event date, and machine token. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to a manually opened public Racer X Vault rider individual-races page. A direct robots.txt lookup was attempted through the available browsing route and returned a tool safety/opening error rather than a usable robots policy; crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_ricky_carmichael_races": {
+      "name": "Racer X Vault — Ricky Carmichael Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T19:03:42Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public Individual Race Results rows for Ricky Carmichael for calendar year 2007, from Anaheim 1 through Spring Creek Motocross.",
+      "provenance_notes": [
+        "Racer X/Vault was used as the priority public source route for this batch.",
+        "This repairs the previous run checkpoint where the Ricky Carmichael individual-races route returned a browsing-tool cache miss.",
+        "Rows were captured as atomic facts only; venue names, class tokens, dates, overall finish positions, and machine tokens."
+      ],
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-ricky-carmichael-race-2007-08-12-spring-creek-motocross-mx-1","type":"individual_race_result","series":"Motocross","year":2007,"event_date":"2007-08-12","venue":"Spring Creek Motocross","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-07-01-redbud-track-n-trail-mx-1","type":"individual_race_result","series":"Motocross","year":2007,"event_date":"2007-07-01","venue":"RedBud Track 'n Trail","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-06-17-budds-creek-motocross-mx-1","type":"individual_race_result","series":"Motocross","year":2007,"event_date":"2007-06-17","venue":"Budds Creek Motocross","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-06-10-moto-x-338-mx-1","type":"individual_race_result","series":"Motocross","year":2007,"event_date":"2007-06-10","venue":"Moto-X 338","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-05-27-high-point-raceway-mx-1","type":"individual_race_result","series":"Motocross","year":2007,"event_date":"2007-05-27","venue":"High Point Raceway","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-05-20-hangtown-motocross-classic-mx-1","type":"individual_race_result","series":"Motocross","year":2007,"event_date":"2007-05-20","venue":"Hangtown Motocross Classic","class":"MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-03-17-orlando-sx-2","type":"individual_race_result","series":"Supercross","year":2007,"event_date":"2007-03-17","venue":"Orlando","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-03-09-daytona-sx-2","type":"individual_race_result","series":"Supercross","year":2007,"event_date":"2007-03-09","venue":"Daytona","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-03-03-st-louis-sx-1","type":"individual_race_result","series":"Supercross","year":2007,"event_date":"2007-03-03","venue":"St. Louis","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-02-24-atlanta-sx-2","type":"individual_race_result","series":"Supercross","year":2007,"event_date":"2007-02-24","venue":"Atlanta","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-01-27-san-francisco-sx-1","type":"individual_race_result","series":"Supercross","year":2007,"event_date":"2007-01-27","venue":"San Francisco","class":"SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-01-13-phoenix-sx-2","type":"individual_race_result","series":"Supercross","year":2007,"event_date":"2007-01-13","venue":"Phoenix","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2007-01-06-anaheim-1-sx-2","type":"individual_race_result","series":"Supercross","year":2007,"event_date":"2007-01-06","venue":"Anaheim 1","class":"SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93}
+  ],
+  "deduplication": {
+    "strategy": "Deterministic fact_id composed from source scope, rider slug, event date, venue slug, class token, and overall finish.",
+    "checked_against_prior_batches": true,
+    "prior_batches_reviewed": [
+      "2026-07-07-1810Z-racerx-ricky-carmichael-season-standings.json captured season standings only, not individual race-result rows.",
+      "GitHub code search for racerx-ricky-carmichael-2007-results returned no existing matching backfill file before commit."
+    ],
+    "duplicate_facts_committed": false
+  },
+  "checkpoint": {
+    "rider_slug": "ricky-carmichael",
+    "source_route": "/rider/ricky-carmichael/races",
+    "last_completed_scope": "Racer X Vault visible individual race-result rows for Ricky Carmichael calendar year 2007",
+    "next_recommended_action": "Continue Racer X/Vault Ricky Carmichael individual-race backfill with the next chronological/public visible slice, starting 2006 rows, while preserving deduplication against season-standings-only batches.",
+    "failure_receipts": [
+      {
+        "stage": "robots_txt_direct_open",
+        "status": "tool_safety_open_error",
+        "detail": "Attempted to open https://vault.racerxonline.com/robots.txt through the available browsing route; tool returned a non-retryable safe-open error rather than robots content. No automated crawler was run."
+      }
+    ]
+  }
+}
