@@ -1,0 +1,106 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T17-04Z-run42",
+  "created_utc": "2026-07-07T17:04:00Z",
+  "status": "committed_supplemental_atomic_season_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied. Facts in this batch are lower-confidence supplemental placeholders pending Racer X/Vault or official-series archival replacement/corroboration.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic season-result fields were captured. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Racer X/Vault direct rider-races open returned a fetch/cache miss this run, so the run did not expand into crawling.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_jeremy_mcgrath_races_attempt": {
+      "name": "Racer X Vault — Jeremy McGrath Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T17:04:00Z",
+      "access_status": "fetch_cache_miss",
+      "provenance_notes": [
+        "Racer X/Vault remained the priority source route.",
+        "The page could not be fetched by the browsing tool during this run, so no Racer X 1989 race rows were captured."
+      ],
+      "copy_policy": "Use as attempted priority source route only for this batch."
+    },
+    "wikipedia_jeremy_mcgrath": {
+      "name": "Wikipedia — Jeremy McGrath",
+      "url": "https://en.wikipedia.org/wiki/Jeremy_McGrath",
+      "publisher": "Wikimedia Foundation / community-edited encyclopedia",
+      "accessed_utc": "2026-07-07T17:04:00Z",
+      "source_span": "Public biography and career-results summary stating McGrath began AMA professional years in 1989 and placed 8th in the 125cc West Region supercross season of 1989.",
+      "provenance_notes": [
+        "Supplemental source only; not treated as equal to Racer X/Vault or official series records.",
+        "Captured only atomic season facts needed to preserve continuity before retrying primary archival sources."
+      ],
+      "copy_policy": "Use as lower-confidence supplemental provenance only. Do not copy article body text."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races"
+  },
+  "facts": [
+    {
+      "fact_id": "supplemental-jeremy-mcgrath-season-1989-125wsx-8th",
+      "type": "season_standing",
+      "series": "Supercross",
+      "year": 1989,
+      "class": "125WSX",
+      "rider": "Jeremy McGrath",
+      "season_position": 8,
+      "sources": ["wikipedia_jeremy_mcgrath"],
+      "confidence": 0.54,
+      "replacement_priority": "Replace or corroborate with Racer X/Vault rider standings/races or official AMA/Supercross archive when accessible."
+    },
+    {
+      "fact_id": "supplemental-jeremy-mcgrath-career-start-1989",
+      "type": "career_marker",
+      "marker": "first_listed_professional_year",
+      "year": 1989,
+      "rider": "Jeremy McGrath",
+      "sources": ["wikipedia_jeremy_mcgrath"],
+      "confidence": 0.52,
+      "replacement_priority": "Replace or corroborate with Racer X/Vault rider profile or official AMA archive when accessible."
+    }
+  ],
+  "deduplication": {
+    "strategy": "Deterministic fact_id composed from supplemental source scope, rider slug, year, class, and season-position/career-marker field.",
+    "checked_against_prior_batches": true,
+    "prior_batches_reviewed": [
+      "Jeremy McGrath Racer X 1990 result facts",
+      "Jeremy McGrath 1991 supplemental season-summary facts",
+      "Jeremy McGrath Racer X 1992 result facts",
+      "Jeremy McGrath Racer X season standings facts"
+    ],
+    "duplicate_facts_committed": false
+  },
+  "checkpoint": {
+    "rider_slug": "jeremy-mcgrath",
+    "source_route": "/rider/jeremy-mcgrath/races",
+    "last_completed_year": 1989,
+    "next_recommended_action": "Retry Racer X/Vault Jeremy McGrath races and standings routes for 1989 replacement/corroboration. If still unavailable, proceed to the next high-value Racer X historical vault target with visible public rows, likely another historically significant rider profile, while preserving this supplemental 1989 placeholder as lower-confidence.",
+    "failure_receipts": [
+      {
+        "stage": "racerx_rider_races_open",
+        "status": "fetch_cache_miss",
+        "detail": "Opening https://vault.racerxonline.com/rider/jeremy-mcgrath/races returned a browsing-tool cache miss during this run."
+      },
+      {
+        "stage": "robots_txt_direct_open",
+        "status": "not_checked_by_browsing_tool",
+        "detail": "No automated crawler was run. Direct robots.txt inspection was not available in this browsing-tool path during the run."
+      }
+    ]
+  }
+}
