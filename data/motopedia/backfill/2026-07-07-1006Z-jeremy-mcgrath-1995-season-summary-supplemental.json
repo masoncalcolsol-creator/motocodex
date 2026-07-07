@@ -1,0 +1,96 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T10-06Z-run35",
+  "created_utc": "2026-07-07T10:06:00Z",
+  "status": "committed_supplemental_atomic_season_summary_facts",
+  "truth_boundary": "Manual source-linked factual backfill. This is not a live crawler, database insert, or deployment. No article bodies copied. These are lower-confidence supplemental season-summary facts because the preferred Racer X Vault individual-race route returned a fetch/cache miss during this run.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No login-only, member-only, or paywalled material accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic/structured season-result summary fields were captured: season, class, round-position sequence, average finish, podium percentage, final placing, rider, and source URL. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Racer X Vault was not crawled after a browser fetch/cache miss on the public Jeremy McGrath races route. Future automated crawler work must fetch and honor robots.txt before collection and stop with a failure receipt if disallowed or unavailable.",
+    "rate_limit": "Manual source lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Supplemental public encyclopedic/source-linked pages only when higher-priority sources are temporarily unavailable, clearly marked as supplemental"
+    ]
+  },
+  "sources": {
+    "wikipedia_jeremy_mcgrath_career_results": {
+      "name": "Wikipedia — Jeremy McGrath career results table",
+      "url": "https://en.wikipedia.org/wiki/Jeremy_McGrath",
+      "publisher": "Wikipedia contributors",
+      "accessed_utc": "2026-07-07T10:06:00Z",
+      "source_span": "Public Jeremy McGrath career results table rows visible for 1995 250 SX and 1995 250 MX.",
+      "provenance_notes": [
+        "This batch continues the checkpoint after the 1996 Racer X/Vault individual-race batch, but does not claim to complete the requested 1995 Racer X individual venue/date rows.",
+        "The preferred Racer X Vault Jeremy McGrath individual-races page returned a fetch/cache miss in the browsing tool during this run.",
+        "The captured facts preserve aggregate round-position sequences and final season summary data only; they should be superseded or corroborated by Racer X Vault or official-series sources when accessible."
+      ],
+      "copy_policy": "Use as supplemental structured season-summary facts/provenance source only. Do not copy article bodies or narrative content."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Jeremy McGrath",
+    "slug": "jeremy-mcgrath",
+    "display_aliases": ["The King of Supercross", "Showtime"],
+    "racerx_vault_url": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races"
+  },
+  "facts": [
+    {
+      "fact_id": "supplemental-wikipedia-jeremy-mcgrath-season-summary-1995-250sx",
+      "type": "season_result_summary",
+      "series": "Supercross",
+      "year": 1995,
+      "class": "250SX",
+      "rider": "Jeremy McGrath",
+      "round_positions": [1, 1, 1, 1, 1, 4, 7, 1, 1, 5, 1, 2, 1, 1, "DNS"],
+      "average_finish": 2.00,
+      "podium_percent": 79,
+      "final_position_text": "1st",
+      "sources": ["wikipedia_jeremy_mcgrath_career_results"],
+      "confidence": 0.58,
+      "replacement_policy": "Replace or confirm with Racer X Vault or official-series venue/date rows when accessible."
+    },
+    {
+      "fact_id": "supplemental-wikipedia-jeremy-mcgrath-season-summary-1995-250mx",
+      "type": "season_result_summary",
+      "series": "Motocross",
+      "year": 1995,
+      "class": "250MX",
+      "rider": "Jeremy McGrath",
+      "round_positions": [1, 6, 3, 1, 2, 1, 1, 2, 2, 1, 1, 1],
+      "average_finish": 1.83,
+      "podium_percent": 92,
+      "final_position_text": "1st",
+      "sources": ["wikipedia_jeremy_mcgrath_career_results"],
+      "confidence": 0.58,
+      "replacement_policy": "Replace or confirm with Racer X Vault or official-series venue/date rows when accessible."
+    }
+  ],
+  "dedupe": {
+    "strategy": "Supplemental season_summary fact_id uses supplemental source namespace, rider slug, year, and class. Do not merge into Racer X individual_race_result fact_ids; instead link or supersede when primary venue/date facts become available.",
+    "checkpoint_previous": "Jeremy McGrath Racer X/Vault 1996 individual race-result facts captured for all visible rows from Orlando through Steel City Raceway.",
+    "checkpoint_current": "Jeremy McGrath 1995 supplemental public season-summary facts captured for 250SX and 250MX aggregate round-position rows only.",
+    "next_suggested_checkpoint": "Retry Racer X Vault Jeremy McGrath individual-race facts for visible 1995 rows as a separate auditable batch; if unavailable again, seek official AMA/Supercross/Motocross historical sources before adding more supplemental material."
+  },
+  "failure_receipts": [
+    {
+      "type": "preferred_source_fetch_cache_miss",
+      "target": "https://vault.racerxonline.com/rider/jeremy-mcgrath/races",
+      "result": "browser_tool_cache_miss",
+      "detail": "The preferred public Racer X Vault rider races route could not be fetched by the browsing tool during this run. No forced crawler, authentication bypass, or paywall path was attempted."
+    },
+    {
+      "type": "automated_crawl_not_run",
+      "detail": "No crawler was run and no automated requests were made against Racer X, official series sites, or Wikipedia."
+    },
+    {
+      "type": "official_series_crosscheck_limited",
+      "detail": "Search did not surface a directly accessible official-series 1995 Jeremy McGrath venue/date results source in this run. The committed facts are therefore marked supplemental and lower confidence."
+    }
+  ]
+}
