@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T21:00:06.109Z",
+  "updatedAt": "2026-07-07T22:33:54.403Z",
   "queue": [
     {
       "url": "https://racerxonline.com/archive",
@@ -66,20 +66,6 @@
       "score": 29
     },
     {
-      "url": "https://www.supercrosslive.com/news/monster-energy-signs-on-as-presenting-sponsor-of-supermotocross-world-championship-finals-and-extends-title-partnership-with-supercross/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/musquin-captures-first-career-450sx-victory-during-chaotic-night-in-arlington/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
       "url": "https://www.supercrosslive.com/news/musquin-out-for-remainder-of-supercross-season/",
       "sourceKey": "supercrosslive",
       "discoveredAt": "2026-07-04T09:32:13.449Z",
@@ -95,104 +81,6 @@
     },
     {
       "url": "https://www.supercrosslive.com/news/plessinger-suffers-broken-arm-in-practice-likely-out-for-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/questions-abound-for-riders-and-suppliers-at-first-nashville-supercross/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-anaheim-1-full-results-2/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-anaheim-1-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-daytona-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-detroit-triple-crown-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-east-rutherford-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-glendale-full-results-2/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-glendale-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-houston-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-indianapolis-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-las-vegas-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-minneapolis-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-nashville-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-oakland-full-results/",
       "sourceKey": "supercrosslive",
       "discoveredAt": "2026-07-04T09:32:13.449Z",
       "yearHint": null,
@@ -1522,6 +1410,102 @@
       "documentId": "06da524ea54ec6e7109ef212630e",
       "contentHash": "b64fbdf28983836248c5a685b6d5ac94c27eed07",
       "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/monster-energy-signs-on-as-presenting-sponsor-of-supermotocross-world-championship-finals-and-extends-title-partnership-with-supercross/": {
+      "processedAt": "2026-07-07T22:33:26.968Z",
+      "documentId": "3a3b2b8972fe3f3029d206e35ae2",
+      "contentHash": "ac1a4a42314f10e2344f6af8df2e612799d1e5b6",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/musquin-captures-first-career-450sx-victory-during-chaotic-night-in-arlington/": {
+      "processedAt": "2026-07-07T22:33:28.610Z",
+      "documentId": "81f6fe7099617bda5fc99a5db58d",
+      "contentHash": "b3123668d4e81e84c4a5c2021a86b44ab506920c",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/questions-abound-for-riders-and-suppliers-at-first-nashville-supercross/": {
+      "processedAt": "2026-07-07T22:33:35.604Z",
+      "documentId": "5ea1bbba11081684c75cb86e7031",
+      "contentHash": "bfe7601109eab42fa950e34bbc1b465e4aadfa1b",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-anaheim-1-full-results-2/": {
+      "processedAt": "2026-07-07T22:33:37.322Z",
+      "documentId": "0ea9009e4c0299bb3264acd70c7d",
+      "contentHash": "e2054a6e531dd95fea542bf75043448135bab753",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-anaheim-1-full-results/": {
+      "processedAt": "2026-07-07T22:33:38.249Z",
+      "documentId": "4f886174f6a3728b80934ce04e5b",
+      "contentHash": "dd98ec2c846518516578e73adac5d2e0f7fa574f",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-daytona-full-results/": {
+      "processedAt": "2026-07-07T22:33:39.182Z",
+      "documentId": "16cc66a48852dd39f641aa1aeee1",
+      "contentHash": "58b4daec7e829295d18edf28186fa75e95471002",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-detroit-triple-crown-full-results/": {
+      "processedAt": "2026-07-07T22:33:40.118Z",
+      "documentId": "0e3faa05d49342d49d8167888ad9",
+      "contentHash": "ce5922013f4d7a469462892c62aeb77cbba1d64f",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-east-rutherford-full-results/": {
+      "processedAt": "2026-07-07T22:33:41.051Z",
+      "documentId": "8cda1fd6b6625d8b18d5c2044f15",
+      "contentHash": "e4b2edaa24c8996be0f43532f04b14d34b35adee",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-glendale-full-results-2/": {
+      "processedAt": "2026-07-07T22:33:43.251Z",
+      "documentId": "c340557780b2e8b7f486d9808a46",
+      "contentHash": "fff046144299344c70dbb6c43912fcf64d1564fe",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-glendale-full-results/": {
+      "processedAt": "2026-07-07T22:33:45.055Z",
+      "documentId": "a2448324a7e9f5a39ec71c5eddec",
+      "contentHash": "efc56ca6cc21def71bfac593d6a417089ff2f94d",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-houston-full-results/": {
+      "processedAt": "2026-07-07T22:33:45.987Z",
+      "documentId": "da6c228c471bcecf1fcda8435788",
+      "contentHash": "ddd3ca442630f42c81aa33e64fcf89be5493009d",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-indianapolis-full-results/": {
+      "processedAt": "2026-07-07T22:33:47.864Z",
+      "documentId": "6a68e284fdc315a49b7469f38b4b",
+      "contentHash": "84ca0750e5c325f85cf39ba0b8a0d04951083dd2",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-las-vegas-full-results/": {
+      "processedAt": "2026-07-07T22:33:49.708Z",
+      "documentId": "dfcd62a4353ca16e1de5b6f15296",
+      "contentHash": "22cb8bddbd8ea0c0b73bdfb5acda62064c8553b5",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-minneapolis-full-results/": {
+      "processedAt": "2026-07-07T22:33:50.658Z",
+      "documentId": "3d67a4f2b832838cad545477ff1c",
+      "contentHash": "bde92d107d39f852eb08378cf1d652ad8a1526ec",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-nashville-full-results/": {
+      "processedAt": "2026-07-07T22:33:51.600Z",
+      "documentId": "c89bdaccfd846a2ba4df6e78d4c5",
+      "contentHash": "793b30292fe2c00edfe4df3b8fdb373dadea87ed",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-oakland-full-results/": {
+      "processedAt": "2026-07-07T22:33:53.502Z",
+      "documentId": "4e962dd11af9542836c4a900d182",
+      "contentHash": "bcf6413a082ebb8833e9be910bc56aa102cf7b5e",
+      "factCount": 0
     }
   },
   "failed": {
@@ -2536,112 +2520,127 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://racerxonline.com/archive": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T20:59:16.318Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-07T22:33:10.166Z",
       "error": "404 Not Found"
     },
     "https://www.supercrosslive.com/news/adam-cianciarulo-announces-retirement-from-professional-racing-following-supercross-season/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T20:59:17.361Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-07T22:33:11.963Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/chris-blose-joins-kawasaki-for-250-east-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T20:59:20.864Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-07T22:33:13.807Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/colt-nichols-joins-honda-for-450-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T20:59:22.631Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-07T22:33:15.553Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/elbow-fracture-sidelines-plessinger-for-remainder-of-supercross-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T20:59:34.622Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-07T22:33:17.280Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ferrandis-aiming-to-return-by-end-of-supercross-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T20:59:42.019Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-07T22:33:18.954Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/forkner-to-miss-remainder-of-supercross-season-due-to-injury/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T20:59:43.673Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-07T22:33:20.805Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/gift-supercross-tickets-this-holiday-season-with-a-printable-certificate/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T20:59:48.626Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-07T22:33:23.655Z",
       "error": "404 Not Found"
     },
     "https://www.supercrosslive.com/news/how-to-watch-supercross-season-opener-from-anaheim/": {
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-07T22:33:25.186Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/news/musquin-out-for-remainder-of-supercross-season/": {
       "attempts": 1,
-      "lastAttemptAt": "2026-07-07T20:59:56.058Z",
+      "lastAttemptAt": "2026-07-07T22:33:30.271Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/news/new-symbol-new-season-tickets-on-presale-now/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-07T22:33:32.140Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/news/plessinger-suffers-broken-arm-in-practice-likely-out-for-season/": {
+      "attempts": 1,
+      "lastAttemptAt": "2026-07-07T22:33:33.741Z",
       "error": "Page did not contain durable historical result metadata"
     }
   },
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:58:54.797Z",
+      "checkedAt": "2026-07-07T22:32:49.635Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:58:56.601Z",
+      "checkedAt": "2026-07-07T22:32:51.289Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:58:58.398Z",
+      "checkedAt": "2026-07-07T22:32:52.945Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-07T20:58:59.299Z",
+      "checkedAt": "2026-07-07T22:32:53.846Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:00.480Z",
+      "checkedAt": "2026-07-07T22:32:54.747Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:02.280Z",
+      "checkedAt": "2026-07-07T22:32:56.404Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:04.078Z",
+      "checkedAt": "2026-07-07T22:32:58.063Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-07T20:59:04.979Z",
+      "checkedAt": "2026-07-07T22:32:58.964Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:05.759Z",
+      "checkedAt": "2026-07-07T22:32:59.886Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:07.391Z",
+      "checkedAt": "2026-07-07T22:33:01.636Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:09.043Z",
+      "checkedAt": "2026-07-07T22:33:03.387Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-07T20:59:09.944Z",
+      "checkedAt": "2026-07-07T22:33:04.287Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -2658,25 +2657,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:10.884Z",
+      "checkedAt": "2026-07-07T22:33:05.153Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:12.678Z",
+      "checkedAt": "2026-07-07T22:33:06.811Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T20:59:14.477Z",
+      "checkedAt": "2026-07-07T22:33:08.468Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-07T20:59:15.378Z",
+      "checkedAt": "2026-07-07T22:33:09.369Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 952
+  "cursor": 980
 }
