@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T15:18:46.016Z",
+  "generatedAt": "2026-07-07T18:23:25.130Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 21,
-    "factsExtracted": 0,
+    "pagesAccepted": 22,
+    "factsExtracted": 1,
     "lastError": null,
     "supabaseSync": {
       "attempted": false
@@ -310,6 +310,62 @@
       "contentHash": "70f0338e27ff5e47af6b78c7dcfad93bb8c04f88"
     },
     {
+      "id": "9f9defb40aee59e1a94eadfcd6da",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/championship-clinching-scenarios-for-monster-energy-supercross-finale/",
+      "title": "Championship clinching scenarios for Monster Energy Supercross finale | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:22.041Z",
+      "publishedAt": "2017-05-05T10:41:15.000Z",
+      "year": 2017,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "894cd3a34eba05cfb5c226692a764d914b3d0fd1"
+    },
+    {
+      "id": "73f0370b2dbecd4e56deb122ae40",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/anderson-takes-points-lead-at-houston/",
+      "title": "Anderson Takes Points Lead at Houston | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:12.758Z",
+      "publishedAt": "2018-01-14T11:10:23.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 2,
+      "factCount": 1,
+      "contentHash": "815852721675c2cd11e08189e0ce84019723a995"
+    },
+    {
+      "id": "e210bb3160a419747e2d57020c9a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/24-national-champions-crowned-at-inaugural-supercross-futures-ama-national-championship/",
+      "title": "24 National Champions Crowned at Inaugural Supercross Futures AMA National Championship | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:06.430Z",
+      "publishedAt": "2019-10-24T00:21:30.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "aa10439627e8b1d030f09be837f036175f016b38"
+    },
+    {
+      "id": "82b8cef5c8ef18de80bdea4387c7",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/chad-reed-vs-seven-champions/",
+      "title": "Chad Reed vs. Seven Champions | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:21.108Z",
+      "publishedAt": "2019-08-14T19:35:01.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "24690ceac1c8ec929fcf7748733298b26d7ffa57"
+    },
+    {
       "id": "177fa0446477b48091b241a2d66d",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/gallery/2019-rider-head-shots/",
@@ -336,6 +392,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "628bcebbea7429661139f09c5d1a752a1c3c1b78"
+    },
+    {
+      "id": "ed30d0eeb42d0aae93d9a6f9e11b",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/chad-reed-one-last-race-for-retiring-champion/",
+      "title": "Chad Reed: One Last Race for Retiring Champion | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:20.174Z",
+      "publishedAt": "2020-06-19T17:41:24.000Z",
+      "year": 2020,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "da28fad8a2456a733b005fba12616d3d7d0b6b1f"
     },
     {
       "id": "2ff5af0531ead376d7caccaa687d",
@@ -702,6 +772,20 @@
       "contentHash": "6bb8c31e73257a47858f4f94e250363bdfbaef4b"
     },
     {
+      "id": "4c134736fd3cb619c098b1026f05",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/championship-final-press-conference-salt-lake-city/",
+      "title": "2024 Supercross Championship Final: Press Conference - Salt Lake City | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:24.228Z",
+      "publishedAt": "2024-05-12T04:36:21.000Z",
+      "year": 2024,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "de5b4e48b7c69e84925d621c788f65f71375b358"
+    },
+    {
       "id": "f9626bddb6f3bb68b25a31813cf9",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/2024-supercrossmotocross-world-championship-tv-and-streaming-schedules/",
@@ -714,6 +798,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "11fac743e9db5278e658c0b2de2ab32e7e477b8d"
+    },
+    {
+      "id": "981412f286e125fe76f060e82d7f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/blast-from-the-past-pontiac-points/",
+      "title": "Blast From the Past - Pontiac Points | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:18.274Z",
+      "publishedAt": "2024-02-03T16:51:40.000Z",
+      "year": 2024,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "94d21ac870aed0ce1402e2a1a7b20e2a482d030c"
     },
     {
       "id": "6cca88738013d163f6ca63588485",
@@ -856,6 +954,34 @@
       "contentHash": "8c35e0de27236f67547a99639460f982de4f47e6"
     },
     {
+      "id": "0accd282fead65e46d3ad29e878d",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/become-a-supercross-legend-with-the-new-career-mode/",
+      "title": "Become a Supercross Legend with the New Career Mode | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:14.689Z",
+      "publishedAt": "2025-04-17T17:28:32.000Z",
+      "year": 2025,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "7ecc57b186a2df16d6476fbe11340c4a168e19f1"
+    },
+    {
+      "id": "9472bb84ce31d7dd9d11da011397",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/blast-from-the-past-champions-collide/",
+      "title": "Blast From the Past: Champions Collide | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:16.460Z",
+      "publishedAt": "2025-02-06T15:00:00.000Z",
+      "year": 2025,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e3fb1f4cdf707294d018b9459aaa8112c383e6be"
+    },
+    {
       "id": "2fdaf38ea4e48650f50730fc4950",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/smx-world-championship-international-video-pass-to-feature-three-language-offerings-in-2025/",
@@ -954,6 +1080,20 @@
       "contentHash": "33013fcf3d4c8302e7deb389b9ab35fb091442ca"
     },
     {
+      "id": "f125d2994a2b0f5927266fb40bbb",
+      "sourceKey": "racerx",
+      "url": "https://racerxonline.com/mx/2026/races?utm_medium=Social&utm_source=Facebook",
+      "title": "2026 Motocross Race Results - Racer X",
+      "fetchedAt": "2026-07-07T18:23:04.169Z",
+      "publishedAt": null,
+      "year": 2026,
+      "seriesKey": null,
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "764853360584b9a17eb48c48d9ca22279605b307"
+    },
+    {
       "id": "74fd982a41db1429aec098820cab",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/2026-national-and-career-pro-numbers-for-smx/",
@@ -982,6 +1122,20 @@
       "contentHash": "54e7ae0c7567484f28ed0eda4afbfb552c04ac9f"
     },
     {
+      "id": "1fb42736bc18780823c412939822",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/ac-jb-show-this-was-the-biggest-moment-in-supercross-history/",
+      "title": "AC & JB Show: This was the BIGGEST moment in Supercross History! | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:08.751Z",
+      "publishedAt": "2026-05-13T13:38:44.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "ee35682b19f2cee3a6337d3eb4b174ff5d989f1d"
+    },
+    {
       "id": "4df2ec50a16acb9f3ed0b0ce2963",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/rider/austin-forkner/",
@@ -994,6 +1148,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "981950a655f3cf9744a13039d5e503d780def014"
+    },
+    {
+      "id": "c2801b976ec3a86226fdd8b8ccf9",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/bass-pro-shops-partners-with-smx-to-bring-world-championship-final-to-thunder-ridge/",
+      "title": "Bass Pro Shops Partners with SMX to Bring World Championship Final to Thunder Ridge | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:23:13.690Z",
+      "publishedAt": "2026-01-09T17:59:17.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "6f96a5cefbae6ba671da6dab84dc5ee89586d082"
     },
     {
       "id": "3844efc213e458c355cab9a8d2a1",
@@ -1514,6 +1682,20 @@
       "contentHash": "3b9f064e32bfae523a6e221e85d6050d4315ad5e"
     },
     {
+      "id": "2fbef82c633db7d95c43de9e50a5",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/rider/seth-hammaker/",
+      "title": "Seth Hammaker",
+      "fetchedAt": "2026-07-07T18:22:45.955Z",
+      "publishedAt": "2026-07-07T18:22:45.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "29bb9396fe1a89ef9bae80b7bd5d574053f15e78"
+    },
+    {
       "id": "14b74869883ffd5b6b5eb23570ad",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/champions/",
@@ -1526,6 +1708,104 @@
       "tableCount": 1,
       "factCount": 54,
       "contentHash": "1aa1f218af18d115b70a3999ddb7812f65a55120"
+    },
+    {
+      "id": "0f9b0219ac44b548a50603237bb0",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/smx-next/rider-information/",
+      "title": "Supercross Futures Rider Information",
+      "fetchedAt": "2026-07-07T18:22:46.890Z",
+      "publishedAt": "2026-07-07T17:36:33.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "cf018791ae68046e10f6863e25c345393f49a5cb"
+    },
+    {
+      "id": "ca70a36071f211fe527cd1f1a8a2",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/toy/supercross-authentic-cade-clason-124-scale-die-cast-motorcycle-with-rider-figure-for-kids-and-collectors-ages-3-and-up/",
+      "title": "Supercross, Authentic Cade Clason 1:24 Scale Die-Cast Motorcycle with Rider Figure, for Kids and Collectors Ages 3 and up | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:22:48.727Z",
+      "publishedAt": "2026-07-07T18:22:48.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e7f491a3dab240ec5ee96a2e2f1a54de19da40b8"
+    },
+    {
+      "id": "e15b233d14a0d71586ba392468ec",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/toy/supercross-authentic-chase-sexton-124-scale-die-cast-motorcycle-with-rider-figure-for-kids-and-collectors-ages-3-and-up/",
+      "title": "Supercross, Authentic Chase Sexton 1:24 Scale Die-Cast Motorcycle with Rider Figure, for Kids and Collectors Ages 3 and up | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:22:50.929Z",
+      "publishedAt": "2026-07-07T18:22:50.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "228ffd9dead1080c4ecd6df6a9acd231a804c59f"
+    },
+    {
+      "id": "127914ce395193cb625563607b6f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/toy/supercross-authentic-devon-raper-124-scale-die-cast-motorcycle-with-rider-figure-for-kids-and-collectors-ages-3-and-up/",
+      "title": "Supercross, Authentic Devon Raper 1:24 Scale Die-Cast Motorcycle with Rider Figure, for Kids and Collectors Ages 3 and up | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:22:53.183Z",
+      "publishedAt": "2026-07-07T18:22:53.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "8aec64d0b8bd0788380bcb058ef5e07c00898f21"
+    },
+    {
+      "id": "44a4f407960ed7e119bcaa9b289c",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/toy/supercross-authentic-justin-cooper-124-scale-die-cast-motorcycle-with-rider-figure-for-kids-and-collectors-ages-3-and-up/",
+      "title": "Supercross, Authentic Justin Cooper 1:24 Scale Die-Cast Motorcycle with Rider Figure, for Kids and Collectors Ages 3 and up | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:22:55.055Z",
+      "publishedAt": "2026-07-07T18:22:55.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "c1b1674f829599baf65771361f39a128401bf661"
+    },
+    {
+      "id": "9d4e7a5ec641d984522639ebf578",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/toy/supercross-authentic-ricky-carmichael-124-scale-die-cast-motorcycle-with-rider-figure-for-kids-and-collectors-ages-3-and-up-2/",
+      "title": "Supercross, Authentic Ricky Carmichael 1:24 Scale Die-Cast Motorcycle with Rider Figure, for Kids and Collectors Ages 3 and up | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:22:56.841Z",
+      "publishedAt": "2026-07-07T18:22:56.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "cbf27e308cb325869f49e7cdf3499f1d47d40aff"
+    },
+    {
+      "id": "2e8c238de972cf7dc54a7b08ef43",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/toy/supercross-authentic-ricky-carmichael-124-scale-die-cast-motorcycle-with-rider-figure-for-kids-and-collectors-ages-3-and-up/",
+      "title": "Supercross, Authentic Ricky Carmichael 1:24 Scale Die-Cast Motorcycle with Rider Figure, for Kids and Collectors Ages 3 and up | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T18:22:59.318Z",
+      "publishedAt": "2026-07-07T18:22:59.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "25decc2bf60ef4323e9a5aa3035c8e843b0efa19"
     },
     {
       "id": "24a0aa1ce7471ceadfc35c2fafc6",
@@ -1582,6 +1862,34 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "e255dd4e952c139d200d31b2348b616511cdd5d9"
+    },
+    {
+      "id": "2cc71a15a0a6da2519e8d122972b",
+      "sourceKey": "racerx-llvault",
+      "url": "https://llvault.racerxonline.com/",
+      "title": "Welcome - The Loretta Lynn's Vault - Amateur Motocross Results",
+      "fetchedAt": "2026-07-07T18:23:00.345Z",
+      "publishedAt": null,
+      "year": null,
+      "seriesKey": "loretta-lynns-amateur-national",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "0f3547c9123becacf0c0c37eff68a76221fec903"
+    },
+    {
+      "id": "0e609b567c9efaba28b07e9cda61",
+      "sourceKey": "racerx-vault",
+      "url": "https://vault.racerxonline.com/",
+      "title": "Welcome - The Vault - Historical Motocross & Supercross Results",
+      "fetchedAt": "2026-07-07T18:23:01.364Z",
+      "publishedAt": null,
+      "year": null,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "861c72f6129b11c57dd6e79b76884d8c5265c3f2"
     }
   ],
   "facts": [
@@ -2826,6 +3134,26 @@
       },
       "provenanceUrl": "https://www.supercrosslive.com/champions/",
       "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "1cc82582d21c47825ba4611168ca",
+      "documentId": "73f0370b2dbecd4e56deb122ae40",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "ama-supercross",
+      "year": 2018,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "standings-row",
+      "value": "{\"column_1\":\"About Feld Entertainment Feld Entertainment ® is the worldwide leader in producing and presenting live touring family entertainment experiences that uplift the human spirit and bring people together. Properties include Monster Jam ® , Monst\"}",
+      "context": {
+        "tableIndex": 1,
+        "rowIndex": 0,
+        "headers": [
+          "column_1"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/anderson-takes-points-lead-at-houston/",
+      "extractedAt": "2026-07-07T18:23:12.758Z"
     },
     {
       "id": "006d6773a57bae4d3ac1120fef6b",
