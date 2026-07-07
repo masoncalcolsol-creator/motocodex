@@ -1,0 +1,87 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T21-06Z-run46",
+  "created_utc": "2026-07-07T21:06:46Z",
+  "status": "committed_racerx_atomic_individual_race_result_facts",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible individual race-result rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic race-result fields visible in the public page were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue, class token, event date, and machine token. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to a manually opened public Racer X Vault rider individual-races page. Prior robots.txt direct lookup remained unavailable through the browsing route; crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_ricky_carmichael_races": {
+      "name": "Racer X Vault — Ricky Carmichael Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T21:06:46Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public Individual Race Results rows for Ricky Carmichael for calendar year 2005, from Anaheim 1 through Glen Helen Raceway.",
+      "provenance_notes": [
+        "Racer X/Vault was used as the priority public source route for this batch.",
+        "Rows were captured as atomic facts only; venue names, class tokens, dates, overall finish positions, and machine tokens.",
+        "This continues the prior Ricky Carmichael 2006 individual-race backfill checkpoint."
+      ],
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-ricky-carmichael-race-2005-09-11-glen-helen-raceway-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-09-11","venue":"Glen Helen Raceway","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-09-04-steel-city-raceway-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-09-04","venue":"Steel City Raceway","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-08-21-broome-tioga-sports-center-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-08-21","venue":"Broome-Tioga Sports Center","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-08-14-spring-creek-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-08-14","venue":"Spring Creek Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-07-31-washougal-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-07-31","venue":"Washougal Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-07-24-thunder-valley-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-07-24","venue":"Thunder Valley Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-07-17-unadilla-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-07-17","venue":"Unadilla Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-07-03-redbud-track-n-trail-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-07-03","venue":"RedBud Track 'n Trail","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-06-19-budds-creek-motocross-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-06-19","venue":"Budds Creek Motocross","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-06-12-moto-x-338-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-06-12","venue":"Moto-X 338","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-05-29-high-point-raceway-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-05-29","venue":"High Point Raceway","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-05-22-hangtown-motocross-classic-250mx-1","type":"individual_race_result","series":"Motocross","year":2005,"event_date":"2005-05-22","venue":"Hangtown Motocross Classic","class":"250MX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z450","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-05-07-las-vegas-250sx-2","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-05-07","venue":"Las Vegas","class":"250SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-04-30-houston-250sx-3","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-04-30","venue":"Houston","class":"250SX","rider":"Ricky Carmichael","overall_finish":3,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-04-16-seattle-250sx-3","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-04-16","venue":"Seattle","class":"250SX","rider":"Ricky Carmichael","overall_finish":3,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-04-09-pontiac-250sx-2","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-04-09","venue":"Pontiac","class":"250SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-04-02-irving-250sx-2","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-04-02","venue":"Irving","class":"250SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-03-19-orlando-250sx-2","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-03-19","venue":"Orlando","class":"250SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-03-11-daytona-250sx-2","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-03-11","venue":"Daytona","class":"250SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-03-05-st-louis-250sx-1","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-03-05","venue":"St. Louis","class":"250SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-02-26-atlanta-250sx-1","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-02-26","venue":"Atlanta","class":"250SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-02-19-san-diego-250sx-2","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-02-19","venue":"San Diego","class":"250SX","rider":"Ricky Carmichael","overall_finish":2,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-02-12-indianapolis-250sx-1","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-02-12","venue":"Indianapolis","class":"250SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-02-05-anaheim-3-250sx-1","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-02-05","venue":"Anaheim 3","class":"250SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-01-29-san-francisco-250sx-1","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-01-29","venue":"San Francisco","class":"250SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-01-22-anaheim-2-250sx-1","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-01-22","venue":"Anaheim 2","class":"250SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-01-15-phoenix-250sx-1","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-01-15","venue":"Phoenix","class":"250SX","rider":"Ricky Carmichael","overall_finish":1,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93},
+    {"fact_id":"racerx-ricky-carmichael-race-2005-01-08-anaheim-1-250sx-3","type":"individual_race_result","series":"Supercross","year":2005,"event_date":"2005-01-08","venue":"Anaheim 1","class":"250SX","rider":"Ricky Carmichael","overall_finish":3,"machine":"Suzuki RM-Z250","sources":["racerx_ricky_carmichael_races"],"confidence":0.93}
+  ],
+  "deduplication": {
+    "natural_key_fields": ["source", "rider", "event_date", "venue", "class", "overall_finish", "machine"],
+    "fact_id_strategy": "racerx-{rider_slug}-race-{event_date}-{venue_slug}-{class_slug}-{overall_finish}",
+    "known_prior_checkpoint": "Ricky Carmichael Racer X/Vault season standings plus 2007 and 2006 individual race-result batches already committed in prior automation runs.",
+    "duplicate_policy": "If a future source returns the same natural key, retain one canonical fact and append corroborating source metadata rather than creating a duplicate."
+  },
+  "checkpoint": {
+    "rider_slug": "ricky-carmichael",
+    "last_completed_year": 2005,
+    "next_recommended_action": "Continue backward to Racer X Vault Ricky Carmichael 2004 individual race-result rows, then 2003, preserving one year per batch unless official corroboration is added.",
+    "blocked": false,
+    "failure_receipts": []
+  }
+}
