@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T18:23:25.130Z",
+  "generatedAt": "2026-07-07T21:00:06.110Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 22,
-    "factsExtracted": 1,
+    "pagesAccepted": 19,
+    "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
       "attempted": false
@@ -324,6 +324,34 @@
       "contentHash": "894cd3a34eba05cfb5c226692a764d914b3d0fd1"
     },
     {
+      "id": "090dab3536caa8494f5052bb1d14",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/dungey-osborne-crowned-champions-in-drama-filled-vegas-finale/",
+      "title": "Dungey, Osborne crowned champions in drama-filled Vegas finale | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:32.896Z",
+      "publishedAt": "2017-05-07T13:19:49.000Z",
+      "year": 2017,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "3a0f129ce8a19bec6e48b2e5f7ef80244078ddaf"
+    },
+    {
+      "id": "3dba2e8dbf7087b72edd6456c287",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/history-surrounding-daytona-supercross-by-honda/",
+      "title": "History surrounding Daytona Supercross by Honda | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:54.347Z",
+      "publishedAt": "2017-03-08T00:37:30.000Z",
+      "year": 2017,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "093d10e2d08327766273d2bb69186956a0f63ec6"
+    },
+    {
       "id": "73f0370b2dbecd4e56deb122ae40",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/anderson-takes-points-lead-at-houston/",
@@ -336,6 +364,34 @@
       "tableCount": 2,
       "factCount": 1,
       "contentHash": "815852721675c2cd11e08189e0ce84019723a995"
+    },
+    {
+      "id": "8ef8848ce835cfd8fc0460b1ce42",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/foxborough-live-updated-results/",
+      "title": "Foxborough Live Updated Results | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:45.510Z",
+      "publishedAt": "2018-04-21T23:28:33.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "5886af1f40e1909d6331070caf3a6b24f9332167"
+    },
+    {
+      "id": "06da524ea54ec6e7109ef212630e",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/monster-energy-cup-live-results/",
+      "title": "Monster Energy Cup Live Results | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T21:00:05.210Z",
+      "publishedAt": "2018-10-14T05:25:07.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "b64fbdf28983836248c5a685b6d5ac94c27eed07"
     },
     {
       "id": "e210bb3160a419747e2d57020c9a",
@@ -364,6 +420,48 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "24690ceac1c8ec929fcf7748733298b26d7ffa57"
+    },
+    {
+      "id": "c17a283fd06981808a3834f79653",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/cooper-webb-extends-points-lead-to-23-with-one-race-left/",
+      "title": "Cooper Webb extends points lead to 23 with one race left | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:24.314Z",
+      "publishedAt": "2019-04-29T05:02:46.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "294a374f6c210fa59dcdc4c07e3178f11bf17bac"
+    },
+    {
+      "id": "44a60454304711d0247a110a86a8",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/cooper-webb-takes-triple-crown-championship-extends-points-lead/",
+      "title": "Cooper Webb takes Triple Crown Championship, extends points lead | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:29.294Z",
+      "publishedAt": "2019-04-01T01:48:31.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "15ec688788f8af6f27bf9ef9a783153bd532bbc8"
+    },
+    {
+      "id": "e6eb0a953446ac7447ab7800e83a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/eli-tomac-shifts-the-point-standings-with-win-in-nashville/",
+      "title": "Eli Tomac shifts the point standings with win in Nashville | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:36.363Z",
+      "publishedAt": "2019-04-08T04:58:35.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "aa1f45ebe923433492c47964d45acb62d4b642df"
     },
     {
       "id": "177fa0446477b48091b241a2d66d",
@@ -420,6 +518,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "35de3e5a506056e5b98df241db13bcb698f12f29"
+    },
+    {
+      "id": "c2ea3f02f575df935689d28cb757",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/eli-tomac-takes-450sx-class-victory-and-points-lead/",
+      "title": "Eli Tomac Takes 450SX Class Victory and Points Lead | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:38.177Z",
+      "publishedAt": "2020-02-18T03:52:42.000Z",
+      "year": 2020,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e43b8983568c3971d1248b20a3ee49ae5a8ce55b"
     },
     {
       "id": "af0eca68879c7cc41866cc2febe0",
@@ -560,6 +672,34 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "700ba98f48c788d77ae3dd6fed88224605787b75"
+    },
+    {
+      "id": "bf13574f6535c57471a73d3f91d4",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/check-out-the-track-map-for-the-inaugural-smx-world-championship-finale/",
+      "title": "Check Out the Track Map for the Inaugural SMX World Championship Finale | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:19.170Z",
+      "publishedAt": "2022-10-05T00:10:00.000Z",
+      "year": 2022,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "50e30be0318ef55da5622e45a1cfa1dfb2953b6f"
+    },
+    {
+      "id": "19afaeb21d28678e836fa8a3b81a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/feld-motor-sports-and-mx-sports-pro-racing-partner-to-form-the-supermotocross-world-championship/",
+      "title": "Feld Motor Sports and MX Sports Pro Racing Partner to Form the SuperMotocross World Championship | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:40.150Z",
+      "publishedAt": "2022-08-02T18:00:00.000Z",
+      "year": 2022,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "dab8302b3c78463e6839d631fb337305e9e4e314"
     },
     {
       "id": "69ce740514d7b24ade8e0853f196",
@@ -730,6 +870,76 @@
       "contentHash": "23cc06312d984582256854554ab2bd33bf8013d8"
     },
     {
+      "id": "0b67d7fd684a7ca992319cf7c9c1",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/go-behind-the-scenes-with-the-smx-world-championship-vlog-series/",
+      "title": "Go Behind the Scenes with the SMX World Championship Vlog Series | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:50.529Z",
+      "publishedAt": "2023-09-25T21:15:08.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "1112fef309a5e2debf899833cd9fc431871ff6e0"
+    },
+    {
+      "id": "f2bc42d44d48e56c9c1d36ecabb1",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/history-made-with-hill-brothers-top-10-finishes-in-detroit/",
+      "title": "History Made with Hill Brothers Top-10 Finishes in Detroit | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:52.472Z",
+      "publishedAt": "2023-03-21T19:02:07.000Z",
+      "year": 2023,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e4a14131c7e6b79841acbd7ce7a33aa77caaaa7b"
+    },
+    {
+      "id": "0c32e9abc7339c578df614850acf",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/jett-lawrence-clinches-450-pro-motocross-championship/",
+      "title": "Jett Lawrence Clinches 450 Pro Motocross Championship | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:57.760Z",
+      "publishedAt": "2023-08-14T17:23:32.000Z",
+      "year": 2023,
+      "seriesKey": "ama-pro-motocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "be9ecebf989700996509eaee97934adfc3502cfc"
+    },
+    {
+      "id": "c25c317bd1ef12b9c70f6ba0549e",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/jett-lawrence-wins-smx-world-championship-playoff-2-at-chicagoland-speedway/",
+      "title": "Jett Lawrence Wins SMX World Championship Playoff 2 at Chicagoland Speedway | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:59.672Z",
+      "publishedAt": "2023-09-18T18:20:54.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "40a6251074ea84665f81f134fc5536efa7c086dc"
+    },
+    {
+      "id": "098cacc4bf2cdd777c523ab793a8",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/major-milestones-achieved-during-historic-supermotocross-world-championship-inaugural-season/",
+      "title": "Major Milestones Achieved During Historic SuperMotocross World Championship Inaugural Season | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T21:00:03.280Z",
+      "publishedAt": "2023-10-12T21:47:52.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "b393e641fe92cfb97da238e0ed696b00b5d84118"
+    },
+    {
       "id": "8cbbe65d9326ee36dafadbd016b5",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-2023-supermotocross-world-championship-final-la-coliseum/",
@@ -840,6 +1050,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "6dc6ef9e0de2c0fb6b4723b84ebcf65c0e1de44c"
+    },
+    {
+      "id": "6394bfc0e4243ee2fc4530eec339",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/ktm-junior-supercross-returns-for-smx-world-championship-final-in-vegas/",
+      "title": "KTM Junior Supercross Returns for SMX World Championship Final in Vegas | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T21:00:01.426Z",
+      "publishedAt": "2024-07-18T18:04:17.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "8ebdc8f10bff06fc6dba4a6907a1aa64740a2264"
     },
     {
       "id": "39d304bf6ffa19ba6389c23d0dff",
@@ -980,6 +1204,48 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "e3fb1f4cdf707294d018b9459aaa8112c383e6be"
+    },
+    {
+      "id": "dc18737a1d8fb49dfdc758b92796",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/cooper-webb-joins-short-list-of-three-time-supercross-champions/",
+      "title": "Cooper Webb Joins Short List of Three-Time Supercross Champions | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:25.277Z",
+      "publishedAt": "2025-05-27T18:27:43.000Z",
+      "year": 2025,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "29a634602e5e33ac99ebc73d1107d605c7d02d1b"
+    },
+    {
+      "id": "e50af59cbbcd9aadeac607d149cd",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/cooper-webb-takes-supercross-championship-chase-sexton-wins-salt-lake-city-finale/",
+      "title": "Cooper Webb Takes Supercross Championship, Chase Sexton Wins Salt Lake City Finale | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:27.236Z",
+      "publishedAt": "2025-05-11T13:52:54.000Z",
+      "year": 2025,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "c9bda94e74512ae5eddbaa0fd9ca25d03283af9f"
+    },
+    {
+      "id": "b531e0ed16ce554ffec968e8df87",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/daily-mail-video-spotlights-the-physical-demands-of-being-an-smx-rider/",
+      "title": "Daily Mail Video Spotlights the Physical Demands of Being an SMX Rider | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-07T20:59:31.022Z",
+      "publishedAt": "2025-07-08T20:37:40.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "63b3c69f3cdae5bfbac407fc912ebe6155e6b00d"
     },
     {
       "id": "2fdaf38ea4e48650f50730fc4950",
