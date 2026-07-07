@@ -1,0 +1,107 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-07T18-10Z-run43",
+  "created_utc": "2026-07-07T18:10:00Z",
+  "status": "committed_racerx_atomic_season_standings_facts",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible standings. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic season-standing fields visible in the public page were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic season-standing fields were captured: year, series/class token, normalized discipline, overall position, and points. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to a manually opened public Racer X Vault rider standings page plus one attempted linked individual-races page, which returned a cache miss.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider race-results pages",
+      "Racer X Vault public historical rider standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_ricky_carmichael_points": {
+      "name": "Racer X Vault — Ricky Carmichael Overall Points Standings",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T18:10:00Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public Overall Season Results rows for Ricky Carmichael, listing year, class, overall position, and points from 1997 through 2007.",
+      "provenance_notes": [
+        "Racer X/Vault was used as the priority public source route for this batch.",
+        "The linked Individual Races route was attempted after the standings page but returned a browsing-tool cache miss, so no per-race rows were captured in this batch."
+      ],
+      "copy_policy": "Use only atomic standings facts; do not copy article bodies or narrative text."
+    },
+    "racerx_ricky_carmichael_races_attempt": {
+      "name": "Racer X Vault — Ricky Carmichael Individual Races",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-07T18:10:00Z",
+      "access_status": "fetch_cache_miss",
+      "provenance_notes": [
+        "Individual-race facts remain higher priority than summary standings when accessible.",
+        "No data was copied from this route because the browsing tool could not fetch the page during this run."
+      ],
+      "copy_policy": "Attempted source route only for this batch."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races"
+  },
+  "facts": [
+    {"fact_id":"racerx-ricky-carmichael-season-2007-mxmx-6-291","type":"season_standing","series":"Motocross","year":2007,"class":"mxMX","rider":"Ricky Carmichael","season_position":6,"points":291,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2007-sxsx-8-160","type":"season_standing","series":"Supercross","year":2007,"class":"sxSX","rider":"Ricky Carmichael","season_position":8,"points":160,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2006-sxsx-1-338","type":"season_standing","series":"Supercross","year":2006,"class":"sxSX","rider":"Ricky Carmichael","season_position":1,"points":338,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2006-mxmx-1-539","type":"season_standing","series":"Motocross","year":2006,"class":"mxMX","rider":"Ricky Carmichael","season_position":1,"points":539,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2005-250sx-1-367","type":"season_standing","series":"Supercross","year":2005,"class":"250SX","rider":"Ricky Carmichael","season_position":1,"points":367,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2005-250mx-1-594","type":"season_standing","series":"Motocross","year":2005,"class":"250MX","rider":"Ricky Carmichael","season_position":1,"points":594,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2004-250mx-1-600","type":"season_standing","series":"Motocross","year":2004,"class":"250MX","rider":"Ricky Carmichael","season_position":1,"points":600,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2003-250sx-1-367","type":"season_standing","series":"Supercross","year":2003,"class":"250SX","rider":"Ricky Carmichael","season_position":1,"points":367,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2003-250mx-1-529","type":"season_standing","series":"Motocross","year":2003,"class":"250MX","rider":"Ricky Carmichael","season_position":1,"points":529,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2002-250sx-1-356","type":"season_standing","series":"Supercross","year":2002,"class":"250SX","rider":"Ricky Carmichael","season_position":1,"points":356,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2002-250mx-1-600","type":"season_standing","series":"Motocross","year":2002,"class":"250MX","rider":"Ricky Carmichael","season_position":1,"points":600,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2001-250sx-1-392","type":"season_standing","series":"Supercross","year":2001,"class":"250SX","rider":"Ricky Carmichael","season_position":1,"points":392,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2001-125mx-26-45","type":"season_standing","series":"Motocross","year":2001,"class":"125MX","rider":"Ricky Carmichael","season_position":26,"points":45,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2001-250mx-1-490","type":"season_standing","series":"Motocross","year":2001,"class":"250MX","rider":"Ricky Carmichael","season_position":1,"points":490,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2000-250sx-5-263","type":"season_standing","series":"Supercross","year":2000,"class":"250SX","rider":"Ricky Carmichael","season_position":5,"points":263,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-2000-250mx-1-535","type":"season_standing","series":"Motocross","year":2000,"class":"250MX","rider":"Ricky Carmichael","season_position":1,"points":535,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-1999-250sx-16-115","type":"season_standing","series":"Supercross","year":1999,"class":"250SX","rider":"Ricky Carmichael","season_position":16,"points":115,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-1999-125mx-1-549","type":"season_standing","series":"Motocross","year":1999,"class":"125MX","rider":"Ricky Carmichael","season_position":1,"points":549,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-1998-125mx-1-525","type":"season_standing","series":"Motocross","year":1998,"class":"125MX","rider":"Ricky Carmichael","season_position":1,"points":525,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-1998-125esx-1-200","type":"season_standing","series":"Supercross","year":1998,"class":"125ESX","rider":"Ricky Carmichael","season_position":1,"points":200,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-1997-125esx-3-123","type":"season_standing","series":"Supercross","year":1997,"class":"125ESX","rider":"Ricky Carmichael","season_position":3,"points":123,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-1997-125wsx-27-10","type":"season_standing","series":"Supercross","year":1997,"class":"125WSX","rider":"Ricky Carmichael","season_position":27,"points":10,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92},
+    {"fact_id":"racerx-ricky-carmichael-season-1997-125mx-1-563","type":"season_standing","series":"Motocross","year":1997,"class":"125MX","rider":"Ricky Carmichael","season_position":1,"points":563,"sources":["racerx_ricky_carmichael_points"],"confidence":0.92}
+  ],
+  "deduplication": {
+    "strategy": "Deterministic fact_id composed from source scope, rider slug, year, class token, season position, and points.",
+    "checked_against_prior_batches": true,
+    "prior_batches_reviewed": [
+      "GitHub code search for ricky-carmichael returned no existing backfill files before commit.",
+      "Jeremy McGrath prior batches were not overlapping entity scope."
+    ],
+    "duplicate_facts_committed": false
+  },
+  "checkpoint": {
+    "rider_slug": "ricky-carmichael",
+    "source_route": "/rider/ricky-carmichael/points",
+    "last_completed_scope": "Racer X Vault visible overall season standings rows, 1997-2007",
+    "next_recommended_action": "Retry Racer X/Vault Ricky Carmichael individual-races route for per-race backfill. If still unavailable, continue Racer X public standings coverage for another high-value historical rider while preserving source priority and failure receipts.",
+    "failure_receipts": [
+      {
+        "stage": "racerx_rider_races_open",
+        "status": "fetch_cache_miss",
+        "detail": "Opening https://vault.racerxonline.com/rider/ricky-carmichael/races from the public standings page returned a browsing-tool cache miss during this run."
+      },
+      {
+        "stage": "robots_txt_direct_open",
+        "status": "not_retrieved_this_run",
+        "detail": "No automated crawler was run. This batch used manually opened public pages only; robots.txt was not retrieved successfully through the available browsing route."
+      }
+    ]
+  }
+}
