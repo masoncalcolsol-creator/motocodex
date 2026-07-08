@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T00:14:25.280Z",
+  "generatedAt": "2026-07-08T03:49:56.471Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 15,
-    "factsExtracted": 0,
+    "pagesAccepted": 9,
+    "factsExtracted": 21,
     "lastError": null,
     "supabaseSync": {
       "attempted": false
@@ -434,6 +434,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "b64fbdf28983836248c5a685b6d5ac94c27eed07"
+    },
+    {
+      "id": "f1d8f8a462b1d28b1c86b58fac59",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/st-louis-results/",
+      "title": "St. Louis Results | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:55.571Z",
+      "publishedAt": "2018-03-18T06:06:06.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "c023ed5c644e7437cdd66f82550b5f2995a75fe6"
     },
     {
       "id": "e210bb3160a419747e2d57020c9a",
@@ -1486,6 +1500,34 @@
       "contentHash": "8632e67ef396690d7fc99e1cdc0221727ed0a032"
     },
     {
+      "id": "e2cb7f06a6260ba2468955adea91",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-supermotocross-world-championship-finals-preview/",
+      "title": "SMX Insider - SuperMotocross World Championship Finals Preview | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:48.499Z",
+      "publishedAt": "2024-09-19T18:28:00.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "f44c0c8788fee8a4c120455aac9e6e70bbe6f817"
+    },
+    {
+      "id": "78d756581d953d7b2a39ab6a9cef",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-supercross-championship-final-preview/",
+      "title": "SMX Insider – Supercross Championship Final Preview | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:46.517Z",
+      "publishedAt": "2024-05-09T19:43:36.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "df3ccf9074266698cb1348147479b85e85c08afd"
+    },
+    {
       "id": "1576f19d7345d196fab6e1dff124",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/smx-insider-the-2024-champions-of-supercross/",
@@ -1666,6 +1708,90 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "6b18e3bb507ab183b14d1bde48c9e49604d1a499"
+    },
+    {
+      "id": "7d22c74275c36e839ab35357c7fc",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-a-new-championship-picture/",
+      "title": "SMX Insider - A New Championship Picture | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:30.431Z",
+      "publishedAt": "2025-02-06T18:52:54.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "33d9c905caac7bc2687e0398c937d863fd143a9a"
+    },
+    {
+      "id": "9c11271bf1398c21a8b8704fd6a6",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-championship-round-preview/",
+      "title": "SMX Insider - Championship Round Preview | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:32.298Z",
+      "publishedAt": "2025-05-09T13:16:30.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e0f71fedbe062e0ea0aff9de0da985eb7a759aa3"
+    },
+    {
+      "id": "a3418e8636c351629e6fcbef7120",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-history-in-tampa/",
+      "title": "SMX Insider - History in Tampa | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:37.289Z",
+      "publishedAt": "2025-02-13T21:34:51.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "055ce23e012ca8599b048308e0977526d00c6495"
+    },
+    {
+      "id": "f3a76ec288dffd9564b3f4b8298b",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-world-championship-wrap-up/",
+      "title": "SMX Insider - World Championship Wrap-Up | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:52.093Z",
+      "publishedAt": "2025-09-25T19:47:21.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "a1ff121d85abd58302534ecdfc12e44647def4fd"
+    },
+    {
+      "id": "ce4e46c065cdaa75fa9d736cc63f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-smx-world-championship-finale-preview/",
+      "title": "SMX Insider – SMX World Championship Finale Preview | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:44.719Z",
+      "publishedAt": "2025-09-18T19:45:43.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "028a5931b3e2b6a2d4452e7c81837a938cbcc92b"
+    },
+    {
+      "id": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "title": "SMX Next Supercross Championship Contenders Set for Winner-Takes-All Pittsburgh Finale this Saturday, April 26th | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T03:49:53.972Z",
+      "publishedAt": "2025-04-25T12:40:42.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 1,
+      "factCount": 21,
+      "contentHash": "89514efac4c28aba639bcddba6b2298753b97dd3"
     },
     {
       "id": "2fdaf38ea4e48650f50730fc4950",
@@ -3834,6 +3960,531 @@
       },
       "provenanceUrl": "https://www.supercrosslive.com/champions/",
       "extractedAt": "2026-07-07T08:46:12.669Z"
+    },
+    {
+      "id": "0a7d652ec081588197f1df8879f0",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"46\",\"column_2\":\"KTM\",\"column_3\":\"Fauser\",\"column_4\":\"Luke\",\"column_5\":\"Midland\",\"column_6\":\"PA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 8,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "0fb050dfd896b0907aabcbc9b63f",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"16\",\"column_2\":\"GAS\",\"column_3\":\"Robbins\",\"column_4\":\"Klark\",\"column_5\":\"Shamong\",\"column_6\":\"NJ\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 1,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "1594a4f0da631052edb69c01121b",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"809\",\"column_2\":\"YAM\",\"column_3\":\"Ehlermann\",\"column_4\":\"Brayden\",\"column_5\":\"Westtown\",\"column_6\":\"NY\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 19,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "1d0b2b2bdd51481ec9954bc0e9e0",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"47\",\"column_2\":\"YAM\",\"column_3\":\"Edwards\",\"column_4\":\"Hayes\",\"column_5\":\"Montgomery\",\"column_6\":\"TX\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 9,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "1d48877eac22f656d22180af5540",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"#\",\"column_2\":\"OEM\",\"column_3\":\"Last\",\"column_4\":\"First\",\"column_5\":\"City\",\"column_6\":\"Country\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 0,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "20148a5cb5f7f1746e973070ebd9",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"140\",\"column_2\":\"KTM\",\"column_3\":\"Buccheri\",\"column_4\":\"Russell\",\"column_5\":\"Duxbury\",\"column_6\":\"MA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 14,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "20c101cb745d4bb6d9dfc0ab949a",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"18\",\"column_2\":\"KAW\",\"column_3\":\"Gordon\",\"column_4\":\"Landen\",\"column_5\":\"Atascadero\",\"column_6\":\"CA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 2,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "3f063f1aa6f5e073f1047b75823b",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"43\",\"column_2\":\"HON\",\"column_3\":\"Wood\",\"column_4\":\"Tiger\",\"column_5\":\"Townsville\",\"column_6\":\"AUS\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 7,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "41ba2b08355265e1fd5d2d2f2bf0",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"107\",\"column_2\":\"KTM\",\"column_3\":\"Renfro\",\"column_4\":\"Jordan\",\"column_5\":\"Lake Park\",\"column_6\":\"GA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 11,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "4c06593c0caa349663a35026bfad",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"124\",\"column_2\":\"HON\",\"column_3\":\"Walker\",\"column_4\":\"Brock\",\"column_5\":\"Fort Worth\",\"column_6\":\"TX\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 12,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "4e07f4351d7110e812ddade62cd9",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"34\",\"column_2\":\"KAW\",\"column_3\":\"Wheaton\",\"column_4\":\"Reece\",\"column_5\":\"Irwin\",\"column_6\":\"PA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 6,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "5b8cf33201bc879eaf0c87fd35a7",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"72\",\"column_2\":\"YAM\",\"column_3\":\"Betts\",\"column_4\":\"Gavin\",\"column_5\":\"Halfmoon\",\"column_6\":\"NY\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 10,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "5da3741c3537679e509286ccddf2",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"27\",\"column_2\":\"KAW\",\"column_3\":\"Wey\",\"column_4\":\"Vincent\",\"column_5\":\"Murietta\",\"column_6\":\"CA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 5,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "6bc91f60593eb96b253cc0200bb8",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"981\",\"column_2\":\"YAM\",\"column_3\":\"Malinoski\",\"column_4\":\"Ryder\",\"column_5\":\"Wyoming\",\"column_6\":\"MN\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 20,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "9fd287ea0ce18d3668391866e3b3",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"257\",\"column_2\":\"YAM\",\"column_3\":\"Turner\",\"column_4\":\"Jesson\",\"column_5\":\"Chesterfield\",\"column_6\":\"SC\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 16,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "a1f1459c2ded1d327860a35068ef",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"23\",\"column_2\":\"HUS\",\"column_3\":\"Gibson\",\"column_4\":\"Landon\",\"column_5\":\"Peachtree City\",\"column_6\":\"GA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 4,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "a697bc05bfa13f80630e7c64620b",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"492\",\"column_2\":\"YAM\",\"column_3\":\"Hartz\",\"column_4\":\"Landon\",\"column_5\":\"Chelsea\",\"column_6\":\"AL\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 17,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "d43c0881c948f942a7d802a0afa6",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"132\",\"column_2\":\"HON\",\"column_3\":\"Oehlof\",\"column_4\":\"Leum\",\"column_5\":\"Cairo\",\"column_6\":\"GA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 13,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "d660b254f3939096180bc3bd5e14",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"600\",\"column_2\":\"YAM\",\"column_3\":\"Fedortsov\",\"column_4\":\"Alexander\",\"column_5\":\"Hillandale\",\"column_6\":\"FL\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 18,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "fd597971448ace891c276b46e5f4",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"177\",\"column_2\":\"YAM\",\"column_3\":\"Johnson\",\"column_4\":\"Kade\",\"column_5\":\"Hideaway\",\"column_6\":\"TX\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 15,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
+    },
+    {
+      "id": "ff4a1c3d6013f512bc7460dabdf4",
+      "documentId": "6e1c56dd4f2d51436ac5fcdf0b56",
+      "sourceKey": "supercrosslive",
+      "seriesKey": "supermotocross",
+      "year": 2025,
+      "entityType": "result-row",
+      "entityName": null,
+      "factType": "result-row",
+      "value": "{\"column_1\":\"21\",\"column_2\":\"KAW\",\"column_3\":\"Temmerman\",\"column_4\":\"Enzo\",\"column_5\":\"Visalia\",\"column_6\":\"CA\",\"column_7\":\"USA\"}",
+      "context": {
+        "tableIndex": 0,
+        "rowIndex": 3,
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6"
+        ]
+      },
+      "provenanceUrl": "https://www.supercrosslive.com/news/smx-next-supercross-championship-contenders-set-for-winner-takes-all-pittsburgh-finale-this-saturday-april-26th/",
+      "extractedAt": "2026-07-08T03:49:53.972Z"
     },
     {
       "id": "1cc82582d21c47825ba4611168ca",
