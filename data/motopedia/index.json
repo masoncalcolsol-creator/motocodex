@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T09:40:26.827Z",
+  "generatedAt": "2026-07-08T11:59:35.855Z",
   "run": {
     "status": "backfill-active",
-    "pagesAttempted": 28,
-    "pagesAccepted": 12,
+    "pagesAttempted": 27,
+    "pagesAccepted": 11,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
@@ -308,6 +308,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "70f0338e27ff5e47af6b78c7dcfad93bb8c04f88"
+    },
+    {
+      "id": "a616ab329ec4230572a60083f6f7",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/video-never-before-seen-footage-from-dungeys-championship/",
+      "title": "VIDEO: Never before seen footage from Dungey's championship | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:25.569Z",
+      "publishedAt": "2016-10-23T13:00:00.000Z",
+      "year": 2016,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "831bd5f8021ebfa36e540f9085b12329743029f2"
     },
     {
       "id": "9f9defb40aee59e1a94eadfcd6da",
@@ -1122,6 +1136,34 @@
       "contentHash": "50e30be0318ef55da5622e45a1cfa1dfb2953b6f"
     },
     {
+      "id": "f7ad338fc1e38ec35ce26a34a984",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/video/christian-craig-championship-press-conference/",
+      "title": "Christian Craig Championship Press Conference | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:31.593Z",
+      "publishedAt": "2022-05-08T11:32:44.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "c2e2289e5dee5755f792b9a53e839d8d6d79dbed"
+    },
+    {
+      "id": "c878f421de4f7af5f58e8932e8a1",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/video/eli-tomac-championship-press-conference-denver/",
+      "title": "Eli Tomac Championship Press Conference: Denver | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:33.288Z",
+      "publishedAt": "2022-05-01T05:39:24.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "b230a3664d87edc40a93a19f7e8748c2353b0fcd"
+    },
+    {
       "id": "19afaeb21d28678e836fa8a3b81a",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/feld-motor-sports-and-mx-sports-pro-racing-partner-to-form-the-supermotocross-world-championship/",
@@ -1276,6 +1318,20 @@
       "contentHash": "67b031f2efc5187f2892a6a5c8932302c88787b2"
     },
     {
+      "id": "8c73b45f7d857bbf222d0518f828",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/tv-alert-championship-concludes-in-primetime-with-30-minute-pre-show/",
+      "title": "TV Alert: Championship Concludes in Primetime with 30-Minute Pre-Show | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:21.132Z",
+      "publishedAt": "2022-05-06T18:37:06.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "3f1fc7adb43343aaf3c35b014bad7c7c1733441d"
+    },
+    {
       "id": "a766d23e9e033659e1d177152804",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/gallery/supercross-world-championship-2022-rice-eccles-stadium-salt-lake-city/",
@@ -1288,6 +1344,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "30ed79162a82c1f3a9b55f8857622fce8087f75c"
+    },
+    {
+      "id": "e81ed40e8d89bc325250544c740f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/video-will-tomac-race-in-inaugural-supermotocross-world-championship/",
+      "title": "Video: Will Tomac race in inaugural SuperMotocross World Championship? | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:27.269Z",
+      "publishedAt": "2022-12-23T21:53:18.000Z",
+      "year": 2022,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "eca9a2e46ba0464d4346cb978a7f44dc62b2f81d"
     },
     {
       "id": "4cdf3bd0cc60d05973939d026176",
@@ -1542,6 +1612,20 @@
       "contentHash": "9234f97c84f750499915d350d333e1faf26536df"
     },
     {
+      "id": "d24352b871243f72dda17b69a8be",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/video/supercross-rider-feature-haiden-deegan/",
+      "title": "Supercross Rider Feature - Haiden Deegan | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:34.955Z",
+      "publishedAt": "2023-04-15T20:39:55.000Z",
+      "year": 2023,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "9861790dc67a3bffb0306efe8beef901dfc5821c"
+    },
+    {
       "id": "d2d66f0c7f7bb22d61ca2989f3fb",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/supermotocross-world-championship-points-and-payout-breakdown/",
@@ -1568,6 +1652,34 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "aafb949f1022a90fb228707a722bb93adb07fb4a"
+    },
+    {
+      "id": "37e0c9011ee308216da570a61d79",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/two-time-supercross-champion-finally-wins-opening-round/",
+      "title": "Two-time Supercross Champion Finally Wins Opening Round | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:22.082Z",
+      "publishedAt": "2023-01-10T22:00:00.000Z",
+      "year": 2023,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "355e0c691b79a9876e300e14f685f9cd6f530aa3"
+    },
+    {
+      "id": "ae0f0e4e7e201496b32adfc51231",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/worlds-best-amateur-athletes-to-compete-at-first-ever-supermotocross-world-championship-finals/",
+      "title": "World’s Best Amateur Athletes to Compete at First-Ever SuperMotocross World Championship Finals | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:29.923Z",
+      "publishedAt": "2023-08-08T21:00:00.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "4552bdf568f7a5e99df7745adea7a9a94d471a47"
     },
     {
       "id": "8cbbe65d9326ee36dafadbd016b5",
@@ -1878,6 +1990,20 @@
       "contentHash": "9b6ef44e314d75dbbc24a2b493f88ccc18c94a21"
     },
     {
+      "id": "c64004a378664677b184dd061b28",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/triumph-brings-rich-pedigree-to-supermotocross-world-championship-as-newest-oem-partner/",
+      "title": "Triumph Brings Rich Pedigree to SuperMotocross World Championship as Newest OEM Partner | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:19.149Z",
+      "publishedAt": "2024-02-02T21:24:45.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "965ad0c5fe1a1c58786514d30c2f7bc07d72df87"
+    },
+    {
       "id": "c9316d80a45f3d778a216cf25b67",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/triumph-signs-ivan-tedesco-as-test-rider-for-2024-supermotocross-world-championship/",
@@ -1890,6 +2016,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "ca98ce984a17f53c81a990cf3f0e003669bae87f"
+    },
+    {
+      "id": "7c47ec9de0f692df971d1f31c25c",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/ufo-plast-becomes-newest-exclusive-partner-of-the-smx-world-championship/",
+      "title": "UFO Plast Becomes Newest Exclusive Partner of the SMX World Championship | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:23.897Z",
+      "publishedAt": "2024-12-18T17:53:19.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "9bb10cf263196dd098d58459683ddab9648a7525"
     },
     {
       "id": "98baafcc71d2606d7c8554a66b49",
@@ -3024,6 +3164,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "e255dd4e952c139d200d31b2348b616511cdd5d9"
+    },
+    {
+      "id": "d9d49208141f3ffcd863f5f73741",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/womens-motocross-championship-joins-smx-with-synchrony-partnership/",
+      "title": "Women’s Motocross Championship Joins SMX with Synchrony Partnership | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T11:59:28.959Z",
+      "publishedAt": "2026-01-07T17:00:04.000Z",
+      "year": 2026,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "81f74ef8516f35e5eb094a2ff26e4defab8cca19"
     },
     {
       "id": "2cc71a15a0a6da2519e8d122972b",
