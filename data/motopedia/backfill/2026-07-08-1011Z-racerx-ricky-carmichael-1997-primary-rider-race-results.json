@@ -1,0 +1,82 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-08T10-11Z-run59",
+  "created_utc": "2026-07-08T10:11:00Z",
+  "status": "committed_1997_primary_racerx_rider_race_rows",
+  "truth_boundary": "Respectful public-source historical backfill. This file records only atomic race-result facts visible in the public Racer X Vault rider-races table for Ricky Carmichael. No article bodies copied. No authentication bypass attempted. No paywalled or restricted content accessed. These rows supersede the prior secondary 1997 round-finish crosscheck where fields overlap.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Only the public Racer X Vault rider-races page was opened.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic result fields were captured: overall result, event name, class, date, machine, rider, source URL, and source priority. No narrative article text copied.",
+    "robots_txt": "Direct robots.txt retrieval was not available through the safe web-open flow during this run. No automated crawler was run; this was a manual, single-page public lookup.",
+    "rate_limit": "Manual lookup only. Future crawler default remains no faster than 1 request per 10 seconds per host, with exponential backoff on 429/5xx and checkpoint preservation before retry."
+  },
+  "sources": {
+    "racerx_ricky_carmichael_rider_races": {
+      "name": "Racer X Vault — Ricky Carmichael Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T10:11:00Z",
+      "access_status": "public_visible_rider_race_rows_available",
+      "source_priority": "primary_preferred_public_historical_vault"
+    },
+    "racerx_1997_mx_points_prior_checkpoint": {
+      "name": "Racer X Vault — 1997 Overall Motocross Points Standings",
+      "url": "https://vault.racerxonline.com/1997/mx/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T08:03:00Z",
+      "access_status": "public_visible_standings_rows_available_in_prior_committed_checkpoint",
+      "prior_commit": "77e82706e5e7f8f9fc15f3ae856e3d765c0cb1bd",
+      "prior_path": "data/motopedia/backfill/2026-07-08-0803Z-racerx-ricky-carmichael-1998-125mx-cache-miss-repair-and-1997-standings.json"
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-los-angeles-2-125wsx-overall-11","type":"race_result","series":"Supercross","year":1997,"class":"125WSX","event":"Los Angeles 2","date":"1997-01-18","rider":"Ricky Carmichael","overall_position":11,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-indianapolis-125esx-overall-19","type":"race_result","series":"Supercross","year":1997,"class":"125ESX","event":"Indianapolis","date":"1997-02-15","rider":"Ricky Carmichael","overall_position":19,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-atlanta-125esx-overall-1","type":"race_result","series":"Supercross","year":1997,"class":"125ESX","event":"Atlanta","date":"1997-02-22","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-gatorback-cycle-park-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Gatorback Cycle Park","date":"1997-03-02","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-daytona-125esx-overall-6","type":"race_result","series":"Supercross","year":1997,"class":"125ESX","event":"Daytona","date":"1997-03-08","rider":"Ricky Carmichael","overall_position":6,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-orlando-125esx-overall-1","type":"race_result","series":"Supercross","year":1997,"class":"125ESX","event":"Orlando","date":"1997-03-29","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-st-louis-125esx-overall-10","type":"race_result","series":"Supercross","year":1997,"class":"125ESX","event":"St. Louis","date":"1997-04-05","rider":"Ricky Carmichael","overall_position":10,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-pontiac-125esx-overall-3","type":"race_result","series":"Supercross","year":1997,"class":"125ESX","event":"Pontiac","date":"1997-04-12","rider":"Ricky Carmichael","overall_position":3,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-charlotte-125esx-overall-1","type":"race_result","series":"Supercross","year":1997,"class":"125ESX","event":"Charlotte","date":"1997-04-19","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-hangtown-motocross-classic-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Hangtown Motocross Classic","date":"1997-05-04","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-glen-helen-raceway-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Glen Helen Raceway","date":"1997-05-11","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-las-vegas-shootout-125sx-shootout-overall-18","type":"race_result","series":"Supercross","year":1997,"class":"125SX/Shootout","event":"Las Vegas","date":"1997-05-17","rider":"Ricky Carmichael","overall_position":18,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-high-point-raceway-125mx-overall-13","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"High Point Raceway","date":"1997-05-25","rider":"Ricky Carmichael","overall_position":13,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-budds-creek-motocross-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Budds Creek Motocross","date":"1997-06-15","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-moto-x-338-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Moto-X 338","date":"1997-06-22","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-redbud-track-n-trail-125mx-overall-2","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"RedBud Track 'n Trail","date":"1997-07-06","rider":"Ricky Carmichael","overall_position":2,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-unadilla-motocross-125mx-overall-4","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Unadilla Motocross","date":"1997-07-20","rider":"Ricky Carmichael","overall_position":4,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-kenworthys-motocross-park-125mx-overall-2","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Kenworthy's Motocross Park","date":"1997-07-27","rider":"Ricky Carmichael","overall_position":2,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-spring-creek-motocross-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Spring Creek Motocross","date":"1997-08-03","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-washougal-motocross-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Washougal Motocross","date":"1997-08-17","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-broome-tioga-sports-center-125mx-overall-1","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Broome-Tioga Sports Center","date":"1997-08-24","rider":"Ricky Carmichael","overall_position":1,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"},
+    {"fact_id":"racerx-ricky-carmichael-race-result-1997-steel-city-raceway-125mx-overall-3","type":"race_result","series":"Motocross","year":1997,"class":"125MX","event":"Steel City Raceway","date":"1997-08-31","rider":"Ricky Carmichael","overall_position":3,"machine":"Kawasaki","sources":["racerx_ricky_carmichael_rider_races"],"confidence":0.95,"verification_status":"primary_racerx_rider_race_row"}
+  ],
+  "deduplication": {
+    "identity_fields": ["source", "rider", "year", "series", "class", "event", "date", "overall_position"],
+    "overlap_resolution": "Supersedes secondary 1997 125MX round-finish crosscheck facts from commit 546cd2afac3c80317d4345f08fe089a597b358e5 where event/date/class/overall result overlap. Does not duplicate prior 1997 Racer X season standings checkpoint facts.",
+    "new_primary_coverage": "22 public Racer X rider-race rows for Ricky Carmichael in 1997: 13 125MX rows, 7 125ESX rows, 1 125WSX row, and 1 125SX/Shootout row."
+  },
+  "checkpoints": {
+    "previous_completed_focus": "1997 round-finish crosscheck from a secondary public summary, pending primary verification.",
+    "this_batch_focus": "Primary Racer X rider-races table verification for Ricky Carmichael 1997 SX/MX result rows.",
+    "next_recommended_focus": "Continue backward to Ricky Carmichael 1996 visible Racer X rider-race rows, then expand from rider-level rows into event-level context only where public pages expose atomic result/standings data."
+  },
+  "failure_receipts": [
+    {
+      "id": "failure-racerx-robots-direct-open-not-indexed-2026-07-08T10-11Z",
+      "type": "robots_txt_access_limited_by_tool_safe_open_policy",
+      "target": "https://vault.racerxonline.com/robots.txt",
+      "result": "Direct robots.txt open remained unavailable through the safe URL-open flow. No automated crawl was run; this run used a single public rider-races page already reachable directly."
+    }
+  ]
+}
