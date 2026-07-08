@@ -1,21 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-07T22:33:54.403Z",
+  "updatedAt": "2026-07-08T00:14:25.280Z",
   "queue": [
-    {
-      "url": "https://racerxonline.com/archive",
-      "sourceKey": "racerx",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 38
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/adam-cianciarulo-announces-retirement-from-professional-racing-following-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
     {
       "url": "https://www.supercrosslive.com/news/chris-blose-joins-kawasaki-for-250-east-season/",
       "sourceKey": "supercrosslive",
@@ -87,112 +73,7 @@
       "score": 29
     },
     {
-      "url": "https://www.supercrosslive.com/news/race-hub-san-diego-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/race-hub-st-louis-full-results/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/reed-docked-points-fined-after-run-in-with-dungey/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/register-now-esx-esport-championship-presented-by-yamaha/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/registration-open-for-esx-esport-championship-presented-by-yamaha/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/results-from-the-bmx-triple-challenge-in-glendale/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/rm-fantasy-sxperts-final-standings/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/savatgy-loses-championship-lead-following-new-jersey-penalty/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
       "url": "https://www.supercrosslive.com/news/shimoda-sidelined-for-opening-rounds-of-250-east-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-at-ironman/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-entering-budds-creek/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-entering-unadilla/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-high-point/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-southwick/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-spring-creek/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-04T09:32:13.449Z",
-      "yearHint": null,
-      "score": 29
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-insider-450-class-tied-in-points/",
       "sourceKey": "supercrosslive",
       "discoveredAt": "2026-07-04T09:32:13.449Z",
       "yearHint": null,
@@ -1506,6 +1387,96 @@
       "documentId": "4e962dd11af9542836c4a900d182",
       "contentHash": "bcf6413a082ebb8833e9be910bc56aa102cf7b5e",
       "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-san-diego-full-results/": {
+      "processedAt": "2026-07-08T00:14:00.468Z",
+      "documentId": "ed69f90e63f09d767ca1a9c4c33e",
+      "contentHash": "b3bdb87c03fc07243669603b91d3f1ec7036a5cc",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/race-hub-st-louis-full-results/": {
+      "processedAt": "2026-07-08T00:14:01.396Z",
+      "documentId": "87737e2ba552a8f28cf39ceb2fa7",
+      "contentHash": "018e2e5bc3e44d398aa348d39c00a37652d5da99",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/reed-docked-points-fined-after-run-in-with-dungey/": {
+      "processedAt": "2026-07-08T00:14:02.322Z",
+      "documentId": "9d5637ed9c09d5c5b859126bd2fd",
+      "contentHash": "7315ac455bdb991675aa468f7bd4b30b13d5beab",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/register-now-esx-esport-championship-presented-by-yamaha/": {
+      "processedAt": "2026-07-08T00:14:04.282Z",
+      "documentId": "cbe6b033e469e213b129538a1f77",
+      "contentHash": "6c0b588aacf0317acf7573145dfa08917f952d64",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/registration-open-for-esx-esport-championship-presented-by-yamaha/": {
+      "processedAt": "2026-07-08T00:14:06.224Z",
+      "documentId": "4b3c71d501e293df38b735e95fbe",
+      "contentHash": "b93ab324b456c73967812716684d02dfe0eebabd",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/results-from-the-bmx-triple-challenge-in-glendale/": {
+      "processedAt": "2026-07-08T00:14:08.050Z",
+      "documentId": "47cc8ad2a10e3085e6a1e3930c35",
+      "contentHash": "d4dc9b0e791b8f3421a28268b65cc19c29518057",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/rm-fantasy-sxperts-final-standings/": {
+      "processedAt": "2026-07-08T00:14:08.984Z",
+      "documentId": "6f64df3d8cda58501b213be9c7e3",
+      "contentHash": "22b429369323129d01abdd6dc116a1ba193b7f3b",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/savatgy-loses-championship-lead-following-new-jersey-penalty/": {
+      "processedAt": "2026-07-08T00:14:10.766Z",
+      "documentId": "b54ebe5cac3b898cb6ae671d7042",
+      "contentHash": "fb583fa04785768d8aa914b7e1280584e0c25f07",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-at-ironman/": {
+      "processedAt": "2026-07-08T00:14:14.188Z",
+      "documentId": "5b9c79240661eebb7d02c32a8a54",
+      "contentHash": "de8a5bc500fc863a6073bca2bfa09759c8125d2e",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-entering-budds-creek/": {
+      "processedAt": "2026-07-08T00:14:15.881Z",
+      "documentId": "4ed097e751fdeeed0b8dc458cf10",
+      "contentHash": "3e5ec1ca0a8149b61c21c47df5a8497afb51a772",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-entering-unadilla/": {
+      "processedAt": "2026-07-08T00:14:17.650Z",
+      "documentId": "14263c59a49bd914c97c3d8ad00a",
+      "contentHash": "8adb2ee3f7bee78e94350817d5efd94d3c19e80e",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-high-point/": {
+      "processedAt": "2026-07-08T00:14:19.349Z",
+      "documentId": "d45ffd673bf24551fde5317d1d8d",
+      "contentHash": "04f1bdab621a4dad03127b98030be95194386d77",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-southwick/": {
+      "processedAt": "2026-07-08T00:14:21.039Z",
+      "documentId": "bb886155038044fa86ff3527ab05",
+      "contentHash": "d6ade2d555440111afd364fa9fe032f0a3972337",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-spring-creek/": {
+      "processedAt": "2026-07-08T00:14:22.752Z",
+      "documentId": "acae8a5fea5633a15941f6d4637c",
+      "contentHash": "9234f97c84f750499915d350d333e1faf26536df",
+      "factCount": 0
+    },
+    "https://www.supercrosslive.com/news/smx-insider-450-class-tied-in-points/": {
+      "processedAt": "2026-07-08T00:14:24.379Z",
+      "documentId": "617bc95e1fb59a495dbde22f9f18",
+      "contentHash": "6b18e3bb507ab183b14d1bde48c9e49604d1a499",
+      "factCount": 0
     }
   },
   "failed": {
@@ -2520,127 +2491,132 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://racerxonline.com/archive": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-07T22:33:10.166Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-08T00:13:46.258Z",
       "error": "404 Not Found"
     },
     "https://www.supercrosslive.com/news/adam-cianciarulo-announces-retirement-from-professional-racing-following-supercross-season/": {
-      "attempts": 3,
-      "lastAttemptAt": "2026-07-07T22:33:11.963Z",
+      "attempts": 4,
+      "lastAttemptAt": "2026-07-08T00:13:47.262Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/chris-blose-joins-kawasaki-for-250-east-season/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T22:33:13.807Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-08T00:13:48.190Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/colt-nichols-joins-honda-for-450-season/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T22:33:15.553Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-08T00:13:49.116Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/elbow-fracture-sidelines-plessinger-for-remainder-of-supercross-season/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T22:33:17.280Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-08T00:13:50.041Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ferrandis-aiming-to-return-by-end-of-supercross-season/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T22:33:18.954Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-08T00:13:50.963Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/forkner-to-miss-remainder-of-supercross-season-due-to-injury/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T22:33:20.805Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-08T00:13:51.890Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/gift-supercross-tickets-this-holiday-season-with-a-printable-certificate/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T22:33:23.655Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-08T00:13:54.672Z",
       "error": "404 Not Found"
     },
     "https://www.supercrosslive.com/news/how-to-watch-supercross-season-opener-from-anaheim/": {
-      "attempts": 2,
-      "lastAttemptAt": "2026-07-07T22:33:25.186Z",
+      "attempts": 3,
+      "lastAttemptAt": "2026-07-08T00:13:55.599Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/musquin-out-for-remainder-of-supercross-season/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T22:33:30.271Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-08T00:13:56.527Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/new-symbol-new-season-tickets-on-presale-now/": {
-      "attempts": 1,
-      "lastAttemptAt": "2026-07-07T22:33:32.140Z",
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-08T00:13:57.455Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/plessinger-suffers-broken-arm-in-practice-likely-out-for-season/": {
+      "attempts": 2,
+      "lastAttemptAt": "2026-07-08T00:13:58.383Z",
+      "error": "Page did not contain durable historical result metadata"
+    },
+    "https://www.supercrosslive.com/news/shimoda-sidelined-for-opening-rounds-of-250-east-season/": {
       "attempts": 1,
-      "lastAttemptAt": "2026-07-07T22:33:33.741Z",
+      "lastAttemptAt": "2026-07-08T00:14:12.501Z",
       "error": "Page did not contain durable historical result metadata"
     }
   },
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:32:49.635Z",
+      "checkedAt": "2026-07-08T00:13:25.600Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:32:51.289Z",
+      "checkedAt": "2026-07-08T00:13:27.262Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:32:52.945Z",
+      "checkedAt": "2026-07-08T00:13:28.920Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-07T22:32:53.846Z",
+      "checkedAt": "2026-07-08T00:13:29.821Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:32:54.747Z",
+      "checkedAt": "2026-07-08T00:13:30.713Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:32:56.404Z",
+      "checkedAt": "2026-07-08T00:13:32.367Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:32:58.063Z",
+      "checkedAt": "2026-07-08T00:13:34.022Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-07T22:32:58.964Z",
+      "checkedAt": "2026-07-08T00:13:34.923Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:32:59.886Z",
+      "checkedAt": "2026-07-08T00:13:35.979Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:33:01.636Z",
+      "checkedAt": "2026-07-08T00:13:37.730Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:33:03.387Z",
+      "checkedAt": "2026-07-08T00:13:39.480Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-07T22:33:04.287Z",
+      "checkedAt": "2026-07-08T00:13:40.380Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -2657,25 +2633,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:33:05.153Z",
+      "checkedAt": "2026-07-08T00:13:41.235Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:33:06.811Z",
+      "checkedAt": "2026-07-08T00:13:42.892Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-07T22:33:08.468Z",
+      "checkedAt": "2026-07-08T00:13:44.552Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-07T22:33:09.369Z",
+      "checkedAt": "2026-07-08T00:13:45.453Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 980
+  "cursor": 1008
 }

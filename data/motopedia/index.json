@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-07T22:33:54.403Z",
+  "generatedAt": "2026-07-08T00:14:25.280Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 16,
+    "pagesAccepted": 15,
     "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
@@ -366,6 +366,34 @@
       "contentHash": "b3123668d4e81e84c4a5c2021a86b44ab506920c"
     },
     {
+      "id": "9d5637ed9c09d5c5b859126bd2fd",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/reed-docked-points-fined-after-run-in-with-dungey/",
+      "title": "Reed docked points, fined after run-in with Dungey | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:02.322Z",
+      "publishedAt": "2017-04-04T03:41:20.000Z",
+      "year": 2017,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "7315ac455bdb991675aa468f7bd4b30b13d5beab"
+    },
+    {
+      "id": "b54ebe5cac3b898cb6ae671d7042",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/savatgy-loses-championship-lead-following-new-jersey-penalty/",
+      "title": "Savatgy loses championship lead following New Jersey penalty | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:10.766Z",
+      "publishedAt": "2017-04-30T04:48:04.000Z",
+      "year": 2017,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "fb583fa04785768d8aa914b7e1280584e0c25f07"
+    },
+    {
       "id": "73f0370b2dbecd4e56deb122ae40",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/anderson-takes-points-lead-at-houston/",
@@ -646,6 +674,20 @@
       "contentHash": "bcf6413a082ebb8833e9be910bc56aa102cf7b5e"
     },
     {
+      "id": "ed69f90e63f09d767ca1a9c4c33e",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/race-hub-san-diego-full-results/",
+      "title": "Race Hub: San Diego {Full Results} | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:00.467Z",
+      "publishedAt": "2019-02-02T18:21:19.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "b3bdb87c03fc07243669603b91d3f1ec7036a5cc"
+    },
+    {
       "id": "177fa0446477b48091b241a2d66d",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/gallery/2019-rider-head-shots/",
@@ -800,6 +842,20 @@
       "contentHash": "281d32d9a6912ec3210329adfd0a9c62011c96e1"
     },
     {
+      "id": "87737e2ba552a8f28cf39ceb2fa7",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/race-hub-st-louis-full-results/",
+      "title": "Race Hub - St. Louis {Full Results} | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:01.396Z",
+      "publishedAt": "2020-01-11T22:49:11.000Z",
+      "year": 2020,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "018e2e5bc3e44d398aa348d39c00a37652d5da99"
+    },
+    {
       "id": "4b41ac2b442857cd945bdd679827",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/fantasy/2021-preseason-supercross-power-rankings/",
@@ -840,6 +896,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "813f0b269ca94bef7b012572a97a4fa7db53a0d8"
+    },
+    {
+      "id": "cbe6b033e469e213b129538a1f77",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/register-now-esx-esport-championship-presented-by-yamaha/",
+      "title": "Register Now! eSX eSport Championship Presented by Yamaha﻿ | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:04.282Z",
+      "publishedAt": "2021-04-26T18:34:25.000Z",
+      "year": 2021,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "6c0b588aacf0317acf7573145dfa08917f952d64"
     },
     {
       "id": "0cc53b466a7eb240184d9b5c8f80",
@@ -938,6 +1008,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "5f5fb0314c15fdd9986051ae7494171ecbfaf264"
+    },
+    {
+      "id": "4b3c71d501e293df38b735e95fbe",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/registration-open-for-esx-esport-championship-presented-by-yamaha/",
+      "title": "Registration Open for eSX eSport Championship Presented by Yamaha | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:06.224Z",
+      "publishedAt": "2022-04-22T21:00:00.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "b93ab324b456c73967812716684d02dfe0eebabd"
     },
     {
       "id": "b2c465764e5b7d86c86803112ba4",
@@ -1162,6 +1246,90 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "ac1a4a42314f10e2344f6af8df2e612799d1e5b6"
+    },
+    {
+      "id": "5b9c79240661eebb7d02c32a8a54",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-at-ironman/",
+      "title": "SMX Combined Points: Playoff Stories to Watch at Ironman | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:14.188Z",
+      "publishedAt": "2023-08-22T18:41:01.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "de8a5bc500fc863a6073bca2bfa09759c8125d2e"
+    },
+    {
+      "id": "4ed097e751fdeeed0b8dc458cf10",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-entering-budds-creek/",
+      "title": "SMX Combined Points: Playoff Stories to Watch Entering Budds Creek | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:15.880Z",
+      "publishedAt": "2023-08-15T19:11:11.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "3e5ec1ca0a8149b61c21c47df5a8497afb51a772"
+    },
+    {
+      "id": "14263c59a49bd914c97c3d8ad00a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-entering-unadilla/",
+      "title": "SMX Combined Points: Playoff Stories to Watch Entering Unadilla | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:17.650Z",
+      "publishedAt": "2023-08-08T18:36:55.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "8adb2ee3f7bee78e94350817d5efd94d3c19e80e"
+    },
+    {
+      "id": "d45ffd673bf24551fde5317d1d8d",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-high-point/",
+      "title": "SMX Combined Points: Playoff Stories to Watch Following High Point | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:19.349Z",
+      "publishedAt": "2023-06-22T19:17:58.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "04f1bdab621a4dad03127b98030be95194386d77"
+    },
+    {
+      "id": "bb886155038044fa86ff3527ab05",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-southwick/",
+      "title": "SMX Combined Points: Playoff Stories to Watch Following Southwick | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:21.039Z",
+      "publishedAt": "2023-07-13T19:25:42.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "d6ade2d555440111afd364fa9fe032f0a3972337"
+    },
+    {
+      "id": "acae8a5fea5633a15941f6d4637c",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-combined-points-playoff-stories-to-watch-following-spring-creek/",
+      "title": "SMX Combined Points: Playoff Stories to Watch Following Spring Creek | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:22.752Z",
+      "publishedAt": "2023-07-18T22:45:11.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "9234f97c84f750499915d350d333e1faf26536df"
     },
     {
       "id": "8cbbe65d9326ee36dafadbd016b5",
@@ -1470,6 +1638,34 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "63b3c69f3cdae5bfbac407fc912ebe6155e6b00d"
+    },
+    {
+      "id": "47cc8ad2a10e3085e6a1e3930c35",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/results-from-the-bmx-triple-challenge-in-glendale/",
+      "title": "Results from the BMX Triple Challenge in Glendale | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:08.050Z",
+      "publishedAt": "2025-02-05T18:28:12.000Z",
+      "year": 2025,
+      "seriesKey": "ama-supercross",
+      "documentType": "results",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "d4dc9b0e791b8f3421a28268b65cc19c29518057"
+    },
+    {
+      "id": "617bc95e1fb59a495dbde22f9f18",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/smx-insider-450-class-tied-in-points/",
+      "title": "SMX Insider - 450 Class Tied in Points | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:24.379Z",
+      "publishedAt": "2025-02-20T20:03:32.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "6b18e3bb507ab183b14d1bde48c9e49604d1a499"
     },
     {
       "id": "2fdaf38ea4e48650f50730fc4950",
@@ -2156,6 +2352,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "bc8bb11d46c650f60822c5a637786e8d485c5266"
+    },
+    {
+      "id": "6f64df3d8cda58501b213be9c7e3",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/rm-fantasy-sxperts-final-standings/",
+      "title": "RM Fantasy SXperts Final Standings | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T00:14:08.984Z",
+      "publishedAt": "2026-05-11T20:15:13.000Z",
+      "year": 2026,
+      "seriesKey": "ama-supercross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "22b429369323129d01abdd6dc116a1ba193b7f3b"
     },
     {
       "id": "c7e457199dfe4bf1e187d8b5d778",
