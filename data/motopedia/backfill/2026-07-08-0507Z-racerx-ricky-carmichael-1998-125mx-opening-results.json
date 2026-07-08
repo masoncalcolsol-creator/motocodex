@@ -1,0 +1,151 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-08T05-07Z-run54",
+  "created_utc": "2026-07-08T05:07:00Z",
+  "status": "committed_racerx_atomic_individual_race_result_facts_partial_year",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic race-result, season-index, checkpoint, provenance, deduplication, and failure-receipt fields visible in public pages were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue, event date, class token, moto finishes, and machine token. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to manually opened public Racer X Vault pages and visible links from a public season race index. Crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry."
+  },
+  "sources": {
+    "racerx_1998_mx_races_index": {
+      "name": "Racer X Vault — 1998 Motocross Races",
+      "url": "https://vault.racerxonline.com/1998/mx/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T05:07:00Z",
+      "access_status": "public_visible_season_race_index_available"
+    },
+    "racerx_1998_glen_helen_125mx": {
+      "name": "Racer X Vault — 1998 Glen Helen Raceway - 125MX",
+      "url": "https://vault.racerxonline.com/1998-05-10/125mx/glen-helen-raceway",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T05:07:00Z",
+      "access_status": "public_visible_rows_available"
+    },
+    "racerx_1998_hangtown_125mx": {
+      "name": "Racer X Vault — 1998 Hangtown Motocross Classic - 125MX",
+      "url": "https://vault.racerxonline.com/1998-05-17/125mx/hangtown-motocross-classic",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T05:07:00Z",
+      "access_status": "public_visible_rows_available"
+    },
+    "racerx_1998_high_point_125mx": {
+      "name": "Racer X Vault — 1998 High Point Raceway - 125MX",
+      "url": "https://vault.racerxonline.com/1998-05-24/125mx/high-point-raceway",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T05:07:00Z",
+      "access_status": "public_visible_rows_available"
+    },
+    "racerx_1998_moto_x_338_125mx": {
+      "name": "Racer X Vault — 1998 Moto-X 338 - 125MX",
+      "url": "https://vault.racerxonline.com/1998-06-14/125mx/moto-x-338",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T05:07:00Z",
+      "access_status": "public_visible_rows_available"
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1998-05-10-glen-helen-raceway-125mx-1",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1998,
+      "event_date": "1998-05-10",
+      "venue": "Glen Helen Raceway",
+      "location": "San Bernardino, CA",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 1,
+      "moto_1_finish": 1,
+      "moto_2_finish": 1,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1998_glen_helen_125mx", "racerx_1998_mx_races_index"],
+      "confidence": 0.94
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1998-05-17-hangtown-motocross-classic-125mx-3",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1998,
+      "event_date": "1998-05-17",
+      "venue": "Hangtown Motocross Classic",
+      "location": "Rancho Cordova, CA",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 3,
+      "moto_1_finish": 8,
+      "moto_2_finish": 1,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1998_hangtown_125mx", "racerx_1998_mx_races_index"],
+      "confidence": 0.94
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1998-05-24-high-point-raceway-125mx-1",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1998,
+      "event_date": "1998-05-24",
+      "venue": "High Point Raceway",
+      "location": "Mt. Morris, PA",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 1,
+      "moto_1_finish": 1,
+      "moto_2_finish": 1,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1998_high_point_125mx", "racerx_1998_mx_races_index"],
+      "confidence": 0.94
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1998-06-14-moto-x-338-125mx-9",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1998,
+      "event_date": "1998-06-14",
+      "venue": "Moto-X 338",
+      "location": "Southwick, MA",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 9,
+      "moto_1_finish": 28,
+      "moto_2_finish": 2,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1998_moto_x_338_125mx", "racerx_1998_mx_races_index"],
+      "confidence": 0.94
+    }
+  ],
+  "deduplication": {
+    "identity_fields": ["source", "rider", "year", "series", "class", "event_date", "venue", "overall_finish"],
+    "known_prior_checkpoint": "Previous committed 1999 partial repairs captured Ricky Carmichael 1999 Glen Helen plus later selected 125MX event rows. This batch starts the distinct 1998 125MX season and does not duplicate prior 1999 facts.",
+    "primary_new_coverage": "Ricky Carmichael 1998 125MX individual race-result facts for Glen Helen, Hangtown, High Point, and Moto-X 338."
+  },
+  "checkpoints": {
+    "previous_completed_focus": "Ricky Carmichael 1999 Racer X partial 125MX event-row repair",
+    "this_batch_focus": "Ricky Carmichael 1998 Racer X 125MX opening-round event rows",
+    "next_recommended_focus": "Continue Ricky Carmichael 1998 125MX event-row ingestion from Budds Creek, RedBud, Unadilla, Kenworthy's, Washougal, Spring Creek, Broome-Tioga, and Steel City, or retry rider-level individual-races route when public cache/fetch access is available."
+  },
+  "failure_receipts": [
+    {
+      "route": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "attempted_utc": "2026-07-08T05:07:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely enumerate the full rider-specific individual-race rows from the rider-races endpoint in this run. Continued through public season race index links instead."
+    }
+  ]
+}
