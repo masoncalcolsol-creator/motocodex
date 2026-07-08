@@ -1,0 +1,117 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-08T03-03Z-run52",
+  "created_utc": "2026-07-08T03:03:00Z",
+  "status": "committed_racerx_atomic_individual_race_result_fact_partial_year",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic race-result and checkpoint fields visible in public pages were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue, class token, event date, moto finishes, and machine token. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to manually opened public Racer X Vault pages. Prior robots.txt direct lookup remained unavailable through the browsing route; crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider and season result pages",
+      "Racer X Vault public historical standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_1999_glen_helen_125mx": {
+      "name": "Racer X Vault — 1999 Glen Helen Raceway - 125MX",
+      "url": "https://vault.racerxonline.com/1999-05-09/125mx/glen-helen-raceway",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T03:03:00Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public 1999 Glen Helen Raceway 125MX results table row for Ricky Carmichael.",
+      "provenance_notes": [
+        "Racer X/Vault was used as the priority public source route for this batch.",
+        "The general rider individual-races URL returned a cache miss, so this batch used the 1999 motocross season race index and one accessible event result page.",
+        "Rows were captured as atomic facts only; venue, class token, date, overall finish, moto finishes, and machine token."
+      ],
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    },
+    "racerx_1999_mx_points": {
+      "name": "Racer X Vault — 1999 Overall Motocross Points Standings",
+      "url": "https://vault.racerxonline.com/1999/mx/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T03:03:00Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public 1999 125MX standings row confirming Ricky Carmichael as first with 549 points.",
+      "copy_policy": "Use only atomic standings facts; do not copy article bodies or narrative text."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1999-05-09-glen-helen-raceway-125mx-1",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1999,
+      "event_date": "1999-05-09",
+      "venue": "Glen Helen Raceway",
+      "location": "San Bernardino, CA",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 1,
+      "moto_1_finish": 1,
+      "moto_2_finish": 1,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1999_glen_helen_125mx"],
+      "confidence": 0.94
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-season-1999-125mx-1-549",
+      "type": "season_standing_crosscheck",
+      "series": "Motocross",
+      "year": 1999,
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 1,
+      "points": 549,
+      "sources": ["racerx_1999_mx_points"],
+      "confidence": 0.94,
+      "note": "Crosscheck included for context; broader Ricky Carmichael season standings may already exist in an earlier all-season standings backfill."
+    }
+  ],
+  "deduplication": {
+    "identity_fields": ["source", "rider", "year", "series", "class", "event_date", "venue", "overall_finish"],
+    "known_prior_checkpoint": "Previous committed Ricky Carmichael sequence covered Racer X individual race-result facts through 2000. Earlier all-season standings backfill may already contain the 1999 season-standing row, so the standings fact here is explicitly marked as a crosscheck rather than the primary new coverage.",
+    "primary_new_coverage": "1999 Glen Helen Raceway 125MX individual race-result fact for Ricky Carmichael."
+  },
+  "checkpoints": {
+    "previous_completed_focus": "Ricky Carmichael 2000 Racer X individual race-result facts",
+    "this_batch_focus": "Ricky Carmichael 1999 Racer X partial individual race-result repair through accessible season-event route",
+    "next_recommended_focus": "Retry Racer X individual-races page or continue 1999 125MX event result pages from Hangtown onward when public cache/fetch access is available."
+  },
+  "failure_receipts": [
+    {
+      "route": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "attempted_utc": "2026-07-08T03:03:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely enumerate the full 1999 rider-specific individual-race rows from the rider-races endpoint in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-05-16/125mx/hangtown-motocross-classic",
+      "attempted_utc": "2026-07-08T03:03:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely continue to the next 1999 125MX event result page in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-05-30/125mx/high-point-raceway",
+      "attempted_utc": "2026-07-08T03:03:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest the High Point 1999 125MX event result page in this run."
+    }
+  ]
+}
