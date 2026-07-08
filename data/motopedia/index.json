@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T06:41:01.313Z",
+  "generatedAt": "2026-07-08T09:40:26.827Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
@@ -448,6 +448,62 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "c023ed5c644e7437cdd66f82550b5f2995a75fe6"
+    },
+    {
+      "id": "84fff8b38eeb453eedfd268cb840",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/toyota-holeshot-history-marvin-musquin/",
+      "title": "Toyota Holeshot History Marvin Musquin | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:23.294Z",
+      "publishedAt": "2018-10-12T02:33:28.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "916095de433b8ce3cedb574bcd1faf5161539d42"
+    },
+    {
+      "id": "6d3e83d19dfc64382e4e37bb10dc",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/toyota-holeshot-history-austin-forkner/",
+      "title": "Toyota Holeshot History: Austin Forkner | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:19.748Z",
+      "publishedAt": "2018-09-21T21:58:51.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "0e6dae15549c3ce2e7cf2a227202f833e3432d83"
+    },
+    {
+      "id": "3ab8aef30232ace7aa4835d57eb4",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/toyota-holeshot-history-jason-anderson/",
+      "title": "Toyota Holeshot History: Jason Anderson | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:21.439Z",
+      "publishedAt": "2018-09-28T20:13:58.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "2379623bd23d35867c6bdff891602e5be5c22941"
+    },
+    {
+      "id": "e94e35764e087d711bad43e9e4b8",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/toyota-holeshot-history-ryan-villopoto/",
+      "title": "Toyota Holeshot History: Ryan Villopoto | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:24.963Z",
+      "publishedAt": "2018-10-04T18:42:34.000Z",
+      "year": 2018,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "df7a5d158c5e84a7ac698152c264eed1dda6db34"
     },
     {
       "id": "e210bb3160a419747e2d57020c9a",
@@ -912,6 +968,20 @@
       "contentHash": "018e2e5bc3e44d398aa348d39c00a37652d5da99"
     },
     {
+      "id": "d6900c4d0688e885833c11ee7f6f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/tomac-grabs-first-450sx-championship/",
+      "title": "Tomac Grabs First 450SX Championship | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:15.231Z",
+      "publishedAt": "2020-06-22T06:48:46.000Z",
+      "year": 2020,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "ccd9d8c87d6bd75c818b77cfd78608be05013ed9"
+    },
+    {
       "id": "4b41ac2b442857cd945bdd679827",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/fantasy/2021-preseason-supercross-power-rankings/",
@@ -1162,6 +1232,48 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "94448bac1ee9ea94eb3209e42f30ef99a7ea8448"
+    },
+    {
+      "id": "cf0b4020479f52b7b39a2f44cf39",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/time-trials-for-esx-esport-championship-start-today/",
+      "title": "Time trials for eSX eSport Championship Start Today | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:12.349Z",
+      "publishedAt": "2022-05-10T21:08:37.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "a0d4a0251737c677d77e190c6431b4f31944c178"
+    },
+    {
+      "id": "73123a7f7315cccf6efda8f2cc2b",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/tomac-becomes-winningest-rider-in-daytona-supercross-history/",
+      "title": "Tomac Becomes Winningest Rider in Daytona Supercross History | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:14.294Z",
+      "publishedAt": "2022-03-08T02:47:42.000Z",
+      "year": 2022,
+      "seriesKey": "ama-supercross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "61a882a62efc1cb11a59488ec5d8aefbe631abbd"
+    },
+    {
+      "id": "4dd5a908ad838c155f44ecb17de9",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/top-riders-react-to-the-supermotocross-announcement/",
+      "title": "Top Riders React to the SuperMotocross Announcement | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:18.005Z",
+      "publishedAt": "2022-10-06T00:06:11.000Z",
+      "year": 2022,
+      "seriesKey": "supermotocross",
+      "documentType": "rider-profile",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "67b031f2efc5187f2892a6a5c8932302c88787b2"
     },
     {
       "id": "a766d23e9e033659e1d177152804",
@@ -1444,6 +1556,20 @@
       "contentHash": "4ba766b5764ec66cc65616f417edc4bd7436a016"
     },
     {
+      "id": "a14f2d3ac38b2af2fe4fa0314700",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/tickets-on-sale-now-for-the-inaugural-supermotocross-world-championship-playoffs-and-final/",
+      "title": "Tickets On-Sale Now for the Inaugural SuperMotocross World Championship Playoffs and Final | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:08.579Z",
+      "publishedAt": "2023-02-01T01:30:00.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "aafb949f1022a90fb228707a722bb93adb07fb4a"
+    },
+    {
       "id": "8cbbe65d9326ee36dafadbd016b5",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-2023-supermotocross-world-championship-final-la-coliseum/",
@@ -1696,6 +1822,34 @@
       "contentHash": "7504402817a9745772b1d7b87a2371a742f27332"
     },
     {
+      "id": "8fc043d486115b703b215e000e69",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/this-week-in-supermotocross-supercross-championship-final/",
+      "title": "This Week in SuperMotocross: Supercross Championship Final | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:05.662Z",
+      "publishedAt": "2024-05-09T17:06:12.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "b7e31f93363aa5ea3ba96848d9e81631f9dc4918"
+    },
+    {
+      "id": "745990fc92e33e915551a899117f",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/this-week-in-supermotocross-world-championship-final/",
+      "title": "This Week in SuperMotocross: World Championship Final | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:06.603Z",
+      "publishedAt": "2024-09-19T17:00:00.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "7b7ed1608c24d6f81b18374d4eea3645ef4b9fb5"
+    },
+    {
       "id": "0ca104083bee08d2b1d9fcbc5803",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/tickets-on-sale-now-for-the-2024-supermotocross-world-championship-playoffs-and-final/",
@@ -1708,6 +1862,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "fb1b2a8cbc0f4f8c4920c28bc8e38a6b698e6d3f"
+    },
+    {
+      "id": "f3eb2af7efbd17d5f416fc8043c7",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/trio-of-speedways-set-to-host-second-year-of-supermotocross-world-championship-playoffs/",
+      "title": "Trio of Speedways Set to Host Second Year of SuperMotocross World Championship Playoffs | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T09:40:25.927Z",
+      "publishedAt": "2024-03-04T16:07:09.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "9b6ef44e314d75dbbc24a2b493f88ccc18c94a21"
     },
     {
       "id": "c9316d80a45f3d778a216cf25b67",
