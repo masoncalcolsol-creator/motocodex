@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-08T03:49:56.471Z",
+  "generatedAt": "2026-07-08T06:41:01.313Z",
   "run": {
     "status": "backfill-active",
     "pagesAttempted": 28,
-    "pagesAccepted": 9,
-    "factsExtracted": 21,
+    "pagesAccepted": 12,
+    "factsExtracted": 0,
     "lastError": null,
     "supabaseSync": {
       "attempted": false
@@ -702,6 +702,48 @@
       "contentHash": "b3bdb87c03fc07243669603b91d3f1ec7036a5cc"
     },
     {
+      "id": "ff05566e992e6fad5bfb95cfb86a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supercross-futures-ama-national-championship-in-vegas-this-october/",
+      "title": "Supercross Futures AMA National Championship in Vegas this October | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:43.313Z",
+      "publishedAt": "2019-08-13T17:47:09.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "9139b8c10488a130f11d24f7106664b2faaa9b42"
+    },
+    {
+      "id": "ea1fb335b11a48f6aefc14d7ac96",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supercross-futures-eight-race-series-culminates-championship-weekend-in-las-vegas/",
+      "title": "Supercross Futures Eight Race Series Culminates Championship Weekend in Las Vegas | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:44.252Z",
+      "publishedAt": "2019-05-08T19:00:24.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "ba56f461d053aa23043ae1e05bfaa0efb715b1ed"
+    },
+    {
+      "id": "c5f2087b7878db143123c69cb85a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supercross-futures-national-championship-livestream-announcement/",
+      "title": "Supercross Futures National Championship Livestream Announcement | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:45.174Z",
+      "publishedAt": "2019-10-10T17:10:30.000Z",
+      "year": 2019,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "8bc93d142633c8720d0cb00c9a0fd0b56addaf59"
+    },
+    {
       "id": "177fa0446477b48091b241a2d66d",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/gallery/2019-rider-head-shots/",
@@ -926,6 +968,34 @@
       "contentHash": "6c0b588aacf0317acf7573145dfa08917f952d64"
     },
     {
+      "id": "c064086ee217cc3af262f0a6df74",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supercross-esports-champion-crowned/",
+      "title": "Supercross eSports Champion Crowned! | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:42.363Z",
+      "publishedAt": "2021-12-30T19:09:50.000Z",
+      "year": 2021,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "e8e12840e897026bc85c263a9920b8f2120bc064"
+    },
+    {
+      "id": "308fe6b507212b6c6fff2fce9376",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/the-inaugural-esx-esport-championship-presented-by-yamaha-kicks-off-today/",
+      "title": "The Inaugural eSX eSport Championship Presented by Yamaha Kicks Off Today! | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:57.518Z",
+      "publishedAt": "2021-05-07T23:06:37.000Z",
+      "year": 2021,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "c6ba6027a78c1538d3ba9a7a3ae4396cbd8c01c7"
+    },
+    {
       "id": "0cc53b466a7eb240184d9b5c8f80",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/fantasy/2022-rmfantasysx-season-now-open/",
@@ -1078,6 +1148,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "ddc5dd9496afe62e902a01747ecb169535b6281f"
+    },
+    {
+      "id": "dd8c4c1681f72e3941720c9e1ced",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supermotocross-world-championship-details-unveiled/",
+      "title": "SuperMotocross World Championship Details Unveiled | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:52.961Z",
+      "publishedAt": "2022-10-06T21:18:13.000Z",
+      "year": 2022,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "94448bac1ee9ea94eb3209e42f30ef99a7ea8448"
     },
     {
       "id": "a766d23e9e033659e1d177152804",
@@ -1346,6 +1430,20 @@
       "contentHash": "9234f97c84f750499915d350d333e1faf26536df"
     },
     {
+      "id": "d2d66f0c7f7bb22d61ca2989f3fb",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supermotocross-world-championship-points-and-payout-breakdown/",
+      "title": "SuperMotocross World Championship Points and Payout Breakdown | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:54.810Z",
+      "publishedAt": "2023-06-20T21:00:00.000Z",
+      "year": 2023,
+      "seriesKey": "supermotocross",
+      "documentType": "standings",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "4ba766b5764ec66cc65616f417edc4bd7436a016"
+    },
+    {
       "id": "8cbbe65d9326ee36dafadbd016b5",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-2023-supermotocross-world-championship-final-la-coliseum/",
@@ -1542,6 +1640,34 @@
       "contentHash": "94db81fc10b735e79fd4aadecad6546599e3dcc5"
     },
     {
+      "id": "83f0466de2cdd3af07adcb5ced7c",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supermotocross-world-championship-broadcast-teams-wins-two-telly-awards/",
+      "title": "SuperMotocross World Championship Broadcast Teams Wins Two Telly Awards | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:51.205Z",
+      "publishedAt": "2024-05-23T14:02:00.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "0e2361187c00926ade23a5d7fdab936ac4cab4e7"
+    },
+    {
+      "id": "fde27c55f861f81e8bd5b3780308",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supermotocross-world-championship-finals-broadcast-and-streaming-schedule-announced/",
+      "title": "SuperMotocross World Championship Finals Broadcast and Streaming Schedule Announced | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:53.887Z",
+      "publishedAt": "2024-07-17T16:58:28.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "schedule",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "352a0880c64445d909290231ae471f2db7b88c15"
+    },
+    {
       "id": "61b42f87eaadfcc67a72dd77e5fd",
       "sourceKey": "supercrosslive",
       "url": "https://www.supercrosslive.com/news/the-2024-season-schedule-is-here/",
@@ -1554,6 +1680,20 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "6e728ad6906e04a057a7597f8e9861110bfb34f6"
+    },
+    {
+      "id": "e13a65538f1b641bfaeb0914253a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/the-inside-track-to-lead-vip-experience-offerings-at-smx-world-championship/",
+      "title": "The Inside Track to Lead VIP Experience Offerings at SMX World Championship | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:58.445Z",
+      "publishedAt": "2024-07-23T19:17:05.000Z",
+      "year": 2024,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "7504402817a9745772b1d7b87a2371a742f27332"
     },
     {
       "id": "0ca104083bee08d2b1d9fcbc5803",
@@ -1806,6 +1946,34 @@
       "tableCount": 0,
       "factCount": 0,
       "contentHash": "c7bab72001912a1e1627a720c597097b0f94d4da"
+    },
+    {
+      "id": "9297a7cbfd165b56e4cd21f74d5c",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/supercross-championship-final-post-race-press-conference/",
+      "title": "Supercross Championship Final: Post Race Press Conference | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:40:41.439Z",
+      "publishedAt": "2025-05-11T03:07:33.000Z",
+      "year": 2025,
+      "seriesKey": "ama-supercross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "f213e8f1178ad21d819f0efaae5669d66f5b1917"
+    },
+    {
+      "id": "01a5eb25fe99a29c8f68132f583a",
+      "sourceKey": "supercrosslive",
+      "url": "https://www.supercrosslive.com/news/the-smx-championship-heads-northeast-in-april/",
+      "title": "The SMX Championship heads Northeast in April | News | Monster Energy AMA Supercross",
+      "fetchedAt": "2026-07-08T06:41:00.412Z",
+      "publishedAt": "2025-02-26T17:56:39.000Z",
+      "year": 2025,
+      "seriesKey": "supermotocross",
+      "documentType": "historical-index",
+      "tableCount": 0,
+      "factCount": 0,
+      "contentHash": "3f7def360d8eb3a76aa79b903146fe735e8ea254"
     },
     {
       "id": "4fc1bc941fd5639969171007b8ff",
