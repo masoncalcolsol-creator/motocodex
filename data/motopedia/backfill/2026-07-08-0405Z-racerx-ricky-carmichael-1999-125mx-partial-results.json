@@ -1,0 +1,209 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-08T04-05Z-run53",
+  "created_utc": "2026-07-08T04:05:00Z",
+  "status": "committed_racerx_atomic_individual_race_result_facts_partial_year",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic race-result, season-index, checkpoint, provenance, deduplication, and failure-receipt fields visible in public pages were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic race-result fields were captured: overall finish, venue, class token, event date, moto finishes, and machine token. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to manually opened public Racer X Vault pages and visible links from a public season race index. Prior robots.txt direct lookup remained unavailable through the browsing route; crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry.",
+    "source_priority": [
+      "Racer X Vault public historical rider and season result pages",
+      "Racer X Vault public historical standings pages",
+      "Official AMA/Supercross/Motocross/series sources for corroboration when accessible",
+      "Clearly attributed supplemental public references when primary routes are temporarily unavailable"
+    ]
+  },
+  "sources": {
+    "racerx_1999_mx_races_index": {
+      "name": "Racer X Vault — 1999 Motocross Races",
+      "url": "https://vault.racerxonline.com/1999/mx/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T04:05:00Z",
+      "access_status": "public_visible_season_race_index_available",
+      "source_span": "Visible public 1999 Motocross race index listing event dates, venues, locations, and class links.",
+      "copy_policy": "Use only navigational/provenance facts and atomic event metadata; do not copy article bodies or narrative text."
+    },
+    "racerx_1999_budds_creek_125mx": {
+      "name": "Racer X Vault — 1999 Budds Creek Motocross - 125MX",
+      "url": "https://vault.racerxonline.com/1999-06-20/125mx/budds-creek-motocross-park",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T04:05:00Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public 1999 Budds Creek Motocross 125MX results table row for Ricky Carmichael.",
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    },
+    "racerx_1999_washougal_125mx": {
+      "name": "Racer X Vault — 1999 Washougal Motocross - 125MX",
+      "url": "https://vault.racerxonline.com/1999-08-01/125mx/washougal-motocross-park",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T04:05:00Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public 1999 Washougal Motocross 125MX results table row for Ricky Carmichael.",
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    },
+    "racerx_1999_spring_creek_125mx": {
+      "name": "Racer X Vault — 1999 Spring Creek Motocross - 125MX",
+      "url": "https://vault.racerxonline.com/1999-08-15/125mx/spring-creek-motocross-park",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T04:05:00Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public 1999 Spring Creek Motocross 125MX results table row for Ricky Carmichael.",
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    },
+    "racerx_1999_broome_tioga_125mx": {
+      "name": "Racer X Vault — 1999 Broome-Tioga Sports Center - 125MX",
+      "url": "https://vault.racerxonline.com/1999-08-29/125mx/broome-tioga-sports-center",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T04:05:00Z",
+      "access_status": "public_visible_rows_available",
+      "source_span": "Visible public 1999 Broome-Tioga Sports Center 125MX results table row for Ricky Carmichael.",
+      "copy_policy": "Use only atomic race-result facts; do not copy article bodies or narrative text."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1999-06-20-budds-creek-motocross-park-125mx-6",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1999,
+      "event_date": "1999-06-20",
+      "venue": "Budds Creek Motocross Park",
+      "location": "Mechanicsville, MD",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 6,
+      "moto_1_finish": 22,
+      "moto_2_finish": 1,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1999_budds_creek_125mx", "racerx_1999_mx_races_index"],
+      "confidence": 0.94
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1999-08-01-washougal-motocross-park-125mx-2",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1999,
+      "event_date": "1999-08-01",
+      "venue": "Washougal MX Park",
+      "location": "Washougal, WA",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 2,
+      "moto_1_finish": 2,
+      "moto_2_finish": 2,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1999_washougal_125mx", "racerx_1999_mx_races_index"],
+      "confidence": 0.94
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1999-08-15-spring-creek-motocross-park-125mx-3",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1999,
+      "event_date": "1999-08-15",
+      "venue": "Spring Creek MX Park",
+      "location": "Millville, MN",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 3,
+      "moto_1_finish": 10,
+      "moto_2_finish": 1,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1999_spring_creek_125mx", "racerx_1999_mx_races_index"],
+      "confidence": 0.94
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-race-1999-08-29-broome-tioga-sports-center-125mx-1",
+      "type": "individual_race_result",
+      "series": "Motocross",
+      "year": 1999,
+      "event_date": "1999-08-29",
+      "venue": "Broome-Tioga Sports Center",
+      "location": "Binghamton, NY",
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "overall_finish": 1,
+      "moto_1_finish": 1,
+      "moto_2_finish": 1,
+      "machine": "Kawasaki",
+      "sources": ["racerx_1999_broome_tioga_125mx", "racerx_1999_mx_races_index"],
+      "confidence": 0.94
+    }
+  ],
+  "deduplication": {
+    "identity_fields": ["source", "rider", "year", "series", "class", "event_date", "venue", "overall_finish"],
+    "known_prior_checkpoint": "Previous committed 1999 partial repair captured Glen Helen Raceway 125MX and a 1999 125MX standings crosscheck. This batch excludes Glen Helen to avoid duplicate primary facts and adds only newly visible 1999 Ricky Carmichael 125MX individual race-result rows.",
+    "primary_new_coverage": "Ricky Carmichael 1999 125MX individual race-result facts for Budds Creek, Washougal, Spring Creek, and Broome-Tioga."
+  },
+  "checkpoints": {
+    "previous_completed_focus": "Ricky Carmichael 1999 Glen Helen Raceway 125MX partial individual race-result repair",
+    "this_batch_focus": "Ricky Carmichael 1999 Racer X partial 125MX event-row repair through accessible season-event pages",
+    "next_recommended_focus": "Retry the missing 1999 125MX event pages from Hangtown, High Point, Moto-X 338, RedBud, Unadilla, Kenworthy's, and Steel City, or retry the rider-level individual-races route when public cache/fetch access is available."
+  },
+  "failure_receipts": [
+    {
+      "route": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely enumerate the full 1999 rider-specific individual-race rows from the rider-races endpoint in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-05-16/125mx/hangtown-motocross-classic",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest Hangtown 1999 125MX event result page in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-05-30/125mx/high-point-raceway",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest High Point 1999 125MX event result page in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-06-13/125mx/moto-x-338",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest Moto-X 338 1999 125MX event result page in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-07-04/125mx/red-bud-track-n-trail",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest RedBud 1999 125MX event result page in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-07-18/125mx/unadilla",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest Unadilla 1999 125MX event result page in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-07-25/125mx/kenworthys-motocross-park",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest Kenworthy's 1999 125MX event result page in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1999-09-05/125mx/steel-city-raceway",
+      "attempted_utc": "2026-07-08T04:05:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely ingest Steel City 1999 125MX event result page in this run."
+    }
+  ]
+}
