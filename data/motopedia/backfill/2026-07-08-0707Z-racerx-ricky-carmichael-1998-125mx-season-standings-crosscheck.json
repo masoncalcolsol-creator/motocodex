@@ -1,0 +1,89 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-08T07-07Z-run56",
+  "created_utc": "2026-07-08T07:07:00Z",
+  "status": "committed_racerx_atomic_season_standings_fact_crosscheck",
+  "truth_boundary": "Manual source-linked factual backfill from public Racer X Vault visible rows. This is not a live crawler, database insert, or deployment. No article bodies copied. Only atomic season standing, checkpoint, provenance, deduplication, and failure-receipt fields visible in public pages were captured.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic season-standing fields were captured: position, rider, hometown, points, year, series, and class. No article body or narrative content copied.",
+    "robots_txt": "No automated site crawl was run. Access was limited to manually opened public Racer X Vault pages and visible public season index / standings routes. Crawler behavior remains constrained to manual/public-page access until robots can be verified by an approved route.",
+    "rate_limit": "Manual lookup only. Future crawler default: 1 request per 10 seconds per host, exponential backoff on 429/5xx, preserve checkpoint before retry."
+  },
+  "sources": {
+    "racerx_1998_mx_points": {
+      "name": "Racer X Vault — 1998 Overall Motocross Points Standings",
+      "url": "https://vault.racerxonline.com/1998/mx/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T07:07:00Z",
+      "access_status": "public_visible_standings_rows_available"
+    },
+    "racerx_1998_mx_races_index": {
+      "name": "Racer X Vault — 1998 Motocross Races",
+      "url": "https://vault.racerxonline.com/1998/mx/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T07:07:00Z",
+      "access_status": "public_visible_season_race_index_available"
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "home": "Havana, FL, United States",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {
+      "fact_id": "racerx-ricky-carmichael-season-standing-1998-mx-125mx-position-1-points-525",
+      "type": "season_standing",
+      "series": "Motocross",
+      "year": 1998,
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "rider_home": "Havana, FL",
+      "position": 1,
+      "points": 525,
+      "sources": ["racerx_1998_mx_points"],
+      "confidence": 0.95
+    }
+  ],
+  "deduplication": {
+    "identity_fields": ["source", "rider", "year", "series", "class", "position", "points"],
+    "known_prior_checkpoint": "Previous committed 1998 batches captured individual 125MX race-result rows for Glen Helen, Hangtown, High Point, Moto-X 338, RedBud, Washougal, Spring Creek, and Broome-Tioga. This batch adds a distinct 1998 125MX season-standing crosscheck and does not duplicate those individual race-result facts.",
+    "primary_new_coverage": "Ricky Carmichael 1998 Racer X 125MX final season-standing fact: 1st place, 525 points."
+  },
+  "checkpoints": {
+    "previous_completed_focus": "Ricky Carmichael 1998 Racer X 125MX continuation event rows from RedBud, Washougal, Spring Creek, and Broome-Tioga",
+    "this_batch_focus": "Ricky Carmichael 1998 Racer X 125MX season standings crosscheck",
+    "next_recommended_focus": "Retry cache-missed 1998 125MX event pages for Budds Creek, Unadilla, Kenworthy's, and Steel City; then move backward to 1997 Racer X rider or season result routes, using official series sources only when Racer X/Vault remains unavailable."
+  },
+  "failure_receipts": [
+    {
+      "route": "https://vault.racerxonline.com/1998-06-21/125mx/budds-creek-motocross-park",
+      "attempted_utc": "2026-07-08T07:07:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely capture Ricky Carmichael's Budds Creek 1998 125MX individual result row in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1998-07-19/125mx/unadilla",
+      "attempted_utc": "2026-07-08T07:07:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely capture Ricky Carmichael's Unadilla 1998 125MX individual result row in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1998-07-25/125mx/kenworthys-motocross-park",
+      "attempted_utc": "2026-07-08T07:07:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely capture Ricky Carmichael's Kenworthy's 1998 125MX individual result row in this run."
+    },
+    {
+      "route": "https://vault.racerxonline.com/1998-09-06/125mx/steel-city-raceway",
+      "attempted_utc": "2026-07-08T07:07:00Z",
+      "result": "cache_miss",
+      "impact": "Could not safely capture Ricky Carmichael's Steel City 1998 125MX individual result row in this run."
+    }
+  ]
+}
