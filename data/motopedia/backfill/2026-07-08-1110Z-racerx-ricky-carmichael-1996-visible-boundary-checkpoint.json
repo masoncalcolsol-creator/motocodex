@@ -1,0 +1,100 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-08T11-10Z-run60",
+  "created_utc": "2026-07-08T11:10:00Z",
+  "status": "committed_1996_visible_racerx_boundary_checkpoint",
+  "truth_boundary": "Respectful public-source historical backfill. This file records only atomic facts visible in public Racer X Vault pages for Ricky Carmichael and adjacent 1996 standings pages. No article bodies copied. No authentication bypass attempted. No paywalled or restricted content accessed. The rider-level public results currently expose one 1996 Ricky Carmichael individual race row, and the public rider-points page visible in this run does not list a 1996 Ricky Carmichael season-points row.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. Only public Racer X Vault pages were opened.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic result and checkpoint fields were captured: overall result, event name, class, date, machine, rider, standings-presence/absence observation, source URL, and source priority. No narrative article text copied.",
+    "robots_txt": "Direct robots.txt retrieval was not available through the safe web-open flow during this run. No automated crawler was run; this was a manual, low-volume public lookup.",
+    "rate_limit": "Manual lookup only. Future crawler default remains no faster than 1 request per 10 seconds per host, with exponential backoff on 429/5xx and checkpoint preservation before retry."
+  },
+  "sources": {
+    "racerx_ricky_carmichael_rider_races": {
+      "name": "Racer X Vault — Ricky Carmichael Individual Race Results",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T11:10:00Z",
+      "access_status": "public_visible_rider_race_rows_available",
+      "source_priority": "primary_preferred_public_historical_vault"
+    },
+    "racerx_ricky_carmichael_rider_points": {
+      "name": "Racer X Vault — Ricky Carmichael Overall Season Results",
+      "url": "https://vault.racerxonline.com/rider/ricky-carmichael/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T11:10:00Z",
+      "access_status": "public_visible_rider_points_rows_available_through_1997_no_1996_ricky_row_visible",
+      "source_priority": "primary_preferred_public_historical_vault"
+    },
+    "racerx_1996_mx_points": {
+      "name": "Racer X Vault — 1996 Overall Motocross Points Standings",
+      "url": "https://vault.racerxonline.com/1996/mx/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T11:10:00Z",
+      "access_status": "public_visible_1996_mx_standings_rows_available",
+      "source_priority": "primary_preferred_public_historical_vault"
+    },
+    "racerx_1996_sx_points": {
+      "name": "Racer X Vault — 1996 Overall Supercross Points Standings",
+      "url": "https://vault.racerxonline.com/1996/sx/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T11:10:00Z",
+      "access_status": "public_visible_1996_sx_standings_rows_available",
+      "source_priority": "primary_preferred_public_historical_vault"
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {
+      "fact_id": "racerx-ricky-carmichael-race-result-1996-steel-city-raceway-125mx-overall-8",
+      "type": "race_result",
+      "series": "Motocross",
+      "year": 1996,
+      "class": "125MX",
+      "event": "Steel City Raceway",
+      "date": "1996-09-01",
+      "rider": "Ricky Carmichael",
+      "overall_position": 8,
+      "machine": "Kawasaki",
+      "sources": ["racerx_ricky_carmichael_rider_races"],
+      "confidence": 0.95,
+      "verification_status": "primary_racerx_rider_race_row"
+    },
+    {
+      "fact_id": "racerx-ricky-carmichael-rider-points-visible-boundary-1996-no-row-visible",
+      "type": "source_boundary_checkpoint",
+      "year": 1996,
+      "rider": "Ricky Carmichael",
+      "observation": "The public Ricky Carmichael Racer X rider-points page visible in this run lists season rows from 2007 back through 1997, with no 1996 Ricky Carmichael season-points row visible. This is a visibility/provenance checkpoint, not proof that no 1996 points were earned in every possible source.",
+      "sources": ["racerx_ricky_carmichael_rider_points"],
+      "confidence": 0.9,
+      "verification_status": "primary_racerx_rider_points_page_boundary_observation"
+    }
+  ],
+  "deduplication": {
+    "identity_fields": ["source", "rider", "year", "series", "class", "event", "date", "overall_position"],
+    "overlap_resolution": "Does not duplicate the 1997 primary rider-race facts committed in 68d6309c73a3365f39d3105a7806af27eb2e3871. This file only adds the single visible 1996 Ricky Carmichael rider-race row and a separate source-boundary checkpoint for points-page visibility.",
+    "new_primary_coverage": "1 public Racer X rider-race row for Ricky Carmichael in 1996, plus 1 provenance/boundary checkpoint about the public rider-points page visibility."
+  },
+  "checkpoints": {
+    "previous_completed_focus": "Primary Racer X rider-races table verification for Ricky Carmichael 1997 SX/MX result rows.",
+    "this_batch_focus": "Ricky Carmichael 1996 visible Racer X rider-race boundary and points-page visibility checkpoint.",
+    "next_recommended_focus": "Before moving to broader historical riders or official series pages, inspect whether public Racer X event-level pages around 1996 Steel City expose additional atomic moto/result context for Ricky Carmichael without copying article bodies; if not, mark the Ricky Carmichael backward rider-level run complete and begin the next high-priority rider/season slice from Racer X Vault standings/rider pages."
+  },
+  "failure_receipts": [
+    {
+      "scope": "ricky_carmichael_1996_rider_points",
+      "status": "no_visible_1996_ricky_points_row_on_public_rider_points_page",
+      "detail": "Racer X public rider-points page was accessible, but visible rows ended at 1997 for Ricky Carmichael during this run. This should be treated as a source visibility boundary rather than a historical negative fact.",
+      "next_action": "Use official or public event-level sources only if they expose atomic facts without authentication, paywall access, or body-copying."
+    }
+  ]
+}
