@@ -1,0 +1,250 @@
+{
+  "schema": "motopedia.historical_backfill.v1",
+  "ingest_run_id": "motopedia-backfill-2026-07-08T09-11Z-run58",
+  "created_utc": "2026-07-08T09:11:00Z",
+  "status": "committed_1997_round_finish_crosscheck_with_racerx_route_failure_receipts",
+  "truth_boundary": "Respectful public-source checkpoint. Racer X Vault remains the preferred source, but individual 1997 event/rider route discovery did not yield clean accessible rows during this run. This file therefore stores only conservative non-Racer-X round-position crosscheck facts and explicit failure receipts; it does not claim complete event-level Racer X ingestion. No article bodies copied.",
+  "respectful_ingestion_policy": {
+    "authentication": "No authentication bypass attempted. No logged-in, restricted, or paywalled pages were accessed.",
+    "paywalls": "No paywalled content accessed or copied.",
+    "copying": "Only atomic result-summary fields were captured: rider, year, class, series, round number, finish position where visible, final championship position, and source provenance. No narrative article body copied.",
+    "robots_txt": "No automated crawl was run. Direct robots.txt retrieval through the available web tool was not available from an indexed/search-result URL in this run, so crawler behavior remained manual and conservative.",
+    "rate_limit": "Manual lookup only. Future crawler default remains 1 request per 10 seconds per host, exponential backoff on 429/5xx, and checkpoint preservation before retry."
+  },
+  "sources": {
+    "racerx_1997_mx_points_prior_checkpoint": {
+      "name": "Racer X Vault — 1997 Overall Motocross Points Standings",
+      "url": "https://vault.racerxonline.com/1997/mx/points",
+      "publisher": "Filter Publications LLC / Racer X",
+      "accessed_utc": "2026-07-08T08:03:00Z",
+      "access_status": "public_visible_standings_rows_available_in_prior_committed_checkpoint",
+      "prior_commit": "77e82706e5e7f8f9fc15f3ae856e3d765c0cb1bd",
+      "prior_path": "data/motopedia/backfill/2026-07-08-0803Z-racerx-ricky-carmichael-1998-125mx-cache-miss-repair-and-1997-standings.json"
+    },
+    "wikipedia_ricky_carmichael_motorsports_career_results": {
+      "name": "Ricky Carmichael — Motorsports career results",
+      "url": "https://en.wikipedia.org/wiki/Ricky_Carmichael",
+      "publisher": "Wikipedia",
+      "accessed_utc": "2026-07-08T09:11:00Z",
+      "access_status": "public_visible_summary_table_available",
+      "source_priority_note": "Secondary public crosscheck only. Use Racer X or official series rows for final event-level ingestion when available."
+    }
+  },
+  "entity": {
+    "type": "rider",
+    "name": "Ricky Carmichael",
+    "slug": "ricky-carmichael",
+    "racerx_vault_races_url": "https://vault.racerxonline.com/rider/ricky-carmichael/races",
+    "racerx_vault_points_url": "https://vault.racerxonline.com/rider/ricky-carmichael/points"
+  },
+  "facts": [
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r01-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 1,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r02-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 2,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r03-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 3,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r04-position-13",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 4,
+      "rider": "Ricky Carmichael",
+      "finish_position": 13,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r05-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 5,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r06-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 6,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r07-position-2",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 7,
+      "rider": "Ricky Carmichael",
+      "finish_position": 2,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r08-position-4",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 8,
+      "rider": "Ricky Carmichael",
+      "finish_position": 4,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r09-position-2",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 9,
+      "rider": "Ricky Carmichael",
+      "finish_position": 2,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r10-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 10,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r11-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 11,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r12-position-1",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 12,
+      "rider": "Ricky Carmichael",
+      "finish_position": 1,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-round-finish-summary-1997-125mx-r13-position-3",
+      "type": "round_finish_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "round": 13,
+      "rider": "Ricky Carmichael",
+      "finish_position": 3,
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results"],
+      "confidence": 0.65,
+      "verification_status": "needs_racerx_or_official_event_row"
+    },
+    {
+      "fact_id": "crosscheck-ricky-carmichael-season-summary-1997-125mx-average-finish-2-46-podium-85-championship-1",
+      "type": "season_summary_crosscheck",
+      "series": "Motocross",
+      "year": 1997,
+      "class": "125MX",
+      "rider": "Ricky Carmichael",
+      "average_finish": 2.46,
+      "podium_percent": "85%",
+      "championship_position": 1,
+      "linked_primary_standing_fact": "racerx-ricky-carmichael-season-standing-1997-mx-125mx-position-1-points-563",
+      "sources": ["wikipedia_ricky_carmichael_motorsports_career_results", "racerx_1997_mx_points_prior_checkpoint"],
+      "confidence": 0.7,
+      "verification_status": "season championship position agrees with prior Racer X standings checkpoint; round positions need event-row verification"
+    }
+  ],
+  "deduplication": {
+    "identity_fields": ["source", "rider", "year", "series", "class", "round", "finish_position", "verification_status"],
+    "known_prior_checkpoint": "Prior checkpoint committed 1997 Racer X season standings for 125MX, 125WSX, and 125ESX, but not 1997 individual round/event results.",
+    "primary_new_coverage": "1997 125MX Ricky Carmichael round-finish summary crosscheck facts, explicitly marked as secondary and pending Racer X or official event-row verification."
+  },
+  "checkpoints": {
+    "previous_completed_focus": "Ricky Carmichael 1998 125MX cache-miss repair and 1997 Racer X season standings checkpoint",
+    "this_batch_focus": "Seed 1997 125MX round-finish crosscheck facts without overstating source authority",
+    "next_recommended_focus": "Resume Racer X Vault 1997 individual event-row discovery for the 13 125MX rounds; replace or confirm these crosscheck facts with primary event-level rows when visible."
+  },
+  "failure_receipts": [
+    {
+      "id": "failure-racerx-robots-direct-open-not-indexed-2026-07-08T09-11Z",
+      "type": "robots_txt_access_limited_by_tool_safe-open_policy",
+      "target": "https://vault.racerxonline.com/robots.txt",
+      "result": "Direct open was not available because the URL was not returned as a prior safe search result in the web tool. No automated crawl was run."
+    },
+    {
+      "id": "failure-racerx-1997-route-search-empty-2026-07-08T09-11Z",
+      "type": "racerx_event_route_discovery_incomplete",
+      "target": "Racer X Vault 1997 Ricky Carmichael 125MX individual event rows",
+      "result": "Searches for specific 1997 Racer X Vault event-route phrases returned no clean Racer X result pages. The run did not guess and mass-open candidate event URLs."
+    }
+  ]
+}
