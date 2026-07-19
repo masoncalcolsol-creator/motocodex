@@ -1,203 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T17:28:47.354Z",
+  "updatedAt": "2026-07-19T19:35:24.715Z",
   "queue": [
-    {
-      "url": "https://www.supercrosslive.com/news/five-comeback-rides-from-the-2022-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/five-dramatic-moments-from-the-2022-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/five-feel-good-moments-from-the-2022-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/musquin-extends-red-bull-racing-contract-through-2022-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/roczen-pulls-out-of-2022-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/supercross-video-pass-to-offer-international-streaming-of-2022-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/2022-round-1-race-day-recap-anaheim-ca/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/eli-tomac-first-repeat-winner-of-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-10-recap-detroit-mar-12th-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-11-recap-indianapolis-mar-19th-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-12-recap-seattle-mar-26th-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-13-recap-st-louis-apr-9th-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-14-recap-atlanta-apr-16th-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-15-recap-foxborough-apr-23-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-16-recap-denver-apr-30-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-6-recap-anaheim-feb-12-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-7-recap-minneapolis-feb-19-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-8-recap-arlington-feb-26-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-9-recap-daytona-mar-5th-2022/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2022,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/full-streaming-details-for-2023-supermotocross-season-announced/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-1-recap-anaheim-jan-7-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-10-recap-detroit-mar-18-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-11-recap-seattle-mar-25-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-12-recap-glendale-april-8-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-13-recap-atlanta-april-15-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-14-recap-east-rutherford-april-22-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-15-recap-nashville-april-29-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-16-recap-denver-may-6-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-07-19T17:27:44.330Z",
-      "yearHint": 2023,
-      "score": 31
-    },
     {
       "url": "https://www.supercrosslive.com/recaps/supercross-round-2-recap-oakland-feb-18-2023/",
       "sourceKey": "supercrosslive",
@@ -2411,33 +2215,33 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/five-comeback-rides-from-the-2022-supercross-season/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:04.303Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:34:54.456Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/five-dramatic-moments-from-the-2022-supercross-season/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:06.156Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:34:55.415Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/five-feel-good-moments-from-the-2022-supercross-season/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:08.126Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:34:56.378Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/musquin-extends-red-bull-racing-contract-through-2022-season/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:09.751Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:34:57.368Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/roczen-pulls-out-of-2022-supercross-season/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:10.688Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:34:59.104Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/supercross-video-pass-to-offer-international-streaming-of-2022-season/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:12.355Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:00.071Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2022-round-1-angel-stadium-of-anaheim-anaheim-ca/": {
@@ -2521,73 +2325,73 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/2022-round-1-race-day-recap-anaheim-ca/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:14.128Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:01.056Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/eli-tomac-first-repeat-winner-of-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:16.061Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:01.990Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-10-recap-detroit-mar-12th-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:18.044Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:03.007Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-11-recap-indianapolis-mar-19th-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:19.926Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:03.970Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-12-recap-seattle-mar-26th-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:21.489Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:04.960Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-13-recap-st-louis-apr-9th-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:23.325Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:05.922Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-14-recap-atlanta-apr-16th-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:24.840Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:06.891Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-15-recap-foxborough-apr-23-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:26.799Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:07.860Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-16-recap-denver-apr-30-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:28.647Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:08.848Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-6-recap-anaheim-feb-12-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:30.422Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:09.816Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-7-recap-minneapolis-feb-19-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:32.214Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:10.779Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-8-recap-arlington-feb-26-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:34.089Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:11.765Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-9-recap-daytona-mar-5th-2022/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:35.082Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:13.661Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/full-streaming-details-for-2023-supermotocross-season-announced/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:36.842Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:14.624Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/anaheim-1-2023/": {
@@ -2676,43 +2480,43 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-1-recap-anaheim-jan-7-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:38.697Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:15.583Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-10-recap-detroit-mar-18-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:39.702Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:16.514Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-11-recap-seattle-mar-25-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:40.639Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:18.204Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-12-recap-glendale-april-8-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:42.457Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:19.161Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-13-recap-atlanta-april-15-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:44.213Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:20.147Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-14-recap-east-rutherford-april-22-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:46.000Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:21.108Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-15-recap-nashville-april-29-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:47.785Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:22.067Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-16-recap-denver-may-6-2023/": {
-      "attempts": 35,
-      "lastAttemptAt": "2026-07-19T13:56:48.775Z",
+      "attempts": 36,
+      "lastAttemptAt": "2026-07-19T19:35:23.815Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-2-recap-oakland-feb-18-2023/": {
@@ -3024,64 +2828,64 @@
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:45.377Z",
+      "checkedAt": "2026-07-19T19:34:33.972Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:47.161Z",
+      "checkedAt": "2026-07-19T19:34:35.751Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:48.943Z",
+      "checkedAt": "2026-07-19T19:34:37.533Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-07-19T17:27:49.842Z",
+      "checkedAt": "2026-07-19T19:34:38.433Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:50.954Z",
+      "checkedAt": "2026-07-19T19:34:39.500Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:52.745Z",
+      "checkedAt": "2026-07-19T19:34:41.283Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:54.540Z",
+      "checkedAt": "2026-07-19T19:34:43.064Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-07-19T17:27:55.440Z",
+      "checkedAt": "2026-07-19T19:34:43.963Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:56.204Z",
+      "checkedAt": "2026-07-19T19:34:44.724Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:57.832Z",
+      "checkedAt": "2026-07-19T19:34:46.351Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:27:59.459Z",
+      "checkedAt": "2026-07-19T19:34:47.978Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-07-19T17:28:00.358Z",
+      "checkedAt": "2026-07-19T19:34:48.878Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -3098,25 +2902,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:28:15.075Z",
+      "checkedAt": "2026-07-19T19:34:49.809Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:28:16.863Z",
+      "checkedAt": "2026-07-19T19:34:51.600Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-07-19T17:28:18.655Z",
+      "checkedAt": "2026-07-19T19:34:53.393Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-07-19T17:28:19.555Z",
+      "checkedAt": "2026-07-19T19:34:54.293Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 4619
+  "cursor": 4647
 }
