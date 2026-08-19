@@ -1,203 +1,7 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-19T18:56:22.602Z",
+  "updatedAt": "2026-08-19T19:43:09.278Z",
   "queue": [
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-2-recap-oakland-feb-18-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-3-recap-san-diego-jan-21-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-4-recap-anaheim-2-jan-28-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-5-recap-houston-feb-4-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-6-recap-tampa-feb-11-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-7-recap-arlington-feb-25-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-8-recap-daytona-mar-4-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/recaps/supercross-round-9-recap-indianapolis-mar-11-2023/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2023,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/2024-monster-energy-supercross-season-recap/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/enzo-lopes-joins-star-yamaha-for-2024-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/ken-roczen-out-for-remainder-of-2024-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/monster-energy-supercross-announces-themed-races-for-2024-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/supermotocross-2024-season-preview-show/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/2024-track-maps/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/slcsweeps-2024-rules/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/track-maps/2024-monster-energy-supercross-track-maps/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-arlington-2024/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-detroit-2024/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-indianapolis-2024/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-st-louis-2024/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2024,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/eli-tomac-re-signs-with-yamaha-for-2025-smx-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/ken-roczen-out-for-remainder-of-2025-monster-energy-supercross-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/ken-roczen-re-signs-with-suzuki-for-2025-smx-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/ktm-jr-supercross-ready-to-race-into-2025-season/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/play-rmfantasysx-for-the-2025-season-on-the-the-rmfantasy-app/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/news/smx-2025-season-preview-show/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 44
-    },
-    {
-      "url": "https://www.supercrosslive.com/fan-sweepstakes-2025/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 31
-    },
-    {
-      "url": "https://www.supercrosslive.com/slc-2025-survey-sweepstakes-rules/",
-      "sourceKey": "supercrosslive",
-      "discoveredAt": "2026-08-19T17:43:11.554Z",
-      "yearHint": 2025,
-      "score": 31
-    },
     {
       "url": "https://www.supercrosslive.com/news/ken-roczen-returns-to-suzuki-for-2026-smx-season/",
       "sourceKey": "supercrosslive",
@@ -2520,73 +2324,73 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-2-recap-oakland-feb-18-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:20.498Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:22.913Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-3-recap-san-diego-jan-21-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:21.495Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:24.729Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-4-recap-anaheim-2-jan-28-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:22.457Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:26.489Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-5-recap-houston-feb-4-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:24.239Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:27.417Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-6-recap-tampa-feb-11-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:25.200Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:29.252Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-7-recap-arlington-feb-25-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:26.180Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:30.209Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-8-recap-daytona-mar-4-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:27.113Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:31.947Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/recaps/supercross-round-9-recap-indianapolis-mar-11-2023/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:28.045Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:33.643Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/2024-monster-energy-supercross-season-recap/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:29.011Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:35.469Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/enzo-lopes-joins-star-yamaha-for-2024-season/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:29.992Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:37.184Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ken-roczen-out-for-remainder-of-2024-supercross-season/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:30.967Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:39.068Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/monster-energy-supercross-announces-themed-races-for-2024-season/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:31.935Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:40.819Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/supermotocross-2024-season-preview-show/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:32.864Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:42.625Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/2024-track-maps/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:33.807Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:44.510Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/gallery/2024-track-maps/": {
@@ -2595,73 +2399,73 @@
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/slcsweeps-2024-rules/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:35.455Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:45.435Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/track-maps/2024-monster-energy-supercross-track-maps/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:36.388Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:47.234Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-arlington-2024/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:37.328Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:48.919Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-detroit-2024/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:38.267Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:50.684Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-indianapolis-2024/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:39.195Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:52.344Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/track-maps/yamaha-animated-track-map-st-louis-2024/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:40.162Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:54.187Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/eli-tomac-re-signs-with-yamaha-for-2025-smx-season/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:41.116Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:55.941Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ken-roczen-out-for-remainder-of-2025-monster-energy-supercross-season/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:42.093Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:57.782Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ken-roczen-re-signs-with-suzuki-for-2025-smx-season/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:43.030Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:42:59.589Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ktm-jr-supercross-ready-to-race-into-2025-season/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:43.993Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:43:01.350Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/play-rmfantasysx-for-the-2025-season-on-the-the-rmfantasy-app/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:44.958Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:43:03.097Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/smx-2025-season-preview-show/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:45.887Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:43:04.844Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/fan-sweepstakes-2025/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:46.876Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:43:06.587Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/slc-2025-survey-sweepstakes-rules/": {
-      "attempts": 143,
-      "lastAttemptAt": "2026-08-19T15:48:47.860Z",
+      "attempts": 144,
+      "lastAttemptAt": "2026-08-19T19:43:08.377Z",
       "error": "Page did not contain durable historical result metadata"
     },
     "https://www.supercrosslive.com/news/ken-roczen-returns-to-suzuki-for-2026-smx-season/": {
@@ -2828,64 +2632,64 @@
   "sitemaps": {
     "https://racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:11.440Z",
+      "checkedAt": "2026-08-19T19:42:01.511Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:13.225Z",
+      "checkedAt": "2026-08-19T19:42:03.305Z",
       "error": "404 Not Found"
     },
     "https://racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:15.011Z",
+      "checkedAt": "2026-08-19T19:42:05.102Z",
       "error": "404 Not Found"
     },
     "racerx": {
       "ok": true,
-      "checkedAt": "2026-08-19T18:55:15.911Z",
+      "checkedAt": "2026-08-19T19:42:06.002Z",
       "sitemapCount": 3,
       "candidateCount": 2
     },
     "https://vault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:17.010Z",
+      "checkedAt": "2026-08-19T19:42:07.087Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:18.813Z",
+      "checkedAt": "2026-08-19T19:42:08.874Z",
       "error": "404 Not Found"
     },
     "https://vault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:20.592Z",
+      "checkedAt": "2026-08-19T19:42:10.658Z",
       "error": "404 Not Found"
     },
     "racerx-vault": {
       "ok": true,
-      "checkedAt": "2026-08-19T18:55:21.492Z",
+      "checkedAt": "2026-08-19T19:42:11.557Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
     "https://llvault.racerxonline.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:22.373Z",
+      "checkedAt": "2026-08-19T19:42:12.331Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:24.054Z",
+      "checkedAt": "2026-08-19T19:42:13.956Z",
       "error": "404 Not Found"
     },
     "https://llvault.racerxonline.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:25.721Z",
+      "checkedAt": "2026-08-19T19:42:15.583Z",
       "error": "404 Not Found"
     },
     "racerx-llvault": {
       "ok": true,
-      "checkedAt": "2026-08-19T18:55:26.621Z",
+      "checkedAt": "2026-08-19T19:42:16.483Z",
       "sitemapCount": 3,
       "candidateCount": 1
     },
@@ -2902,25 +2706,25 @@
     },
     "https://promotocross.com/sitemap.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:27.727Z",
+      "checkedAt": "2026-08-19T19:42:17.418Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap_index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:29.512Z",
+      "checkedAt": "2026-08-19T19:42:19.209Z",
       "error": "404 Not Found"
     },
     "https://promotocross.com/sitemap-index.xml": {
       "ok": false,
-      "checkedAt": "2026-08-19T18:55:31.299Z",
+      "checkedAt": "2026-08-19T19:42:21.000Z",
       "error": "404 Not Found"
     },
     "promotocross": {
       "ok": true,
-      "checkedAt": "2026-08-19T18:55:32.198Z",
+      "checkedAt": "2026-08-19T19:42:21.899Z",
       "sitemapCount": 3,
       "candidateCount": 1
     }
   },
-  "cursor": 16743
+  "cursor": 16771
 }
